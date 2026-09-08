@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aveni | حلول التواصل الذكي وتقنية NFC</title>
+    <meta name="description" content="ستاندات وبطاقات ذكية بتقنية NFC لربط عملائك بعالمك الرقمي بلمسة واحدة.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-sky-500 selection:text-white">
+
+    <!-- شريط التنقل (Navigation) -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 to-cyan-400 flex items-center justify-center font-black text-xl text-white shadow-lg shadow-sky-500/20">
+                    A
+                </div>
+                <span class="text-2xl font-black tracking-tight text-white">AVENI</span>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
+                <a href="#how-it-works" class="hover:text-white transition-colors">كيف تعمل؟</a>
+                <a href="#products" class="hover:text-white transition-colors">المنتجات</a>
+                <a href="#why-aveni" class="hover:text-white transition-colors">المزايا</a>
+                <a href="#pricing" class="hover:text-white transition-colors">الباقات</a>
+                <a href="#faq" class="hover:text-white transition-colors">الأسئلة الشائعة</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-bold bg-sky-500 hover:bg-sky-400 text-white transition-all shadow-md shadow-sky-500/20">
+                    اطلب الآن
+                </a>
+                <button id="menu-btn" class="md:hidden p-2 text-slate-400 hover:text-white" aria-label="قائمة التنقل">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- القائمة للأجهزة الذكية -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-950 px-4 py-6 space-y-4">
+            <a href="#how-it-works" class="block text-slate-300 hover:text-white font-medium">كيف تعمل؟</a>
+            <a href="#products" class="block text-slate-300 hover:text-white font-medium">المنتجات</a>
+            <a href="#why-aveni" class="block text-slate-300 hover:text-white font-medium">المزايا</a>
+            <a href="#pricing" class="block text-slate-300 hover:text-white font-medium">الباقات</a>
+            <a href="#faq" class="block text-slate-300 hover:text-white font-medium">الأسئلة الشائعة</a>
+            <a href="#contact" class="block text-center w-full py-2.5 rounded-lg font-bold bg-sky-500 text-white">اطلب الآن</a>
+        </div>
+    </header>
+
+    <!-- القسم البارز (Hero Section) -->
+    <section class="relative pt-36 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-sky-500/10 blur-[130px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <div class="lg:col-span-7 text-center lg:text-right space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-400 text-xs font-bold tracking-wide">
+                        <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+                        الجيل الجديد من بطاقات وستاندات NFC
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
+                        لمسة واحدة.<br>
+                        <span class="bg-gradient-to-l from-sky-400 to-cyan-300 bg-clip-text text-transparent">عالمك الرقمي بين يديك.</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        حوّل تفاعلاتك اليومية إلى نتائج ملموسة. ستاندات وبطاقات Aveni الذكية تفتح حساباتك، تقييمات خرائط Google، ومعلوماتك المهنية على هواتف عملائك فوراً ودون تطبيقات.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#pricing" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold bg-sky-500 hover:bg-sky-400 text-white shadow-xl shadow-sky-500/25 transition-all">
+                            اطلب منتجك الآن
+                            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#how-it-works" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold border border-slate-700 hover:border-slate-500 bg-slate-900/60 text-slate-200 transition-all">
+                            شاهد كيف تعمل
+                        </a>
+                    </div>
+                    <div class="pt-6 flex items-center justify-center lg:justify-start gap-6 text-xs text-slate-400 font-medium">
+                        <div class="flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400"></i>
+                            لا يتطلب تطبيقات
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-400"></i>
+                            متوافق مع iPhone و Android
+                        </div>
+                    </div>
+                </div>
+
+                <!-- معاينة بصرية للهاتف والستاند -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 sm:w-80 rounded-[40px] border-4 border-slate-700 bg-slate-900 p-4 shadow-2xl shadow-sky-500/10">
+                        <div class="w-28 h-5 bg-slate-800 rounded-full mx-auto mb-6"></div>
+                        <div class="bg-slate-950 rounded-[28px] p-5 border border-slate-800 space-y-5 text-center">
+                            <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-sky-500 to-cyan-400 mx-auto p-1">
+                                <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-xl font-extrabold text-white">
+                                    Aveni
+                                </div>
+                            </div>
+                            <div>
+                                <h2 class="text-base font-bold text-white">مقهى الأفق الحديث</h2>
+                                <p class="text-xs text-slate-400">الفرع الرئيسي • تقييم 4.9 ★</p>
+                            </div>
+                            <div class="space-y-2.5">
+                                <div class="p-3 bg-slate-900 hover:bg-slate-850 rounded-xl border border-slate-800 flex items-center justify-between text-xs font-semibold">
+                                    <span class="flex items-center gap-2"><i data-lucide="star" class="w-4 h-4 text-amber-400"></i> قيّمنا على Google Maps</span>
+                                    <i data-lucide="chevron-left" class="w-3.5 h-3.5 text-slate-500"></i>
+                                </div>
+                                <div class="p-3 bg-slate-900 hover:bg-slate-850 rounded-xl border border-slate-800 flex items-center justify-between text-xs font-semibold">
+                                    <span class="flex items-center gap-2"><i data-lucide="utensils" class="w-4 h-4 text-sky-400"></i> المنيو الرقمي وقائمة القهوة</span>
+                                    <i data-lucide="chevron-left" class="w-3.5 h-3.5 text-slate-500"></i>
+                                </div>
+                                <div class="p-3 bg-slate-900 hover:bg-slate-850 rounded-xl border border-slate-800 flex items-center justify-between text-xs font-semibold">
+                                    <span class="flex items-center gap-2"><i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i> حساب Instagram</span>
+                                    <i data-lucide="chevron-left" class="w-3.5 h-3.5 text-slate-500"></i>
+                                </div>
+                                <div class="p-3 bg-slate-900 hover:bg-slate-850 rounded-xl border border-slate-800 flex items-center justify-between text-xs font-semibold">
+                                    <span class="flex items-center gap-2"><i data-lucide="phone-call" class="w-4 h-4 text-emerald-400"></i> تواصل عبر WhatsApp</span>
+                                    <i data-lucide="chevron-left" class="w-3.5 h-3.5 text-slate-500"></i>
+                                </div>
+                            </div>
+                            <div class="pt-2 text-[10px] text-slate-500 flex items-center justify-center gap-1">
+                                <i data-lucide="nfc" class="w-3.5 h-3.5 text-sky-400"></i> تم التحميل بلمسة NFC واحدة
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- كيف تعمل؟ (How It Works) -->
+    <section id="how-it-works" class="py-24 bg-slate-900/50 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+                <span class="text-sky-400 text-xs font-black tracking-wider uppercase">بساطة لا متناهية</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">كيف تعمل Aveni؟</h2>
+                <p class="text-slate-400 text-sm sm:text-base">أربع خطوات فقط تفصلك عن أتمتة مشاركة هويتك وعروضك مع العالم.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- خطوة 1 -->
+                <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 relative">
+                    <span class="text-4xl font-black text-slate-800 absolute top-4 left-4">01</span>
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center mb-5">
+                        <i data-lucide="package-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">اختر منتجك</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">اختر ستاند الطاولات أو بطاقة الأعمال الذكية بالخامة التي تعكس فخامة علامتك.</p>
+                </div>
+                <!-- خطوة 2 -->
+                <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 relative">
+                    <span class="text-4xl font-black text-slate-800 absolute top-4 left-4">02</span>
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center mb-5">
+                        <i data-lucide="layout-template" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">خصص صفحتك</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">أضف روابطك، شعارك، حسابات التواصل، ورابط تقييم جوجل عبر لوحة تحكم سلسة.</p>
+                </div>
+                <!-- خطوة 3 -->
+                <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 relative">
+                    <span class="text-4xl font-black text-slate-800 absolute top-4 left-4">03</span>
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center mb-5">
+                        <i data-lucide="smartphone-nfc" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">تفعيل بلمسة واحدة</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">يقرب الزائر هاتفه من المنتج، لتفتح صفحتك مباشرة في ثانية واحدة بدون تطبيقات.</p>
+                </div>
+                <!-- خطوة 4 -->
+                <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800 relative">
+                    <span class="text-4xl font-black text-slate-800 absolute top-4 left-4">04</span>
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center mb-5">
+                        <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">حدّث وتتبع في أي وقت</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">عدّل روابطك متى شئت دون الحاجة لإعادة طباعة الستاند أو البطاقة مع متابعة النقرات.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- المنتجات (Products) -->
+    <section id="products" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+                <span class="text-sky-400 text-xs font-black tracking-wider uppercase">ابتكار في التصنيع</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">حلول Aveni المصممة لأجلك</h2>
+                <p class="text-slate-400 text-sm sm:text-base">اجمع بين التقنية السحابية وأفخر الخامات الفيزيائية المقاومة للخدش والعوامل الخارجية.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- منتج 1: ستاندات الطاولة -->
+                <div class="rounded-3xl bg-slate-900 border border-slate-800 p-8 flex flex-col justify-between hover:border-slate-700 transition-all group">
+                    <div class="space-y-5">
+                        <div class="w-14 h-14 rounded-2xl bg-sky-500/10 text-sky-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i data-lucide="store" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">ستاندات NFC الذكية للمتاجر</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            مصممة خصيصاً للمقاهي، المطاعم، صالونات التجميل، والعيادات. توضع على الكاونتر أو الطاولات لحث الزبائن على التقييم المباشر على Google Maps أو تصفح القائمة.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> خامات: أكريليك فاخر، خشب طبيعي معالج</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> طباعة UV بالغة الدقة تدوم طويلاً</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> مزود بـ QR ديناميكي إضافي احتياطي</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="mt-8 block text-center py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-colors">
+                        طلب عرض مخصص للستاندات
+                    </a>
+                </div>
+
+                <!-- منتج 2: بطاقات الأعمال -->
+                <div class="rounded-3xl bg-slate-900 border border-sky-500/40 p-8 flex flex-col justify-between relative shadow-lg shadow-sky-500/5 group">
+                    <div class="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-sky-500 text-white text-[11px] font-black">
+                        الأكثر طلباً للأفراد
+                    </div>
+                    <div class="space-y-5">
+                        <div class="w-14 h-14 rounded-2xl bg-sky-500/20 text-sky-300 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i data-lucide="credit-card" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">بطاقات الأعمال الذكية</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            البديل العصري الدائم للكرتون الورقي التقليدي. بطاقة واحدة في محفظتك تتيح لك مشاركة كافة وسائل اتصالك وسيرتك الذاتية في أي اجتماع أو مؤتمر بلمسة واحدة على هاتف الطرف الآخر.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> خامات: PVC مرن مقاوم للماء، أو معدن فاخر (Stainless)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> حفظ جهة الاتصال مباشرة إلى دفتر الهاتف (vCard)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> تخصيص الشعار والاسم بالليزر أو الطباعة</li>
+                        </ul>
+                    </div>
+                    <a href="#pricing" class="mt-8 block text-center py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs transition-colors shadow-md shadow-sky-500/20">
+                        اطلب بطاقتك الآن
+                    </a>
+                </div>
+
+                <!-- منتج 3: الصفحة الرقمية ولوحة التحكم -->
+                <div class="rounded-3xl bg-slate-900 border border-slate-800 p-8 flex flex-col justify-between hover:border-slate-700 transition-all group">
+                    <div class="space-y-5">
+                        <div class="w-14 h-14 rounded-2xl bg-sky-500/10 text-sky-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i data-lucide="globe" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">الملف الرقمي السحابي</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            الصفحة الفورية فائقة السرعة التي يستقبلها العميل فور تقريب هاتفه. مصممة لتفتح في أجزاء من الثانية وبتناسق مخصص يعكس هويتك البصرية.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> دعم روابط التواصل، واتساب، الخرائط، والملفات</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> لوحة تحكم لتغيير البيانات فورياً بدون إعادة طباعة</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> تتبع عدد الزيارات ومصادر التفاعل</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="mt-8 block text-center py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-colors">
+                        استكشف المميزات البرمجية
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- لماذا تختار Aveni؟ (Why Choose Us) -->
+    <section id="why-aveni" class="py-24 bg-slate-900/40 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+                <span class="text-sky-400 text-xs font-black tracking-wider uppercase">القيمة المضافة</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">لماذا تثق بكبرى العلامات في Aveni؟</h2>
+                <p class="text-slate-400 text-sm sm:text-base">نجمع بين جمالية العتاد الملموس وقوة المنصة الرقمية لخدمة أهدافك التسويقية.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flex gap-4 items-start">
+                    <div class="w-11 h-11 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="mouse-pointer-click" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-white mb-1">تفاعل أسرع 10 أضعاف</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">العميل لا يبحث عن اسمك يدوياً أو يكتب روابط طويلة؛ نقرة واحدة تكفي لنقله حيث تريد.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                    <div class="w-11 h-11 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-white mb-1">مرونة التحديث اللحظي</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">تغير رقم هاتفك أو عروض مطعمك؟ عدّل البيانات من هاتفك لتنعكس على نفس الستاند فوراً.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                    <div class="w-11 h-11 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="leaf" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-white mb-1">صديقة للبيئة واقتصادية</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">تخلص من طباعة آلاف بطاقات العمل الورقية والقوائم الورقية المهدورة بعد كل تعديل.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                    <div class="w-11 h-11 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-white mb-1">هوية احترافية حديثة</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">تمنح علامتك التجارية انطباعاً مبتكراً ومواكباً لأحدث تقنيات التجربة الرقمية للعميل.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                    <div class="w-11 h-11 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="lock" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-white mb-1">أمان وتشفير عالي</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">رقائق NFC آمنة ومشفرة ضد التعديل العشوائي، وتوجيه موثوق عبر بروتوكولات HTTPS السحابية.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 items-start">
+                    <div class="w-11 h-11 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="headset" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-white mb-1">دعم فني وضمان شامل</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">ضمان تشغيلي على الرقائق وخدمة عملاء مباشرة لدعم التخصيص وإعداد الصفحات.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الباقات والأسعار (Pricing & Packages) -->
+    <section id="pricing" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+                <span class="text-sky-400 text-xs font-black tracking-wider uppercase">استثمار مباشر في نموك</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">اختر الباقة المناسبة لطبيعة عملك</h2>
+                <p class="text-slate-400 text-sm sm:text-base">بدون رسوم خفية أو تجديدات إجبارية للمنتجات الفردية.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                <!-- باقة الأفراد -->
+                <div class="rounded-3xl bg-slate-900 border border-slate-800 p-8 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-bold text-white">باقة الأفراد المستقلين</h3>
+                            <p class="text-xs text-slate-400 mt-1">المثالية للمحترفين والمستقلين وأصحاب الأعمال الحرة.</p>
+                        </div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-3xl font-black text-white">99</span>
+                            <span class="text-xs font-bold text-slate-400">ريال / تدفع مرة واحدة</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> بطاقة أعمال NFC واحدة (خامة PVC أنيقة)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> صفحة رقمية مخصصة حتى 5 روابط</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> رمز QR ديناميكي احتياطي مطبوع</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> تحديث غير محدود للبيانات مدى الحياة</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="mt-8 block text-center py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-colors">
+                        طلب باقة الأفراد
+                    </a>
+                </div>
+
+                <!-- باقة الأعمال (المميزة) -->
+                <div class="rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-sky-500 p-8 flex flex-col justify-between relative shadow-xl shadow-sky-500/10">
+                    <div class="absolute -top-3.5 right-1/2 translate-x-1/2 px-4 py-1 rounded-full bg-sky-500 text-white text-xs font-black">
+                        الخيار الأكثر شعبية للمتاجر
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-bold text-white">باقة الأعمال (Pro)</h3>
+                            <p class="text-xs text-slate-400 mt-1">الخيار الأمثل للمقاهي والمتاجر لرفع تقييمات Google ومشاركة القوائم.</p>
+                        </div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-3xl font-black text-white">299</span>
+                            <span class="text-xs font-bold text-slate-400">ريال / تدفع مرة واحدة</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-slate-200">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> 1 ستاند طاولة مخصص (أكريليك أو خشب) أو 3 بطاقات</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> طباعة شعار علامتك وهوية نشاطك بجودة عالية</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> صفحة رقمية مخصصة حتى 15 رابطاً</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> إحصائيات وتتبع عدد مرات التفاعل (Analytics)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> دعم فني مخصص وخدمة إعداد الصفحة مجاناً</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="mt-8 block text-center py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs transition-colors shadow-md shadow-sky-500/20">
+                        اطلب باقة الأعمال الآن
+                    </a>
+                </div>
+
+                <!-- باقة الشركات والكميات -->
+                <div class="rounded-3xl bg-slate-900 border border-slate-800 p-8 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-bold text-white">حلول الشركات (Enterprise)</h3>
+                            <p class="text-xs text-slate-400 mt-1">للفروع المتعددة، الفنادق، المعارض، والمنظمات الكبيرة.</p>
+                        </div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-2xl font-black text-white">تسعير مخصص</span>
+                        </div>
+                        <ul class="space-y-3 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> كميات غير محدودة من الستاندات والبطاقات الفاخرة</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> ربط نطاق مخصص للشركة (company.com/profile)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> لوحة تحكم مركزية لإدارة بطاقات كافة الموظفين</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> مدير حساب مخصص وتسليم سريع بأولوية عليا</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="mt-8 block text-center py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-colors">
+                        طلب عرض سعر للشركات
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الأسئلة الشائعة (FAQ) -->
+    <section id="faq" class="py-24 bg-slate-900/40 border-y border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-16">
+                <span class="text-sky-400 text-xs font-black tracking-wider uppercase">كل ما تود معرفته</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">الأسئلة الشائعة</h2>
+            </div>
+
+            <div class="space-y-4" id="faq-accordion">
+                <!-- سؤال 1 -->
+                <div class="border border-slate-800 bg-slate-950 rounded-2xl p-5 cursor-pointer faq-item">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-sm sm:text-base font-bold text-white">هل يحتاج العميل لتحميل تطبيق لقراءة الستاند أو البطاقة؟</h3>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-200"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-3 hidden leading-relaxed">
+                        لا نهائياً، تعمل تقنية Aveni مباشرة وبشكل مدمج مع نظام الهاتف. بمجرد ملامسة الهاتف للبطاقة أو الستاند، يظهر إشعار فوري يفتح صفحة الروابط على المتصفح تلقائياً.
+                    </p>
+                </div>
+
+                <!-- سؤال 2 -->
+                <div class="border border-slate-800 bg-slate-950 rounded-2xl p-5 cursor-pointer faq-item">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-sm sm:text-base font-bold text-white">ماذا يحدث إذا كان هاتف العميل لا يدعم تقنية NFC؟</h3>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-200"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-3 hidden leading-relaxed">
+                        جميع منتجات Aveni تأتي مطبوعة برمز QR ديناميكي ذكي ومدمج كخيار بديل، بحيث يمكن لأي هاتف قديم مسح الكود بكاميرا الهاتف للوصول لنفس الصفحة دون أي عائق.
+                    </p>
+                </div>
+
+                <!-- سؤال 3 -->
+                <div class="border border-slate-800 bg-slate-950 rounded-2xl p-5 cursor-pointer faq-item">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-sm sm:text-base font-bold text-white">هل يمكنني تعديل الروابط والبيانات بعد استلام المنتج؟</h3>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-200"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-3 hidden leading-relaxed">
+                        نعم بكل تأكيد. يمكنك الدخول إلى لوحة التحكم الخاصة بك في أي وقت وتعديل رقم الواتساب، حسابات التواصل، أو القوائم، وستظهر التعديلات فوراً لكل من يلمس الستاند أو البطاقة لاحقاً.
+                    </p>
+                </div>
+
+                <!-- سؤال 4 -->
+                <div class="border border-slate-800 bg-slate-950 rounded-2xl p-5 cursor-pointer faq-item">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-sm sm:text-base font-bold text-white">كم يستغرق تجهيز وشحن الطلبات المخصصة؟</h3>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-200"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-3 hidden leading-relaxed">
+                        يتم تجهيز المنتجات الفردية وشحنها خلال 2 إلى 4 أيام عمل، بينما تستغرق طلبيات الشركات والكميات من 4 إلى 7 أيام عمل متضمنة اختبارات الجودة والبرمجة والطباعة المخصصة.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تواصل معنا ونموذج الطلب (Contact & Lead Gen) -->
+    <section id="contact" class="py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-12">
+                <span class="text-sky-400 text-xs font-black tracking-wider uppercase">ابدأ الآن</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">طلب منتج أو استفسار تجاري</h2>
+                <p class="text-slate-400 text-sm sm:text-base">املأ البيانات وسيتواصل معك خبراؤنا لتأكيد التفاصيل وتجهيز تصميمك فوراً.</p>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl">
+                <form class="space-y-6" onsubmit="event.preventDefault(); alert('شكراً لطلبك! سيقوم فريق Aveni بالتواصل معك خلال ساعات قليلة.');">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-2">الاسم الكريم</label>
+                            <input type="text" required placeholder="مثال: صالح العلي" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-2">رقم الجوال / واتساب</label>
+                            <input type="tel" required placeholder="05xxxxxxxx" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-2">اسم النشاط أو الشركة (اختياري)</label>
+                            <input type="text" placeholder="مثال: كافيه الأفق" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-2">المنتج أو الباقة المطلوبة</label>
+                            <select class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-sky-500 transition-colors">
+                                <option>باقة الأعمال (ستاند طاولة NFC)</option>
+                                <option>باقة الأفراد (بطاقة أعمال شخصية)</option>
+                                <option>طلب كميات مخصصة للشركات والجهات</option>
+                                <option>استفسار عام / طلب معاينة</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-2">ملاحظات أو متطلبات خاصة للتصميم</label>
+                        <textarea rows="3" placeholder="اذكر أي تفاصيل إضافية بخصوص المواد المفضلة أو عدد الطاولات/الفروع..." class="w-full bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 transition-colors"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-sm transition-all shadow-lg shadow-sky-500/25">
+                        إرسال الطلب والتواصل معي
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل (Footer) -->
+    <footer class="border-t border-slate-800/80 bg-slate-950 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2 md:col-span-1 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-sky-500 flex items-center justify-center font-black text-white text-sm">
+                            A
+                        </div>
+                        <span class="text-xl font-black text-white">AVENI</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        الحلول الذكية لمشاركة الروابط والبيانات بتقنية NFC. صُممت لتمكين الأعمال والأفراد من تواصل أسرع وأكثر فاعلية.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-white mb-4">المنتجات</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#products" class="hover:text-white">ستاندات الطاولات</a></li>
+                        <li><a href="#products" class="hover:text-white">بطاقات الأعمال NFC</a></li>
+                        <li><a href="#products" class="hover:text-white">الملف التعريفي الرقمي</a></li>
+                        <li><a href="#pricing" class="hover:text-white">حلول التقييم السريع</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-white mb-4">الشركة والدعم</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#how-it-works" class="hover:text-white">كيف تعمل التقنية</a></li>
+                        <li><a href="#faq" class="hover:text-white">الأسئلة المتكررة</a></li>
+                        <li><a href="#contact" class="hover:text-white">مبيعات الشركات</a></li>
+                        <li><a href="#contact" class="hover:text-white">الدعم الفني والضمان</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-white mb-4">تواصل مباشر</h4>
+                    <div class="space-y-2 text-xs text-slate-400">
+                        <p class="flex items-center gap-2"><i data-lucide="phone" class="w-3.5 h-3.5 text-sky-400"></i> خدمة العملاء المباشرة</p>
+                        <p class="flex items-center gap-2"><i data-lucide="mail" class="w-3.5 h-3.5 text-sky-400"></i> contact@aveni.me</p>
+                        <p class="text-[11px] text-slate-500 pt-2">المملكة العربية السعودية</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>جميع الحقوق محفوظة لشركة Aveni © 2026</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-slate-400">سياسة الخصوصية</a>
+                    <a href="#" class="hover:text-slate-400">الشروط والأحكام</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- سكربت التحكم بالأيقونات والتفاعل -->
+    <script>
+        // تشغيل الأيقونات
+        lucide.createIcons();
+
+        // التحكم بالقائمة للأجهزة المحمولة
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // تشغيل نظام الأكورديون للأسئلة الشائعة
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.querySelector('p');
+                const icon = item.querySelector('i');
+                const isHidden = answer.classList.contains('hidden');
+                
+                // إغلاق أي سؤال مفتوح مسبقاً
+                document.querySelectorAll('.faq-item p').forEach(p => p.classList.add('hidden'));
+                document.querySelectorAll('.faq-item i').forEach(i => i.classList.remove('rotate-180'));
+                
+                if (isHidden) {
+                    answer.classList.remove('hidden');
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
