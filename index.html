@@ -6,37 +6,44 @@
     <title>AVENi | أنظمة وحلول الاتصال الذكي NFC</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- الخطوط: IBM Plex Sans Arabic + Plus Jakarta Sans -->
+    <!-- الخطوط الرسمية: IBM Plex Sans Arabic + Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
         .font-brand { font-family: 'Plus Jakarta Sans', sans-serif; }
         
-        /* خلفية داكنة انسيابية بهالات إضاءة ناعمة */
-        .bg-canvas-dark {
+        .bg-obsidian {
             background-color: #08080A;
             background-image: 
-                radial-gradient(ellipse 80% 50% at 50% -15%, rgba(56, 68, 92, 0.25), transparent 70%),
-                radial-gradient(ellipse 60% 40% at 100% 50%, rgba(16, 185, 129, 0.05), transparent 60%),
-                radial-gradient(ellipse 50% 40% at 0% 40%, rgba(30, 41, 59, 0.15), transparent 60%);
+                radial-gradient(ellipse 80% 50% at 50% -15%, rgba(255, 255, 255, 0.05), transparent 70%),
+                radial-gradient(ellipse 60% 40% at 100% 50%, rgba(16, 185, 129, 0.03), transparent 60%),
+                radial-gradient(ellipse 50% 40% at 0% 40%, rgba(255, 255, 255, 0.02), transparent 60%);
         }
 
         details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
-<body class="bg-canvas-dark text-zinc-100 antialiased selection:bg-white selection:text-black min-h-screen pb-20 md:pb-0">
+<body class="bg-obsidian text-zinc-100 antialiased selection:bg-white selection:text-black min-h-screen pb-20 md:pb-0">
 
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-[#08080A]/85 backdrop-blur-xl border-b border-zinc-800/80">
+    <header class="sticky top-0 z-50 bg-[#08080A]/90 backdrop-blur-xl border-b border-zinc-800/80">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- الشعار الرسمي AVENi -->
-            <a href="#" dir="ltr" class="font-brand inline-flex items-baseline tracking-[0.22em] font-black text-2xl text-white select-none group">
-                <span>AVEN</span><span class="text-emerald-400 group-hover:text-emerald-300 transition-colors">i</span>
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 ml-1.5 shadow-[0_0_8px_#10B981]"></span>
+            
+            <!-- الشعار الرسمي المعتمد مطابق للصور تماماً وبدون أي نقطة في النهاية -->
+            <a href="#" dir="ltr" class="flex items-center gap-3 select-none group">
+                <svg class="w-8 h-8 text-white transition-transform group-hover:scale-105 duration-300" viewBox="0 0 110 100" fill="currentColor">
+                    <!-- الضلع الأيسر الخارجي الموازي -->
+                    <polygon points="3,88 16,88 38,50 27,45" />
+                    <!-- الضلع المتقاطع والقمة (Inverted V) -->
+                    <polygon points="65,16 106,88 93,88 65,40 37,88 24,88" />
+                </svg>
+                <span class="font-brand font-black text-2xl tracking-[0.25em] text-white flex items-baseline">
+                    <span>Λ</span><span>V</span><span>E</span><span>N</span><span class="text-white">i</span>
+                </span>
             </a>
 
             <!-- القائمة العلوية -->
@@ -57,14 +64,14 @@
     <section class="relative pt-24 pb-28 border-b border-zinc-800/60 overflow-hidden">
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
             
-            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs font-semibold mb-8 backdrop-blur-md shadow-inner">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs font-semibold mb-8 backdrop-blur-md">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_#10B981]"></span>
                 <span class="tracking-wide">حلول الاتصال الذكي NFC المخصصة للمتاجر والشركات</span>
             </div>
             
             <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-[1.3] mb-6">
                 انقل هويتك وتواصل مع عملائك <br>
-                <span class="bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-600 bg-clip-text text-transparent">
+                <span class="bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
                     بملامسة هاتف واحدة ودون تطبيقات.
                 </span>
             </h1>
@@ -74,7 +81,7 @@
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#order" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-white hover:bg-zinc-200 text-black shadow-lg shadow-white/5 transition-all text-sm">
+                <a href="#order" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-white hover:bg-zinc-200 text-black shadow-lg transition-all text-sm">
                     ابدأ الطلب الآن
                 </a>
                 <a href="#solutions" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-zinc-900/80 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 transition-all text-sm">
@@ -89,19 +96,19 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-zinc-400 text-xs font-medium">
                 <div class="flex items-center justify-center gap-2">
-                    <i data-lucide="smartphone" class="w-4 h-4 text-emerald-400"></i>
+                    <i data-lucide="smartphone" class="w-4 h-4 text-white"></i>
                     <span>متوافق مع جميع أجهزة Apple و Android</span>
                 </div>
                 <div class="flex items-center justify-center gap-2">
-                    <i data-lucide="zap-off" class="w-4 h-4 text-emerald-400"></i>
+                    <i data-lucide="zap-off" class="w-4 h-4 text-white"></i>
                     <span>يعمل تلقائياً دون تثبيت تطبيقات</span>
                 </div>
                 <div class="flex items-center justify-center gap-2">
-                    <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                    <i data-lucide="shield-check" class="w-4 h-4 text-white"></i>
                     <span>شريحة NFC ذكية وسريعة الاستجابة</span>
                 </div>
                 <div class="flex items-center justify-center gap-2">
-                    <i data-lucide="infinity" class="w-4 h-4 text-emerald-400"></i>
+                    <i data-lucide="infinity" class="w-4 h-4 text-white"></i>
                     <span>دفع لمرة واحدة بدون اشتراكات شهرية</span>
                 </div>
             </div>
@@ -112,7 +119,7 @@
     <section id="solutions" class="py-24 border-b border-zinc-800/70">
         <div class="max-w-6xl mx-auto px-6">
             <div class="max-w-xl mb-16">
-                <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase mb-2 block">المنتجات والباقات</span>
+                <span class="text-xs font-bold tracking-widest text-zinc-400 uppercase mb-2 block">المنتجات والباقات</span>
                 <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">الحلول المتاحة والأسعار</h2>
                 <p class="text-zinc-400 text-sm leading-relaxed">منتجات ذكية مبرمجة مسبقاً وجاهزة للاستخدام الفوري لربط عملائك بنشاطك بلمسة واحدة.</p>
             </div>
@@ -122,18 +129,24 @@
                 <!-- Bento 1: بطاقة الأعمال الذكية (49 ريال) -->
                 <div class="md:col-span-6 bg-[#101014] border border-zinc-800/90 rounded-2xl p-7 flex flex-col justify-between hover:border-zinc-700 transition-all duration-300">
                     <div>
-                        <!-- مجسم البطاقة -->
+                        <!-- مجسم البطاقة بالشعار الرسمي المعتمد -->
                         <div class="h-52 rounded-xl bg-gradient-to-br from-zinc-900 via-[#141418] to-black text-zinc-100 p-6 flex flex-col justify-between mb-6 shadow-2xl border border-zinc-800 relative overflow-hidden">
                             <div class="flex justify-between items-start" dir="ltr">
-                                <span class="font-brand tracking-[0.24em] text-xs text-zinc-300 font-bold">AVEN<span class="text-emerald-400">i</span></span>
-                                <i data-lucide="radio" class="w-5 h-5 text-emerald-400"></i>
+                                <div class="flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-white" viewBox="0 0 110 100" fill="currentColor">
+                                        <polygon points="3,88 16,88 38,50 27,45" />
+                                        <polygon points="65,16 106,88 93,88 65,40 37,88 24,88" />
+                                    </svg>
+                                    <span class="font-brand tracking-[0.2em] text-xs text-white font-extrabold">ΛVENi</span>
+                                </div>
+                                <i data-lucide="radio" class="w-5 h-5 text-zinc-400"></i>
                             </div>
                             <div class="flex justify-between items-end">
                                 <div>
-                                    <span class="block text-xs font-bold text-zinc-200 tracking-wide">SMART BUSINESS CARD</span>
+                                    <span class="block text-xs font-bold text-zinc-200 tracking-wide font-brand">SMART BUSINESS CARD</span>
                                     <span class="text-[10px] text-zinc-500 font-mono">TOUCH TO CONNECT</span>
                                 </div>
-                                <span class="text-[9px] font-mono tracking-widest text-zinc-400 border border-zinc-700 bg-zinc-900/60 px-2 py-0.5 rounded">NFC</span>
+                                <span class="text-[9px] font-mono tracking-widest text-zinc-300 border border-zinc-700 bg-zinc-900/60 px-2 py-0.5 rounded">NFC</span>
                             </div>
                         </div>
 
@@ -168,7 +181,7 @@
                             <span class="text-xs font-bold text-white">قيّمنا على خرائط Google</span>
                             <span class="text-[10px] font-semibold text-zinc-400 font-mono">Rate us on Google Maps</span>
                             <div class="mt-1 flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-[10px] font-bold text-zinc-300">
-                                <i data-lucide="smartphone" class="w-3 h-3 text-emerald-400"></i>
+                                <i data-lucide="smartphone" class="w-3 h-3 text-white"></i>
                                 <span>المس بهاتفك للتقييم</span>
                             </div>
                         </div>
@@ -189,23 +202,23 @@
                 </div>
 
                 <!-- Bento 3: باقة ستاند نقاط البيع المخصص + الصفحة التعريفية (299 ريال) -->
-                <div class="md:col-span-12 bg-[#101014] border border-emerald-500/30 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-10 hover:border-emerald-500/50 transition-all duration-300 relative overflow-hidden">
+                <div class="md:col-span-12 bg-[#101014] border border-zinc-700/80 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-10 hover:border-zinc-500 transition-all duration-300 relative overflow-hidden">
                     <div class="md:w-1/2">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold mb-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold mb-4">
                             <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
                             <span>الباقة المتكاملة لنقاط البيع والاستقبال</span>
                         </div>
                         <div class="flex items-center gap-4 mb-3">
                             <h3 class="text-2xl font-bold text-white">باقة ستاند نقاط البيع المخصص + الصفحة التعريفية</h3>
-                            <span class="text-2xl font-black text-emerald-400">299 ريال</span>
+                            <span class="text-2xl font-black text-white">299 ريال</span>
                         </div>
                         <p class="text-zinc-400 text-sm leading-relaxed mb-6">
-                            ستاند أكريليك فاخر مصمم ومطبوع بهوية وشعار علامتك التجارية (Custom Branded) يوضع عند نقاط البيع أو كاونترات المحاسبة والاستقبال؛ مبرمج للربط المباشر بصفحتك التعريفية الرقمية التي تجمع قنوات التواصل، حسابات السوشال ميديا، والتقييم بلمسة واحدة.
+                            ستاند أكريليك فاخر مصمم ومطبوع بهوية وشعار علامتك التجارية يوضع عند نقاط البيع أو كاونترات المحاسبة والاستقبال؛ مبرمج للربط المباشر بصفحتك التعريفية الرقمية التي تجمع قنوات التواصل، حسابات السوشال ميديا، والتقييم بلمسة واحدة.
                         </p>
                         <ul class="space-y-2.5 text-xs font-semibold text-zinc-300 mb-6">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> تصميم وطباعة ستاند مخصص بشعار وهوية منشأتك بالكامل</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> صفحة رقمية سريعة تضم (الموقع، واتساب، سناب شات، وإنستغرام)</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> لوحة تحكم لتحديث بياناتك وحساباتك مستقبلاً مجاناً وبأي وقت</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-white"></i> تصميم وطباعة ستاند مخصص بشعار وهوية منشأتك بالكامل</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-white"></i> صفحة رقمية سريعة تضم (الموقع، واتساب، سناب شات، وإنستغرام)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-white"></i> إمكانية تحديث بياناتك وحساباتك مستقبلاً مجاناً وفي أي وقت</li>
                         </ul>
                         <a href="#order" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white hover:bg-zinc-200 text-black text-xs font-bold transition-all shadow-md">
                             طلب باقة نقاط البيع
@@ -213,14 +226,17 @@
                     </div>
 
                     <div class="md:w-1/2 w-full max-w-sm">
-                        <!-- مجسم الستاند والصفحة التفاعلية -->
+                        <!-- مجسم الستاند والصفحة التفاعلية بالهوية والشعار الجديد -->
                         <div class="rounded-2xl bg-zinc-950 border border-zinc-800 p-4 shadow-2xl">
                             <div class="flex items-center justify-between pb-3 mb-3 border-b border-zinc-800/80">
                                 <div class="flex items-center gap-2" dir="ltr">
-                                    <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-[10px] font-bold">A</div>
-                                    <span class="text-xs font-bold text-zinc-200">BRAND POS STAND</span>
+                                    <svg class="w-4 h-4 text-white" viewBox="0 0 110 100" fill="currentColor">
+                                        <polygon points="3,88 16,88 38,50 27,45" />
+                                        <polygon points="65,16 106,88 93,88 65,40 37,88 24,88" />
+                                    </svg>
+                                    <span class="text-xs font-bold text-zinc-200 font-brand">BRAND POS STAND</span>
                                 </div>
-                                <span class="text-[9px] text-emerald-400 font-mono bg-emerald-500/10 px-2 py-0.5 rounded">CUSTOM NFC</span>
+                                <span class="text-[9px] text-zinc-300 font-mono bg-zinc-800 border border-zinc-700 px-2 py-0.5 rounded">CUSTOM NFC</span>
                             </div>
 
                             <div class="space-y-2">
@@ -267,24 +283,24 @@
     <section id="workflow" class="py-24 border-b border-zinc-800/70 bg-[#0B0B0E]/60">
         <div class="max-w-6xl mx-auto px-6">
             <div class="max-w-xl mb-16">
-                <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase mb-2 block">بساطة الاستخدام</span>
+                <span class="text-xs font-bold tracking-widest text-zinc-400 uppercase mb-2 block">بساطة الاستخدام</span>
                 <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">كيف تعمل التقنية؟</h2>
                 <p class="text-zinc-400 text-sm leading-relaxed">ثلاث خطوات سريعة تضمن وصول عميلك إلى خدماتك في جزء من الثانية.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="p-8 rounded-2xl bg-[#101014] border border-zinc-800">
-                    <span class="text-xs font-mono font-bold text-emerald-400 block mb-3">01</span>
+                    <span class="text-xs font-mono font-bold text-zinc-400 block mb-3">01</span>
                     <h3 class="text-base font-bold text-white mb-2">ملامسة الهاتف</h3>
                     <p class="text-sm text-zinc-400 leading-relaxed">يقرب العميل هاتفه الذكي من بطاقة الأعمال أو ستاند نقاط البيع على مسافة 2-3 سم.</p>
                 </div>
                 <div class="p-8 rounded-2xl bg-[#101014] border border-zinc-800">
-                    <span class="text-xs font-mono font-bold text-emerald-400 block mb-3">02</span>
+                    <span class="text-xs font-mono font-bold text-zinc-400 block mb-3">02</span>
                     <h3 class="text-base font-bold text-white mb-2">استجابة فورية</h3>
                     <p class="text-sm text-zinc-400 leading-relaxed">ينبثق إشعار مباشر في هاتف العميل لنقله إلى وجهتك أو فتح صفحة التقييم تلقائياً.</p>
                 </div>
                 <div class="p-8 rounded-2xl bg-[#101014] border border-zinc-800">
-                    <span class="text-xs font-mono font-bold text-emerald-400 block mb-3">03</span>
+                    <span class="text-xs font-mono font-bold text-zinc-400 block mb-3">03</span>
                     <h3 class="text-base font-bold text-white mb-2">التفاعل المباشر</h3>
                     <p class="text-sm text-zinc-400 leading-relaxed">حفظ جهة الاتصال، تقييم المنشأة بـ 5 نجوم، أو متابعة حسابات السوشال ميديا فوراً.</p>
                 </div>
@@ -296,7 +312,7 @@
     <section id="faq" class="py-24 border-b border-zinc-800/70">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase mb-2 block">الأسئلة المتكررة</span>
+                <span class="text-xs font-bold tracking-widest text-zinc-400 uppercase mb-2 block">الأسئلة المتكررة</span>
                 <h2 class="text-3xl font-bold text-white">إجابات على كل ما يهمك</h2>
             </div>
 
@@ -339,7 +355,7 @@
         <div class="max-w-lg mx-auto px-6">
             <div class="bg-[#101014] border border-zinc-800 rounded-2xl p-8 shadow-2xl">
                 <div class="mb-6">
-                    <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase mb-1 block">تأكيد الطلب</span>
+                    <span class="text-xs font-bold tracking-widest text-zinc-400 uppercase mb-1 block">تأكيد الطلب</span>
                     <h2 class="text-2xl font-bold text-white mb-1">طلب منتج أو استفسار</h2>
                     <p class="text-zinc-400 text-xs">أدخل بياناتك وسيتم توجيهك مباشرة لمحادثة الواتساب لإكمال تفاصيل الهوية وتأكيد التجهيز.</p>
                 </div>
@@ -373,11 +389,14 @@
     <!-- Footer -->
     <footer class="py-8 bg-[#08080A] border-t border-zinc-800/80">
         <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-500 font-medium">
-            <div dir="ltr" class="font-brand inline-flex items-baseline tracking-[0.22em] font-black text-white uppercase">
-                <span>AVEN</span><span class="text-emerald-400">i</span>
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 ml-1 shadow-[0_0_8px_#10B981]"></span>
+            <div dir="ltr" class="flex items-center gap-2.5">
+                <svg class="w-5 h-5 text-white" viewBox="0 0 110 100" fill="currentColor">
+                    <polygon points="3,88 16,88 38,50 27,45" />
+                    <polygon points="65,16 106,88 93,88 65,40 37,88 24,88" />
+                </svg>
+                <span class="font-brand tracking-[0.25em] font-black text-white text-sm">ΛVENi</span>
             </div>
-            <span>© 2026 جميع الحقوق محفوظة لـ AVENi.</span>
+            <span>© 2026 جميع الحقوق محفوظة لـ AVENi</span>
         </div>
     </footer>
 
