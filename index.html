@@ -6,7 +6,7 @@
     <title>AVENi | أنظمة وحلول الاتصال الذكي NFC</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- الخطوط: IBM Plex Sans Arabic + Plus Jakarta Sans -->
+    <!-- الخطوط الرسمية: IBM Plex Sans Arabic + Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -33,18 +33,13 @@
     <header class="sticky top-0 z-50 bg-[#08080A]/90 backdrop-blur-xl border-b border-zinc-800/80">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
             
-            <!-- الشعار الرسمي المعتمد: ΛVENi فقط بدون الرمز الجانبي -->
+            <!-- الشعار الرسمي المعتمد: ΛVENi -->
             <a href="#" dir="ltr" class="flex items-center select-none group">
                 <svg class="h-6 w-auto text-white transition-opacity group-hover:opacity-80 duration-200" viewBox="0 0 135 28" fill="currentColor">
-                    <!-- Λ -->
                     <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
-                    <!-- V -->
                     <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
-                    <!-- E -->
                     <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
-                    <!-- N -->
                     <path d="M87,4 H91.5 L102.5,19 V4 H106.5 V25 H102 L91,10 V25 H87 Z" />
-                    <!-- i -->
                     <rect x="116" y="10.5" width="4.5" height="14.5" />
                     <rect x="116" y="3.5" width="4.5" height="4.5" />
                 </svg>
@@ -65,27 +60,27 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-20 pb-24 border-b border-zinc-800/60 overflow-hidden">
+    <section class="relative pt-16 pb-20 border-b border-zinc-800/60 overflow-hidden">
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
             
-            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs font-semibold mb-8 backdrop-blur-md">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs font-semibold mb-6 backdrop-blur-md">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_#10B981]"></span>
                 <span class="tracking-wide">حلول الاتصال الذكي NFC المخصصة للمتاجر والشركات</span>
             </div>
             
-            <!-- العنوان الرئيسي: تم تصغير الحجم قليلاً، زيادة التباعد الرأسي، وحذف tracking-tight -->
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.45] md:leading-[1.4] mb-7">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.4] md:leading-[1.4] mb-6">
                 انقل هويتك وتواصل مع عملائك <br class="hidden sm:inline">
                 <span class="bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
                     بملامسة هاتف واحدة ودون تطبيقات.
                 </span>
             </h1>
 
-            <p class="text-zinc-400 text-sm sm:text-base max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+            <p class="text-zinc-400 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed font-normal">
                 بطاقات أعمال ذكية وستاندات مخصصة لمنصات الاستقبال ونقاط البيع؛ لجمع تقييمات Google ومشاركة قنوات التواصل بلمسة واحدة.
             </p>
 
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <!-- أزرار الإجراء السريع -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-12">
                 <a href="#order" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-white hover:bg-zinc-200 text-black shadow-lg transition-all text-sm">
                     ابدأ الطلب الآن
                 </a>
@@ -93,6 +88,72 @@
                     استعراض الحلول
                 </a>
             </div>
+
+            <!-- بطاقات المعاينة البصرية المباشرة للمنتجات والخدمات -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto text-right">
+                
+                <!-- 1. مجسم بطاقة الأعمال الذكية -->
+                <div class="p-4 rounded-2xl bg-[#111115] border border-zinc-800 flex flex-col justify-between h-36 shadow-lg relative overflow-hidden group hover:border-zinc-700 transition-all">
+                    <div class="flex justify-between items-start" dir="ltr">
+                        <svg class="h-3.5 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
+                            <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
+                            <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
+                            <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
+                            <path d="M87,4 H91.5 L102.5,19 V4 H106.5 V25 H102 L91,10 V25 H87 Z" />
+                            <rect x="116" y="10.5" width="4.5" height="14.5" />
+                            <rect x="116" y="3.5" width="4.5" height="4.5" />
+                        </svg>
+                        <i data-lucide="radio" class="w-4 h-4 text-zinc-500"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-white block">بطاقة أعمال ذكية</span>
+                        <span class="text-[10px] text-zinc-500 font-mono">حفظ الرقم والبيانات بلمسة</span>
+                    </div>
+                </div>
+
+                <!-- 2. مجسم صفحة السوشال ميديا والروابط -->
+                <div class="p-4 rounded-2xl bg-[#111115] border border-zinc-800 flex flex-col justify-between h-36 shadow-lg hover:border-zinc-700 transition-all">
+                    <div class="flex items-center justify-between pb-2 border-b border-zinc-800/80">
+                        <span class="text-[10px] font-bold text-zinc-300">صفحة نشاطك الرقمية</span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    </div>
+                    <div class="space-y-1.5">
+                        <div class="h-6 rounded-lg bg-zinc-900 border border-zinc-800/80 flex items-center justify-between px-2.5 text-[10px] text-zinc-300">
+                            <span class="flex items-center gap-1.5"><i data-lucide="message-circle" class="w-3 h-3 text-emerald-400"></i> محادثة واتساب</span>
+                            <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-600"></i>
+                        </div>
+                        <div class="h-6 rounded-lg bg-zinc-900 border border-zinc-800/80 flex items-center justify-between px-2.5 text-[10px] text-zinc-300">
+                            <span class="flex items-center gap-1.5"><i data-lucide="globe" class="w-3 h-3 text-blue-400"></i> الموقع الإلكتروني</span>
+                            <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. مجسم تقييم خرائط Google -->
+                <div class="p-4 rounded-2xl bg-[#111115] border border-zinc-800 flex flex-col justify-between h-36 shadow-lg hover:border-zinc-700 transition-all">
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-md bg-zinc-900 border border-zinc-700 flex items-center justify-center">
+                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#4285F4"/>
+                                <circle cx="12" cy="9" r="1.5" fill="#EA4335"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs font-bold text-white">تقييم خرائط Google</span>
+                    </div>
+                    <div class="bg-zinc-900/90 border border-zinc-800 rounded-xl p-2 flex items-center justify-between">
+                        <div class="flex text-amber-400 gap-0.5">
+                            <i data-lucide="star" class="w-3 h-3 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-amber-400"></i>
+                        </div>
+                        <span class="text-[9px] font-bold text-zinc-400">فتح مباشر</span>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
@@ -126,7 +187,7 @@
             <div class="max-w-xl mb-16">
                 <span class="text-xs font-bold tracking-widest text-zinc-400 uppercase mb-2 block">المنتجات والباقات</span>
                 <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">الحلول المتاحة والأسعار</h2>
-                <p class="text-zinc-400 text-sm leading-relaxed">منتجات ذكية مبرمجة مسبقاً وجاهزة للاستخدام الفوري لربط عملائك بنشاطك بلمسة واحدة.</p>
+                <p class="text-zinc-400 text-sm leading-relaxed">منتجات ملموسة ذكية مبرمجة مسبقاً وجاهزة للاستخدام الفوري لربط عملائك بنشاطك بلمسة واحدة.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
@@ -134,7 +195,7 @@
                 <!-- Bento 1: بطاقة الأعمال الذكية (49 ريال) -->
                 <div class="md:col-span-6 bg-[#101014] border border-zinc-800/90 rounded-2xl p-7 flex flex-col justify-between hover:border-zinc-700 transition-all duration-300">
                     <div>
-                        <!-- مجسم البطاقة بالشعار النصي الصريح -->
+                        <!-- مجسم البطاقة -->
                         <div class="h-52 rounded-xl bg-gradient-to-br from-zinc-900 via-[#141418] to-black text-zinc-100 p-6 flex flex-col justify-between mb-6 shadow-2xl border border-zinc-800 relative overflow-hidden">
                             <div class="flex justify-between items-start" dir="ltr">
                                 <svg class="h-4 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
@@ -174,7 +235,7 @@
                 <!-- Bento 2: ستاند تقييمات خرائط Google (99 ريال) -->
                 <div class="md:col-span-6 bg-[#101014] border border-zinc-800/90 rounded-2xl p-7 flex flex-col justify-between hover:border-zinc-700 transition-all duration-300">
                     <div>
-                        <!-- مجسم ستاند خرائط قوقل -->
+                        <!-- مجسم ستاند خرائط Google -->
                         <div class="h-52 rounded-xl bg-gradient-to-b from-[#16161B] to-[#101014] border border-zinc-800 p-5 flex flex-col justify-center items-center gap-2 mb-6 shadow-inner text-center">
                             <div class="w-11 h-11 rounded-xl bg-zinc-900 border border-zinc-700 shadow-md flex items-center justify-center mb-1">
                                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
@@ -265,9 +326,7 @@
                                 </div>
                                 <div class="h-8 w-full bg-zinc-900 border border-zinc-800 rounded-lg flex items-center justify-between px-3 text-xs text-zinc-200 font-medium">
                                     <div class="flex items-center gap-2">
-                                        <svg class="w-3.5 h-3.5 text-amber-400 fill-amber-400" viewBox="0 0 24 24">
-                                            <path d="M12 2c-3.8 0-6.3 2.9-6.3 6.1 0 1.2.4 2.6 1.1 3.7.2.3.2.5.1.7-.2.3-.6.5-1.1.7-.5.2-.8.5-.8.9 0 .5.4.9 1 .9.3 0 .7-.1 1-.2.4-.1.7 0 .9.3.5.7 1.4 1.3 2.6 1.6.4.1.7.4.7.8 0 .9-.9 1.4-2.1 1.7-.4.1-.7.4-.7.8 0 .6.5 1 1.2 1 .3 0 .7-.1 1.2-.3.6-.2 1.3-.2 1.9.2.6.4 1.4.6 2.2.6.8 0 1.6-.2 2.2-.6.6-.4 1.3-.4 1.9-.2.5.2.9.3 1.2.3.7 0 1.2-.4 1.2-1 0-.4-.3-.7-.7-.8-1.2-.3-2.1-.8-2.1-1.7 0-.4.3-.7.7-.8 1.2-.3 2.1-.9 2.6-1.6.2-.3.5-.4.9-.3.3.1.7.2 1 .2.6 0 1-.4 1-.9 0-.4-.3-.7-.8-.9-.5-.2-.9-.4-1.1-.7-.1-.2-.1-.4.1-.7.7-1.1 1.1-2.5 1.1-3.7C18.3 4.9 15.8 2 12 2z"/>
-                                        </svg>
+                                        <i data-lucide="camera" class="w-3.5 h-3.5 text-amber-400"></i>
                                         <span>تابعنا عبر سناب شات</span>
                                     </div>
                                     <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-500"></i>
