@@ -1,537 +1,214 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" class="scroll-smooth">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AVENi | أنظمة وحلول الاتصال الذكي NFC</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- الخطوط الرسمية: IBM Plex Sans Arabic + Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>قائمة الروابط | ΛVENi</title>
     <style>
-        body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
-        .font-brand { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .font-sys-clean { font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif; }
-        
-        .bg-obsidian {
-            background-color: #08080A;
-            background-image: 
-                radial-gradient(ellipse 80% 50% at 50% -15%, rgba(255, 255, 255, 0.05), transparent 70%),
-                radial-gradient(ellipse 60% 40% at 100% 50%, rgba(16, 185, 129, 0.03), transparent 60%),
-                radial-gradient(ellipse 50% 40% at 0% 40%, rgba(255, 255, 255, 0.02), transparent 60%);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        details > summary::-webkit-details-marker { display: none; }
+        body {
+            background-color: #0b0f19;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-h-screen;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .brand-name {
+            font-size: 32px;
+            font-weight: 200;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+
+        .link-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .link-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-grow: 1;
+            justify-content: flex-end; /* للمحاذاة اليمين */
+        }
+
+        .link-text {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .icon-wrapper {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* تنسيق خاص لأيقونة سناب شات الجديدة لضمان الوضوح والمطابقة */
+        .snap-icon {
+            filter: drop-shadow(0 0 5px rgba(255, 252, 0, 0.3));
+        }
+
+        .arrow {
+            opacity: 0.6;
+            font-size: 14px;
+        }
     </style>
 </head>
-<body class="bg-obsidian text-zinc-100 antialiased selection:bg-white selection:text-black min-h-screen pb-20 md:pb-0">
-
-    <!-- Header -->
-    <header class="sticky top-0 z-50 bg-[#08080A]/90 backdrop-blur-xl border-b border-zinc-800/80">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            
-            <!-- الشعار الرسمي المعتمد: ΛVENi -->
-            <a href="#" dir="ltr" class="flex items-center select-none group">
-                <svg class="h-6 w-auto text-white transition-opacity group-hover:opacity-80 duration-200" viewBox="0 0 135 28" fill="currentColor">
-                    <!-- Λ -->
-                    <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
-                    <!-- V -->
-                    <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
-                    <!-- E -->
-                    <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
-                    <!-- N -->
-                    <path d="M87,4 H91.5 L102.5,19 V4 H106.5 V25 H102 L91,10 V25 H87 Z" />
-                    <!-- i -->
-                    <rect x="116" y="10.5" width="4.5" height="14.5" />
-                    <rect x="116" y="3.5" width="4.5" height="4.5" />
-                </svg>
-            </a>
-
-            <!-- القائمة العلوية -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
-                <a href="#solutions" class="hover:text-white transition-colors">الحلول والمنتجات</a>
-                <a href="#compatibility" class="hover:text-white transition-colors">التوافق</a>
-                <a href="#workflow" class="hover:text-white transition-colors">آلية العمل</a>
-                <a href="#faq" class="hover:text-white transition-colors">الأسئلة الشائعة</a>
-            </nav>
-
-            <a href="#order" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-xl text-xs font-bold bg-white hover:bg-zinc-200 text-black transition-all shadow-md">
-                طلب منتج
-            </a>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="brand-name">ΛVENi</h1>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="relative pt-16 pb-20 border-b border-zinc-800/60 overflow-hidden">
-        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-            
-            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs font-semibold mb-6 backdrop-blur-md">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_#10B981]"></span>
-                <span class="tracking-wide">حلول الاتصال الذكي NFC المخصصة للمتاجر والشركات</span>
-            </div>
-            
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.4] md:leading-[1.4] mb-6">
-                انقل هويتك وتواصل مع عملائك <br class="hidden sm:inline">
-                <span class="bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
-                    بملامسة هاتف واحدة ودون تطبيقات.
-                </span>
-            </h1>
-
-            <p class="text-zinc-400 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed font-normal">
-                بطاقات أعمال ذكية وستاندات مخصصة لمنصات الاستقبال ونقاط البيع؛ لجمع تقييمات Google ومشاركة قنوات التواصل بلمسة واحدة.
-            </p>
-
-            <!-- أزرار الإجراء السريع -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-12">
-                <a href="#order" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-white hover:bg-zinc-200 text-black shadow-lg transition-all text-sm">
-                    ابدأ الطلب الآن
-                </a>
-                <a href="#solutions" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-zinc-900/80 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 transition-all text-sm">
-                    استعراض الحلول
-                </a>
-            </div>
-
-            <!-- بطاقات المعاينة البصرية المباشرة للمنتجات والخدمات -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto text-right">
-                
-                <!-- 1. مجسم بطاقة الأعمال الذكية -->
-                <div class="p-4 rounded-2xl bg-[#111115] border border-zinc-800 flex flex-col justify-between h-36 shadow-lg relative overflow-hidden group hover:border-zinc-700 transition-all">
-                    <div class="flex justify-between items-start" dir="ltr">
-                        <svg class="h-3.5 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
-                            <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
-                            <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
-                            <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
-                            <path d="M87,4 H91.5 L102.5,19 V4 H106.5 V25 H102 L91,10 V25 H87 Z" />
-                            <rect x="116" y="10.5" width="4.5" height="14.5" />
-                            <rect x="116" y="3.5" width="4.5" height="4.5" />
+        
+        <div class="links-list">
+            <!-- الموقع الرسمي -->
+            <a href="#" class="link-item">
+                <span class="arrow">▼</span>
+                <div class="link-content">
+                    <span class="link-text">الموقع الرسمي للمنشأة</span>
+                    <div class="icon-wrapper">
+                        <!-- أيقونة SVG للكرة الأرضية -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                         </svg>
-                        <i data-lucide="radio" class="w-4 h-4 text-zinc-500"></i>
-                    </div>
-                    <div>
-                        <span class="text-xs font-bold text-white block">بطاقة أعمال ذكية</span>
-                        <span class="text-[10px] text-zinc-500 font-mono">حفظ الرقم والبيانات بلمسة</span>
                     </div>
                 </div>
+            </a>
 
-                <!-- 2. مجسم صفحة السوشال ميديا والروابط -->
-                <div class="p-4 rounded-2xl bg-[#111115] border border-zinc-800 flex flex-col justify-between h-36 shadow-lg hover:border-zinc-700 transition-all">
-                    <div class="flex items-center justify-between pb-2 border-b border-zinc-800/80">
-                        <span class="text-[10px] font-bold text-zinc-300">صفحة نشاطك الرقمية</span>
-                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                    </div>
-                    <div class="space-y-1.5">
-                        <div class="h-6 rounded-lg bg-zinc-900 border border-zinc-800/80 flex items-center justify-between px-2.5 text-[10px] text-zinc-300">
-                            <span class="flex items-center gap-1.5">
-                                <svg class="w-3 h-3 text-[#25D366] fill-current" viewBox="0 0 24 24">
-                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                </svg>
-                                <span>محادثة واتساب</span>
-                            </span>
-                            <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-600"></i>
-                        </div>
-                        <div class="h-6 rounded-lg bg-zinc-900 border border-zinc-800/80 flex items-center justify-between px-2.5 text-[10px] text-zinc-300">
-                            <span class="flex items-center gap-1.5"><i data-lucide="globe" class="w-3 h-3 text-blue-400"></i> الموقع الإلكتروني</span>
-                            <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-600"></i>
-                        </div>
+            <!-- واتساب -->
+            <a href="#" class="link-item">
+                <span class="arrow">▼</span>
+                <div class="link-content">
+                    <span class="link-text">مراسلتنا عبر الواتساب</span>
+                    <div class="icon-wrapper">
+                        <!-- أيقونة واتساب -->
+                        <svg viewBox="0 0 24 24" fill="#22c55e">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                        </svg>
                     </div>
                 </div>
+            </a>
 
-                <!-- 3. مجسم تقييم خرائط Google -->
-                <div class="p-4 rounded-2xl bg-[#111115] border border-zinc-800 flex flex-col justify-between h-36 shadow-lg hover:border-zinc-700 transition-all">
-                    <div class="flex items-center gap-2">
-                        <div class="w-6 h-6 rounded-md bg-zinc-900 border border-zinc-700 flex items-center justify-center">
-                            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#4285F4"/>
-                                <circle cx="12" cy="9" r="1.5" fill="#EA4335"/>
-                            </svg>
-                        </div>
-                        <span class="text-xs font-bold text-white">تقييم خرائط Google</span>
-                    </div>
-                    <div class="bg-zinc-900/90 border border-zinc-800 rounded-xl p-2 flex items-center justify-between">
-                        <div class="flex text-amber-400 gap-0.5">
-                            <i data-lucide="star" class="w-3 h-3 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3 h-3 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3 h-3 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3 h-3 fill-amber-400"></i>
-                            <i data-lucide="star" class="w-3 h-3 fill-amber-400"></i>
-                        </div>
-                        <span class="text-[9px] font-bold text-zinc-400">فتح مباشر</span>
+            <!-- سناب شات (تم تحديث الأيقونة) -->
+            <a href="#" class="link-item">
+                <span class="arrow">▼</span>
+                <div class="link-content">
+                    <span class="link-text">تابعنا عبر سناب شات</span>
+                    <div class="icon-wrapper snap-icon">
+                        <!-- تم استخدام SVG يطابق تماماً الشكل ثلاثي الأبعاد والحدود السوداء للشبح -->
+                        <svg viewBox="0 0 128 128">
+                            <defs>
+                                <linearGradient id="snapGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FFFC00;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#F5E600;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="0" y="0" width="128" height="128" rx="26" fill="url(#snapGrad)"/>
+                            <path d="M64.2 31.5c-11.8 0-19.1 8.2-19.1 18.2 0 4.3 1.2 8.7 3.3 12.3.6 1 .7 1.6.4 2.3-.6 1.4-1.9 2.1-3.6 3-1.9 1-3.3 1.8-3.3 3.6 0 1.9 1.7 3.3 3.9 3.3 1.2 0 2.5-.3 3.7-.8 1.6-.6 2.6-.2 3.4 1.3 1.8 2.8 5.2 5 9.7 6.1 1.5.4 2.6 1.6 2.6 3.1 0 3.2-3.3 5.3-7.9 6.2-1.5.3-2.6 1.4-2.6 3.1 0 2.1 2 3.6 4.8 3.6 1.3 0 2.9-.3 4.6-.9 2-.7 4.6-.9 6.7.4 2 1.3 4.9 2.1 8 2.1 3.1 0 6-1 8-2.1 2.1-1.4 4.8-1.2 6.9-.4 1.8.6 3.3 1 4.6 1 2.8 0 4.8-1.6 4.8-3.6 0-1.7-1.1-2.8-2.6-3.1-4.6-.9-7.9-3-7.9-6.2 0-1.5 1.1-2.7 2.6-3.1 4.5-1.1 7.9-3.3 9.7-6.1.8-1.4 1.8-1.9 3.4-1.3 1.2.5 2.5.8 3.7.8 2.2 0 3.9-1.4 3.9-3.3 0-1.7-1.3-2.6-3.3-3.6-1.7-.9-3-1.6-3.6-3-.3-.7-.2-1.3.4-2.3 2.2-3.6 3.3-8 3.3-12.3 0-10-7.3-18.2-19.1-18.2z" 
+                                  fill="white" stroke="black" stroke-width="1.8" stroke-linejoin="round"/>
+                        </svg>
                     </div>
                 </div>
+            </a>
 
-            </div>
+            <!-- تيك توك -->
+            <a href="#" class="link-item">
+                <span class="arrow">▼</span>
+                <div class="link-content">
+                    <span class="link-text">تابعنا عبر تيك توك</span>
+                    <div class="icon-wrapper">
+                        <!-- أيقونة تيك توك -->
+                        <svg viewBox="0 0 448 512" fill="white">
+                            <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/>
+                            <!-- طبقة ملونة للشعار -->
+                            <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" fill="white" style="mix-blend-mode:hard-light"/>
+                            <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" fill="#ff0050" style="mix-blend-mode:color-burn"/>
+                            <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" fill="#00f2ea" style="mix-blend-mode:color-dodge"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
 
+            <!-- إنستغرام -->
+            <a href="#" class="link-item">
+                <span class="arrow">▼</span>
+                <div class="link-content">
+                    <span class="link-text">تابعنا عبر إنستغرام</span>
+                    <div class="icon-wrapper">
+                        <!-- أيقونة إنستغرام بمتدرج لوني -->
+                        <svg viewBox="0 0 24 24">
+                            <defs>
+                                <radialGradient id="instaGrad" r="150%" cx="30%" cy="107%">
+                                    <stop stop-color="#fdf497" offset="0%"/>
+                                    <stop stop-color="#fdf497" offset="5%"/>
+                                    <stop stop-color="#fd5949" offset="45%"/>
+                                    <stop stop-color="#d6249f" offset="60%"/>
+                                    <stop stop-color="#285AEB" offset="90%"/>
+                                </radialGradient>
+                            </defs>
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21 1.791 4 4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="url(#instaGrad)"/>
+                        </svg>
+                    </div>
+                </div>
+            </a>
         </div>
-    </section>
-
-    <!-- Compatibility Bar -->
-    <section id="compatibility" class="py-7 bg-[#0B0B0E] border-b border-zinc-800/80">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-zinc-400 text-xs font-medium">
-                <div class="flex items-center justify-center gap-2">
-                    <i data-lucide="smartphone" class="w-4 h-4 text-white"></i>
-                    <span>متوافق مع جميع أجهزة Apple و Android</span>
-                </div>
-                <div class="flex items-center justify-center gap-2">
-                    <i data-lucide="zap-off" class="w-4 h-4 text-white"></i>
-                    <span>يعمل تلقائياً دون تثبيت تطبيقات</span>
-                </div>
-                <div class="flex items-center justify-center gap-2">
-                    <i data-lucide="shield-check" class="w-4 h-4 text-white"></i>
-                    <span>شريحة NFC ذكية وسريعة الاستجابة</span>
-                </div>
-                <div class="flex items-center justify-center gap-2">
-                    <i data-lucide="infinity" class="w-4 h-4 text-white"></i>
-                    <span>دفع لمرة واحدة بدون اشتراكات شهرية</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bento Grid: Solutions Section -->
-    <section id="solutions" class="py-24 border-b border-zinc-800/70">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="max-w-xl mb-16">
-                <span class="text-xs font-bold tracking-widest text-zinc-400 uppercase mb-2 block">المنتجات والباقات</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">الحلول المتاحة والأسعار</h2>
-                <p class="text-zinc-400 text-sm leading-relaxed">منتجات ملموسة ذكية مبرمجة مسبقاً وجاهزة للاستخدام الفوري لربط عملائك بنشاطك بلمسة واحدة.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-                
-                <!-- Bento 1: بطاقة الأعمال الذكية (49 ريال) -->
-                <div class="md:col-span-6 bg-[#101014] border border-zinc-800/90 rounded-2xl p-7 flex flex-col justify-between hover:border-zinc-700 transition-all duration-300">
-                    <div>
-                        <!-- مجسم البطاقة -->
-                        <div class="h-52 rounded-xl bg-gradient-to-br from-zinc-900 via-[#141418] to-black text-zinc-100 p-6 flex flex-col justify-between mb-6 shadow-2xl border border-zinc-800 relative overflow-hidden">
-                            <div class="flex justify-between items-start" dir="ltr">
-                                <svg class="h-4 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
-                                    <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
-                                    <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
-                                    <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
-                                    <path d="M87,4 H91.5 L102.5,19 V4 H106.5 V25 H102 L91,10 V25 H87 Z" />
-                                    <rect x="116" y="10.5" width="4.5" height="14.5" />
-                                    <rect x="116" y="3.5" width="4.5" height="4.5" />
-                                </svg>
-                                <i data-lucide="radio" class="w-5 h-5 text-zinc-400"></i>
-                            </div>
-                            <div class="flex justify-between items-end">
-                                <div>
-                                    <span class="block text-xs font-bold text-zinc-200 tracking-wide font-brand">SMART BUSINESS CARD</span>
-                                    <span class="text-[10px] text-zinc-500 font-mono">TOUCH TO CONNECT</span>
-                                </div>
-                                <span class="text-[9px] font-mono tracking-widest text-zinc-300 border border-zinc-700 bg-zinc-900/60 px-2 py-0.5 rounded">NFC</span>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center justify-between mb-2">
-                            <h3 class="text-lg font-bold text-white">بطاقة الأعمال الذكية</h3>
-                            <span class="text-xl font-black text-white">49 ريال</span>
-                        </div>
-                        <p class="text-zinc-400 text-sm leading-relaxed font-normal mb-6">
-                            بديلك العصري لبطاقات العمل الورقية؛ بمجرد ملامستها لهاتف العميل تحفظ اسمك، أرقامك، موقعك، وروابط التواصل مباشرة في سجل الهاتف دون كتابة يدوية.
-                        </p>
-                    </div>
-
-                    <div class="pt-4 border-t border-zinc-800/80 flex items-center justify-between">
-                        <span class="text-xs font-semibold text-zinc-500">جاهزة للاستخدام ومبرمجة</span>
-                        <a href="#order" class="px-5 py-2 rounded-lg bg-white hover:bg-zinc-200 text-black text-xs font-bold transition-all">اطلب الآن</a>
-                    </div>
-                </div>
-
-                <!-- Bento 2: ستاند تقييمات خرائط Google (99 ريال) -->
-                <div class="md:col-span-6 bg-[#101014] border border-zinc-800/90 rounded-2xl p-7 flex flex-col justify-between hover:border-zinc-700 transition-all duration-300">
-                    <div>
-                        <!-- مجسم ستاند خرائط Google -->
-                        <div class="h-52 rounded-xl bg-gradient-to-b from-[#16161B] to-[#101014] border border-zinc-800 p-5 flex flex-col justify-center items-center gap-2 mb-6 shadow-inner text-center">
-                            <div class="w-11 h-11 rounded-xl bg-zinc-900 border border-zinc-700 shadow-md flex items-center justify-center mb-1">
-                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#4285F4"/>
-                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 1.94.8 3.7 2.08 4.97L12 22V2z" fill="#34A853"/>
-                                    <path d="M12 6.5A2.5 2.5 0 1012 11.5 2.5 2.5 0 0012 6.5z" fill="#FFFFFF"/>
-                                    <circle cx="12" cy="9" r="1.5" fill="#EA4335"/>
-                                </svg>
-                            </div>
-                            <span class="text-xs font-bold text-white">قيّمنا على خرائط Google</span>
-                            <span class="text-[10px] font-semibold text-zinc-400 font-mono">Rate us on Google Maps</span>
-                            <div class="mt-1 flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-[10px] font-bold text-zinc-300">
-                                <i data-lucide="smartphone" class="w-3 h-3 text-white"></i>
-                                <span>المس بهاتفك للتقييم</span>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center justify-between mb-2">
-                            <h3 class="text-lg font-bold text-white">ستاند تقييمات خرائط Google</h3>
-                            <span class="text-xl font-black text-white">99 ريال</span>
-                        </div>
-                        <p class="text-zinc-400 text-sm leading-relaxed font-normal mb-6">
-                            ستاند مكتبي تفاعلي يوضع على المكاتب أو الطاولات؛ يوجه العميل بلمسة هاتف مباشرة لصفحة تقييم نشاطك على خرائط Google لزيادة تقييماتك ورفع ثقة العملاء.
-                        </p>
-                    </div>
-
-                    <div class="pt-4 border-t border-zinc-800/80 flex items-center justify-between">
-                        <span class="text-xs font-semibold text-zinc-500">أكريليك أسود مقاوم للخدش</span>
-                        <a href="#order" class="px-5 py-2 rounded-lg bg-white hover:bg-zinc-200 text-black text-xs font-bold transition-all">اطلب الآن</a>
-                    </div>
-                </div>
-
-                <!-- Bento 3: باقة ستاند نقاط البيع المخصص + الصفحة التعريفية (299 ريال) -->
-                <div class="md:col-span-12 bg-[#101014] border border-zinc-700/80 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-10 hover:border-zinc-500 transition-all duration-300 relative overflow-hidden">
-                    <div class="md:w-1/2">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold mb-4">
-                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-                            <span>الباقة المتكاملة لنقاط البيع والاستقبال</span>
-                        </div>
-                        <div class="flex items-center gap-4 mb-3">
-                            <h3 class="text-2xl font-bold text-white">باقة ستاند نقاط البيع المخصص + الصفحة التعريفية</h3>
-                            <span class="text-2xl font-black text-white">299 ريال</span>
-                        </div>
-                        <p class="text-zinc-400 text-sm leading-relaxed mb-6">
-                            ستاند أكريليك فاخر مصمم ومطبوع بهوية وشعار علامتك التجارية يوضع عند نقاط البيع أو كاونترات المحاسبة والاستقبال؛ مبرمج للربط المباشر بصفحتك التعريفية الرقمية التي تجمع قنوات التواصل، حسابات السوشال ميديا، والتقييم بلمسة واحدة.
-                        </p>
-                        <ul class="space-y-2.5 text-xs font-semibold text-zinc-300 mb-6">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-white"></i> تصميم وطباعة ستاند مخصص بشعار وهوية منشأتك بالكامل</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-white"></i> صفحة رقمية سريعة تضم (الموقع، واتساب، سناب شات، تيك توك، وإنستغرام)</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-white"></i> إمكانية تحديث بياناتك وحساباتك مستقبلاً مجاناً وفي أي وقت</li>
-                        </ul>
-                        <a href="#order" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white hover:bg-zinc-200 text-black text-xs font-bold transition-all shadow-md">
-                            طلب باقة نقاط البيع
-                        </a>
-                    </div>
-
-                    <div class="md:w-1/2 w-full max-w-sm">
-                        <!-- مجسم الستاند والصفحة التفاعلية (مع الأيقونات الأصلية بالكامل بما فيها سناب شات وتيك توك) -->
-                        <div class="rounded-2xl bg-zinc-950 border border-zinc-800 p-4 shadow-2xl">
-                            <div class="flex items-center justify-between pb-3 mb-3 border-b border-zinc-800/80">
-                                <div class="flex items-center gap-2" dir="ltr">
-                                    <svg class="h-3.5 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
-                                        <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
-                                        <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
-                                        <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
-                                        <path d="M87,4 H91.5 L102.5,19 V4 H106.5 V25 H102 L91,10 V25 H87 Z" />
-                                        <rect x="116" y="10.5" width="4.5" height="14.5" />
-                                        <rect x="116" y="3.5" width="4.5" height="4.5" />
-                                    </svg>
-                                </div>
-                                <span class="text-[9px] text-zinc-300 font-mono bg-zinc-800 border border-zinc-700 px-2 py-0.5 rounded">CUSTOM NFC</span>
-                            </div>
-
-                            <div class="space-y-2">
-                                <!-- 1. الموقع الرسمي للمنشأة -->
-                                <div class="h-8 w-full bg-zinc-900 border border-zinc-800 rounded-lg flex items-center justify-between px-3 text-xs text-zinc-200 font-medium">
-                                    <div class="flex items-center gap-2.5">
-                                        <i data-lucide="globe" class="w-3.5 h-3.5 text-blue-400"></i>
-                                        <span>الموقع الرسمي للمنشأة</span>
-                                    </div>
-                                    <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-500"></i>
-                                </div>
-
-                                <!-- 2. مراسلتنا عبر الواتساب (الأيقونة الأصلية) -->
-                                <div class="h-8 w-full bg-zinc-900 border border-zinc-800 rounded-lg flex items-center justify-between px-3 text-xs text-zinc-200 font-medium">
-                                    <div class="flex items-center gap-2.5">
-                                        <svg class="w-3.5 h-3.5 text-[#25D366] fill-current" viewBox="0 0 24 24">
-                                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                </svg>
-                                <span>مراسلتنا عبر الواتساب</span>
-                            </div>
-                            <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-500"></i>
-                        </div>
-
-                        <!-- 3. تابعنا عبر سناب شات (شبح Ghostface Chillah الأصلي الدقيق المتناسق هندسياً) -->
-                        <div class="h-8 w-full bg-zinc-900 border border-zinc-800 rounded-lg flex items-center justify-between px-3 text-xs text-zinc-200 font-medium">
-                            <div class="flex items-center gap-2.5">
-                                <svg class="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24">
-                                    <rect width="24" height="24" rx="5" fill="#FFFC00"/>
-                                    <g transform="translate(3, 3.5) scale(0.75)">
-                                        <path fill="#FFFFFF" stroke="#000000" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" d="M12.003 0c-4.494 0-7.514 3.013-7.514 6.784 0 .992.316 2.45.88 3.513l.032.062s-.418.156-.708.272c-.524.208-1.077.585-1.077 1.258 0 .47.332.846.852.969.585.138 1.455.088 2.05-.183.05-.023.097-.043.143-.06.19 1.157.94 2.21 2.348 2.585l-.26.31c-.694.829-1.92 1.464-3.565 1.848-.363.085-.565.372-.565.674 0 .363.29.67.75.67.14 0 .3-.027.48-.08 1.343-.4 2.946-.225 4.39.488.66.326 1.385.808 2.094.808.694 0 1.405-.472 2.05-.795 1.468-.733 3.098-.908 4.456-.497.162.05.308.075.437.075.467 0 .762-.314.762-.68 0-.3-.207-.588-.567-.673-1.644-.384-2.87-1.02-3.565-1.848l-.26-.31c1.408-.375 2.158-1.428 2.348-2.585.046.017.093.037.143.06.595.271 1.465.321 2.05.183.52-.123.852-.5.852-.97 0-.672-.553-1.05-1.077-1.257-.29-.116-.708-.272-.708-.272l.032-.062c.564-1.063.88-2.52.88-3.513C19.517 3.013 16.497 0 12.003 0z"/>
-                                    </g>
-                                </svg>
-                                <span>تابعنا عبر سناب شات</span>
-                            </div>
-                            <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-500"></i>
-                        </div>
-
-                        <!-- 4. تابعنا عبر تيك توك (الأيقونة الرسمية مع تصحيح رسم الكاف بخط النظام) -->
-                        <div class="h-8 w-full bg-zinc-900 border border-zinc-800 rounded-lg flex items-center justify-between px-3 text-xs text-zinc-200 font-medium">
-                            <div class="flex items-center gap-2.5">
-                                <svg class="w-3.5 h-3.5 text-white fill-current flex-shrink-0" viewBox="0 0 24 24">
-                                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-                                </svg>
-                                <span class="font-sys-clean">تابعنا عبر تيك توك</span>
-                            </div>
-                            <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-500"></i>
-                        </div>
-
-                        <!-- 5. تابعنا عبر إنستغرام (الأيقونة الرسمية) -->
-                        <div class="h-8 w-full bg-zinc-900 border border-zinc-800 rounded-lg flex items-center justify-between px-3 text-xs text-zinc-200 font-medium">
-                            <div class="flex items-center gap-2.5">
-                                <svg class="w-3.5 h-3.5 text-[#E1306C] fill-current" viewBox="0 0 24 24">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                </svg>
-                                <span>تابعنا عبر إنستغرام</span>
-                            </div>
-                            <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-500"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Workflow Section -->
-    <section id="workflow" class="py-24 border-b border-zinc-800/70 bg-[#0B0B0E]/60">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="max-w-xl mb-16">
-                <span class="text-xs font-bold tracking-widest text-zinc-400 uppercase mb-2 block">بساطة الاستخدام</span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">كيف تعمل التقنية؟</h2>
-                <p class="text-zinc-400 text-sm leading-relaxed">ثلاث خطوات سريعة تضمن وصول عميلك إلى خدماتك في جزء من الثانية.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl bg-[#101014] border border-zinc-800">
-                    <span class="text-xs font-mono font-bold text-white block mb-3">01</span>
-                    <h3 class="text-base font-bold text-white mb-2">ملامسة الهاتف</h3>
-                    <p class="text-sm text-zinc-400 leading-relaxed">يقرب العميل هاتفه الذكي من بطاقة الأعمال أو ستاند نقاط البيع على مسافة 2-3 سم.</p>
-                </div>
-                <div class="p-8 rounded-2xl bg-[#101014] border border-zinc-800">
-                    <span class="text-xs font-mono font-bold text-white block mb-3">02</span>
-                    <h3 class="text-base font-bold text-white mb-2">استجابة فورية</h3>
-                    <p class="text-sm text-zinc-400 leading-relaxed">ينبثق إشعار مباشر في هاتف العميل لنقله إلى وجهتك أو فتح صفحة التقييم تلقائياً.</p>
-                </div>
-                <div class="p-8 rounded-2xl bg-[#101014] border border-zinc-800">
-                    <span class="text-xs font-mono font-bold text-white block mb-3">03</span>
-                    <h3 class="text-base font-bold text-white mb-2">التفاعل المباشر</h3>
-                    <p class="text-sm text-zinc-400 leading-relaxed">حفظ جهة الاتصال، تقييم المنشأة بـ 5 نجوم، أو متابعة حسابات السوشال ميديا فوراً.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-24 border-b border-zinc-800/70">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="text-xs font-bold tracking-widest text-zinc-400 uppercase mb-2 block">الأسئلة المتكررة</span>
-                <h2 class="text-3xl font-bold text-white">إجابات على كل ما يهمك</h2>
-            </div>
-
-            <div class="space-y-4">
-                <details class="group bg-[#101014] border border-zinc-800 rounded-xl p-5 cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-sm text-white">
-                        <span>هل يحتاج العميل لتحميل تطبيق ليعمل معه الكرت أو الستاند؟</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-500 transition-transform group-open:rotate-180"></i>
-                    </summary>
-                    <p class="text-xs text-zinc-400 leading-relaxed mt-3 pt-3 border-t border-zinc-800">
-                        نهائياً؛ تقنية NFC مدمجة تلقائياً في جميع هواتف iPhone والأجهزة العاملة بنظام Android الحديثة وتعمل بمجرد الملامسة.
-                    </p>
-                </details>
-
-                <details class="group bg-[#101014] border border-zinc-800 rounded-xl p-5 cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-sm text-white">
-                        <span>هل توجد أي رسوم أو اشتراكات شهرية؟</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-500 transition-transform group-open:rotate-180"></i>
-                    </summary>
-                    <p class="text-xs text-zinc-400 leading-relaxed mt-3 pt-3 border-t border-zinc-800">
-                        لا توجد أي اشتراكات؛ الدفع لمرة واحدة فقط عند شراء المنتج مع برمجة الشريحة والملف الرقمي مجاناً مدى الحياة.
-                    </p>
-                </details>
-
-                <details class="group bg-[#101014] border border-zinc-800 rounded-xl p-5 cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-sm text-white">
-                        <span>هل يمكنني تعديل حساباتي وروابطي لاحقاً بعد استلام الستاند؟</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-500 transition-transform group-open:rotate-180"></i>
-                    </summary>
-                    <p class="text-xs text-zinc-400 leading-relaxed mt-3 pt-3 border-t border-zinc-800">
-                        نعم بكل تأكيد، صفحتك التعريفية سحابية ويمكنك تحديث كافة الحسابات والبيانات في أي وقت دون الحاجة لتغيير الستاند نفسه.
-                    </p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- Order Form Section -->
-    <section id="order" class="py-24">
-        <div class="max-w-lg mx-auto px-6">
-            <div class="bg-[#101014] border border-zinc-800 rounded-2xl p-8 shadow-2xl">
-                <div class="mb-6">
-                    <span class="text-xs font-bold tracking-widest text-zinc-400 uppercase mb-1 block">تأكيد الطلب</span>
-                    <h2 class="text-2xl font-bold text-white mb-1">طلب منتج أو استفسار</h2>
-                    <p class="text-zinc-400 text-xs">أدخل بياناتك وسيتم توجيهك مباشرة لمحادثة الواتساب لإكمال تفاصيل الهوية وتأكيد التجهيز.</p>
-                </div>
-
-                <form id="orderForm" class="space-y-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-zinc-300 mb-1.5">الاسم أو المنشأة</label>
-                        <input type="text" id="custName" required placeholder="مثال: شركة الحلول المتقدمة" class="w-full px-4 py-3 rounded-xl border border-zinc-800 bg-zinc-900/90 text-white text-sm focus:outline-none focus:border-white transition-colors">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-zinc-300 mb-1.5">رقم الواتساب</label>
-                        <input type="tel" id="custPhone" required placeholder="05xxxxxxxx" class="w-full px-4 py-3 rounded-xl border border-zinc-800 bg-zinc-900/90 text-white text-sm focus:outline-none focus:border-white transition-colors">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-zinc-300 mb-1.5">المنتج أو الباقة المطلوبة</label>
-                        <select id="prodType" class="w-full px-4 py-3 rounded-xl border border-zinc-800 bg-zinc-900/90 text-white text-sm focus:outline-none focus:border-white transition-colors">
-                            <option value="بطاقة الأعمال الذكية (49 ريال)">بطاقة الأعمال الذكية (49 ريال)</option>
-                            <option value="ستاند تقييمات خرائط Google (99 ريال)">ستاند تقييمات خرائط Google (99 ريال)</option>
-                            <option value="باقة ستاند نقاط البيع المخصص + الصفحة التعريفية (299 ريال)">باقة ستاند نقاط البيع المخصص + الصفحة التعريفية (299 ريال)</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="w-full py-3.5 rounded-xl font-bold bg-white hover:bg-zinc-200 text-black text-sm shadow-md transition-all mt-2">
-                        إرسال الطلب عبر واتساب
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-8 bg-[#08080A] border-t border-zinc-800/80">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-500 font-medium">
-            <div dir="ltr" class="flex items-center">
-                <svg class="h-5 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
-                    <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
-                    <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
-                    <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
-                    <path d="M87,4 H91.5 L102.5,19 V4 H106.5 V25 H102 L91,10 V25 H87 Z" />
-                    <rect x="116" y="10.5" width="4.5" height="14.5" />
-                    <rect x="116" y="3.5" width="4.5" height="4.5" />
-                </svg>
-            </div>
-            <span>© 2026 جميع الحقوق محفوظة لـ AVENi</span>
-        </div>
-    </footer>
-
-    <!-- شريط الطلب السريع العائم للهواتف الذكية -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 p-3 bg-[#08080A]/95 backdrop-blur-md border-t border-zinc-800 z-40 flex items-center justify-between gap-4">
-        <div>
-            <span class="text-[10px] text-zinc-400 block">تبدأ الأسعار من</span>
-            <span class="text-sm font-bold text-white">49 ريال</span>
-        </div>
-        <a href="#order" class="px-6 py-2.5 rounded-xl bg-white text-black font-bold text-xs">
-            اطلب الآن
-        </a>
     </div>
-
-    <script>
-        lucide.createIcons();
-
-        document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('custName').value.trim();
-            const phone = document.getElementById('custPhone').value.trim();
-            const product = document.getElementById('prodType').value;
-
-            const text = `مرحباً AVENi،\nأود تأكيد طلب جديد:\n• المنتج: ${product}\n• الاسم/المنشأة: ${name}\n• رقم التواصل: ${phone}`;
-            const whatsappUrl = `https://wa.me/966500000000?text=${encodeURIComponent(text)}`;
-            window.open(whatsappUrl, '_blank');
-        });
-    </script>
 </body>
 </html>
