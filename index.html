@@ -33,17 +33,9 @@
     <header class="sticky top-0 z-50 bg-[#08080A]/90 backdrop-blur-xl border-b border-zinc-800/80">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
             
-            <!-- الشعار الرسمي المطابق للرسم الهندسي الأصلي تماماً -->
-            <a href="#" dir="ltr" class="flex items-center gap-3.5 select-none group">
-                <!-- الرمز الهندسي الدقيق -->
-                <svg class="h-9 w-auto text-white transition-transform group-hover:scale-105 duration-300" viewBox="0 0 105 88" fill="currentColor">
-                    <!-- الضلع الأيسر المنفصل الموازي -->
-                    <polygon points="8,82 21,82 41,40 30,35" />
-                    <!-- الشعار الهندسي الصاعد الرشيق -->
-                    <polygon points="30,82 64,10 98,82 85,82 64,36 43,82" />
-                </svg>
-                <!-- الكلمة الرسمية: Λ V E N i -->
-                <svg class="h-5 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
+            <!-- الشعار الرسمي المعتمد: ΛVENi فقط بدون الرمز الجانبي -->
+            <a href="#" dir="ltr" class="flex items-center select-none group">
+                <svg class="h-6 w-auto text-white transition-opacity group-hover:opacity-80 duration-200" viewBox="0 0 135 28" fill="currentColor">
                     <!-- Λ -->
                     <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
                     <!-- V -->
@@ -52,7 +44,7 @@
                     <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
                     <!-- N -->
                     <path d="M87,4 H91.5 L102.5,19 V4 H106.5 V25 H102 L91,10 V25 H87 Z" />
-                    <!-- i مع النقطة المربعة وبدون أي نقطة في النهاية -->
+                    <!-- i -->
                     <rect x="116" y="10.5" width="4.5" height="14.5" />
                     <rect x="116" y="3.5" width="4.5" height="4.5" />
                 </svg>
@@ -73,7 +65,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-24 pb-28 border-b border-zinc-800/60 overflow-hidden">
+    <section class="relative pt-20 pb-24 border-b border-zinc-800/60 overflow-hidden">
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
             
             <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-zinc-800 text-zinc-300 text-xs font-semibold mb-8 backdrop-blur-md">
@@ -81,14 +73,15 @@
                 <span class="tracking-wide">حلول الاتصال الذكي NFC المخصصة للمتاجر والشركات</span>
             </div>
             
-            <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-[1.3] mb-6">
-                انقل هويتك وتواصل مع عملائك <br>
+            <!-- العنوان الرئيسي: تم تصغير الحجم قليلاً، زيادة التباعد الرأسي، وحذف tracking-tight -->
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.45] md:leading-[1.4] mb-7">
+                انقل هويتك وتواصل مع عملائك <br class="hidden sm:inline">
                 <span class="bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
                     بملامسة هاتف واحدة ودون تطبيقات.
                 </span>
             </h1>
 
-            <p class="text-zinc-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+            <p class="text-zinc-400 text-sm sm:text-base max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
                 بطاقات أعمال ذكية وستاندات مخصصة لمنصات الاستقبال ونقاط البيع؛ لجمع تقييمات Google ومشاركة قنوات التواصل بلمسة واحدة.
             </p>
 
@@ -141,23 +134,17 @@
                 <!-- Bento 1: بطاقة الأعمال الذكية (49 ريال) -->
                 <div class="md:col-span-6 bg-[#101014] border border-zinc-800/90 rounded-2xl p-7 flex flex-col justify-between hover:border-zinc-700 transition-all duration-300">
                     <div>
-                        <!-- مجسم البطاقة بالشعار الهندسي الدقيق -->
+                        <!-- مجسم البطاقة بالشعار النصي الصريح -->
                         <div class="h-52 rounded-xl bg-gradient-to-br from-zinc-900 via-[#141418] to-black text-zinc-100 p-6 flex flex-col justify-between mb-6 shadow-2xl border border-zinc-800 relative overflow-hidden">
                             <div class="flex justify-between items-start" dir="ltr">
-                                <div class="flex items-center gap-2.5">
-                                    <svg class="h-5 w-auto text-white" viewBox="0 0 105 88" fill="currentColor">
-                                        <polygon points="8,82 21,82 41,40 30,35" />
-                                        <polygon points="30,82 64,10 98,82 85,82 64,36 43,82" />
-                                    </svg>
-                                    <svg class="h-3.5 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
-                                        <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
-                                        <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
-                                        <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
-                                        <path d="M87,4 H91.5 L102.5,19 V4 H106.5 V25 H102 L91,10 V25 H87 Z" />
-                                        <rect x="116" y="10.5" width="4.5" height="14.5" />
-                                        <rect x="116" y="3.5" width="4.5" height="4.5" />
-                                    </svg>
-                                </div>
+                                <svg class="h-4 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
+                                    <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
+                                    <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
+                                    <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
+                                    <path d="M87,4 H91.5 L102.5,19 V4 H106.5 V25 H102 L91,10 V25 H87 Z" />
+                                    <rect x="116" y="10.5" width="4.5" height="14.5" />
+                                    <rect x="116" y="3.5" width="4.5" height="4.5" />
+                                </svg>
                                 <i data-lucide="radio" class="w-5 h-5 text-zinc-400"></i>
                             </div>
                             <div class="flex justify-between items-end">
@@ -249,11 +236,14 @@
                         <div class="rounded-2xl bg-zinc-950 border border-zinc-800 p-4 shadow-2xl">
                             <div class="flex items-center justify-between pb-3 mb-3 border-b border-zinc-800/80">
                                 <div class="flex items-center gap-2" dir="ltr">
-                                    <svg class="h-4 w-auto text-white" viewBox="0 0 105 88" fill="currentColor">
-                                        <polygon points="8,82 21,82 41,40 30,35" />
-                                        <polygon points="30,82 64,10 98,82 85,82 64,36 43,82" />
+                                    <svg class="h-3.5 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
+                                        <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
+                                        <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
+                                        <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
+                                        <path d="M87,4 H91.5 L102.5,19 V4 H106.5 V25 H102 L91,10 V25 H87 Z" />
+                                        <rect x="116" y="10.5" width="4.5" height="14.5" />
+                                        <rect x="116" y="3.5" width="4.5" height="4.5" />
                                     </svg>
-                                    <span class="text-xs font-bold text-zinc-200 font-brand">BRAND POS STAND</span>
                                 </div>
                                 <span class="text-[9px] text-zinc-300 font-mono bg-zinc-800 border border-zinc-700 px-2 py-0.5 rounded">CUSTOM NFC</span>
                             </div>
@@ -408,12 +398,8 @@
     <!-- Footer -->
     <footer class="py-8 bg-[#08080A] border-t border-zinc-800/80">
         <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-500 font-medium">
-            <div dir="ltr" class="flex items-center gap-3">
-                <svg class="h-6 w-auto text-white" viewBox="0 0 105 88" fill="currentColor">
-                    <polygon points="8,82 21,82 41,40 30,35" />
-                    <polygon points="30,82 64,10 98,82 85,82 64,36 43,82" />
-                </svg>
-                <svg class="h-4 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
+            <div dir="ltr" class="flex items-center">
+                <svg class="h-5 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
                     <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
                     <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
                     <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
