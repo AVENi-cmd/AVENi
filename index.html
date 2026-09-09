@@ -6,7 +6,7 @@
     <title>AVENi | أنظمة وحلول الاتصال الذكي NFC</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- الخطوط الرسمية: IBM Plex Sans Arabic + Plus Jakarta Sans -->
+    <!-- الخطوط: IBM Plex Sans Arabic + Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -33,17 +33,27 @@
     <header class="sticky top-0 z-50 bg-[#08080A]/90 backdrop-blur-xl border-b border-zinc-800/80">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
             
-            <!-- الشعار الرسمي المعتمد مطابق للصور تماماً وبدون أي نقطة في النهاية -->
+            <!-- الشعار المعتمد بالرسم الفيكتوري المطابق للصورة تماماً -->
             <a href="#" dir="ltr" class="flex items-center gap-3 select-none group">
-                <svg class="w-8 h-8 text-white transition-transform group-hover:scale-105 duration-300" viewBox="0 0 110 100" fill="currentColor">
-                    <!-- الضلع الأيسر الخارجي الموازي -->
-                    <polygon points="3,88 16,88 38,50 27,45" />
-                    <!-- الضلع المتقاطع والقمة (Inverted V) -->
-                    <polygon points="65,16 106,88 93,88 65,40 37,88 24,88" />
+                <!-- الرمز الهندسي -->
+                <svg class="h-8 w-auto text-white transition-transform group-hover:scale-105 duration-300" viewBox="0 0 100 85" fill="currentColor">
+                    <polygon points="2,80 14,80 46,22 25.2,38" />
+                    <polygon points="60,10 98,80 86,80 60,32 34,80 22,80" />
                 </svg>
-                <span class="font-brand font-black text-2xl tracking-[0.25em] text-white flex items-baseline">
-                    <span>Λ</span><span>V</span><span>E</span><span>N</span><span class="text-white">i</span>
-                </span>
+                <!-- الكلمة الرسمية ΛVENi -->
+                <svg class="h-6 w-auto text-white" viewBox="0 0 125 28" fill="currentColor">
+                    <!-- Λ -->
+                    <polygon points="12,3 24,25 19.2,25 12,10.5 4.8,25 0,25" />
+                    <!-- V -->
+                    <polygon points="31,3 35.8,3 43,17.5 50.2,3 55,3 43,25" />
+                    <!-- E -->
+                    <path d="M63,3 H81 V6.8 H67 V12.2 H78 V15.8 H67 V21.2 H81 V25 H63 Z" />
+                    <!-- N -->
+                    <path d="M89,3 H93.5 L105,19 V3 H109 V25 H104.5 L93,9 V25 H89 Z" />
+                    <!-- i مع النقطة المربعة -->
+                    <rect x="118" y="10" width="4.5" height="15" />
+                    <rect x="118" y="2.5" width="4.5" height="4.5" />
+                </svg>
             </a>
 
             <!-- القائمة العلوية -->
@@ -129,15 +139,22 @@
                 <!-- Bento 1: بطاقة الأعمال الذكية (49 ريال) -->
                 <div class="md:col-span-6 bg-[#101014] border border-zinc-800/90 rounded-2xl p-7 flex flex-col justify-between hover:border-zinc-700 transition-all duration-300">
                     <div>
-                        <!-- مجسم البطاقة بالشعار الرسمي المعتمد -->
+                        <!-- مجسم البطاقة بالشعار المطابق -->
                         <div class="h-52 rounded-xl bg-gradient-to-br from-zinc-900 via-[#141418] to-black text-zinc-100 p-6 flex flex-col justify-between mb-6 shadow-2xl border border-zinc-800 relative overflow-hidden">
                             <div class="flex justify-between items-start" dir="ltr">
                                 <div class="flex items-center gap-2">
-                                    <svg class="w-5 h-5 text-white" viewBox="0 0 110 100" fill="currentColor">
-                                        <polygon points="3,88 16,88 38,50 27,45" />
-                                        <polygon points="65,16 106,88 93,88 65,40 37,88 24,88" />
+                                    <svg class="h-5 w-auto text-white" viewBox="0 0 100 85" fill="currentColor">
+                                        <polygon points="2,80 14,80 46,22 25.2,38" />
+                                        <polygon points="60,10 98,80 86,80 60,32 34,80 22,80" />
                                     </svg>
-                                    <span class="font-brand tracking-[0.2em] text-xs text-white font-extrabold">ΛVENi</span>
+                                    <svg class="h-3.5 w-auto text-white" viewBox="0 0 125 28" fill="currentColor">
+                                        <polygon points="12,3 24,25 19.2,25 12,10.5 4.8,25 0,25" />
+                                        <polygon points="31,3 35.8,3 43,17.5 50.2,3 55,3 43,25" />
+                                        <path d="M63,3 H81 V6.8 H67 V12.2 H78 V15.8 H67 V21.2 H81 V25 H63 Z" />
+                                        <path d="M89,3 H93.5 L105,19 V3 H109 V25 H104.5 L93,9 V25 H89 Z" />
+                                        <rect x="118" y="10" width="4.5" height="15" />
+                                        <rect x="118" y="2.5" width="4.5" height="4.5" />
+                                    </svg>
                                 </div>
                                 <i data-lucide="radio" class="w-5 h-5 text-zinc-400"></i>
                             </div>
@@ -226,13 +243,13 @@
                     </div>
 
                     <div class="md:w-1/2 w-full max-w-sm">
-                        <!-- مجسم الستاند والصفحة التفاعلية بالهوية والشعار الجديد -->
+                        <!-- مجسم الستاند والصفحة التفاعلية -->
                         <div class="rounded-2xl bg-zinc-950 border border-zinc-800 p-4 shadow-2xl">
                             <div class="flex items-center justify-between pb-3 mb-3 border-b border-zinc-800/80">
                                 <div class="flex items-center gap-2" dir="ltr">
-                                    <svg class="w-4 h-4 text-white" viewBox="0 0 110 100" fill="currentColor">
-                                        <polygon points="3,88 16,88 38,50 27,45" />
-                                        <polygon points="65,16 106,88 93,88 65,40 37,88 24,88" />
+                                    <svg class="h-4 w-auto text-white" viewBox="0 0 100 85" fill="currentColor">
+                                        <polygon points="2,80 14,80 46,22 25.2,38" />
+                                        <polygon points="60,10 98,80 86,80 60,32 34,80 22,80" />
                                     </svg>
                                     <span class="text-xs font-bold text-zinc-200 font-brand">BRAND POS STAND</span>
                                 </div>
@@ -290,17 +307,17 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="p-8 rounded-2xl bg-[#101014] border border-zinc-800">
-                    <span class="text-xs font-mono font-bold text-zinc-400 block mb-3">01</span>
+                    <span class="text-xs font-mono font-bold text-white block mb-3">01</span>
                     <h3 class="text-base font-bold text-white mb-2">ملامسة الهاتف</h3>
                     <p class="text-sm text-zinc-400 leading-relaxed">يقرب العميل هاتفه الذكي من بطاقة الأعمال أو ستاند نقاط البيع على مسافة 2-3 سم.</p>
                 </div>
                 <div class="p-8 rounded-2xl bg-[#101014] border border-zinc-800">
-                    <span class="text-xs font-mono font-bold text-zinc-400 block mb-3">02</span>
+                    <span class="text-xs font-mono font-bold text-white block mb-3">02</span>
                     <h3 class="text-base font-bold text-white mb-2">استجابة فورية</h3>
                     <p class="text-sm text-zinc-400 leading-relaxed">ينبثق إشعار مباشر في هاتف العميل لنقله إلى وجهتك أو فتح صفحة التقييم تلقائياً.</p>
                 </div>
                 <div class="p-8 rounded-2xl bg-[#101014] border border-zinc-800">
-                    <span class="text-xs font-mono font-bold text-zinc-400 block mb-3">03</span>
+                    <span class="text-xs font-mono font-bold text-white block mb-3">03</span>
                     <h3 class="text-base font-bold text-white mb-2">التفاعل المباشر</h3>
                     <p class="text-sm text-zinc-400 leading-relaxed">حفظ جهة الاتصال، تقييم المنشأة بـ 5 نجوم، أو متابعة حسابات السوشال ميديا فوراً.</p>
                 </div>
@@ -390,11 +407,18 @@
     <footer class="py-8 bg-[#08080A] border-t border-zinc-800/80">
         <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-zinc-500 font-medium">
             <div dir="ltr" class="flex items-center gap-2.5">
-                <svg class="w-5 h-5 text-white" viewBox="0 0 110 100" fill="currentColor">
-                    <polygon points="3,88 16,88 38,50 27,45" />
-                    <polygon points="65,16 106,88 93,88 65,40 37,88 24,88" />
+                <svg class="h-6 w-auto text-white" viewBox="0 0 100 85" fill="currentColor">
+                    <polygon points="2,80 14,80 46,22 25.2,38" />
+                    <polygon points="60,10 98,80 86,80 60,32 34,80 22,80" />
                 </svg>
-                <span class="font-brand tracking-[0.25em] font-black text-white text-sm">ΛVENi</span>
+                <svg class="h-4 w-auto text-white" viewBox="0 0 125 28" fill="currentColor">
+                    <polygon points="12,3 24,25 19.2,25 12,10.5 4.8,25 0,25" />
+                    <polygon points="31,3 35.8,3 43,17.5 50.2,3 55,3 43,25" />
+                    <path d="M63,3 H81 V6.8 H67 V12.2 H78 V15.8 H67 V21.2 H81 V25 H63 Z" />
+                    <path d="M89,3 H93.5 L105,19 V3 H109 V25 H104.5 L93,9 V25 H89 Z" />
+                    <rect x="118" y="10" width="4.5" height="15" />
+                    <rect x="118" y="2.5" width="4.5" height="4.5" />
+                </svg>
             </div>
             <span>© 2026 جميع الحقوق محفوظة لـ AVENi</span>
         </div>
