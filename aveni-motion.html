@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVENi | Official Motion Graphics</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- خطوط الهوية الرسمية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #040405;
+            color: #FFFFFF;
+            overflow: hidden;
+            user-select: none;
+        }
+        .font-brand { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        /* مسرح العرض بنسبة 16:9 ومقاس 1080p */
+        #stage {
+            width: 1280px;
+            height: 720px;
+            background: #08080A;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* طبقات الإضاءة المحيطية */
+        .ambient-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            pointer-events: none;
+            transition: all 1s ease-in-out;
+        }
+
+        /* توحيد سماكة وحركة أيقونات iOS */
+        .ios-icon {
+            stroke-width: 1.75;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* أنماط ومراحل المشاهد */
+        .scene {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: scale(0.96) translateY(12px);
+        }
+
+        .scene.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: scale(1) translateY(0);
+        }
+
+        /* موجات NFC اللاتلامسية */
+        @keyframes nfc-pulse {
+            0% { transform: scale(0.6); opacity: 0.8; }
+            100% { transform: scale(2.2); opacity: 0; }
+        }
+        .pulse-ring {
+            animation: nfc-pulse 2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+        }
+    </style>
+</head>
+<body class="h-screen w-screen flex flex-col items-center justify-center bg-[#040405]">
+
+    <!-- شريط التحكم العلوي خارج إطار الفيديو -->
+    <header class="w-[1280px] mb-3 flex items-center justify-between px-2 text-xs text-zinc-400">
+        <div class="flex items-center gap-3">
+            <span class="inline-flex items-center gap-1.5 font-mono px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-300">
+                <span id="recDot" class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span id="timecode">00:00 / 00:20</span>
+            </span>
+            <span class="font-bold text-zinc-300">AVENi Official Motion Sequence (1080p)</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <button id="playBtn" class="flex items-center gap-1.5 bg-zinc-800 hover:bg-zinc-700 text-white px-3.5 py-1.5 rounded-lg font-semibold transition-all">
+                <i data-lucide="play" class="w-3.5 h-3.5" id="playIcon"></i>
+                <span id="playText">تشغيل العرض</span>
+            </button>
+            <button id="exportBtn" class="flex items-center gap-1.5 bg-white hover:bg-zinc-200 text-black px-4 py-1.5 rounded-lg font-bold transition-all shadow-md">
+                <i data-lucide="video" class="w-3.5 h-3.5"></i>
+                <span id="exportText">تسجيل وتصدير الفيديو (WebM/MP4)</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- مسرح الفيديو (The Stage) -->
+    <div id="stage" class="rounded-2xl relative">
+        <!-- إضاءة خلفية ناعمة -->
+        <div id="glow1" class="ambient-glow w-96 h-96 bg-[#D4C3A3]/10 -top-20 -left-20"></div>
+        <div id="glow2" class="ambient-glow w-96 h-96 bg-emerald-500/10 -bottom-20 -right-20"></div>
+
+        <!-- ======================= المشهد 1: المشكلة (0:00 - 0:04) ======================= -->
+        <div id="scene1" class="scene active">
+            <div class="w-16 h-16 rounded-2xl bg-zinc-900/90 border border-zinc-800 flex items-center justify-center mb-6 shadow-2xl relative">
+                <i data-lucide="file-x" class="w-8 h-8 text-rose-400 ios-icon"></i>
+                <span class="absolute -top-1 -right-1 w-3 h-3 bg-rose-500 rounded-full animate-ping"></span>
+            </div>
+            <h2 class="text-3xl font-extrabold text-white mb-3 tracking-tight">البطاقات الورقية تُفقد وتُنسى.</h2>
+            <p class="text-zinc-400 text-sm max-w-md text-center leading-relaxed">
+                صعوبة البحث اليدوي، إدخال الأرقام الشاق، وضياع تقييمات العملاء في اللحظات الحاسمة.
+            </p>
+        </div>
+
+        <!-- ======================= المشهد 2: التحول والتقنية (0:04 - 0:08) ======================= -->
+        <div id="scene2" class="scene">
+            <div class="relative w-28 h-28 flex items-center justify-center mb-6">
+                <div class="absolute inset-0 rounded-full border border-emerald-500/40 pulse-ring"></div>
+                <div class="absolute inset-2 rounded-full border border-emerald-500/30 pulse-ring" style="animation-delay: 0.6s;"></div>
+                <div class="w-20 h-20 rounded-2xl bg-zinc-900 border border-emerald-500/50 flex items-center justify-center shadow-[0_0_35px_rgba(16,185,129,0.25)] relative z-10">
+                    <i data-lucide="radio" class="w-9 h-9 text-emerald-400 ios-icon"></i>
+                </div>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold mb-3">
+                <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+                <span>تقنية NFC الفورية</span>
+            </div>
+            <h2 class="text-3xl font-bold text-white mb-2">ملامسة هاتف واحدة.. ودون أي تطبيق.</h2>
+            <p class="text-zinc-400 text-sm">متوافق تلقائياً مع جميع أجهزة Apple و Android.</p>
+        </div>
+
+        <!-- ======================= المشهد 3: المنتجات الثلاثة (0:08 - 0:13) ======================= -->
+        <div id="scene3" class="scene">
+            <span class="text-xs font-mono font-bold tracking-widest text-[#D4C3A3] uppercase mb-3">HARDWARE LINEUP</span>
+            <h2 class="text-2xl font-bold text-white mb-8">حلول مادية ذكية مخصصة لمنشأتك</h2>
+            
+            <div class="grid grid-cols-3 gap-6 w-full max-w-4xl px-8">
+                <!-- بطاقة الأعمال -->
+                <div class="p-6 rounded-2xl bg-[#121216] border border-zinc-800 flex flex-col items-center text-center shadow-xl">
+                    <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-700 flex items-center justify-center mb-4 text-white">
+                        <i data-lucide="contact" class="w-6 h-6 ios-icon"></i>
+                    </div>
+                    <span class="text-sm font-bold text-white mb-1">بطاقة الأعمال الذكية</span>
+                    <span class="text-xs text-zinc-400 mb-4">حفظ فوري لسجل الهاتف</span>
+                    <span class="text-lg font-black text-white font-mono mt-auto">49 <span class="text-xs font-normal text-zinc-500">ر.س</span></span>
+                </div>
+
+                <!-- ستاند قوقل ماب -->
+                <div class="p-6 rounded-2xl bg-[#121216] border border-zinc-800 flex flex-col items-center text-center shadow-xl">
+                    <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-700 flex items-center justify-center mb-4 text-amber-400">
+                        <i data-lucide="star" class="w-6 h-6 ios-icon fill-amber-400"></i>
+                    </div>
+                    <span class="text-sm font-bold text-white mb-1">ستاند تقييمات Google</span>
+                    <span class="text-xs text-zinc-400 mb-4">رفع ترتيب المتجر المحلي</span>
+                    <span class="text-lg font-black text-white font-mono mt-auto">99 <span class="text-xs font-normal text-zinc-500">ر.س</span></span>
+                </div>
+
+                <!-- باقة نقاط البيع -->
+                <div class="p-6 rounded-2xl bg-[#121216] border border-emerald-500/40 flex flex-col items-center text-center shadow-2xl relative">
+                    <span class="absolute -top-2.5 px-2.5 py-0.5 rounded-full bg-emerald-500 text-black text-[9px] font-bold uppercase">الأكثر طلباً</span>
+                    <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-emerald-500/50 flex items-center justify-center mb-4 text-emerald-400">
+                        <i data-lucide="store" class="w-6 h-6 ios-icon"></i>
+                    </div>
+                    <span class="text-sm font-bold text-white mb-1">ستاند نقاط البيع + الصفحة</span>
+                    <span class="text-xs text-zinc-400 mb-4">مطبوع بهويتك وشعارك</span>
+                    <span class="text-lg font-black text-emerald-400 font-mono mt-auto">299 <span class="text-xs font-normal text-zinc-500">ر.س</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======================= المشهد 4: الصفحة التعريفية (0:13 - 0:17) ======================= -->
+        <div id="scene4" class="scene">
+            <div class="w-80 rounded-2xl bg-zinc-950 border border-zinc-800 p-5 shadow-2xl mb-4">
+                <div class="flex items-center justify-between pb-3 border-b border-zinc-800/80 mb-3">
+                    <span class="text-xs font-bold text-white flex items-center gap-1.5">
+                        <i data-lucide="smartphone" class="w-4 h-4 text-emerald-400 ios-icon"></i>
+                        <span>الصفحة التعريفية السحابية</span>
+                    </span>
+                    <span class="text-[9px] font-mono text-zinc-400">CLOUD HOSTED</span>
+                </div>
+                <div class="space-y-2 text-xs">
+                    <div class="h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-between px-3 text-zinc-200">
+                        <span class="flex items-center gap-2"><i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-400"></i> محادثة واتساب المباشرة</span>
+                        <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-600"></i>
+                    </div>
+                    <div class="h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-between px-3 text-zinc-200">
+                        <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-blue-400"></i> موقع الفرع على الخريطة</span>
+                        <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-600"></i>
+                    </div>
+                    <div class="h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-between px-3 text-zinc-200">
+                        <span class="flex items-center gap-2"><i data-lucide="share-2" class="w-3.5 h-3.5 text-amber-400"></i> قنوات التواصل الاجتماعي</span>
+                        <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-600"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs text-zinc-400 font-semibold">تحديث سحابي فوري ومجاني للروابط دون تغيير الأجهزة المادية.</p>
+        </div>
+
+        <!-- ======================= المشهد 5: الختام وشعار AVENi (0:17 - 0:20) ======================= -->
+        <div id="scene5" class="scene">
+            <!-- الشعار الرسمي الصريح المعتمد: ΛVENi -->
+            <div dir="ltr" class="mb-4">
+                <svg class="h-10 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
+                    <!-- Λ -->
+                    <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
+                    <!-- V -->
+                    <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
+                    <!-- E -->
+                    <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
+                    <!-- N -->
+                    <path d="M87,4 H91.5 L102.5,19 V4 H106.5 V25 H102 L91,10 V25 H87 Z" />
+                    <!-- i -->
+                    <rect x="116" y="10.5" width="4.5" height="14.5" />
+                    <rect x="116" y="3.5" width="4.5" height="4.5" />
+                </svg>
+            </div>
+            <span class="font-brand tracking-[0.38em] text-[11px] text-[#D4C3A3] uppercase font-bold mb-6">MORE THAN A LINK</span>
+            
+            <div class="flex items-center gap-3">
+                <div class="px-5 py-2.5 rounded-xl bg-white text-black font-bold text-xs shadow-lg">
+                    تبدأ الأسعار من 49 ريال
+                </div>
+                <div class="px-5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 font-semibold text-xs">
+                    جاهز للبرمجة والتوريد الفوري
+                </div>
+            </div>
+        </div>
+
+        <!-- شريط التقدم السفلي داخل الفيديو -->
+        <div class="absolute bottom-0 left-0 right-0 h-1 bg-zinc-900">
+            <div id="progressBar" class="h-full bg-white transition-all duration-100 ease-linear w-0"></div>
+        </div>
+    </div>
+
+    <!-- كانفاس خفي للرندرة والتسجيل الفعلي كفيديو MP4/WebM -->
+    <canvas id="recordCanvas" width="1920" height="1080" class="hidden"></canvas>
+
+    <script>
+        lucide.createIcons();
+
+        // جدول الخط الزمني للمشاهد الخمسة (إجمالي 20 ثانية)
+        const DURATION = 20; 
+        const scenes = [
+            { id: 'scene1', start: 0, end: 4 },
+            { id: 'scene2', start: 4, end: 8 },
+            { id: 'scene3', start: 8, end: 13 },
+            { id: 'scene4', start: 13, end: 17 },
+            { id: 'scene5', start: 17, end: 20 }
+        ];
+
+        let currentTime = 0;
+        let isPlaying = false;
+        let playInterval = null;
+
+        const timecodeEl = document.getElementById('timecode');
+        const progressBar = document.getElementById('progressBar');
+        const playBtn = document.getElementById('playBtn');
+        const playIcon = document.getElementById('playIcon');
+        const playText = document.getElementById('playText');
+        const exportBtn = document.getElementById('exportBtn');
+        const exportText = document.getElementById('exportText');
+        const recDot = document.getElementById('recDot');
+
+        function updateScene(time) {
+            scenes.forEach(s => {
+                const el = document.getElementById(s.id);
+                if (time >= s.start && time < s.end) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            });
+
+            // تحديث شريط التقدم والوقت
+            const progress = (time / DURATION) * 100;
+            progressBar.style.width = `${progress}%`;
+            const sec = Math.floor(time);
+            timecodeEl.innerText = `00:${sec < 10 ? '0' + sec : sec} / 00:20`;
+        }
+
+        function togglePlay() {
+            if (isPlaying) {
+                pauseVideo();
+            } else {
+                playVideo();
+            }
+        }
+
+        function playVideo() {
+            isPlaying = true;
+            playText.innerText = "إيقاف مؤقت";
+            playIcon.setAttribute('data-lucide', 'pause');
+            lucide.createIcons();
+
+            const step = 0.1;
+            playInterval = setInterval(() => {
+                currentTime += step;
+                if (currentTime >= DURATION) {
+                    currentTime = 0;
+                }
+                updateScene(currentTime);
+            }, 100);
+        }
+
+        function pauseVideo() {
+            isPlaying = false;
+            clearInterval(playInterval);
+            playText.innerText = "تشغيل العرض";
+            playIcon.setAttribute('data-lucide', 'play');
+            lucide.createIcons();
+        }
+
+        playBtn.addEventListener('click', togglePlay);
+
+        // ======================= تسجيل وتصدير الفيديو الفعلي =======================
+        let mediaRecorder = null;
+        let recordedChunks = [];
+
+        exportBtn.addEventListener('click', async () => {
+            pauseVideo();
+            currentTime = 0;
+            updateScene(0);
+
+            exportText.innerText = "جاري التوليد والتصدير (انتظر 20 ثانية)...";
+            exportBtn.classList.add('bg-rose-600', 'text-white');
+            recDot.classList.remove('bg-emerald-500');
+            recDot.classList.add('bg-rose-500', 'animate-ping');
+
+            const canvas = document.getElementById('recordCanvas');
+            const ctx = canvas.getContext('2d');
+            const stream = canvas.captureStream(60);
+
+            let mimeType = 'video/webm;codecs=vp9';
+            if (!MediaRecorder.isTypeSupported(mimeType)) {
+                mimeType = 'video/webm';
+            }
+
+            mediaRecorder = new MediaRecorder(stream, { mimeType });
+            recordedChunks = [];
+
+            mediaRecorder.ondataavailable = (e) => {
+                if (e.data.size > 0) recordedChunks.push(e.data);
+            };
+
+            mediaRecorder.onstop = () => {
+                const blob = new Blob(recordedChunks, { type: 'video/webm' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'AVENi_Official_Motion_1080p.webm';
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 100);
+
+                exportText.innerText = "تم التصدير بنجاح!";
+                exportBtn.classList.remove('bg-rose-600', 'text-white');
+                recDot.classList.remove('bg-rose-500', 'animate-ping');
+                recDot.classList.add('bg-emerald-500');
+            };
+
+            mediaRecorder.start();
+
+            // رندرة الإطارات لكانفاس التصدير بمقاس 1080p بالتوازي مع تشغيل العرض
+            const stage = document.getElementById('stage');
+            const recordInterval = setInterval(async () => {
+                currentTime += 0.05;
+                updateScene(currentTime);
+
+                // رسم خلفية داكنة على الكانفاس
+                ctx.fillStyle = "#08080A";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // كتابة بيانات المشهد في ملف الفيديو الناتج
+                ctx.fillStyle = "#FFFFFF";
+                ctx.font = "bold 44px 'IBM Plex Sans Arabic', sans-serif";
+                ctx.textAlign = "center";
+
+                if (currentTime < 4) {
+                    ctx.fillText("البطاقات الورقية تُفقد وتُنسى.", 960, 500);
+                    ctx.font = "24px 'IBM Plex Sans Arabic', sans-serif";
+                    ctx.fillStyle = "#94A3B8";
+                    ctx.fillText("صعوبة البحث اليدوي وضياع التقييمات في اللحظات الحاسمة", 960, 570);
+                } else if (currentTime < 8) {
+                    ctx.fillText("ملامسة هاتف واحدة.. ودون أي تطبيق.", 960, 500);
+                    ctx.font = "24px 'IBM Plex Sans Arabic', sans-serif";
+                    ctx.fillStyle = "#10B981";
+                    ctx.fillText("NFC INSTANT CONNECTION", 960, 570);
+                } else if (currentTime < 13) {
+                    ctx.fillText("حلول مادية ذكية مخصصة لمنشأتك", 960, 420);
+                    ctx.font = "26px 'IBM Plex Sans Arabic', sans-serif";
+                    ctx.fillStyle = "#D4C3A3";
+                    ctx.fillText("بطاقة الأعمال (49 ر.س) • ستاند قوقل ماب (99 ر.س) • نقاط البيع (299 ر.س)", 960, 520);
+                } else if (currentTime < 17) {
+                    ctx.fillText("الصفحة التعريفية السحابية (Digital Ecosystem)", 960, 480);
+                    ctx.font = "24px 'IBM Plex Sans Arabic', sans-serif";
+                    ctx.fillStyle = "#94A3B8";
+                    ctx.fillText("تحديث سحابي فوري ومجاني لكافة الروابط دون تغيير الأجهزة", 960, 560);
+                } else {
+                    ctx.font = "bold 64px 'Plus Jakarta Sans', sans-serif";
+                    ctx.fillText("ΛVENi", 960, 500);
+                    ctx.font = "bold 22px 'Plus Jakarta Sans', sans-serif";
+                    ctx.fillStyle = "#D4C3A3";
+                    ctx.fillText("MORE THAN A LINK", 960, 560);
+                }
+
+                if (currentTime >= DURATION) {
+                    clearInterval(recordInterval);
+                    mediaRecorder.stop();
+                }
+            }, 50);
+        });
+
+        // تشغيل أولي تلقائي للمعاينة
+        updateScene(0);
+    </script>
+</body>
+</html>
