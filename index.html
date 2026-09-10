@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" class="scroll-smooth" style="scroll-padding-top: 5rem;">
+<html lang="ar" dir="rtl" class="scroll-smooth" style="scroll-padding-top: 6rem;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,6 @@
         .font-brand { font-family: 'Plus Jakarta Sans', sans-serif; }
         .font-sys-clean { font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif; }
         
-        /* أسود أوبسيديان كخلفية أساسية للموقع */
         .bg-obsidian {
             background-color: #08080A;
             background-image: 
@@ -28,11 +27,18 @@
 </head>
 <body class="bg-obsidian text-[#F4F4F5] antialiased selection:bg-[#10B981] selection:text-[#FAFAFA] min-h-screen pb-20 md:pb-0">
 
-    <!-- Header -->
-    <header class="sticky top-0 z-50 bg-[#08080A]/95 backdrop-blur-xl border-b border-zinc-800/60 shadow-2xl">
+    <!-- شريط التنبيهات العلوي (Announcement Bar) -->
+    <div class="bg-gradient-to-r from-emerald-950/60 via-zinc-900 to-blue-950/60 border-b border-zinc-800/80 py-2 px-4 text-center text-xs text-zinc-300 font-medium relative z-50">
+        <span class="inline-flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-ping"></span>
+            عروض مرحلة ما قبل الإطلاق: شحن وتوصيل مجاني لكافة مناطق المملكة لفترة محدودة!
+        </span>
+    </div>
+
+    <!-- Header (بارز ومنفصل بصرياً) -->
+    <header class="sticky top-0 z-50 bg-[#08080A]/90 backdrop-blur-xl border-b border-zinc-700/60 shadow-[0_4px_30px_rgba(0,0,0,0.8)]">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" dir="ltr" aria-label="الرئيسية - AVENi" class="flex items-center select-none group">
-                <!-- شعار AVENi الأصلي -->
                 <svg aria-hidden="true" class="h-6 w-auto text-[#FAFAFA] transition-opacity group-hover:opacity-80 duration-200" viewBox="0 0 135 28" fill="currentColor">
                     <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
                     <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
@@ -47,6 +53,7 @@
                 <a href="#solutions" class="hover:text-[#F4F4F5] transition-colors">الحلول والمنتجات</a>
                 <a href="#compatibility" class="hover:text-[#F4F4F5] transition-colors">التوافق</a>
                 <a href="#workflow" class="hover:text-[#F4F4F5] transition-colors">آلية العمل</a>
+                <a href="#testimonials" class="hover:text-[#F4F4F5] transition-colors">آراء العملاء</a>
                 <a href="#faq" class="hover:text-[#F4F4F5] transition-colors">الأسئلة الشائعة</a>
             </nav>
 
@@ -87,7 +94,6 @@
 
                 <!-- بطاقات المعاينة البصرية -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto text-right">
-                    <!-- 1. مجسم بطاقة الأعمال الذكية -->
                     <div class="p-4 rounded-2xl bg-[#111115] border border-zinc-800/80 flex flex-col justify-between h-36 shadow-lg relative overflow-hidden group hover:border-[#3B82F6]/40 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#3B82F6]/5 duration-300 ease-out transition-all">
                         <div class="flex justify-between items-start" dir="ltr">
                             <svg aria-hidden="true" class="h-3.5 w-auto text-[#FAFAFA]" viewBox="0 0 135 28" fill="currentColor">
@@ -106,7 +112,6 @@
                         </div>
                     </div>
 
-                    <!-- 2. مجسم صفحة السوشال ميديا -->
                     <div class="p-4 rounded-2xl bg-[#111115] border border-zinc-800/80 flex flex-col justify-between h-36 shadow-lg hover:border-[#10B981]/40 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#10B981]/5 duration-300 ease-out transition-all">
                         <div class="flex items-center justify-between pb-2 border-b border-zinc-800/80">
                             <span class="text-[10px] font-bold text-[#F4F4F5]">صفحة نشاطك الرقمية</span>
@@ -129,7 +134,6 @@
                         </div>
                     </div>
 
-                    <!-- 3. مجسم تقييم خرائط Google -->
                     <div class="p-4 rounded-2xl bg-[#111115] border border-zinc-800/80 flex flex-col justify-between h-36 shadow-lg hover:border-[#FAFAFA]/30 hover:-translate-y-1.5 hover:shadow-2xl duration-300 ease-out transition-all">
                         <div class="flex items-center gap-2">
                             <div class="w-6 h-6 rounded-md bg-[#08080A] border border-zinc-700 flex items-center justify-center p-1">
@@ -205,7 +209,7 @@
                                         <rect x="116" y="10.5" width="4.5" height="14.5" />
                                         <rect x="116" y="3.5" width="4.5" height="4.5" />
                                     </svg>
-                                    <i data-lucide="radio" class="w-5 h-5 text-zinc-500"></i>
+                                    <i data-lucide="radio" class="w-5 h-5 text-zinc-400"></i>
                                 </div>
                                 <div class="flex justify-between items-end">
                                     <div>
@@ -269,7 +273,6 @@
 
                     <!-- Bento 3: باقة ستاند نقاط البيع المخصص + الصفحة التعريفية -->
                     <div class="md:col-span-12 relative group">
-                        <!-- تأثير التوهج الخلفي المميز للباقة الرئيسية -->
                         <div class="absolute -inset-0.5 bg-gradient-to-r from-[#10B981] to-[#3B82F6] rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
                         <div class="relative bg-[#111115] border border-zinc-800/80 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-10 hover:border-[#10B981]/50 transition-all duration-300 overflow-hidden">
                             <div class="md:w-1/2">
@@ -298,7 +301,6 @@
                                 <div class="rounded-2xl bg-[#08080A] border border-zinc-800 p-4 shadow-2xl">
                                     <div class="flex items-center justify-between pb-3 mb-3 border-b border-zinc-800/80">
                                         <div class="flex items-center gap-2" dir="ltr">
-                                            <!-- الشعار داخل المجسم -->
                                             <svg aria-hidden="true" class="h-3.5 w-auto text-[#FAFAFA]" viewBox="0 0 135 28" fill="currentColor">
                                                 <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
                                                 <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
@@ -312,7 +314,6 @@
                                     </div>
 
                                     <div class="space-y-2">
-                                        <!-- 1. الموقع الرسمي -->
                                         <div class="h-8 w-full bg-[#111115] border border-zinc-800/80 rounded-lg flex items-center justify-between px-3 text-xs text-[#F4F4F5] font-medium cursor-default hover:bg-zinc-800 transition-colors">
                                             <div class="flex items-center gap-2.5">
                                                 <i data-lucide="globe" class="w-3.5 h-3.5 text-[#3B82F6]"></i>
@@ -321,7 +322,6 @@
                                             <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-500"></i>
                                         </div>
 
-                                        <!-- 2. الواتساب -->
                                         <div class="h-8 w-full bg-[#111115] border border-zinc-800/80 rounded-lg flex items-center justify-between px-3 text-xs text-[#F4F4F5] font-medium cursor-default hover:bg-zinc-800 transition-colors">
                                             <div class="flex items-center gap-2.5">
                                                 <svg aria-hidden="true" class="w-3.5 h-3.5 text-[#25D366] fill-current" viewBox="0 0 24 24">
@@ -332,7 +332,6 @@
                                             <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-500"></i>
                                         </div>
 
-                                        <!-- 3. تيك توك -->
                                         <div class="h-8 w-full bg-[#111115] border border-zinc-800/80 rounded-lg flex items-center justify-between px-3 text-xs text-[#F4F4F5] font-medium cursor-default hover:bg-zinc-800 transition-colors">
                                             <div class="flex items-center gap-2.5">
                                                 <svg aria-hidden="true" class="w-3.5 h-3.5 text-[#FAFAFA] fill-current flex-shrink-0" viewBox="0 0 24 24">
@@ -343,7 +342,6 @@
                                             <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-500"></i>
                                         </div>
 
-                                        <!-- 4. إنستغرام -->
                                         <div class="h-8 w-full bg-[#111115] border border-zinc-800/80 rounded-lg flex items-center justify-between px-3 text-xs text-[#F4F4F5] font-medium cursor-default hover:bg-zinc-800 transition-colors">
                                             <div class="flex items-center gap-2.5">
                                                 <svg aria-hidden="true" class="w-3.5 h-3.5 text-[#E1306C] fill-current" viewBox="0 0 24 24">
@@ -386,6 +384,51 @@
                         <span class="text-xs font-mono font-bold text-[#10B981] block mb-3">03</span>
                         <h3 class="text-base font-bold text-[#F4F4F5] mb-2">التفاعل المباشر</h3>
                         <p class="text-sm text-[#A1A1AA] leading-relaxed">حفظ جهة الاتصال، تقييم المنشأة بـ 5 نجوم، أو متابعة حسابات السوشال ميديا فوراً.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section (آراء شركاء النجاح) -->
+        <section id="testimonials" class="py-24 border-b border-zinc-800/70 bg-[#0B0B0E]/40">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-xs font-bold tracking-widest text-[#10B981] uppercase mb-2 block">شركاء النجاح</span>
+                    <h2 class="text-3xl font-bold text-[#FAFAFA]">ماذا يقول أصحاب المتاجر عن AVENi؟</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-6 rounded-2xl bg-[#111115] border border-zinc-800/80 flex flex-col justify-between">
+                        <p class="text-xs text-[#A1A1AA] leading-relaxed mb-6">"ستاندات تقييم خرائط Google ساهمت بشكل ملحوظ في زيادة تقييمات متجرنا وترشيحنا للعملاء الجدد بكل سهولة."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-zinc-800/60">
+                            <div class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center font-bold text-xs text-white">م</div>
+                            <div>
+                                <span class="text-xs font-bold text-[#F4F4F5] block">مشاري العتيبي</span>
+                                <span class="text-[10px] text-zinc-500">إدارة مقهى مختص</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-[#111115] border border-zinc-800/80 flex flex-col justify-between">
+                        <p class="text-xs text-[#A1A1AA] leading-relaxed mb-6">"بطاقة الأعمال الذكية أحدثت انطباعاً أولياً مذهلاً مع العملاء والشركات. فكرة عملية وأنيقة جداً."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-zinc-800/60">
+                            <div class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center font-bold text-xs text-white">ر</div>
+                            <div>
+                                <span class="text-xs font-bold text-[#F4F4F5] block">رائد الشمري</span>
+                                <span class="text-[10px] text-zinc-500">مسؤول مبيعات عقارية</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-[#111115] border border-zinc-800/80 flex flex-col justify-between">
+                        <p class="text-xs text-[#A1A1AA] leading-relaxed mb-6">"باقة نقاط البيع جمعت كل قنواتنا في مكان واحد. الدعم والتجهيز كان سريعاً واحترافياً للغاية."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-zinc-800/60">
+                            <div class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center font-bold text-xs text-white">س</div>
+                            <div>
+                                <span class="text-xs font-bold text-[#F4F4F5] block">سارة القحطاني</span>
+                                <span class="text-[10px] text-zinc-500">صاحبة متجر عطور</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -470,11 +513,24 @@
         </section>
     </main>
 
+    <!-- Success Modal (نافذة منبثقة تفاعلية للنجاح) -->
+    <div id="successModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-[#111115] border border-zinc-800 rounded-2xl p-6 max-w-sm w-full text-center shadow-2xl relative animate-in fade-in zoom-in duration-200">
+            <div class="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">تم تجهيز طلبك بنجاح!</h3>
+            <p class="text-xs text-[#A1A1AA] leading-relaxed mb-6">جاري تحويلك الآن لمحادثة الواتساب لإكمال تفاصيل الهوية وتأكيد الطلب مع فريق AVENi.</p>
+            <button id="closeModal" class="w-full py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold transition-all">
+                حسناً، الانتقال للواتساب
+            </button>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="py-8 bg-[#08080A] border-t border-zinc-800/60">
         <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#A1A1AA] font-medium">
             <div dir="ltr" class="flex items-center">
-                <!-- الشعار في الفوتر -->
                 <svg aria-hidden="true" class="h-5 w-auto text-[#FAFAFA]" viewBox="0 0 135 28" fill="currentColor">
                     <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
                     <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
@@ -503,12 +559,16 @@
         document.addEventListener("DOMContentLoaded", () => {
             lucide.createIcons();
 
-            document.getElementById('orderForm').addEventListener('submit', function(e) {
+            const orderForm = document.getElementById('orderForm');
+            const successModal = document.getElementById('successModal');
+            const closeModal = document.getElementById('closeModal');
+            let pendingUrl = '';
+
+            orderForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 const name = document.getElementById('custName').value.trim();
                 const phone = document.getElementById('custPhone').value.trim();
                 
-                // التحقق من صحة رقم الهاتف السعودي (يبدأ بـ 05 ومكون من 10 أرقام)
                 const phoneRegex = /^05\d{8}$/;
                 if (!phoneRegex.test(phone)) {
                     alert('يرجى إدخال رقم هاتف صحيح يبدأ بـ 05 ويتكون من 10 أرقام.');
@@ -518,10 +578,17 @@
                 const product = document.getElementById('prodType').value;
                 const text = `مرحباً AVENi،\nأود تأكيد طلب جديد:\n• المنتج: ${product}\n• الاسم/المنشأة: ${name}\n• رقم تواصل العميل: ${phone}`;
                 
-                // يتم إرسال الرسالة إلى رقم واتساب الإدارة، وليس العميل
-                // استبدل 966500000000 برقمك الفعلي الخاص بالعمل وقت الإطلاق
-                const whatsappUrl = `https://wa.me/966500000000?text=${encodeURIComponent(text)}`;
-                window.open(whatsappUrl, '_blank');
+                // استبدل 966500000000 برقمك الفعلي عند الإطلاق
+                pendingUrl = `https://wa.me/966500000000?text=${encodeURIComponent(text)}`;
+                
+                successModal.classList.remove('hidden');
+            });
+
+            closeModal.addEventListener('click', function() {
+                successModal.classList.add('hidden');
+                if (pendingUrl) {
+                    window.open(pendingUrl, '_blank');
+                }
             });
         });
     </script>
