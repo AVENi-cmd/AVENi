@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- تحسينات الـ SEO الأساسية -->
     <title>AVENi | أنظمة وحلول الاتصال الذكي NFC</title>
+    <meta name="description" content="بطاقات أعمال ذكية وستاندات مخصصة لتقييمات Google ونقاط البيع عبر تقنية NFC و QR Code. انقل هويتك وتواصل مع عملائك بلمسة واحدة.">
+    <meta name="keywords" content="NFC, بطاقة ذكية, تقييم جوجل, ستاند أكريليك, بطاقة أعمال, AVENi, افيني">
+    <!-- وسوم المشاركة في السوشال ميديا والواتساب (Open Graph) -->
+    <meta property="og:title" content="AVENi | بطاقات وستاندات الأعمال الذكية">
+    <meta property="og:description" content="ارفع مبيعاتك وتقييماتك بلمسة واحدة عبر تقنية NFC وبدون اشتراكات شهرية.">
+    <meta property="og:type" content="website">
+    <!-- يمكنك إضافة رابط صورة مصغرة هنا لاحقاً -->
+    <!-- <meta property="og:image" content="رابط_الصورة_هنا"> -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +24,7 @@
         .font-brand { font-family: 'Plus Jakarta Sans', sans-serif; }
         .font-sys-clean { font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif; }
         
-        /* التدرج اللوني الجديد: أزرق ليلي عميق نابض بالحياة */
+        /* التدرج اللوني: أزرق ليلي عميق نابض بالحياة (Slate Navy) */
         .bg-midnight {
             background-color: #0A0F1C;
             background-image: 
@@ -28,19 +38,19 @@
 </head>
 <body class="bg-midnight text-[#F4F4F5] antialiased selection:bg-[#10B981] selection:text-[#FAFAFA] min-h-screen pb-20 md:pb-0">
 
-    <!-- شريط التنبيهات العلوي -->
+    <!-- شريط التنبيهات العلوي (توضيح الشحن) -->
     <div class="bg-gradient-to-r from-emerald-900/80 via-blue-900/50 to-emerald-900/80 border-b border-blue-900/50 py-2 px-4 text-center text-xs text-blue-100 font-medium relative z-50">
         <span class="inline-flex items-center gap-1.5">
             <span class="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-ping"></span>
-            تقنية ذكية لا تتطلب تطبيقات، ودفع لمرة واحدة بدون أي اشتراكات شهرية.
+            شحن مجاني وسريع (توصيل خلال 24-48 ساعة) لكافة مناطق المملكة بمناسبة الإطلاق التجريبي.
         </span>
     </div>
 
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-[#0A0F1C]/90 backdrop-blur-xl border-b border-slate-800/80 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+    <header class="sticky top-0 z-40 bg-[#0A0F1C]/90 backdrop-blur-xl border-b border-slate-800/80 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" dir="ltr" aria-label="الرئيسية - AVENi" class="flex items-center select-none group">
-                <svg aria-hidden="true" class="h-6 w-auto text-[#FAFAFA] transition-opacity group-hover:opacity-80 duration-200" viewBox="0 0 135 28" fill="currentColor">
+            <a href="#" dir="ltr" aria-label="الرئيسية - AVENi" class="flex items-center select-none group z-50 relative">
+                <svg aria-hidden="true" class="h-6 w-auto text-white transition-opacity group-hover:opacity-80 duration-200" viewBox="0 0 135 28" fill="currentColor">
                     <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
                     <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
                     <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
@@ -50,6 +60,7 @@
                 </svg>
             </a>
 
+            <!-- Navigation for Desktop -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
                 <a href="#solutions" class="hover:text-white transition-colors">الحلول والمنتجات</a>
                 <a href="#compatibility" class="hover:text-white transition-colors">التوافق</a>
@@ -58,11 +69,27 @@
                 <a href="#faq" class="hover:text-white transition-colors">الأسئلة الشائعة</a>
             </nav>
 
-            <a href="#order" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-xl text-xs font-bold bg-white hover:bg-slate-100 text-[#0A0F1C] transition-all shadow-md">
-                طلب منتج
-            </a>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#order" class="inline-flex items-center justify-center px-6 py-2.5 rounded-xl text-xs font-bold bg-white hover:bg-slate-100 text-[#0A0F1C] transition-all shadow-md">
+                    طلب منتج
+                </a>
+            </div>
+
+            <!-- Hamburger Button for Mobile -->
+            <button id="mobileMenuBtn" class="md:hidden text-white p-2 z-50 relative" aria-label="القائمة">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 bg-[#0A0F1C]/98 backdrop-blur-2xl z-40 hidden flex-col items-center justify-center gap-8 border-b border-slate-800">
+        <a href="#solutions" class="mobile-link text-white text-lg font-bold">الحلول والمنتجات</a>
+        <a href="#compatibility" class="mobile-link text-white text-lg font-bold">التوافق</a>
+        <a href="#workflow" class="mobile-link text-white text-lg font-bold">آلية العمل</a>
+        <a href="#testimonials" class="mobile-link text-white text-lg font-bold">آراء العملاء</a>
+        <a href="#faq" class="mobile-link text-white text-lg font-bold">الأسئلة الشائعة</a>
+    </div>
 
     <main>
         <!-- Hero Section -->
@@ -81,19 +108,20 @@
                 </h1>
 
                 <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed font-normal">
-                    بطاقات أعمال ذكية وستاندات مخصصة لمنصات الاستقبال ونقاط البيع؛ لجمع تقييمات Google ومشاركة قنوات التواصل بلمسة واحدة.
+                    بطاقات أعمال ذكية وستاندات مخصصة لمنصات الاستقبال ونقاط البيع؛ لجمع تقييمات Google ومشاركة قنوات التواصل بلمسة واحدة (مزودة برمز QR كبديل إضافي).
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-12">
                     <a href="#order" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-white hover:bg-slate-100 text-[#0A0F1C] shadow-[0_4px_14px_0_rgba(255,255,255,0.1)] transition-all text-sm">
                         ابدأ الطلب الآن
                     </a>
-                    <a href="#solutions" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-[#111827] hover:bg-slate-800 hover:text-[#10B981] hover:border-[#10B981]/50 text-slate-200 border border-slate-700 transition-all text-sm">
-                        استعراض الحلول
+                    <!-- إضافة زر لعرض مثال مباشر (يعزز الموثوقية) -->
+                    <a href="#solutions" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-[#111827] hover:bg-slate-800 hover:text-[#10B981] hover:border-[#10B981]/50 text-slate-200 border border-slate-700 transition-all text-sm flex items-center justify-center gap-2">
+                        <i data-lucide="external-link" class="w-4 h-4"></i> عرض مثال لصفحة رقمية
                     </a>
                 </div>
 
-                <!-- بطاقات المعاينة البصرية باللون الجديد -->
+                <!-- بطاقات المعاينة البصرية -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto text-right">
                     <div class="p-4 rounded-2xl bg-gradient-to-br from-[#111827] to-[#0B1120] border border-slate-800 flex flex-col justify-between h-36 shadow-xl relative overflow-hidden group hover:border-[#3B82F6]/50 hover:-translate-y-1.5 duration-300">
                         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.08),transparent_50%)]"></div>
@@ -106,7 +134,7 @@
                                 <rect x="116" y="10.5" width="4.5" height="14.5" />
                                 <rect x="116" y="3.5" width="4.5" height="4.5" />
                             </svg>
-                            <span class="text-[9px] text-[#3B82F6] font-mono border border-[#3B82F6]/30 px-1.5 py-0.5 rounded bg-[#3B82F6]/10">NFC CARD</span>
+                            <span class="text-[9px] text-[#3B82F6] font-mono border border-[#3B82F6]/30 px-1.5 py-0.5 rounded bg-[#3B82F6]/10">NFC + QR</span>
                         </div>
                         <div class="relative z-10">
                             <span class="text-xs font-bold text-white block">بطاقة أعمال ذكية فاخرة</span>
@@ -144,7 +172,7 @@
                             <span class="text-xs font-bold text-white">ستاند أكتريليك لـ Google</span>
                         </div>
                         <div class="bg-[#0A0F1C]/90 border border-slate-700 rounded-xl p-2 flex items-center justify-between relative z-10">
-                            <span class="text-[10px] text-slate-400">تصميم مكتبى راقي</span>
+                            <span class="text-[10px] text-slate-400">مزود بـ QR إضافي</span>
                             <span class="text-[9px] font-bold text-[#10B981]">عالي التحمل</span>
                         </div>
                     </div>
@@ -165,8 +193,8 @@
                         <span>يعمل تلقائياً دون تثبيت تطبيقات</span>
                     </div>
                     <div class="flex items-center justify-center gap-2">
-                        <i data-lucide="shield-check" class="w-4 h-4 text-[#10B981]"></i>
-                        <span>شريحة NFC ذكية وسريعة الاستجابة</span>
+                        <i data-lucide="qr-code" class="w-4 h-4 text-[#10B981]"></i>
+                        <span>مدعوم برمز QR للعملاء ذوي الهواتف القديمة</span>
                     </div>
                     <div class="flex items-center justify-center gap-2">
                         <i data-lucide="infinity" class="w-4 h-4 text-[#3B82F6]"></i>
@@ -206,7 +234,7 @@
                                         <span class="block text-xs font-bold text-white tracking-wide font-brand">SMART BUSINESS CARD</span>
                                         <span class="text-[10px] text-slate-400 font-mono">TOUCH TO CONNECT</span>
                                     </div>
-                                    <span class="text-[9px] font-mono tracking-widest text-white border border-slate-600 bg-[#0A0F1C]/60 px-2 py-0.5 rounded">NFC</span>
+                                    <span class="text-[9px] font-mono tracking-widest text-white border border-slate-600 bg-[#0A0F1C]/60 px-2 py-0.5 rounded">NFC + QR</span>
                                 </div>
                             </div>
 
@@ -215,7 +243,7 @@
                                 <span class="text-xl font-black text-white">49 ريال</span>
                             </div>
                             <p class="text-slate-400 text-sm leading-relaxed font-normal mb-6">
-                                بديلك العصري لبطاقات العمل الورقية؛ بمجرد ملامستها لهاتف العميل تحفظ اسمك، أرقامك، موقعك، وروابط التواصل مباشرة في سجل الهاتف دون كتابة يدوية.
+                                بديلك العصري لبطاقات العمل الورقية؛ بمجرد ملامستها لهاتف العميل تحفظ بياناتك وروابطك مباشرة في سجل الهاتف. (الجهة الخلفية تحتوي على رمز QR كخيار إضافي).
                             </p>
                         </div>
 
@@ -251,7 +279,7 @@
                                 <span class="text-xl font-black text-white">99 ريال</span>
                             </div>
                             <p class="text-slate-400 text-sm leading-relaxed font-normal mb-6">
-                                ستاند مكتبي تفاعلي يوضع على المكاتب أو الطاولات؛ يوجه العميل بلمسة هاتف مباشرة لصفحة تقييم نشاطك على خرائط Google لزيادة تقييماتك ورفع ثقة العملاء.
+                                ستاند مكتبي تفاعلي يوجه العميل بلمسة هاتف مباشرة لصفحة تقييم نشاطك على خرائط Google لزيادة تقييماتك. (مدعوم برمز QR إضافي في الأسفل).
                             </p>
                         </div>
 
@@ -268,19 +296,19 @@
                             <div class="md:w-1/2">
                                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#10B981]/10 border border-[#10B981]/20 text-[#10B981] text-xs font-bold mb-4">
                                     <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-                                    <span>الباقة المتكاملة لنقاط البيع والاستقبال</span>
+                                    <span>الباقة المتكاملة لنقاط البيع الاستقبال</span>
                                 </div>
                                 <div class="flex items-center gap-4 mb-3">
                                     <h3 class="text-2xl font-bold text-white">باقة ستاند نقاط البيع المخصص</h3>
                                     <span class="text-2xl font-black text-white">299 ريال</span>
                                 </div>
                                 <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                                    ستاند أكريليك فاخر مصمم ومطبوع بهوية وشعار علامتك التجارية يوضع عند نقاط البيع أو كاونترات المحاسبة والاستقبال؛ مبرمج للربط المباشر بصفحتك التعريفية الرقمية التي تجمع قنوات التواصل، حسابات السوشال ميديا، والتقييم بلمسة واحدة.
+                                    ستاند أكريليك فاخر مصمم ومطبوع بهوية وشعار علامتك التجارية؛ مبرمج للربط المباشر بصفحتك التعريفية الرقمية التي تجمع قنوات التواصل، حسابات السوشال ميديا، والتقييم بلمسة واحدة أو بمسح الـ QR Code.
                                 </p>
                                 <ul class="space-y-2.5 text-xs font-semibold text-white mb-6">
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#10B981]"></i> تصميم وطباعة ستاند مخصص بشعار وهوية منشأتك بالكامل</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#10B981]"></i> صفحة رقمية سريعة تضم (الموقع، واتساب، تيك توك، وإنستغرام)</li>
-                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#10B981]"></i> إمكانية تحديث بياناتك وحساباتك مستقبلاً مجاناً وفي أي وقت</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#10B981]"></i> صفحة رقمية سريعة ومجانية بدون اشتراكات شهرية</li>
+                                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#10B981]"></i> إمكانية تحديث بياناتك وحساباتك مستقبلاً عبر خدمة العملاء</li>
                                 </ul>
                                 
                                 <div class="p-3.5 rounded-xl bg-[#0A0F1C] border border-emerald-500/30 text-emerald-400 text-xs mb-6 flex items-center gap-2.5 font-medium">
@@ -347,8 +375,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="p-8 rounded-2xl bg-[#111827] border border-slate-800/80 hover:border-slate-700 hover:-translate-y-1.5 hover:shadow-2xl duration-300 ease-out transition-all">
                         <span class="text-xs font-mono font-bold text-[#10B981] block mb-3">01</span>
-                        <h3 class="text-base font-bold text-white mb-2">ملامسة الهاتف</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">يقرب العميل هاتفه الذكي من بطاقة الأعمال أو ستاند نقاط البيع على مسافة 2-3 سم.</p>
+                        <h3 class="text-base font-bold text-white mb-2">ملامسة الهاتف أو المسح</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">يقرب العميل هاتفه الذكي من بطاقة الأعمال أو الستاند، أو يقوم بمسح رمز الـ QR بالكاميرا.</p>
                     </div>
                     <div class="p-8 rounded-2xl bg-[#111827] border border-slate-800/80 hover:border-slate-700 hover:-translate-y-1.5 hover:shadow-2xl duration-300 ease-out transition-all">
                         <span class="text-xs font-mono font-bold text-[#10B981] block mb-3">02</span>
@@ -359,49 +387,6 @@
                         <span class="text-xs font-mono font-bold text-[#10B981] block mb-3">03</span>
                         <h3 class="text-base font-bold text-white mb-2">التفاعل المباشر</h3>
                         <p class="text-sm text-slate-400 leading-relaxed">حفظ جهة الاتصال، تقييم المنشأة بـ 5 نجوم، أو متابعة حسابات السوشال ميديا فوراً.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-24 border-b border-slate-800/70 bg-[#070A13]">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <span class="text-xs font-bold tracking-widest text-[#10B981] uppercase mb-2 block">شركاء النجاح</span>
-                    <h2 class="text-3xl font-bold text-white">ماذا يقول أصحاب المتاجر عن AVENi؟</h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="p-6 rounded-2xl bg-[#111827] border border-slate-800/80 flex flex-col justify-between">
-                        <p class="text-xs text-slate-400 leading-relaxed mb-6">"ستاندات تقييم خرائط Google ساهمت بشكل ملحوظ في زيادة تقييمات متجرنا وترشيحنا للعملاء الجدد بكل سهولة."</p>
-                        <div class="flex items-center gap-3 pt-4 border-t border-slate-800/60">
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center font-bold text-xs text-white">م</div>
-                            <div>
-                                <span class="text-xs font-bold text-white block">مشاري العتيبي</span>
-                                <span class="text-[10px] text-slate-500">إدارة مقهى مختص</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6 rounded-2xl bg-[#111827] border border-slate-800/80 flex flex-col justify-between">
-                        <p class="text-xs text-slate-400 leading-relaxed mb-6">"بطاقة الأعمال الذكية أحدثت انطباعاً أولياً مذهلاً مع العملاء والشركات. فكرة عملية وأنيقة جداً."</p>
-                        <div class="flex items-center gap-3 pt-4 border-t border-slate-800/60">
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center font-bold text-xs text-white">ر</div>
-                            <div>
-                                <span class="text-xs font-bold text-white block">رائد الشمري</span>
-                                <span class="text-[10px] text-slate-500">مسؤول مبيعات عقارية</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6 rounded-2xl bg-[#111827] border border-slate-800/80 flex flex-col justify-between">
-                        <p class="text-xs text-slate-400 leading-relaxed mb-6">"باقة نقاط البيع جمعت كل قنواتنا في مكان واحد. الدعم والتجهيز كان سريعاً واحترافياً للغاية."</p>
-                        <div class="flex items-center gap-3 pt-4 border-t border-slate-800/60">
-                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center font-bold text-xs text-white">س</div>
-                            <div>
-                                <span class="text-xs font-bold text-white block">سارة القحطاني</span>
-                                <span class="text-[10px] text-slate-500">صاحبة متجر عطور</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -422,7 +407,7 @@
                             <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 transition-transform group-open:rotate-180"></i>
                         </summary>
                         <p class="text-xs text-slate-400 leading-relaxed mt-3 pt-3 border-t border-slate-800/80">
-                            نهائياً؛ تقنية NFC مدمجة تلقائياً في جميع هواتف iPhone والأجهزة العاملة بنظام Android الحديثة وتعمل بمجرد الملامسة.
+                            نهائياً؛ تقنية NFC مدمجة تلقائياً في جميع الهواتف الحديثة، وللهواتف القديمة يمكنهم استخدام كاميرا الجوال لمسح رمز الـ QR المتوفر دائماً كبديل.
                         </p>
                     </details>
                     <details class="group bg-[#111827] border border-slate-800/80 rounded-xl p-5 cursor-pointer hover:border-slate-700 transition-colors">
@@ -440,7 +425,7 @@
                             <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 transition-transform group-open:rotate-180"></i>
                         </summary>
                         <p class="text-xs text-slate-400 leading-relaxed mt-3 pt-3 border-t border-slate-800/80">
-                            نعم بكل تأكيد، صفحتك التعريفية سحابية ويمكنك تحديث كافة الحسابات والبيانات في أي وقت دون الحاجة لتغيير الستاند نفسه.
+                            نعم بكل تأكيد، صفحتك التعريفية سحابية ويمكنك مراسلة خدمة العملاء لتحديث كافة حساباتك وروابطك في أي وقت مجاناً.
                         </p>
                     </details>
                 </div>
@@ -451,10 +436,13 @@
         <section id="order" class="py-24">
             <div class="max-w-lg mx-auto px-6">
                 <div class="bg-[#111827] border border-slate-800/80 rounded-2xl p-8 shadow-2xl">
-                    <div class="mb-6">
-                        <span class="text-xs font-bold tracking-widest text-[#10B981] uppercase mb-1 block">تأكيد الطلب</span>
-                        <h2 class="text-2xl font-bold text-white mb-1">طلب منتج أو استفسار</h2>
-                        <p class="text-slate-400 text-xs">أدخل بياناتك وسيتم توجيهك مباشرة لمحادثة الواتساب لإكمال تفاصيل الهوية وتأكيد التجهيز.</p>
+                    <div class="mb-6 flex justify-between items-start">
+                        <div>
+                            <span class="text-xs font-bold tracking-widest text-[#10B981] uppercase mb-1 block">تأكيد الطلب</span>
+                            <h2 class="text-2xl font-bold text-white mb-1">طلب منتج أو استفسار</h2>
+                            <p class="text-slate-400 text-xs">سيتم توجيهك مباشرة لمحادثة الواتساب لإكمال تفاصيل الهوية وتأكيد التجهيز.</p>
+                        </div>
+                        <i data-lucide="shield-check" class="w-8 h-8 text-[#10B981] opacity-50"></i>
                     </div>
 
                     <form id="orderForm" class="space-y-4">
@@ -465,6 +453,9 @@
                         <div>
                             <label for="custPhone" class="block text-xs font-semibold text-slate-400 mb-1.5 cursor-pointer hover:text-white transition-colors">رقم الواتساب للتواصل</label>
                             <input type="tel" id="custPhone" required placeholder="05xxxxxxxx" class="w-full px-4 py-3 rounded-xl border border-slate-800 bg-[#0A0F1C] text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all" dir="ltr">
+                            <p id="phoneError" class="text-red-400 text-xs font-medium mt-1.5 hidden flex items-center gap-1">
+                                <i data-lucide="alert-circle" class="w-3 h-3"></i> يرجى إدخال رقم سعودي صحيح.
+                            </p>
                         </div>
                         <div>
                             <label for="prodType" class="block text-xs font-semibold text-slate-400 mb-1.5 cursor-pointer hover:text-white transition-colors">المنتج أو الباقة المطلوبة</label>
@@ -475,28 +466,23 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="w-full py-3.5 rounded-xl font-bold bg-white hover:bg-slate-100 text-[#0A0F1C] text-sm shadow-[0_4px_14px_0_rgba(255,255,255,0.1)] transition-all mt-2 active:scale-95">
-                            إرسال الطلب عبر واتساب
+                        <!-- توضيح طرق الدفع والضمان -->
+                        <div class="pt-2 pb-1">
+                            <p class="text-[10px] text-slate-400 font-medium flex justify-center gap-4">
+                                <span class="flex items-center gap-1"><i data-lucide="banknote" class="w-3.5 h-3.5"></i> تحويل بنكي / STC Pay</span>
+                                <span class="flex items-center gap-1"><i data-lucide="check-square" class="w-3.5 h-3.5"></i> ضمان استبدال</span>
+                            </p>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-xl font-bold bg-white hover:bg-slate-100 text-[#0A0F1C] text-sm shadow-[0_4px_14px_0_rgba(255,255,255,0.1)] transition-all mt-2 active:scale-95 flex justify-center items-center gap-2">
+                            <span>إرسال الطلب عبر واتساب</span>
+                            <i data-lucide="send" class="w-4 h-4"></i>
                         </button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- Success Modal -->
-    <div id="successModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-[#111827] border border-slate-800 rounded-2xl p-6 max-w-sm w-full text-center shadow-2xl relative animate-in fade-in zoom-in duration-200">
-            <div class="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4">
-                <i data-lucide="check" class="w-6 h-6"></i>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2">تم تجهيز طلبك بنجاح!</h3>
-            <p class="text-xs text-slate-400 leading-relaxed mb-6">جاري تحويلك الآن لمحادثة الواتساب لإكمال تفاصيل الهوية وتأكيد الطلب مع فريق AVENi.</p>
-            <button id="closeModal" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold transition-all">
-                حسناً، الانتقال للواتساب
-            </button>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="py-8 bg-[#0A0F1C] border-t border-slate-800/60">
@@ -516,7 +502,7 @@
     </footer>
 
     <!-- شريط الطلب السريع للهواتف -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 p-3 bg-[#0A0F1C]/95 backdrop-blur-md border-t border-slate-800/80 z-40 flex items-center justify-between gap-4">
+    <div class="md:hidden fixed bottom-0 left-0 right-0 p-3 bg-[#0A0F1C]/95 backdrop-blur-md border-t border-slate-800/80 z-30 flex items-center justify-between gap-4">
         <div>
             <span class="text-[10px] text-slate-400 block">تبدأ الأسعار من</span>
             <span class="text-sm font-bold text-white">49 ريال</span>
@@ -529,29 +515,64 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             lucide.createIcons();
+            
             const orderForm = document.getElementById('orderForm');
-            const successModal = document.getElementById('successModal');
-            const closeModal = document.getElementById('closeModal');
-            let pendingUrl = '';
-
-            orderForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const name = document.getElementById('custName').value.trim();
-                const phone = document.getElementById('custPhone').value.trim();
-                const phoneRegex = /^05\d{8}$/;
-                if (!phoneRegex.test(phone)) {
-                    alert('يرجى إدخال رقم هاتف صحيح يبدأ بـ 05 ويتكون من 10 أرقام.');
-                    return;
-                }
-                const product = document.getElementById('prodType').value;
-                const text = `مرحباً AVENi،\nأود تأكيد طلب جديد:\n• المنتج: ${product}\n• الاسم/المنشأة: ${name}\n• رقم تواصل العميل: ${phone}`;
-                pendingUrl = `https://wa.me/966500000000?text=${encodeURIComponent(text)}`;
-                successModal.classList.remove('hidden');
+            const phoneInput = document.getElementById('custPhone');
+            const phoneError = document.getElementById('phoneError');
+            
+            // Mobile Menu Logic
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
             });
 
-            closeModal.addEventListener('click', function() {
-                successModal.classList.add('hidden');
-                if (pendingUrl) window.open(pendingUrl, '_blank');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                });
+            });
+
+            // Form Submit Logic
+            orderForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                phoneError.classList.add('hidden');
+                phoneInput.classList.remove('border-red-500', 'focus:ring-red-500');
+                
+                const name = document.getElementById('custName').value.trim();
+                const phone = phoneInput.value.trim();
+                
+                // يقبل 05xxxxxxxx أو 9665xxxxxxxx أو +9665xxxxxxxx
+                const phoneRegex = /^(05|9665|\+9665)\d{8}$/;
+                
+                if (!phoneRegex.test(phone)) {
+                    phoneError.classList.remove('hidden');
+                    phoneInput.classList.add('border-red-500', 'focus:ring-red-500');
+                    phoneInput.focus();
+                    return;
+                }
+                
+                const product = document.getElementById('prodType').value;
+                const text = `مرحباً AVENi،\nأود تأكيد طلب جديد:\n• المنتج: ${product}\n• الاسم/المنشأة: ${name}\n• رقم تواصل العميل: ${phone}`;
+                
+                // فتح الواتساب مباشرة لحل مشكلة حظر النوافذ المنبثقة (Popup Blocker)
+                const whatsappUrl = `https://wa.me/966500000000?text=${encodeURIComponent(text)}`;
+                
+                // الانتقال المباشر للواتساب
+                window.location.href = whatsappUrl;
+                
+                // تفريغ الفورم بعد الإرسال
+                orderForm.reset();
+            });
+            
+            // إزالة حالة الخطأ عند بدء الكتابة
+            phoneInput.addEventListener('input', () => {
+                phoneError.classList.add('hidden');
+                phoneInput.classList.remove('border-red-500', 'focus:ring-red-500');
             });
         });
     </script>
