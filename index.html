@@ -14,29 +14,30 @@
         .font-brand { font-family: 'Plus Jakarta Sans', sans-serif; }
         .font-sys-clean { font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif; }
         
-        .bg-obsidian {
-            background-color: #08080A;
+        /* التدرج اللوني الجديد: أزرق ليلي عميق نابض بالحياة */
+        .bg-midnight {
+            background-color: #0A0F1C;
             background-image: 
-                radial-gradient(ellipse 80% 50% at 50% -15%, rgba(250, 250, 250, 0.03), transparent 70%),
-                radial-gradient(ellipse 60% 40% at 100% 50%, rgba(16, 185, 129, 0.03), transparent 60%),
-                radial-gradient(ellipse 50% 40% at 0% 40%, rgba(59, 130, 246, 0.03), transparent 60%);
+                radial-gradient(ellipse 80% 50% at 50% -15%, rgba(59, 130, 246, 0.05), transparent 70%),
+                radial-gradient(ellipse 60% 40% at 100% 50%, rgba(16, 185, 129, 0.04), transparent 60%),
+                radial-gradient(ellipse 50% 40% at 0% 40%, rgba(59, 130, 246, 0.04), transparent 60%);
         }
 
         details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
-<body class="bg-obsidian text-[#F4F4F5] antialiased selection:bg-[#10B981] selection:text-[#FAFAFA] min-h-screen pb-20 md:pb-0">
+<body class="bg-midnight text-[#F4F4F5] antialiased selection:bg-[#10B981] selection:text-[#FAFAFA] min-h-screen pb-20 md:pb-0">
 
-    <!-- شريط التنبيهات العلوي (Announcement Bar) -->
-    <div class="bg-gradient-to-r from-emerald-950/60 via-zinc-900 to-blue-950/60 border-b border-zinc-800/80 py-2 px-4 text-center text-xs text-zinc-300 font-medium relative z-50">
+    <!-- شريط التنبيهات العلوي -->
+    <div class="bg-gradient-to-r from-emerald-900/80 via-blue-900/50 to-emerald-900/80 border-b border-blue-900/50 py-2 px-4 text-center text-xs text-blue-100 font-medium relative z-50">
         <span class="inline-flex items-center gap-1.5">
             <span class="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-ping"></span>
-           تقنية ذكية لا تتطلب تطبيقات ودفع لمرة واحدة بدون أي اشتراكات شهرية 
+            تقنية ذكية لا تتطلب تطبيقات، ودفع لمرة واحدة بدون أي اشتراكات شهرية.
         </span>
     </div>
 
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-[#08080A]/90 backdrop-blur-xl border-b border-zinc-700/60 shadow-[0_4px_30px_rgba(0,0,0,0.8)]">
+    <header class="sticky top-0 z-50 bg-[#0A0F1C]/90 backdrop-blur-xl border-b border-slate-800/80 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" dir="ltr" aria-label="الرئيسية - AVENi" class="flex items-center select-none group">
                 <svg aria-hidden="true" class="h-6 w-auto text-[#FAFAFA] transition-opacity group-hover:opacity-80 duration-200" viewBox="0 0 135 28" fill="currentColor">
@@ -49,15 +50,15 @@
                 </svg>
             </a>
 
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-[#A1A1AA]">
-                <a href="#solutions" class="hover:text-[#F4F4F5] transition-colors">الحلول والمنتجات</a>
-                <a href="#compatibility" class="hover:text-[#F4F4F5] transition-colors">التوافق</a>
-                <a href="#workflow" class="hover:text-[#F4F4F5] transition-colors">آلية العمل</a>
-                <a href="#testimonials" class="hover:text-[#F4F4F5] transition-colors">آراء العملاء</a>
-                <a href="#faq" class="hover:text-[#F4F4F5] transition-colors">الأسئلة الشائعة</a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+                <a href="#solutions" class="hover:text-white transition-colors">الحلول والمنتجات</a>
+                <a href="#compatibility" class="hover:text-white transition-colors">التوافق</a>
+                <a href="#workflow" class="hover:text-white transition-colors">آلية العمل</a>
+                <a href="#testimonials" class="hover:text-white transition-colors">آراء العملاء</a>
+                <a href="#faq" class="hover:text-white transition-colors">الأسئلة الشائعة</a>
             </nav>
 
-            <a href="#order" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-xl text-xs font-bold bg-[#FAFAFA] hover:bg-white text-[#08080A] transition-all shadow-md">
+            <a href="#order" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 rounded-xl text-xs font-bold bg-white hover:bg-slate-100 text-[#0A0F1C] transition-all shadow-md">
                 طلب منتج
             </a>
         </div>
@@ -65,39 +66,39 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="relative pt-16 pb-20 border-b border-zinc-800/60 overflow-hidden">
+        <section class="relative pt-16 pb-20 border-b border-slate-800/60 overflow-hidden">
             <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#111115]/80 border border-zinc-800 text-[#F4F4F5] text-xs font-semibold mb-6 backdrop-blur-md">
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#111827]/80 border border-slate-700 text-blue-50 text-xs font-semibold mb-6 backdrop-blur-md shadow-lg">
                     <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse shadow-[0_0_8px_#10B981]"></span>
                     <span class="tracking-wide">حلول الاتصال الذكي NFC المخصصة للمتاجر والشركات</span>
                 </div>
                 
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#FAFAFA] leading-[1.4] md:leading-[1.4] mb-6">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-[1.4] md:leading-[1.4] mb-6">
                     انقل هويتك وتواصل مع عملائك <br class="hidden sm:inline">
-                    <span class="bg-gradient-to-r from-[#FAFAFA] via-[#A1A1AA] to-zinc-500 bg-clip-text text-transparent">
+                    <span class="bg-gradient-to-r from-white via-slate-300 to-slate-500 bg-clip-text text-transparent">
                         بملامسة هاتف واحدة ودون تطبيقات.
                     </span>
                 </h1>
 
-                <p class="text-[#A1A1AA] text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed font-normal">
+                <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed font-normal">
                     بطاقات أعمال ذكية وستاندات مخصصة لمنصات الاستقبال ونقاط البيع؛ لجمع تقييمات Google ومشاركة قنوات التواصل بلمسة واحدة.
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-12">
-                    <a href="#order" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-[#FAFAFA] hover:bg-white text-[#08080A] shadow-[0_4px_14px_0_rgba(250,250,250,0.1)] transition-all text-sm">
+                    <a href="#order" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-white hover:bg-slate-100 text-[#0A0F1C] shadow-[0_4px_14px_0_rgba(255,255,255,0.1)] transition-all text-sm">
                         ابدأ الطلب الآن
                     </a>
-                    <a href="#solutions" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-[#111115] hover:bg-zinc-800 hover:text-[#10B981] hover:border-[#10B981]/50 text-[#F4F4F5] border border-zinc-800 transition-all text-sm">
+                    <a href="#solutions" class="w-full sm:w-auto px-8 py-3.5 rounded-xl font-bold bg-[#111827] hover:bg-slate-800 hover:text-[#10B981] hover:border-[#10B981]/50 text-slate-200 border border-slate-700 transition-all text-sm">
                         استعراض الحلول
                     </a>
                 </div>
 
-                <!-- بطاقات المعاينة البصرية الواقعية -->
+                <!-- بطاقات المعاينة البصرية باللون الجديد -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto text-right">
-                    <div class="p-4 rounded-2xl bg-gradient-to-br from-[#141419] to-[#0D0D10] border border-zinc-800 flex flex-col justify-between h-36 shadow-xl relative overflow-hidden group hover:border-[#3B82F6]/50 hover:-translate-y-1.5 duration-300">
+                    <div class="p-4 rounded-2xl bg-gradient-to-br from-[#111827] to-[#0B1120] border border-slate-800 flex flex-col justify-between h-36 shadow-xl relative overflow-hidden group hover:border-[#3B82F6]/50 hover:-translate-y-1.5 duration-300">
                         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.08),transparent_50%)]"></div>
                         <div class="flex justify-between items-start relative z-10" dir="ltr">
-                            <svg aria-hidden="true" class="h-3.5 w-auto text-[#FAFAFA]" viewBox="0 0 135 28" fill="currentColor">
+                            <svg aria-hidden="true" class="h-3.5 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
                                 <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
                                 <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
                                 <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
@@ -108,19 +109,19 @@
                             <span class="text-[9px] text-[#3B82F6] font-mono border border-[#3B82F6]/30 px-1.5 py-0.5 rounded bg-[#3B82F6]/10">NFC CARD</span>
                         </div>
                         <div class="relative z-10">
-                            <span class="text-xs font-bold text-[#F4F4F5] block">بطاقة أعمال ذكية فاخرة</span>
-                            <span class="text-[10px] text-[#A1A1AA] font-mono">تشطيب مطفأ مقاوم للخدش</span>
+                            <span class="text-xs font-bold text-white block">بطاقة أعمال ذكية فاخرة</span>
+                            <span class="text-[10px] text-slate-400 font-mono">تشطيب مطفأ مقاوم للخدش</span>
                         </div>
                     </div>
 
-                    <div class="p-4 rounded-2xl bg-gradient-to-br from-[#141419] to-[#0D0D10] border border-zinc-800 flex flex-col justify-between h-36 shadow-xl relative overflow-hidden group hover:border-[#10B981]/50 hover:-translate-y-1.5 duration-300">
+                    <div class="p-4 rounded-2xl bg-gradient-to-br from-[#111827] to-[#0B1120] border border-slate-800 flex flex-col justify-between h-36 shadow-xl relative overflow-hidden group hover:border-[#10B981]/50 hover:-translate-y-1.5 duration-300">
                         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.08),transparent_50%)]"></div>
-                        <div class="flex items-center justify-between pb-2 border-b border-zinc-800/80 relative z-10">
-                            <span class="text-[10px] font-bold text-[#F4F4F5]">الصفحة السحابية الذكية</span>
+                        <div class="flex items-center justify-between pb-2 border-b border-slate-700 relative z-10">
+                            <span class="text-[10px] font-bold text-white">الصفحة السحابية الذكية</span>
                             <span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
                         </div>
                         <div class="space-y-1.5 relative z-10">
-                            <div class="h-6 rounded-lg bg-[#08080A] border border-zinc-800 flex items-center justify-between px-2.5 text-[10px] text-[#A1A1AA]">
+                            <div class="h-6 rounded-lg bg-[#0A0F1C] border border-slate-800 flex items-center justify-between px-2.5 text-[10px] text-slate-400">
                                 <span class="flex items-center gap-1.5 text-emerald-400 font-medium">
                                     <i data-lucide="check-circle-2" class="w-3 h-3"></i> جاهزة للربط الفوري
                                 </span>
@@ -128,10 +129,10 @@
                         </div>
                     </div>
 
-                    <div class="p-4 rounded-2xl bg-gradient-to-br from-[#141419] to-[#0D0D10] border border-zinc-800 flex flex-col justify-between h-36 shadow-xl relative overflow-hidden group hover:border-amber-500/50 hover:-translate-y-1.5 duration-300">
+                    <div class="p-4 rounded-2xl bg-gradient-to-br from-[#111827] to-[#0B1120] border border-slate-800 flex flex-col justify-between h-36 shadow-xl relative overflow-hidden group hover:border-amber-500/50 hover:-translate-y-1.5 duration-300">
                         <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.08),transparent_50%)]"></div>
                         <div class="flex items-center gap-2 relative z-10">
-                            <div class="w-6 h-6 rounded-md bg-[#08080A] border border-zinc-700 flex items-center justify-center p-1">
+                            <div class="w-6 h-6 rounded-md bg-[#0A0F1C] border border-slate-700 flex items-center justify-center p-1">
                                 <svg aria-hidden="true" class="w-full h-full flex-shrink-0" viewBox="0 0 92 132" fill="none">
                                     <path fill="#4285F4" d="M46 0C20.6 0 0 20.6 0 46c0 10.6 3.6 20.4 9.7 28.2L46 132l36.3-57.8C88.4 66.4 92 56.6 92 46 92 20.6 71.4 0 46 0z"/>
                                     <path fill="#EA4335" d="M46 0C33.3 0 21.8 5.2 13.5 13.5l17.7 17.7C35.1 27.5 40.3 25 46 25c11.6 0 21 9.4 21 21 0 5.7-2.5 10.9-6.2 14.8l17.7 17.7C84.8 70.2 92 58.7 92 46 92 20.6 71.4 0 46 0z"/>
@@ -140,10 +141,10 @@
                                     <circle cx="46" cy="46" r="14" fill="#FFFFFF"/>
                                 </svg>
                             </div>
-                            <span class="text-xs font-bold text-[#F4F4F5]">ستاند أكتريليك لـ Google</span>
+                            <span class="text-xs font-bold text-white">ستاند أكتريليك لـ Google</span>
                         </div>
-                        <div class="bg-[#08080A]/90 border border-zinc-800 rounded-xl p-2 flex items-center justify-between relative z-10">
-                            <span class="text-[10px] text-zinc-400">تصميم مكتبى راقي</span>
+                        <div class="bg-[#0A0F1C]/90 border border-slate-700 rounded-xl p-2 flex items-center justify-between relative z-10">
+                            <span class="text-[10px] text-slate-400">تصميم مكتبى راقي</span>
                             <span class="text-[9px] font-bold text-[#10B981]">عالي التحمل</span>
                         </div>
                     </div>
@@ -152,15 +153,15 @@
         </section>
 
         <!-- Compatibility Bar -->
-        <section id="compatibility" class="py-7 bg-[#08080A] border-b border-zinc-800/80 relative overflow-hidden">
+        <section id="compatibility" class="py-7 bg-[#0A0F1C] border-b border-slate-800/80 relative overflow-hidden">
             <div class="max-w-6xl mx-auto px-6 relative z-10">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-[#A1A1AA] text-xs font-medium">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-slate-400 text-xs font-medium">
                     <div class="flex items-center justify-center gap-2">
-                        <i data-lucide="smartphone" class="w-4 h-4 text-[#F4F4F5]"></i>
+                        <i data-lucide="smartphone" class="w-4 h-4 text-slate-200"></i>
                         <span>متوافق مع جميع أجهزة Apple و Android</span>
                     </div>
                     <div class="flex items-center justify-center gap-2">
-                        <i data-lucide="zap-off" class="w-4 h-4 text-[#F4F4F5]"></i>
+                        <i data-lucide="zap-off" class="w-4 h-4 text-slate-200"></i>
                         <span>يعمل تلقائياً دون تثبيت تطبيقات</span>
                     </div>
                     <div class="flex items-center justify-center gap-2">
@@ -176,21 +177,21 @@
         </section>
 
         <!-- Solutions Section -->
-        <section id="solutions" class="py-24 border-b border-zinc-800/70">
+        <section id="solutions" class="py-24 border-b border-slate-800/70">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="max-w-xl mb-16">
                     <span class="text-xs font-bold tracking-widest text-[#10B981] uppercase mb-2 block">المنتجات والباقات</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-[#FAFAFA] mb-3">الحلول المتاحة والأسعار</h2>
-                    <p class="text-[#A1A1AA] text-sm leading-relaxed">منتجات ملموسة ذكية مبرمجة مسبقاً وجاهزة للاستخدام الفوري لربط عملائك بنشاطك بلمسة واحدة.</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">الحلول المتاحة والأسعار</h2>
+                    <p class="text-slate-400 text-sm leading-relaxed">منتجات ملموسة ذكية مبرمجة مسبقاً وجاهزة للاستخدام الفوري لربط عملائك بنشاطك بلمسة واحدة.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-                    <!-- Bento 1: بطاقة الأعمال الذكية -->
-                    <div class="md:col-span-6 bg-[#111115] border border-zinc-800/80 rounded-2xl p-7 flex flex-col justify-between hover:border-[#3B82F6]/50 hover:-translate-y-1.5 hover:shadow-2xl duration-300 ease-out transition-all">
+                    <!-- Bento 1 -->
+                    <div class="md:col-span-6 bg-[#111827] border border-slate-800/80 rounded-2xl p-7 flex flex-col justify-between hover:border-[#3B82F6]/50 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-blue-900/20 duration-300 ease-out transition-all">
                         <div>
-                            <div class="h-52 rounded-xl bg-gradient-to-br from-zinc-900 via-[#111115] to-[#08080A] text-[#F4F4F5] p-6 flex flex-col justify-between mb-6 shadow-2xl border border-zinc-800 relative overflow-hidden">
+                            <div class="h-52 rounded-xl bg-gradient-to-br from-slate-800 via-[#111827] to-[#0A0F1C] text-white p-6 flex flex-col justify-between mb-6 shadow-2xl border border-slate-700 relative overflow-hidden">
                                 <div class="flex justify-between items-start" dir="ltr">
-                                    <svg aria-hidden="true" class="h-4 w-auto text-[#FAFAFA]" viewBox="0 0 135 28" fill="currentColor">
+                                    <svg aria-hidden="true" class="h-4 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
                                         <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
                                         <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
                                         <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
@@ -198,37 +199,37 @@
                                         <rect x="116" y="10.5" width="4.5" height="14.5" />
                                         <rect x="116" y="3.5" width="4.5" height="4.5" />
                                     </svg>
-                                    <i data-lucide="radio" class="w-5 h-5 text-zinc-400"></i>
+                                    <i data-lucide="radio" class="w-5 h-5 text-slate-400"></i>
                                 </div>
                                 <div class="flex justify-between items-end">
                                     <div>
-                                        <span class="block text-xs font-bold text-[#F4F4F5] tracking-wide font-brand">SMART BUSINESS CARD</span>
-                                        <span class="text-[10px] text-[#A1A1AA] font-mono">TOUCH TO CONNECT</span>
+                                        <span class="block text-xs font-bold text-white tracking-wide font-brand">SMART BUSINESS CARD</span>
+                                        <span class="text-[10px] text-slate-400 font-mono">TOUCH TO CONNECT</span>
                                     </div>
-                                    <span class="text-[9px] font-mono tracking-widest text-[#F4F4F5] border border-zinc-700 bg-[#08080A]/60 px-2 py-0.5 rounded">NFC</span>
+                                    <span class="text-[9px] font-mono tracking-widest text-white border border-slate-600 bg-[#0A0F1C]/60 px-2 py-0.5 rounded">NFC</span>
                                 </div>
                             </div>
 
                             <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-lg font-bold text-[#FAFAFA]">بطاقة الأعمال الذكية</h3>
-                                <span class="text-xl font-black text-[#FAFAFA]">49 ريال</span>
+                                <h3 class="text-lg font-bold text-white">بطاقة الأعمال الذكية</h3>
+                                <span class="text-xl font-black text-white">49 ريال</span>
                             </div>
-                            <p class="text-[#A1A1AA] text-sm leading-relaxed font-normal mb-6">
+                            <p class="text-slate-400 text-sm leading-relaxed font-normal mb-6">
                                 بديلك العصري لبطاقات العمل الورقية؛ بمجرد ملامستها لهاتف العميل تحفظ اسمك، أرقامك، موقعك، وروابط التواصل مباشرة في سجل الهاتف دون كتابة يدوية.
                             </p>
                         </div>
 
-                        <div class="pt-4 border-t border-zinc-800/80 flex items-center justify-between">
-                            <span class="text-xs font-semibold text-zinc-500">خامات مطفأة عالية الجودة</span>
-                            <a href="#order" class="px-5 py-2 rounded-lg bg-[#FAFAFA] hover:bg-white text-[#08080A] text-xs font-bold transition-all">اطلب الآن</a>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-500">خامات مطفأة عالية الجودة</span>
+                            <a href="#order" class="px-5 py-2 rounded-lg bg-white hover:bg-slate-100 text-[#0A0F1C] text-xs font-bold transition-all">اطلب الآن</a>
                         </div>
                     </div>
 
-                    <!-- Bento 2: ستاند تقييمات خرائط Google -->
-                    <div class="md:col-span-6 bg-[#111115] border border-zinc-800/80 rounded-2xl p-7 flex flex-col justify-between hover:border-[#10B981]/50 hover:-translate-y-1.5 hover:shadow-2xl duration-300 ease-out transition-all">
+                    <!-- Bento 2 -->
+                    <div class="md:col-span-6 bg-[#111827] border border-slate-800/80 rounded-2xl p-7 flex flex-col justify-between hover:border-[#10B981]/50 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-emerald-900/20 duration-300 ease-out transition-all">
                         <div>
-                            <div class="h-52 rounded-xl bg-gradient-to-b from-zinc-900/50 to-[#08080A] border border-zinc-800 p-5 flex flex-col justify-center items-center gap-2 mb-6 shadow-inner text-center">
-                                <div class="w-12 h-12 rounded-xl bg-[#08080A] border border-zinc-700 shadow-md flex items-center justify-center p-2 mb-1">
+                            <div class="h-52 rounded-xl bg-gradient-to-b from-slate-800/50 to-[#0A0F1C] border border-slate-800 p-5 flex flex-col justify-center items-center gap-2 mb-6 shadow-inner text-center">
+                                <div class="w-12 h-12 rounded-xl bg-[#0A0F1C] border border-slate-700 shadow-md flex items-center justify-center p-2 mb-1">
                                     <svg aria-hidden="true" class="w-full h-full flex-shrink-0" viewBox="0 0 92 132" fill="none">
                                         <path fill="#4285F4" d="M46 0C20.6 0 0 20.6 0 46c0 10.6 3.6 20.4 9.7 28.2L46 132l36.3-57.8C88.4 66.4 92 56.6 92 46 92 20.6 71.4 0 46 0z"/>
                                         <path fill="#EA4335" d="M46 0C33.3 0 21.8 5.2 13.5 13.5l17.7 17.7C35.1 27.5 40.3 25 46 25c11.6 0 21 9.4 21 21 0 5.7-2.5 10.9-6.2 14.8l17.7 17.7C84.8 70.2 92 58.7 92 46 92 20.6 71.4 0 46 0z"/>
@@ -237,67 +238,66 @@
                                         <circle cx="46" cy="46" r="14" fill="#FFFFFF"/>
                                     </svg>
                                 </div>
-                                <span class="text-xs font-bold text-[#FAFAFA]">قيّمنا على خرائط Google</span>
-                                <span class="text-[10px] font-semibold text-[#A1A1AA] font-mono">Rate us on Google Maps</span>
-                                <div class="mt-1 flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#111115] border border-zinc-700 text-[10px] font-bold text-[#F4F4F5]">
-                                    <i data-lucide="smartphone" class="w-3 h-3 text-[#F4F4F5]"></i>
+                                <span class="text-xs font-bold text-white">قيّمنا على خرائط Google</span>
+                                <span class="text-[10px] font-semibold text-slate-400 font-mono">Rate us on Google Maps</span>
+                                <div class="mt-1 flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#111827] border border-slate-700 text-[10px] font-bold text-white">
+                                    <i data-lucide="smartphone" class="w-3 h-3 text-white"></i>
                                     <span>المس بهاتفك للتقييم</span>
                                 </div>
                             </div>
 
                             <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-lg font-bold text-[#FAFAFA]">ستاند تقييمات خرائط Google</h3>
-                                <span class="text-xl font-black text-[#FAFAFA]">99 ريال</span>
+                                <h3 class="text-lg font-bold text-white">ستاند تقييمات خرائط Google</h3>
+                                <span class="text-xl font-black text-white">99 ريال</span>
                             </div>
-                            <p class="text-[#A1A1AA] text-sm leading-relaxed font-normal mb-6">
+                            <p class="text-slate-400 text-sm leading-relaxed font-normal mb-6">
                                 ستاند مكتبي تفاعلي يوضع على المكاتب أو الطاولات؛ يوجه العميل بلمسة هاتف مباشرة لصفحة تقييم نشاطك على خرائط Google لزيادة تقييماتك ورفع ثقة العملاء.
                             </p>
                         </div>
 
-                        <div class="pt-4 border-t border-zinc-800/80 flex items-center justify-between">
-                            <span class="text-xs font-semibold text-zinc-500">أكريليك أسود مقاوم للخدش</span>
-                            <a href="#order" class="px-5 py-2 rounded-lg bg-[#FAFAFA] hover:bg-white text-[#08080A] text-xs font-bold transition-all">اطلب الآن</a>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-slate-500">أكريليك مقاوم للخدش</span>
+                            <a href="#order" class="px-5 py-2 rounded-lg bg-white hover:bg-slate-100 text-[#0A0F1C] text-xs font-bold transition-all">اطلب الآن</a>
                         </div>
                     </div>
 
-                    <!-- Bento 3: باقة ستاند نقاط البيع المخصص + الصفحة التعريفية -->
+                    <!-- Bento 3 -->
                     <div class="md:col-span-12 relative group">
                         <div class="absolute -inset-0.5 bg-gradient-to-r from-[#10B981] to-[#3B82F6] rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-                        <div class="relative bg-[#111115] border border-zinc-800/80 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-10 hover:border-[#10B981]/50 transition-all duration-300 overflow-hidden">
+                        <div class="relative bg-[#111827] border border-slate-800/80 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-10 hover:border-[#10B981]/50 transition-all duration-300 overflow-hidden">
                             <div class="md:w-1/2">
                                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#10B981]/10 border border-[#10B981]/20 text-[#10B981] text-xs font-bold mb-4">
                                     <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
                                     <span>الباقة المتكاملة لنقاط البيع والاستقبال</span>
                                 </div>
                                 <div class="flex items-center gap-4 mb-3">
-                                    <h3 class="text-2xl font-bold text-[#FAFAFA]">باقة ستاند نقاط البيع المخصص + الصفحة التعريفية</h3>
-                                    <span class="text-2xl font-black text-[#FAFAFA]">299 ريال</span>
+                                    <h3 class="text-2xl font-bold text-white">باقة ستاند نقاط البيع المخصص</h3>
+                                    <span class="text-2xl font-black text-white">299 ريال</span>
                                 </div>
-                                <p class="text-[#A1A1AA] text-sm leading-relaxed mb-6">
+                                <p class="text-slate-400 text-sm leading-relaxed mb-6">
                                     ستاند أكريليك فاخر مصمم ومطبوع بهوية وشعار علامتك التجارية يوضع عند نقاط البيع أو كاونترات المحاسبة والاستقبال؛ مبرمج للربط المباشر بصفحتك التعريفية الرقمية التي تجمع قنوات التواصل، حسابات السوشال ميديا، والتقييم بلمسة واحدة.
                                 </p>
-                                <ul class="space-y-2.5 text-xs font-semibold text-[#F4F4F5] mb-6">
+                                <ul class="space-y-2.5 text-xs font-semibold text-white mb-6">
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#10B981]"></i> تصميم وطباعة ستاند مخصص بشعار وهوية منشأتك بالكامل</li>
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#10B981]"></i> صفحة رقمية سريعة تضم (الموقع، واتساب، تيك توك، وإنستغرام)</li>
                                     <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#10B981]"></i> إمكانية تحديث بياناتك وحساباتك مستقبلاً مجاناً وفي أي وقت</li>
                                 </ul>
                                 
-                                <!-- توضيح آلية استلام الشعار المطلوبة -->
-                                <div class="p-3.5 rounded-xl bg-[#08080A] border border-emerald-500/30 text-emerald-400 text-xs mb-6 flex items-center gap-2.5 font-medium">
+                                <div class="p-3.5 rounded-xl bg-[#0A0F1C] border border-emerald-500/30 text-emerald-400 text-xs mb-6 flex items-center gap-2.5 font-medium">
                                     <i data-lucide="info" class="w-4 h-4 flex-shrink-0"></i>
                                     <span>ملاحظة: سيتم توجيهك لواتساب لإرفاق شعارك الخاص للطباعة بعد تأكيد الطلب.</span>
                                 </div>
 
-                                <a href="#order" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-[#FAFAFA] hover:bg-white text-[#08080A] text-xs font-bold transition-all shadow-md">
+                                <a href="#order" class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white hover:bg-slate-100 text-[#0A0F1C] text-xs font-bold transition-all shadow-md">
                                     طلب باقة نقاط البيع
                                 </a>
                             </div>
 
                             <div class="md:w-1/2 w-full max-w-sm">
-                                <div class="rounded-2xl bg-[#08080A] border border-zinc-800 p-4 shadow-2xl">
-                                    <div class="flex items-center justify-between pb-3 mb-3 border-b border-zinc-800/80">
+                                <div class="rounded-2xl bg-[#0A0F1C] border border-slate-800 p-4 shadow-2xl">
+                                    <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800/80">
                                         <div class="flex items-center gap-2" dir="ltr">
-                                            <svg aria-hidden="true" class="h-3.5 w-auto text-[#FAFAFA]" viewBox="0 0 135 28" fill="currentColor">
+                                            <svg aria-hidden="true" class="h-3.5 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
                                                 <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
                                                 <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
                                                 <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
@@ -306,46 +306,25 @@
                                                 <rect x="116" y="3.5" width="4.5" height="4.5" />
                                             </svg>
                                         </div>
-                                        <span class="text-[9px] text-[#A1A1AA] font-mono bg-[#111115] border border-zinc-700 px-2 py-0.5 rounded">CUSTOM NFC</span>
+                                        <span class="text-[9px] text-slate-400 font-mono bg-[#111827] border border-slate-700 px-2 py-0.5 rounded">CUSTOM NFC</span>
                                     </div>
 
                                     <div class="space-y-2">
-                                        <div class="h-8 w-full bg-[#111115] border border-zinc-800/80 rounded-lg flex items-center justify-between px-3 text-xs text-[#F4F4F5] font-medium cursor-default hover:bg-zinc-800 transition-colors">
+                                        <div class="h-8 w-full bg-[#111827] border border-slate-800/80 rounded-lg flex items-center justify-between px-3 text-xs text-white font-medium cursor-default hover:bg-slate-800 transition-colors">
                                             <div class="flex items-center gap-2.5">
                                                 <i data-lucide="globe" class="w-3.5 h-3.5 text-[#3B82F6]"></i>
                                                 <span>الموقع الرسمي للمنشأة</span>
                                             </div>
-                                            <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-500"></i>
+                                            <i data-lucide="chevron-left" class="w-3 h-3 text-slate-500"></i>
                                         </div>
-
-                                        <div class="h-8 w-full bg-[#111115] border border-zinc-800/80 rounded-lg flex items-center justify-between px-3 text-xs text-[#F4F4F5] font-medium cursor-default hover:bg-zinc-800 transition-colors">
+                                        <div class="h-8 w-full bg-[#111827] border border-slate-800/80 rounded-lg flex items-center justify-between px-3 text-xs text-white font-medium cursor-default hover:bg-slate-800 transition-colors">
                                             <div class="flex items-center gap-2.5">
                                                 <svg aria-hidden="true" class="w-3.5 h-3.5 text-[#25D366] fill-current" viewBox="0 0 24 24">
                                                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                                                 </svg>
                                                 <span>مراسلتنا عبر الواتساب</span>
                                             </div>
-                                            <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-500"></i>
-                                        </div>
-
-                                        <div class="h-8 w-full bg-[#111115] border border-zinc-800/80 rounded-lg flex items-center justify-between px-3 text-xs text-[#F4F4F5] font-medium cursor-default hover:bg-zinc-800 transition-colors">
-                                            <div class="flex items-center gap-2.5">
-                                                <svg aria-hidden="true" class="w-3.5 h-3.5 text-[#FAFAFA] fill-current flex-shrink-0" viewBox="0 0 24 24">
-                                                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-                                                </svg>
-                                                <span class="font-sys-clean">تابعنا عبر تيك توك</span>
-                                            </div>
-                                            <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-500"></i>
-                                        </div>
-
-                                        <div class="h-8 w-full bg-[#111115] border border-zinc-800/80 rounded-lg flex items-center justify-between px-3 text-xs text-[#F4F4F5] font-medium cursor-default hover:bg-zinc-800 transition-colors">
-                                            <div class="flex items-center gap-2.5">
-                                                <svg aria-hidden="true" class="w-3.5 h-3.5 text-[#E1306C] fill-current" viewBox="0 0 24 24">
-                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                                </svg>
-                                                <span>تابعنا عبر إنستغرام</span>
-                                            </div>
-                                            <i data-lucide="chevron-left" class="w-3 h-3 text-zinc-500"></i>
+                                            <i data-lucide="chevron-left" class="w-3 h-3 text-slate-500"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -357,72 +336,70 @@
         </section>
 
         <!-- Workflow Section -->
-        <section id="workflow" class="py-24 border-b border-zinc-800/70 bg-[#08080A]">
+        <section id="workflow" class="py-24 border-b border-slate-800/70 bg-[#0A0F1C]">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="max-w-xl mb-16">
                     <span class="text-xs font-bold tracking-widest text-[#10B981] uppercase mb-2 block">بساطة الاستخدام</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-[#FAFAFA] mb-3">كيف تعمل التقنية؟</h2>
-                    <p class="text-[#A1A1AA] text-sm leading-relaxed">ثلاث خطوات سريعة تضمن وصول عميلك إلى خدماتك في جزء من الثانية.</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3">كيف تعمل التقنية؟</h2>
+                    <p class="text-slate-400 text-sm leading-relaxed">ثلاث خطوات سريعة تضمن وصول عميلك إلى خدماتك في جزء من الثانية.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="p-8 rounded-2xl bg-[#111115] border border-zinc-800/80 hover:border-zinc-700 hover:-translate-y-1.5 hover:shadow-2xl duration-300 ease-out transition-all">
+                    <div class="p-8 rounded-2xl bg-[#111827] border border-slate-800/80 hover:border-slate-700 hover:-translate-y-1.5 hover:shadow-2xl duration-300 ease-out transition-all">
                         <span class="text-xs font-mono font-bold text-[#10B981] block mb-3">01</span>
-                        <h3 class="text-base font-bold text-[#F4F4F5] mb-2">ملامسة الهاتف</h3>
-                        <p class="text-sm text-[#A1A1AA] leading-relaxed">يقرب العميل هاتفه الذكي من بطاقة الأعمال أو ستاند نقاط البيع على مسافة 2-3 سم.</p>
+                        <h3 class="text-base font-bold text-white mb-2">ملامسة الهاتف</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">يقرب العميل هاتفه الذكي من بطاقة الأعمال أو ستاند نقاط البيع على مسافة 2-3 سم.</p>
                     </div>
-                    <div class="p-8 rounded-2xl bg-[#111115] border border-zinc-800/80 hover:border-zinc-700 hover:-translate-y-1.5 hover:shadow-2xl duration-300 ease-out transition-all">
+                    <div class="p-8 rounded-2xl bg-[#111827] border border-slate-800/80 hover:border-slate-700 hover:-translate-y-1.5 hover:shadow-2xl duration-300 ease-out transition-all">
                         <span class="text-xs font-mono font-bold text-[#10B981] block mb-3">02</span>
-                        <h3 class="text-base font-bold text-[#F4F4F5] mb-2">استجابة فورية</h3>
-                        <p class="text-sm text-[#A1A1AA] leading-relaxed">ينبثق إشعار مباشر في هاتف العميل لنقله إلى وجهتك أو فتح صفحة التقييم تلقائياً.</p>
+                        <h3 class="text-base font-bold text-white mb-2">استجابة فورية</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">ينبثق إشعار مباشر في هاتف العميل لنقله إلى وجهتك أو فتح صفحة التقييم تلقائياً.</p>
                     </div>
-                    <div class="p-8 rounded-2xl bg-[#111115] border border-zinc-800/80 hover:border-zinc-700 hover:-translate-y-1.5 hover:shadow-2xl duration-300 ease-out transition-all">
+                    <div class="p-8 rounded-2xl bg-[#111827] border border-slate-800/80 hover:border-slate-700 hover:-translate-y-1.5 hover:shadow-2xl duration-300 ease-out transition-all">
                         <span class="text-xs font-mono font-bold text-[#10B981] block mb-3">03</span>
-                        <h3 class="text-base font-bold text-[#F4F4F5] mb-2">التفاعل المباشر</h3>
-                        <p class="text-sm text-[#A1A1AA] leading-relaxed">حفظ جهة الاتصال، تقييم المنشأة بـ 5 نجوم، أو متابعة حسابات السوشال ميديا فوراً.</p>
+                        <h3 class="text-base font-bold text-white mb-2">التفاعل المباشر</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">حفظ جهة الاتصال، تقييم المنشأة بـ 5 نجوم، أو متابعة حسابات السوشال ميديا فوراً.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials Section (آراء شركاء النجاح) -->
-        <section id="testimonials" class="py-24 border-b border-zinc-800/70 bg-[#0B0B0E]/40">
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-24 border-b border-slate-800/70 bg-[#070A13]">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="text-center mb-16">
                     <span class="text-xs font-bold tracking-widest text-[#10B981] uppercase mb-2 block">شركاء النجاح</span>
-                    <h2 class="text-3xl font-bold text-[#FAFAFA]">ماذا يقول أصحاب المتاجر عن AVENi؟</h2>
+                    <h2 class="text-3xl font-bold text-white">ماذا يقول أصحاب المتاجر عن AVENi؟</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="p-6 rounded-2xl bg-[#111115] border border-zinc-800/80 flex flex-col justify-between">
-                        <p class="text-xs text-[#A1A1AA] leading-relaxed mb-6">"ستاندات تقييم خرائط Google ساهمت بشكل ملحوظ في زيادة تقييمات متجرنا وترشيحنا للعملاء الجدد بكل سهولة."</p>
-                        <div class="flex items-center gap-3 pt-4 border-t border-zinc-800/60">
-                            <div class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center font-bold text-xs text-white">م</div>
+                    <div class="p-6 rounded-2xl bg-[#111827] border border-slate-800/80 flex flex-col justify-between">
+                        <p class="text-xs text-slate-400 leading-relaxed mb-6">"ستاندات تقييم خرائط Google ساهمت بشكل ملحوظ في زيادة تقييمات متجرنا وترشيحنا للعملاء الجدد بكل سهولة."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-800/60">
+                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center font-bold text-xs text-white">م</div>
                             <div>
-                                <span class="text-xs font-bold text-[#F4F4F5] block">مشاري العتيبي</span>
-                                <span class="text-[10px] text-zinc-500">إدارة مقهى مختص</span>
+                                <span class="text-xs font-bold text-white block">مشاري العتيبي</span>
+                                <span class="text-[10px] text-slate-500">إدارة مقهى مختص</span>
                             </div>
                         </div>
                     </div>
-
-                    <div class="p-6 rounded-2xl bg-[#111115] border border-zinc-800/80 flex flex-col justify-between">
-                        <p class="text-xs text-[#A1A1AA] leading-relaxed mb-6">"بطاقة الأعمال الذكية أحدثت انطباعاً أولياً مذهلاً مع العملاء والشركات. فكرة عملية وأنيقة جداً."</p>
-                        <div class="flex items-center gap-3 pt-4 border-t border-zinc-800/60">
-                            <div class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center font-bold text-xs text-white">ر</div>
+                    <div class="p-6 rounded-2xl bg-[#111827] border border-slate-800/80 flex flex-col justify-between">
+                        <p class="text-xs text-slate-400 leading-relaxed mb-6">"بطاقة الأعمال الذكية أحدثت انطباعاً أولياً مذهلاً مع العملاء والشركات. فكرة عملية وأنيقة جداً."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-800/60">
+                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center font-bold text-xs text-white">ر</div>
                             <div>
-                                <span class="text-xs font-bold text-[#F4F4F5] block">رائد الشمري</span>
-                                <span class="text-[10px] text-zinc-500">مسؤول مبيعات عقارية</span>
+                                <span class="text-xs font-bold text-white block">رائد الشمري</span>
+                                <span class="text-[10px] text-slate-500">مسؤول مبيعات عقارية</span>
                             </div>
                         </div>
                     </div>
-
-                    <div class="p-6 rounded-2xl bg-[#111115] border border-zinc-800/80 flex flex-col justify-between">
-                        <p class="text-xs text-[#A1A1AA] leading-relaxed mb-6">"باقة نقاط البيع جمعت كل قنواتنا في مكان واحد. الدعم والتجهيز كان سريعاً واحترافياً للغاية."</p>
-                        <div class="flex items-center gap-3 pt-4 border-t border-zinc-800/60">
-                            <div class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center font-bold text-xs text-white">س</div>
+                    <div class="p-6 rounded-2xl bg-[#111827] border border-slate-800/80 flex flex-col justify-between">
+                        <p class="text-xs text-slate-400 leading-relaxed mb-6">"باقة نقاط البيع جمعت كل قنواتنا في مكان واحد. الدعم والتجهيز كان سريعاً واحترافياً للغاية."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-slate-800/60">
+                            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center font-bold text-xs text-white">س</div>
                             <div>
-                                <span class="text-xs font-bold text-[#F4F4F5] block">سارة القحطاني</span>
-                                <span class="text-[10px] text-zinc-500">صاحبة متجر عطور</span>
+                                <span class="text-xs font-bold text-white block">سارة القحطاني</span>
+                                <span class="text-[10px] text-slate-500">صاحبة متجر عطور</span>
                             </div>
                         </div>
                     </div>
@@ -431,40 +408,38 @@
         </section>
 
         <!-- FAQ Section -->
-        <section id="faq" class="py-24 border-b border-zinc-800/70">
+        <section id="faq" class="py-24 border-b border-slate-800/70">
             <div class="max-w-4xl mx-auto px-6">
                 <div class="text-center mb-16">
                     <span class="text-xs font-bold tracking-widest text-[#3B82F6] uppercase mb-2 block">الأسئلة المتكررة</span>
-                    <h2 class="text-3xl font-bold text-[#FAFAFA]">إجابات على كل ما يهمك</h2>
+                    <h2 class="text-3xl font-bold text-white">إجابات على كل ما يهمك</h2>
                 </div>
 
                 <div class="space-y-4">
-                    <details class="group bg-[#111115] border border-zinc-800/80 rounded-xl p-5 cursor-pointer hover:border-zinc-700 transition-colors">
-                        <summary class="flex justify-between items-center font-bold text-sm text-[#F4F4F5]">
+                    <details class="group bg-[#111827] border border-slate-800/80 rounded-xl p-5 cursor-pointer hover:border-slate-700 transition-colors">
+                        <summary class="flex justify-between items-center font-bold text-sm text-white">
                             <span>هل يحتاج العميل لتحميل تطبيق ليعمل معه الكرت أو الستاند؟</span>
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-500 transition-transform group-open:rotate-180"></i>
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 transition-transform group-open:rotate-180"></i>
                         </summary>
-                        <p class="text-xs text-[#A1A1AA] leading-relaxed mt-3 pt-3 border-t border-zinc-800/80">
+                        <p class="text-xs text-slate-400 leading-relaxed mt-3 pt-3 border-t border-slate-800/80">
                             نهائياً؛ تقنية NFC مدمجة تلقائياً في جميع هواتف iPhone والأجهزة العاملة بنظام Android الحديثة وتعمل بمجرد الملامسة.
                         </p>
                     </details>
-
-                    <details class="group bg-[#111115] border border-zinc-800/80 rounded-xl p-5 cursor-pointer hover:border-zinc-700 transition-colors">
-                        <summary class="flex justify-between items-center font-bold text-sm text-[#F4F4F5]">
+                    <details class="group bg-[#111827] border border-slate-800/80 rounded-xl p-5 cursor-pointer hover:border-slate-700 transition-colors">
+                        <summary class="flex justify-between items-center font-bold text-sm text-white">
                             <span>هل توجد أي رسوم أو اشتراكات شهرية؟</span>
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-500 transition-transform group-open:rotate-180"></i>
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 transition-transform group-open:rotate-180"></i>
                         </summary>
-                        <p class="text-xs text-[#A1A1AA] leading-relaxed mt-3 pt-3 border-t border-zinc-800/80">
+                        <p class="text-xs text-slate-400 leading-relaxed mt-3 pt-3 border-t border-slate-800/80">
                             لا توجد أي اشتراكات؛ الدفع لمرة واحدة فقط عند شراء المنتج مع برمجة الشريحة والملف الرقمي مجاناً مدى الحياة.
                         </p>
                     </details>
-
-                    <details class="group bg-[#111115] border border-zinc-800/80 rounded-xl p-5 cursor-pointer hover:border-zinc-700 transition-colors">
-                        <summary class="flex justify-between items-center font-bold text-sm text-[#F4F4F5]">
+                    <details class="group bg-[#111827] border border-slate-800/80 rounded-xl p-5 cursor-pointer hover:border-slate-700 transition-colors">
+                        <summary class="flex justify-between items-center font-bold text-sm text-white">
                             <span>هل يمكنني تعديل حساباتي وروابطي لاحقاً بعد استلام الستاند؟</span>
-                            <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-500 transition-transform group-open:rotate-180"></i>
+                            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-500 transition-transform group-open:rotate-180"></i>
                         </summary>
-                        <p class="text-xs text-[#A1A1AA] leading-relaxed mt-3 pt-3 border-t border-zinc-800/80">
+                        <p class="text-xs text-slate-400 leading-relaxed mt-3 pt-3 border-t border-slate-800/80">
                             نعم بكل تأكيد، صفحتك التعريفية سحابية ويمكنك تحديث كافة الحسابات والبيانات في أي وقت دون الحاجة لتغيير الستاند نفسه.
                         </p>
                     </details>
@@ -475,32 +450,32 @@
         <!-- Order Form Section -->
         <section id="order" class="py-24">
             <div class="max-w-lg mx-auto px-6">
-                <div class="bg-[#111115] border border-zinc-800/80 rounded-2xl p-8 shadow-2xl">
+                <div class="bg-[#111827] border border-slate-800/80 rounded-2xl p-8 shadow-2xl">
                     <div class="mb-6">
                         <span class="text-xs font-bold tracking-widest text-[#10B981] uppercase mb-1 block">تأكيد الطلب</span>
-                        <h2 class="text-2xl font-bold text-[#FAFAFA] mb-1">طلب منتج أو استفسار</h2>
-                        <p class="text-[#A1A1AA] text-xs">أدخل بياناتك وسيتم توجيهك مباشرة لمحادثة الواتساب لإكمال تفاصيل الهوية وتأكيد التجهيز.</p>
+                        <h2 class="text-2xl font-bold text-white mb-1">طلب منتج أو استفسار</h2>
+                        <p class="text-slate-400 text-xs">أدخل بياناتك وسيتم توجيهك مباشرة لمحادثة الواتساب لإكمال تفاصيل الهوية وتأكيد التجهيز.</p>
                     </div>
 
                     <form id="orderForm" class="space-y-4">
                         <div>
-                            <label for="custName" class="block text-xs font-semibold text-[#A1A1AA] mb-1.5 cursor-pointer hover:text-[#F4F4F5] transition-colors">الاسم أو المنشأة</label>
-                            <input type="text" id="custName" required placeholder="مثال: شركة الحلول المتقدمة" class="w-full px-4 py-3 rounded-xl border border-zinc-800 bg-[#08080A] text-[#F4F4F5] text-sm focus:outline-none focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all">
+                            <label for="custName" class="block text-xs font-semibold text-slate-400 mb-1.5 cursor-pointer hover:text-white transition-colors">الاسم أو المنشأة</label>
+                            <input type="text" id="custName" required placeholder="مثال: شركة الحلول المتقدمة" class="w-full px-4 py-3 rounded-xl border border-slate-800 bg-[#0A0F1C] text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all">
                         </div>
                         <div>
-                            <label for="custPhone" class="block text-xs font-semibold text-[#A1A1AA] mb-1.5 cursor-pointer hover:text-[#F4F4F5] transition-colors">رقم الواتساب للتواصل</label>
-                            <input type="tel" id="custPhone" required placeholder="05xxxxxxxx" class="w-full px-4 py-3 rounded-xl border border-zinc-800 bg-[#08080A] text-[#F4F4F5] text-sm focus:outline-none focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all" dir="ltr">
+                            <label for="custPhone" class="block text-xs font-semibold text-slate-400 mb-1.5 cursor-pointer hover:text-white transition-colors">رقم الواتساب للتواصل</label>
+                            <input type="tel" id="custPhone" required placeholder="05xxxxxxxx" class="w-full px-4 py-3 rounded-xl border border-slate-800 bg-[#0A0F1C] text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all" dir="ltr">
                         </div>
                         <div>
-                            <label for="prodType" class="block text-xs font-semibold text-[#A1A1AA] mb-1.5 cursor-pointer hover:text-[#F4F4F5] transition-colors">المنتج أو الباقة المطلوبة</label>
-                            <select id="prodType" class="w-full px-4 py-3 rounded-xl border border-zinc-800 bg-[#08080A] text-[#F4F4F5] text-sm focus:outline-none focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all">
+                            <label for="prodType" class="block text-xs font-semibold text-slate-400 mb-1.5 cursor-pointer hover:text-white transition-colors">المنتج أو الباقة المطلوبة</label>
+                            <select id="prodType" class="w-full px-4 py-3 rounded-xl border border-slate-800 bg-[#0A0F1C] text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#10B981] focus:border-transparent transition-all">
                                 <option value="بطاقة الأعمال الذكية (49 ريال)">بطاقة الأعمال الذكية (49 ريال)</option>
                                 <option value="ستاند تقييمات خرائط Google (99 ريال)">ستاند تقييمات خرائط Google (99 ريال)</option>
-                                <option value="باقة ستاند نقاط البيع المخصص + الصفحة التعريفية (299 ريال)">باقة ستاند نقاط البيع المخصص + الصفحة التعريفية (299 ريال)</option>
+                                <option value="باقة ستاند نقاط البيع المخصص (299 ريال)">باقة ستاند نقاط البيع المخصص (299 ريال)</option>
                             </select>
                         </div>
 
-                        <button type="submit" class="w-full py-3.5 rounded-xl font-bold bg-[#FAFAFA] hover:bg-white text-[#08080A] text-sm shadow-[0_4px_14px_0_rgba(250,250,250,0.1)] transition-all mt-2 active:scale-95">
+                        <button type="submit" class="w-full py-3.5 rounded-xl font-bold bg-white hover:bg-slate-100 text-[#0A0F1C] text-sm shadow-[0_4px_14px_0_rgba(255,255,255,0.1)] transition-all mt-2 active:scale-95">
                             إرسال الطلب عبر واتساب
                         </button>
                     </form>
@@ -509,25 +484,25 @@
         </section>
     </main>
 
-    <!-- Success Modal (نافذة منبثقة تفاعلية للنجاح) -->
+    <!-- Success Modal -->
     <div id="successModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-        <div class="bg-[#111115] border border-zinc-800 rounded-2xl p-6 max-w-sm w-full text-center shadow-2xl relative animate-in fade-in zoom-in duration-200">
+        <div class="bg-[#111827] border border-slate-800 rounded-2xl p-6 max-w-sm w-full text-center shadow-2xl relative animate-in fade-in zoom-in duration-200">
             <div class="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4">
                 <i data-lucide="check" class="w-6 h-6"></i>
             </div>
             <h3 class="text-lg font-bold text-white mb-2">تم تجهيز طلبك بنجاح!</h3>
-            <p class="text-xs text-[#A1A1AA] leading-relaxed mb-6">جاري تحويلك الآن لمحادثة الواتساب لإكمال تفاصيل الهوية وتأكيد الطلب مع فريق AVENi.</p>
-            <button id="closeModal" class="w-full py-2.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold transition-all">
+            <p class="text-xs text-slate-400 leading-relaxed mb-6">جاري تحويلك الآن لمحادثة الواتساب لإكمال تفاصيل الهوية وتأكيد الطلب مع فريق AVENi.</p>
+            <button id="closeModal" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold transition-all">
                 حسناً، الانتقال للواتساب
             </button>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="py-8 bg-[#08080A] border-t border-zinc-800/60">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#A1A1AA] font-medium">
+    <footer class="py-8 bg-[#0A0F1C] border-t border-slate-800/60">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400 font-medium">
             <div dir="ltr" class="flex items-center">
-                <svg aria-hidden="true" class="h-5 w-auto text-[#FAFAFA]" viewBox="0 0 135 28" fill="currentColor">
+                <svg aria-hidden="true" class="h-5 w-auto text-white" viewBox="0 0 135 28" fill="currentColor">
                     <polygon points="11,4 22,25 17.5,25 11,11 4.5,25 0,25" />
                     <polygon points="31,4 35.5,4 42,18 48.5,4 53,4 42,25" />
                     <path d="M62,4 H78 V7.5 H66 V12.5 H76 V16 H66 V21.5 H78 V25 H62 Z" />
@@ -540,13 +515,13 @@
         </div>
     </footer>
 
-    <!-- شريط الطلب السريع العائم للهواتف الذكية -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 p-3 bg-[#08080A]/95 backdrop-blur-md border-t border-zinc-800/80 z-40 flex items-center justify-between gap-4">
+    <!-- شريط الطلب السريع للهواتف -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 p-3 bg-[#0A0F1C]/95 backdrop-blur-md border-t border-slate-800/80 z-40 flex items-center justify-between gap-4">
         <div>
-            <span class="text-[10px] text-[#A1A1AA] block">تبدأ الأسعار من</span>
-            <span class="text-sm font-bold text-[#FAFAFA]">49 ريال</span>
+            <span class="text-[10px] text-slate-400 block">تبدأ الأسعار من</span>
+            <span class="text-sm font-bold text-white">49 ريال</span>
         </div>
-        <a href="#order" class="flex-1 text-center py-2.5 rounded-xl bg-[#FAFAFA] text-[#08080A] font-bold text-xs active:scale-95 transition-transform shadow-md">
+        <a href="#order" class="flex-1 text-center py-2.5 rounded-xl bg-white text-[#0A0F1C] font-bold text-xs active:scale-95 transition-transform shadow-md">
             اطلب الآن
         </a>
     </div>
@@ -554,7 +529,6 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             lucide.createIcons();
-
             const orderForm = document.getElementById('orderForm');
             const successModal = document.getElementById('successModal');
             const closeModal = document.getElementById('closeModal');
@@ -564,27 +538,20 @@
                 e.preventDefault();
                 const name = document.getElementById('custName').value.trim();
                 const phone = document.getElementById('custPhone').value.trim();
-                
                 const phoneRegex = /^05\d{8}$/;
                 if (!phoneRegex.test(phone)) {
                     alert('يرجى إدخال رقم هاتف صحيح يبدأ بـ 05 ويتكون من 10 أرقام.');
                     return;
                 }
-
                 const product = document.getElementById('prodType').value;
                 const text = `مرحباً AVENi،\nأود تأكيد طلب جديد:\n• المنتج: ${product}\n• الاسم/المنشأة: ${name}\n• رقم تواصل العميل: ${phone}`;
-                
-                // استبدل 966500000000 برقمك الفعلي عند الإطلاق
                 pendingUrl = `https://wa.me/966500000000?text=${encodeURIComponent(text)}`;
-                
                 successModal.classList.remove('hidden');
             });
 
             closeModal.addEventListener('click', function() {
                 successModal.classList.add('hidden');
-                if (pendingUrl) {
-                    window.open(pendingUrl, '_blank');
-                }
+                if (pendingUrl) window.open(pendingUrl, '_blank');
             });
         });
     </script>
