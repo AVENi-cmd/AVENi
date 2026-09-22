@@ -26,8 +26,8 @@
     .bg-modern-light {
       background-color: #F8FAFC;
       background-image: 
-        radial-gradient(circle at 10% 10%, rgba(16, 185, 129, 0.07) 0%, transparent 45%),
-        radial-gradient(circle at 90% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 10% 10%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 90% 20%, rgba(59, 130, 246, 0.06) 0%, transparent 40%),
         radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
     }
     .product-card {
@@ -60,17 +60,68 @@
     .product-card:hover .product-photo-wrap img {
       transform: scale(1.06);
     }
-    /* محاكي الجوال */
-    .mockup-phone {
-      border: 8px solid #0F172A;
-      box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.25);
+
+    /* مجسم الهاتف الواقعي Realistic iPhone Titanium Frame */
+    .iphone-realistic {
+      width: 300px;
+      height: 590px;
+      background: #1C1917;
+      border-radius: 50px;
+      padding: 10px;
+      position: relative;
+      box-shadow: 
+        0 0 0 2px #44403C,
+        0 0 0 5px #1C1917,
+        0 25px 60px -15px rgba(0, 0, 0, 0.35),
+        inset 0 0 10px rgba(255, 255, 255, 0.2);
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
-    @keyframes pulseSoft {
-      0%, 100% { transform: scale(1); opacity: 0.9; }
-      50% { transform: scale(1.08); opacity: 0.4; }
+    .iphone-screen {
+      width: 100%;
+      height: 100%;
+      background: #FFFFFF;
+      border-radius: 40px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border: 2px solid #000;
     }
-    .nfc-wave {
-      animation: pulseSoft 2s infinite ease-in-out;
+    /* Dynamic Island */
+    .dynamic-island {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 88px;
+      height: 24px;
+      background: #000000;
+      border-radius: 20px;
+      z-index: 50;
+      transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px;
+      color: #fff;
+    }
+    .dynamic-island.expanded {
+      width: 240px;
+      height: 56px;
+      border-radius: 28px;
+      padding: 8px 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    /* حركة الاقتراب والاهتزاز للمحاكاة */
+    .iphone-realistic.tapped {
+      transform: translateY(-20px) scale(1.02);
+    }
+    @keyframes ripple {
+      0% { transform: scale(0.8); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+    .nfc-signal-wave {
+      animation: ripple 1.6s infinite ease-out;
     }
   </style>
 </head>
@@ -95,7 +146,7 @@
       
       <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
         <a href="#products" class="hover:text-emerald-600 transition-colors">المنتجات الذكية</a>
-        <a href="#simulator" class="hover:text-emerald-600 transition-colors">جرّب التقنية</a>
+        <a href="#simulator" class="hover:text-emerald-600 transition-colors">جرّب التقنية مباشرة</a>
         <a href="#calculator" class="hover:text-emerald-600 transition-colors">حاسبة التقييمات</a>
         <a href="#bundles" class="hover:text-emerald-600 transition-colors">باقات الكميات</a>
         <a href="#faq" class="hover:text-emerald-600 transition-colors">الأسئلة الشائعة</a>
@@ -114,7 +165,7 @@
   <!-- Mobile Nav Menu -->
   <nav id="mobileMenu" class="fixed inset-0 top-20 z-40 hidden bg-white/98 backdrop-blur-2xl flex-col items-center justify-center gap-7 px-6 text-center border-t border-slate-200">
     <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#products">المنتجات الذكية</a>
-    <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#simulator">جرّب التقنية</a>
+    <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#simulator">جرّب التقنية مباشرة</a>
     <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#calculator">حاسبة التقييمات</a>
     <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#bundles">باقات الكميات</a>
     <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#faq">الأسئلة الشائعة</a>
@@ -147,7 +198,7 @@
             <i class="fa-brands fa-whatsapp text-lg ml-2"></i> اطلب الآن عبر الواتساب
           </a>
           <a href="#simulator" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white border border-slate-300 font-bold text-sm text-slate-700 hover:border-emerald-600 hover:text-emerald-600 transition-all shadow-sm">
-            <i class="fa-solid fa-play ml-1.5 text-xs text-emerald-600"></i> جرّب التفاعل المباشر
+            <i class="fa-solid fa-play ml-1.5 text-xs text-emerald-600"></i> جرّب تجربة النقر الحقيقية
           </a>
         </div>
 
@@ -169,6 +220,150 @@
             <i class="fa-solid fa-arrows-rotate text-emerald-600 text-sm"></i>
             <span>تحديث الرابط مستقبلاً</span>
           </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- محاكي تجربة النقر الواقعي عالي الدقة (Realistic Phone Tap Simulator) -->
+    <section id="simulator" class="py-20 border-b border-slate-200/80 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="text-center mb-14">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold mb-2">
+            <i class="fa-solid fa-circle-play text-xs text-emerald-600"></i> لايف ديمو تفاعلي
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900">جرّب ملامسة الهاتف للستاند بنفسك</h2>
+          <p class="text-sm text-slate-500 mt-2 max-w-md mx-auto">شاهد التجربة الحقيقية التي سيعيشها زبونك عند الكاشير بملامسة واحدة</p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-center bg-slate-50 border border-slate-200 rounded-[36px] p-6 sm:p-12 relative overflow-hidden">
+          
+          <!-- التحكم والخطوات -->
+          <div class="lg:col-span-6 space-y-6">
+            <h3 class="text-2xl font-black text-slate-900 leading-snug">
+              كيف يتحول العميل إلى تقييم 5 نجوم في ثانيتين فقط؟
+            </h3>
+            
+            <div class="space-y-4 text-sm text-slate-600">
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span>
+                <p>يقرّب العميل هاتفه من شعار NFC الموجود في الستاند.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span>
+                <p>تستشعر الجزيرة التفاعلية (Dynamic Island) الرقاقة فوراً بدون كاميرا وبدون أي برنامج.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
+                <p>تفتح صفحة تقييم Google مباشرة ويضع العميل الـ 5 نجوم بكل بساطة.</p>
+              </div>
+            </div>
+
+            <div class="pt-3">
+              <button id="realTapTrigger" type="button" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm shadow-xl shadow-emerald-600/30 flex items-center justify-center gap-3 transition-transform active:scale-95">
+                <i class="fa-solid fa-hand-pointer text-lg"></i>
+                <span>انقر هنا لمحاكاة تقريب الهاتف الآن</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- مساحة العرض التفاعلية: الستاند والهاتف الحقيقي -->
+          <div class="lg:col-span-6 flex flex-col sm:flex-row items-center justify-center gap-6 relative">
+            
+            <!-- مجسم الستاند الذكي -->
+            <div class="w-44 h-60 bg-gradient-to-b from-white to-slate-100 border-2 border-slate-300 rounded-2xl shadow-xl flex flex-col items-center justify-between p-4 relative shrink-0">
+              <div class="w-12 h-1 bg-slate-300 rounded-full"></div>
+              
+              <!-- منطقة استشعار NFC -->
+              <div class="relative flex items-center justify-center my-auto">
+                <div class="absolute w-20 h-20 rounded-full bg-emerald-400/20 nfc-signal-wave pointer-events-none"></div>
+                <div class="w-14 h-14 rounded-full bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-md z-10">
+                  <i class="fa-solid fa-nfc-symbol"></i>
+                </div>
+              </div>
+
+              <div class="text-center w-full">
+                <div class="text-[11px] font-black text-slate-800">قيّمنا على Google</div>
+                <div class="flex justify-center text-amber-400 text-xs gap-0.5 mt-0.5">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <div class="text-[9px] text-slate-400 font-semibold mt-1">المس بالهاتف هنا</div>
+              </div>
+            </div>
+
+            <!-- مجسم هاتف iPhone التيتانيوم -->
+            <div id="simPhone" class="iphone-realistic">
+              <div class="iphone-screen">
+                
+                <!-- الجزيرة التفاعلية Dynamic Island -->
+                <div id="simIsland" class="dynamic-island">
+                  <div class="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-800 shrink-0"></div>
+                  <div id="islandContent" class="hidden items-center justify-between w-full text-xs font-bold text-white px-2">
+                    <span class="flex items-center gap-1.5 text-emerald-400 text-[11px]">
+                      <i class="fa-solid fa-nfc-symbol"></i>
+                      <span>Google Reviews</span>
+                    </span>
+                    <span class="text-[10px] text-slate-300 font-normal">تم التعرف</span>
+                  </div>
+                  <div class="w-2 h-2 rounded-full bg-blue-500/80 shrink-0"></div>
+                </div>
+
+                <!-- محتوى الشاشة: صفحة تقييم Google Maps الواقعية -->
+                <div class="pt-14 px-4 flex-1 flex flex-col justify-between pb-6 text-slate-900 select-none">
+                  
+                  <!-- شريط المتصفح العلوي -->
+                  <div class="bg-slate-100 rounded-xl px-3 py-1.5 flex items-center justify-between text-[10px] text-slate-500">
+                    <span class="flex items-center gap-1"><i class="fa-solid fa-lock text-[8px] text-emerald-600"></i> google.com/maps</span>
+                    <i class="fa-solid fa-rotate-right text-[9px]"></i>
+                  </div>
+
+                  <!-- كارت الفرع والتقييم داخل خرائط Google -->
+                  <div id="gMapContent" class="opacity-0 transition-opacity duration-700 my-auto text-center">
+                    
+                    <div class="w-14 h-14 bg-emerald-50 rounded-2xl mx-auto flex items-center justify-center text-emerald-600 text-2xl shadow-sm mb-3 border border-emerald-100">
+                      <i class="fa-solid fa-store"></i>
+                    </div>
+
+                    <h4 class="font-black text-sm text-slate-900">كافيه & متجر AVENi</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">فرع الأحساء · نقاط البيع</p>
+
+                    <!-- النجوم الـ 5 المضيئة -->
+                    <div class="flex justify-center gap-1.5 text-xl text-amber-400 my-3">
+                      <i class="fa-solid fa-star hover:scale-125 transition-transform cursor-pointer"></i>
+                      <i class="fa-solid fa-star hover:scale-125 transition-transform cursor-pointer"></i>
+                      <i class="fa-solid fa-star hover:scale-125 transition-transform cursor-pointer"></i>
+                      <i class="fa-solid fa-star hover:scale-125 transition-transform cursor-pointer"></i>
+                      <i class="fa-solid fa-star hover:scale-125 transition-transform cursor-pointer"></i>
+                    </div>
+
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-[11px] text-slate-600 text-right">
+                      شارك رأيك وتجربتك للفرع...
+                    </div>
+
+                    <div class="mt-3.5 w-full py-2 rounded-xl bg-blue-600 text-white font-bold text-xs shadow-md">
+                      نشر التقييم على Google
+                    </div>
+                  </div>
+
+                  <!-- حالة الاستعداد الافتراضية قبل النقر -->
+                  <div id="standbyText" class="my-auto text-center">
+                    <div class="w-12 h-12 rounded-full bg-slate-100 mx-auto flex items-center justify-center text-slate-400 mb-2">
+                      <i class="fa-solid fa-rss text-xl"></i>
+                    </div>
+                    <div class="text-xs font-bold text-slate-700">قارئ الـ NFC نشط</div>
+                    <div class="text-[10px] text-slate-400 mt-1">اضغط على زر المحاكاة لبدء النقر</div>
+                  </div>
+
+                  <!-- مؤشر العودة السفلي -->
+                  <div class="w-24 h-1 bg-slate-900 rounded-full mx-auto"></div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
         </div>
 
       </div>
@@ -258,65 +453,6 @@
               </button>
             </div>
           </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- محاكي تجربة النقر التفاعلي (Interactive NFC Simulator) -->
-    <section id="simulator" class="py-20 border-b border-slate-200/80 bg-white">
-      <div class="max-w-5xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          
-          <div>
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold mb-4">
-              <i class="fa-solid fa-hand-pointer text-xs"></i> تجربة تفاعلية مباشرة
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight mb-4">
-              كيف يرى عميلك التجربة عند ملامسة الستاند؟
-            </h2>
-            <p class="text-slate-600 text-sm leading-relaxed mb-8">
-              اضغط على زر المحاكاة وشاهد كيف ينبثق إشعار تقييم Google على هاتف العميل في أجزاء من الثانية دون أن يفتح الكاميرا أو يحمل أي تطبيق.
-            </p>
-            
-            <button id="tapSimulateBtn" type="button" class="px-7 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg shadow-emerald-600/25 flex items-center gap-3 transition">
-              <i class="fa-solid fa-satellite-dish text-lg nfc-wave"></i>
-              <span>اضغط هنا لمحاكاة ملامسة هاتف العميل</span>
-            </button>
-          </div>
-
-          <!-- الهاتف المحاكي -->
-          <div class="flex justify-center">
-            <div class="mockup-phone w-[280px] h-[480px] bg-slate-900 rounded-[44px] p-3 flex flex-col justify-between relative overflow-hidden">
-              
-              <!-- نوتش الآيفون -->
-              <div class="w-28 h-5 bg-black rounded-full mx-auto mb-2"></div>
-              
-              <!-- إشعار NFC المنبثق التفاعلي -->
-              <div id="simNotification" class="transition-all duration-500 opacity-0 translate-y-[-20px] bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-xl border border-slate-200">
-                <div class="flex items-center gap-2.5">
-                  <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-xs">
-                    <i class="fa-solid fa-nfc-symbol text-base"></i>
-                  </div>
-                  <div>
-                    <div class="text-[11px] font-bold text-slate-800">علامة NFC الذكية</div>
-                    <div class="text-[10px] text-slate-500">تم التعرف على مجمع / متجر AVENi</div>
-                  </div>
-                </div>
-                <div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-emerald-600">
-                  <span>فتح صفحة تقييم 5 نجوم على Google</span>
-                  <i class="fa-solid fa-arrow-left text-[10px]"></i>
-                </div>
-              </div>
-
-              <!-- شاشة الهاتف السفلية -->
-              <div class="text-center pb-4">
-                <div class="text-[11px] text-slate-400 font-medium">جاهز لاستشعار هواتف العملاء</div>
-                <div class="w-24 h-1 bg-slate-700 rounded-full mx-auto mt-2"></div>
-              </div>
-
-            </div>
-          </div>
 
         </div>
       </div>
@@ -498,7 +634,7 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- JavaScript -->
+  <!-- JavaScript التفاعلي للمحاكاة والوظائف -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('orderForm');
@@ -507,6 +643,46 @@
       const sel = document.getElementById('prodType');
       const menuBtn = document.getElementById('mobileMenuBtn');
       const menu = document.getElementById('mobileMenu');
+
+      // تفاعل محاكي الآيفون الواقعي (Dynamic Island Tap)
+      const realTapBtn = document.getElementById('realTapTrigger');
+      const simPhone = document.getElementById('simPhone');
+      const simIsland = document.getElementById('simIsland');
+      const islandContent = document.getElementById('islandContent');
+      const gMapContent = document.getElementById('gMapContent');
+      const standbyText = document.getElementById('standbyText');
+
+      if (realTapBtn) {
+        realTapBtn.addEventListener('click', () => {
+          // اهتزاز الجوال الحقيقي إذا كان مدعوماً
+          if (navigator.vibrate) navigator.vibrate([40, 60, 40]);
+
+          // 1. حركة اقتراب الهاتف
+          simPhone.classList.add('tapped');
+          
+          // 2. تمدد الـ Dynamic Island
+          setTimeout(() => {
+            simIsland.classList.add('expanded');
+            islandContent.classList.remove('hidden');
+            islandContent.classList.add('flex');
+          }, 300);
+
+          // 3. فتح شاشة تقييم Google
+          setTimeout(() => {
+            standbyText.classList.add('hidden');
+            gMapContent.classList.remove('opacity-0');
+            gMapContent.classList.add('opacity-100');
+          }, 700);
+
+          // 4. استقرار الجزيرة التفاعلية
+          setTimeout(() => {
+            simIsland.classList.remove('expanded');
+            islandContent.classList.add('hidden');
+            islandContent.classList.remove('flex');
+            simPhone.classList.remove('tapped');
+          }, 2200);
+        });
+      }
 
       // حاسبة التقييمات التفاعلية
       const visitorsInput = document.getElementById('visitorsInput');
@@ -517,23 +693,8 @@
         visitorsInput.addEventListener('input', (e) => {
           const val = parseInt(e.target.value, 10);
           visitorsVal.innerText = val;
-          // نسبة تقديرية واقعية: 4% من الزوار يقيمون عند وجود الستاند بالكاشير
           const estimated = Math.round(val * 30 * 0.04);
           monthlyReviews.innerText = estimated + "+";
-        });
-      }
-
-      // محاكي تجربة النقر
-      const simBtn = document.getElementById('tapSimulateBtn');
-      const simNotif = document.getElementById('simNotification');
-      if (simBtn && simNotif) {
-        simBtn.addEventListener('click', () => {
-          simNotif.classList.remove('opacity-0', 'translate-y-[-20px]');
-          simNotif.classList.add('opacity-100', 'translate-y-0');
-          setTimeout(() => {
-            simNotif.classList.remove('opacity-100', 'translate-y-0');
-            simNotif.classList.add('opacity-0', 'translate-y-[-20px]');
-          }, 3500);
         });
       }
 
