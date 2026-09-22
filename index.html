@@ -3,77 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>AVENi | حلول وأنظمة الاتصال الذكي NFC</title>
-  <meta name="description" content="بطاقات أعمال ذكية وستاندات تقييم Google مخصصة بتقنية NFC وQR Code للمتاجر والشركات.">
-  <meta name="theme-color" content="#ffffff">
+  <title>AVENi | أنظمة وحلول الاتصال الذكي NFC للأعمال</title>
+  <meta name="description" content="البديل الذكي للكرتون والورق: ستاندات تقييم Google وبطاقات أعمال تفاعلية بتقنية NFC الفورية للمنشآت والمحترفين.">
+  <meta name="theme-color" content="#07090E">
   <link rel="canonical" href="https://aveni-cmd.github.io/AVENi/">
 
-  <!-- Fonts & Icons -->
+  <!-- الخطوط والأيقونات -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Readex+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     body {
-      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      font-family: 'Readex Pro', sans-serif;
     }
     .font-brand {
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
-    .bg-modern-light {
-      background-color: #F8FAFC;
+    
+    .bg-tech-dark {
+      background-color: #07090E;
       background-image: 
-        radial-gradient(circle at 10% 10%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
-        radial-gradient(circle at 90% 20%, rgba(59, 130, 246, 0.06) 0%, transparent 40%),
-        radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
-    }
-    .product-card {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .product-card:hover {
-      transform: translateY(-8px);
-      border-color: #10B981;
-      box-shadow: 0 20px 40px -12px rgba(16, 185, 129, 0.18);
-    }
-    .product-photo-wrap {
-      background: radial-gradient(circle at center, #F1F5F9 0%, #FFFFFF 70%);
-      border-radius: 20px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 250px;
-      border: 1px solid #F1F5F9;
-    }
-    .product-photo-wrap img {
-      width: 100%;
-      height: 240px;
-      object-fit: contain;
-      transition: transform 0.4s ease;
-    }
-    .product-card:hover .product-photo-wrap img {
-      transform: scale(1.06);
+        radial-gradient(ellipse 90% 50% at 50% -10%, rgba(37, 99, 235, 0.2) 0%, transparent 60%),
+        radial-gradient(circle at 100% 40%, rgba(99, 102, 241, 0.09) 0%, transparent 50%),
+        radial-gradient(circle at 0% 70%, rgba(14, 165, 233, 0.08) 0%, transparent 45%);
     }
 
-    /* مجسم الهاتف الواقعي Realistic iPhone Titanium Frame */
+    .glass-nav {
+      background: rgba(7, 9, 14, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .premium-card {
+      background: linear-gradient(180deg, rgba(20, 26, 40, 0.75) 0%, rgba(10, 13, 22, 0.95) 100%);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .premium-card:hover {
+      border-color: rgba(59, 130, 246, 0.5);
+      transform: translateY(-6px);
+      box-shadow: 0 30px 60px -15px rgba(37, 99, 235, 0.25);
+    }
+
+    .card-popular {
+      background: linear-gradient(180deg, rgba(27, 37, 65, 0.85) 0%, rgba(13, 18, 32, 0.98) 100%);
+      border: 1.5px solid #3B82F6;
+      box-shadow: 0 25px 60px -15px rgba(59, 130, 246, 0.3);
+    }
+
+    /* مجسم الستاند الواقعي Photorealistic Acrylic Stand */
+    .acrylic-stand-realistic {
+      width: 250px;
+      height: 340px;
+      border-radius: 20px;
+      position: relative;
+      perspective: 1000px;
+      transform: rotateY(-8deg) rotateX(4deg);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 
+        -15px 25px 50px rgba(0, 0, 0, 0.7),
+        inset 0 1px 2px rgba(255, 255, 255, 0.4),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.6);
+    }
+    .stand-black {
+      background: linear-gradient(145deg, #1A1E29 0%, #0B0E14 100%);
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
+    }
+    .stand-white {
+      background: linear-gradient(145deg, #FFFFFF 0%, #E2E8F0 100%);
+      border: 1.5px solid rgba(255, 255, 255, 0.9);
+      box-shadow: -15px 25px 50px rgba(0,0,0,0.4), inset 0 2px 4px #FFFFFF;
+    }
+    .acrylic-reflection {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 55%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 100%);
+      border-radius: 20px 20px 0 0;
+      pointer-events: none;
+    }
+    /* قاعدة الستاند الخشبية/المعدنية الواقعية */
+    .stand-base {
+      width: 280px;
+      height: 24px;
+      background: linear-gradient(180deg, #333846 0%, #151821 100%);
+      border-radius: 8px;
+      margin-top: -12px;
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+      position: relative;
+      z-index: 5;
+    }
+
+    /* مجسم الهاتف الواقعي Realistic iPhone */
     .iphone-realistic {
-      width: 300px;
-      height: 590px;
-      background: #1C1917;
-      border-radius: 50px;
-      padding: 10px;
+      width: 290px;
+      height: 575px;
+      background: #14171F;
+      border-radius: 48px;
+      padding: 9px;
       position: relative;
       box-shadow: 
-        0 0 0 2px #44403C,
-        0 0 0 5px #1C1917,
-        0 25px 60px -15px rgba(0, 0, 0, 0.35),
-        inset 0 0 10px rgba(255, 255, 255, 0.2);
+        0 0 0 2px #2E3444,
+        0 0 0 5px #0E1015,
+        0 30px 70px -10px rgba(0, 0, 0, 0.8),
+        inset 0 0 10px rgba(255, 255, 255, 0.1);
       transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     .iphone-screen {
@@ -87,13 +128,12 @@
       flex-direction: column;
       border: 2px solid #000;
     }
-    /* Dynamic Island */
     .dynamic-island {
       position: absolute;
       top: 10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 88px;
+      width: 86px;
       height: 24px;
       background: #000000;
       border-radius: 20px;
@@ -110,181 +150,380 @@
       height: 56px;
       border-radius: 28px;
       padding: 8px 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6);
     }
-    /* حركة الاقتراب والاهتزاز للمحاكاة */
     .iphone-realistic.tapped {
       transform: translateY(-20px) scale(1.02);
     }
-    @keyframes ripple {
-      0% { transform: scale(0.8); opacity: 1; }
-      100% { transform: scale(2.2); opacity: 0; }
+
+    @keyframes pulseAura {
+      0% { transform: scale(0.9); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 0.3; }
+      100% { transform: scale(0.9); opacity: 0.8; }
     }
-    .nfc-signal-wave {
-      animation: ripple 1.6s infinite ease-out;
+    .signal-wave {
+      animation: pulseAura 2.2s infinite ease-in-out;
+    }
+
+    #liveToast {
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
   </style>
 </head>
 
-<body class="bg-modern-light text-slate-800 antialiased min-h-screen selection:bg-emerald-500 selection:text-white">
+<body class="bg-tech-dark text-slate-100 antialiased min-h-screen selection:bg-blue-600 selection:text-white">
 
   <!-- شريط الإعلان العلوي -->
-  <div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white py-2.5 px-4 text-center text-xs font-bold shadow-sm">
+  <div class="bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-800 text-white py-2 px-4 text-center text-xs font-semibold shadow-inner">
     <div class="max-w-6xl mx-auto flex items-center justify-center gap-2">
-      <span class="inline-block w-2 h-2 rounded-full bg-white animate-ping"></span>
-      <span>شحن سريع خلال 24-48 ساعة لكافة مناطق المملكة | جاهز للاستخدام الفوري بدون أي اشتراكات</span>
+      <span class="inline-block w-2 h-2 rounded-full bg-cyan-300 animate-pulse"></span>
+      <span>توصيل سريع لجميع مناطق المملكة (24-48 ساعة) | برمجة مجانية مسبقة قبل الشحن دون رسوم شهرية</span>
     </div>
   </div>
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/80">
-    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" dir="ltr" class="font-brand text-2xl font-black tracking-wider text-slate-900 flex items-center gap-2.5">
-        <span class="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-black text-base shadow-md shadow-emerald-500/20">A</span>
+  <header class="sticky top-0 z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" dir="ltr" class="font-brand text-2xl font-black tracking-wider text-white flex items-center gap-2.5">
+        <span class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 text-white flex items-center justify-center font-black text-base shadow-lg shadow-blue-500/30">A</span>
         AVENi
       </a>
       
-      <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
-        <a href="#products" class="hover:text-emerald-600 transition-colors">المنتجات الذكية</a>
-        <a href="#simulator" class="hover:text-emerald-600 transition-colors">جرّب التقنية مباشرة</a>
-        <a href="#calculator" class="hover:text-emerald-600 transition-colors">حاسبة التقييمات</a>
-        <a href="#bundles" class="hover:text-emerald-600 transition-colors">باقات الكميات</a>
-        <a href="#faq" class="hover:text-emerald-600 transition-colors">الأسئلة الشائعة</a>
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-300">
+        <a href="#customizer" class="text-cyan-400 hover:text-cyan-300 transition-colors">صمم ستاندك حياً</a>
+        <a href="#ad-roi" class="hover:text-blue-400 transition-colors">وفر تكلفة الإعلانات</a>
+        <a href="#products" class="hover:text-blue-400 transition-colors">الحلول والأجهزة</a>
+        <a href="#simulator" class="hover:text-blue-400 transition-colors">محاكي النقر</a>
+        <a href="#compare" class="hover:text-blue-400 transition-colors">مقارنة الحلول</a>
+        <a href="#faq" class="hover:text-blue-400 transition-colors">الأسئلة الشائعة</a>
       </nav>
 
-      <a href="#order" class="hidden md:inline-flex px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-black hover:bg-emerald-700 transition-all shadow-md shadow-emerald-600/20">
-        اطلب الآن عبر WhatsApp
+      <a href="#order" class="hidden sm:inline-flex px-6 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold hover:shadow-lg hover:shadow-blue-500/40 hover:scale-[1.02] transition-all">
+        اطلب عبر WhatsApp
       </a>
 
-      <button id="mobileMenuBtn" class="md:hidden text-slate-700 p-2 text-xl" aria-label="القائمة">
-        <i class="fa-solid fa-bars"></i>
+      <button id="mobileMenuBtn" class="lg:hidden text-slate-300 p-2 text-2xl" aria-label="القائمة">
+        <i class="fa-solid fa-bars-staggered"></i>
       </button>
     </div>
   </header>
 
   <!-- Mobile Nav Menu -->
-  <nav id="mobileMenu" class="fixed inset-0 top-20 z-40 hidden bg-white/98 backdrop-blur-2xl flex-col items-center justify-center gap-7 px-6 text-center border-t border-slate-200">
-    <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#products">المنتجات الذكية</a>
-    <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#simulator">جرّب التقنية مباشرة</a>
-    <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#calculator">حاسبة التقييمات</a>
-    <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#bundles">باقات الكميات</a>
-    <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#faq">الأسئلة الشائعة</a>
-    <a class="mobile-link px-8 py-3.5 rounded-xl bg-emerald-600 text-white font-black text-sm mt-3" href="#order">اطلب حلولك الآن</a>
+  <nav id="mobileMenu" class="fixed inset-0 top-20 z-40 hidden bg-[#07090E]/98 backdrop-blur-3xl flex-col items-center justify-center gap-7 px-6 text-center border-t border-slate-800">
+    <a class="mobile-link text-lg font-bold text-cyan-400" href="#customizer">صمم ستاندك حياً</a>
+    <a class="mobile-link text-lg font-bold text-slate-200 hover:text-blue-400" href="#ad-roi">وفر تكلفة الإعلانات</a>
+    <a class="mobile-link text-lg font-bold text-slate-200 hover:text-blue-400" href="#products">الحلول والأجهزة</a>
+    <a class="mobile-link text-lg font-bold text-slate-200 hover:text-blue-400" href="#simulator">محاكي النقر المباشر</a>
+    <a class="mobile-link text-lg font-bold text-slate-200 hover:text-blue-400" href="#compare">مقارنة الحلول</a>
+    <a class="mobile-link text-lg font-bold text-slate-200 hover:text-blue-400" href="#faq">الأسئلة الشائعة</a>
+    <a class="mobile-link px-8 py-3.5 rounded-xl bg-blue-600 text-white font-black text-sm mt-3" href="#order">اطلب أجهزتك الآن</a>
   </nav>
 
   <main>
     <!-- Hero Section -->
-    <section class="pt-14 pb-20 border-b border-slate-200/80 relative overflow-hidden">
-      <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+    <section class="pt-16 pb-24 border-b border-slate-800/80 relative overflow-hidden">
+      <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
         
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold mb-6 shadow-sm">
-          <i class="fa-solid fa-bolt text-emerald-600 text-xs"></i>
-          تقنية NFC الحديثة للمتاجر ونمو الأعمال
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-950/60 border border-blue-500/30 text-blue-400 text-xs font-bold mb-8">
+          <i class="fa-solid fa-bolt-lightning text-cyan-400 text-xs"></i>
+          الجيل الجديد لنقاط البيع ونمو تقييمات Google
         </div>
 
-        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-slate-900 leading-[1.3] mb-6 tracking-tight">
-          ضاعف تقييمات Google وتواصلك <br>
-          <span class="bg-gradient-to-r from-emerald-600 to-teal-700 bg-clip-text text-transparent">
-            بملامسة هاتف واحدة وبدون تطبيقات
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-white leading-[1.25] mb-6 tracking-tight">
+          اجعل عملاءك يقيّمون متجرك بـ 5 نجوم <br>
+          <span class="bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-300 bg-clip-text text-transparent">
+            بملامسة هاتف واحدة .. ودون أي تطبيق
           </span>
         </h1>
 
-        <p class="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-          ستاندات أكريليك أنيقة وبطاقات أعمال ذكية مجهزة لجمع تقييمات 5 نجوم على Google Maps ومشاركة قنواتك الرقمية بلمسة واحدة لنقاط البيع والكاشير.
+        <p class="text-slate-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+          أجهزة أكريليك أنيقة وبطاقات أعمال ذكية مجهزة بتقنية NFC المباشرة؛ لنقل العميل في ثانية واحدة لصفحة تقييم Google أو شبكات التواصل على الكاشير والاستقبال.
         </p>
 
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <a href="#order" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-emerald-600 text-white font-black text-sm hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/30">
-            <i class="fa-brands fa-whatsapp text-lg ml-2"></i> اطلب الآن عبر الواتساب
+          <a href="#customizer" class="w-full sm:w-auto px-9 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold text-sm hover:shadow-[0_10px_35px_rgba(37,99,235,0.45)] hover:scale-[1.02] transition-all flex items-center justify-center gap-2.5">
+            <i class="fa-solid fa-palette text-lg"></i> صمم شكل ستاندك الآن
           </a>
-          <a href="#simulator" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white border border-slate-300 font-bold text-sm text-slate-700 hover:border-emerald-600 hover:text-emerald-600 transition-all shadow-sm">
-            <i class="fa-solid fa-play ml-1.5 text-xs text-emerald-600"></i> جرّب تجربة النقر الحقيقية
+          <a href="#ad-roi" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900/90 border border-slate-700 font-bold text-sm text-slate-200 hover:border-blue-500 hover:text-white transition-all shadow-sm flex items-center justify-center gap-2">
+            <i class="fa-solid fa-calculator text-xs text-blue-400"></i> احسب توفيرك مقابل الإعلانات
           </a>
         </div>
 
-        <!-- ميزات المتانة -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-3xl mx-auto pt-8 border-t border-slate-200/80">
-          <div class="flex items-center justify-center gap-2 text-xs font-bold text-slate-600">
-            <i class="fa-solid fa-battery-empty text-emerald-600 text-sm"></i>
-            <span>تعمل للأبد دون بطارية</span>
+        <!-- أرقام الثقة -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto pt-10 border-t border-slate-800/80">
+          <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800">
+            <div class="text-2xl sm:text-3xl font-black text-blue-400 font-brand">99.8%</div>
+            <div class="text-xs text-slate-400 mt-1">توافق مع هواتف Apple & Android</div>
           </div>
-          <div class="flex items-center justify-center gap-2 text-xs font-bold text-slate-600">
-            <i class="fa-solid fa-faucet-drip text-emerald-600 text-sm"></i>
-            <span>مقاومة للماء والقهوة</span>
+          <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800">
+            <div class="text-2xl sm:text-3xl font-black text-cyan-400 font-brand">1 ثانية</div>
+            <div class="text-xs text-slate-400 mt-1">سرعة استجابة وفتح الوجهة</div>
           </div>
-          <div class="flex items-center justify-center gap-2 text-xs font-bold text-slate-600">
-            <i class="fa-solid fa-mobile-screen text-emerald-600 text-sm"></i>
-            <span>متوافقة مع الآيفون والأندرويد</span>
+          <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800">
+            <div class="text-2xl sm:text-3xl font-black text-indigo-400 font-brand">0 ريال</div>
+            <div class="text-xs text-slate-400 mt-1">اشتراكات شهرية (استخدام للأبد)</div>
           </div>
-          <div class="flex items-center justify-center gap-2 text-xs font-bold text-slate-600">
-            <i class="fa-solid fa-arrows-rotate text-emerald-600 text-sm"></i>
-            <span>تحديث الرابط مستقبلاً</span>
+          <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800">
+            <div class="text-2xl sm:text-3xl font-black text-emerald-400 font-brand">100%</div>
+            <div class="text-xs text-slate-400 mt-1">مقاومة للماء والقهوة والسقوط</div>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- محاكي تجربة النقر الواقعي عالي الدقة (Realistic Phone Tap Simulator) -->
-    <section id="simulator" class="py-20 border-b border-slate-200/80 bg-white">
+    <!-- محاكي تخصيص الستاند الحقيقي 3D Live Brand Customizer -->
+    <section id="customizer" class="py-24 border-b border-slate-800/80 bg-[#0B0E17]/80">
       <div class="max-w-6xl mx-auto px-6">
         
         <div class="text-center mb-14">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold mb-2">
-            <i class="fa-solid fa-circle-play text-xs text-emerald-600"></i> لايف ديمو تفاعلي
+          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 text-xs font-bold mb-3">
+            <i class="fa-solid fa-wand-magic-sparkles text-xs"></i> ميزة التخصيص التفاعلي
           </span>
-          <h2 class="text-3xl sm:text-4xl font-black text-slate-900">جرّب ملامسة الهاتف للستاند بنفسك</h2>
-          <p class="text-sm text-slate-500 mt-2 max-w-md mx-auto">شاهد التجربة الحقيقية التي سيعيشها زبونك عند الكاشير بملامسة واحدة</p>
+          <h2 class="text-3xl sm:text-4xl font-black text-white">شاهد كيف سيظهر ستاند متجرك بالواقع قبل الطلب</h2>
+          <p class="text-sm text-slate-400 mt-2 max-w-lg mx-auto">اكتب اسم متجرك أو مقهاك واختر الخامة؛ لتشاهد محاكاة بصرية واقعية للستاند الأكريليكي</p>
         </div>
 
-        <div class="grid lg:grid-cols-12 gap-8 items-center bg-slate-50 border border-slate-200 rounded-[36px] p-6 sm:p-12 relative overflow-hidden">
+        <div class="grid lg:grid-cols-12 gap-12 items-center bg-slate-900/60 border border-slate-800 rounded-[36px] p-6 sm:p-12">
           
-          <!-- التحكم والخطوات -->
+          <!-- أدوات التخصيص المباشرة -->
           <div class="lg:col-span-6 space-y-6">
-            <h3 class="text-2xl font-black text-slate-900 leading-snug">
-              كيف يتحول العميل إلى تقييم 5 نجوم في ثانيتين فقط؟
-            </h3>
-            
-            <div class="space-y-4 text-sm text-slate-600">
-              <div class="flex items-start gap-3">
-                <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span>
-                <p>يقرّب العميل هاتفه من شعار NFC الموجود في الستاند.</p>
-              </div>
-              <div class="flex items-start gap-3">
-                <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span>
-                <p>تستشعر الجزيرة التفاعلية (Dynamic Island) الرقاقة فوراً بدون كاميرا وبدون أي برنامج.</p>
-              </div>
-              <div class="flex items-start gap-3">
-                <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
-                <p>تفتح صفحة تقييم Google مباشرة ويضع العميل الـ 5 نجوم بكل بساطة.</p>
+            <div>
+              <label for="brandInput" class="block text-sm font-bold text-slate-200 mb-2">اسم مقهاك / متجرك / منشأتك:</label>
+              <div class="relative">
+                <input id="brandInput" type="text" maxlength="30" value="مقهى ركن القهوة" class="w-full rounded-2xl bg-slate-950 border border-slate-700 px-4 py-3.5 text-sm text-white focus:border-cyan-400 outline-none transition font-bold" placeholder="اكتب اسم متجرك هنا...">
+                <i class="fa-solid fa-pen text-slate-500 absolute left-4 top-4 text-xs"></i>
               </div>
             </div>
 
-            <div class="pt-3">
-              <button id="realTapTrigger" type="button" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm shadow-xl shadow-emerald-600/30 flex items-center justify-center gap-3 transition-transform active:scale-95">
+            <div>
+              <label class="block text-sm font-bold text-slate-200 mb-2">اختر خامة ولون الستاند الأكريليكي:</label>
+              <div class="grid grid-cols-2 gap-4">
+                <button type="button" id="btnStandBlack" class="p-3.5 rounded-xl border-2 border-cyan-500 bg-slate-950 flex items-center justify-center gap-2 text-xs font-bold text-white transition">
+                  <span class="w-4 h-4 rounded-full bg-slate-900 border border-slate-600 inline-block"></span>
+                  أسود تيتانيوم مطفي (الملكي)
+                </button>
+                <button type="button" id="btnStandWhite" class="p-3.5 rounded-xl border border-slate-700 bg-slate-950/60 flex items-center justify-center gap-2 text-xs font-bold text-slate-300 hover:border-slate-500 transition">
+                  <span class="w-4 h-4 rounded-full bg-white border border-slate-300 inline-block"></span>
+                  أبيض لؤلؤي فاخر
+                </button>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-950/60 border border-slate-800 text-xs text-slate-400 space-y-2">
+              <div class="flex items-center gap-2 text-cyan-400 font-bold">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>مواصفات تصنيع الستاند المعتمد:</span>
+              </div>
+              <p>• أكريليك عالي الكثافة مقاوم للخدوش ولانسكاب السوائل الساخنة.</p>
+              <p>• شريحة NFC أصلية مدمجة بالداخل ومحمية من الرطوبة والحرارة.</p>
+            </div>
+
+            <button id="orderCustomStand" type="button" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-sm flex items-center justify-center gap-2 transition shadow-xl shadow-cyan-500/20">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              اعتماد هذا الستاند واطلبه الآن عبر الواتساب
+            </button>
+          </div>
+
+          <!-- مجسم الستاند ثلاثي الأبعاد الواقعي -->
+          <div class="lg:col-span-6 flex flex-col items-center justify-center pt-6 pb-2">
+            
+            <div id="standMesh" class="acrylic-stand-realistic stand-black p-6 flex flex-col justify-between items-center text-center">
+              
+              <div class="acrylic-reflection"></div>
+
+              <!-- الشعار العلوي -->
+              <div class="w-full flex items-center justify-between z-10">
+                <span class="text-[9px] font-black tracking-widest uppercase text-slate-400 font-brand">AVENi SMART</span>
+                <i class="fa-brands fa-google text-slate-400 text-sm"></i>
+              </div>
+
+              <!-- اسم المتجر المطبوع بالليزر -->
+              <div class="z-10 my-auto w-full">
+                <div id="standBrandName" class="text-lg font-black text-white tracking-wide transition-all">
+                  مقهى ركن القهوة
+                </div>
+                <div id="standTagline" class="text-[10px] text-slate-400 font-semibold mt-1">
+                  شاركونا تجربتكم وتقييمكم
+                </div>
+
+                <!-- النجوم الخمسة المطبوعة -->
+                <div class="flex justify-center text-amber-400 text-sm gap-1 my-3">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+
+                <!-- رمز استشعار الـ NFC المضيء -->
+                <div class="relative w-14 h-14 mx-auto flex items-center justify-center mt-2">
+                  <div class="absolute inset-0 rounded-full bg-cyan-500/20 signal-wave"></div>
+                  <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white flex items-center justify-center text-xl shadow-lg relative z-10">
+                    <i class="fa-solid fa-nfc-symbol"></i>
+                  </div>
+                </div>
+                <div id="standFootnote" class="text-[9px] text-cyan-300 font-bold mt-2">المس بالهاتف هنا للتقييم</div>
+              </div>
+
+              <!-- الباركود الاحتياطي المدمج -->
+              <div class="z-10 flex items-center justify-between w-full pt-3 border-t border-white/10 text-[8px] text-slate-400">
+                <span>NFC FAST TAP</span>
+                <i class="fa-solid fa-qrcode text-base text-slate-300"></i>
+                <span>BACKUP QR</span>
+              </div>
+            </div>
+
+            <!-- قاعدة الستاند الثقيلة -->
+            <div class="stand-base"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- قسم معادلة توفير تكلفة الإعلانات (Ad Spend vs. Organic Reviews) -->
+    <section id="ad-roi" class="py-24 border-b border-slate-800/80 bg-[#07090E]">
+      <div class="max-w-5xl mx-auto px-6">
+        
+        <div class="text-center mb-16">
+          <p class="text-xs font-bold text-cyan-400 mb-2 uppercase tracking-widest">SMART INVESTMENT</p>
+          <h2 class="text-3xl sm:text-4xl font-black text-white">كم يكلفك جلب عميل جديد بالإعلانات مقابل ستاند AVENi؟</h2>
+          <p class="text-sm text-slate-400 mt-2 max-w-xl mx-auto">أصحاب الأنشطة الأذكياء لا يدفعون آلاف الريالات شهرياً لإعلانات مؤقتة بينما يمكنهم كسب صدارة خرائط Google مجاناً</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-stretch">
+          
+          <!-- الإعلانات الممولة التقليدية -->
+          <div class="p-8 rounded-3xl bg-slate-950/70 border border-red-500/20 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold text-red-400 bg-red-950/50 px-3 py-1 rounded-full border border-red-800/50">نزيف مالي متكرر</span>
+                <i class="fa-solid fa-arrow-trend-down text-red-400 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">إعلانات سناب شات والمشاهير</h3>
+              <div class="text-3xl font-black text-red-400 font-brand my-4">2,500+ <span class="text-sm font-normal text-slate-400 font-sans">ريال شهرياً</span></div>
+              <ul class="space-y-3.5 text-xs text-slate-300 leading-relaxed">
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-xmark text-red-400 mt-0.5"></i>
+                  <span>بمجرد أن تنتهي ميزانية الحملة (خلال 3 إلى 5 أيام) يتوقف تدفق الزوار تماماً.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-xmark text-red-400 mt-0.5"></i>
+                  <span>ثقة العملاء بالإعلانات تنخفض مقارنة بثقتهم بالمراجعات الحقيقية بالخرائط.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-xmark text-red-400 mt-0.5"></i>
+                  <span>لا تبني لك أصولاً رقمية دائمة ترفع تقييم علامتك على المدى البعيد.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- استثمار ستاند AVENi الدائم -->
+          <div class="p-8 rounded-3xl bg-gradient-to-b from-blue-950/40 via-slate-900 to-slate-950 border-2 border-cyan-500/50 shadow-2xl shadow-blue-500/10 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold text-cyan-300 bg-cyan-950/80 px-3 py-1 rounded-full border border-cyan-700/50">استثمار دائم لمرة واحدة</span>
+                <i class="fa-solid fa-crown text-amber-400 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">ستاند تقييم Google من AVENi</h3>
+              <div class="text-3xl font-black text-cyan-300 font-brand my-4">99 <span class="text-sm font-normal text-slate-400 font-sans">ريال فقط (تدفع مرة واحدة للأبد)</span></div>
+              <ul class="space-y-3.5 text-xs text-slate-200 leading-relaxed">
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-cyan-400 mt-0.5"></i>
+                  <span>يعمل 365 يوماً في السنة على الكاشير يحول كل عميل راضٍ إلى تقييم 5 نجوم مجاني.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-cyan-400 mt-0.5"></i>
+                  <span>تصدر نتائج البحث الأولى في حيك ومدينتك في خرائط Google (SEO مجاني دائم).</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-circle-check text-cyan-400 mt-0.5"></i>
+                  <span>كل تقييم جديد يرفع مبيعات الفرع وثقة الزبائن الجدد دون دفع أي تكلفة إعلانية.</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-5 border-t border-slate-800 text-center">
+              <a href="#order" class="inline-flex items-center gap-2 text-xs font-bold text-cyan-400 hover:text-cyan-300 transition">
+                <span>اطلب ستاند فرعك الآن بـ 99 ريال فقط</span>
+                <i class="fa-solid fa-arrow-left"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- محاكي تجربة النقر الواقعي Realistic Interactive Simulator -->
+    <section id="simulator" class="py-24 border-b border-slate-800/80 bg-[#0B0E17]/60">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="text-center mb-14">
+          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-950/80 border border-blue-500/30 text-blue-400 text-xs font-bold mb-3">
+            <i class="fa-solid fa-circle-play text-xs text-cyan-400"></i> محاكي التفاعل المباشر
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white">جرّب ملامسة هاتف العميل للستاند</h2>
+          <p class="text-sm text-slate-400 mt-2 max-w-md mx-auto">شاهد كيف يتفاعل الهاتف بمجرد اقترابه من الستاند دون فتح الكاميرا أو كتابة أي رابط</p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-10 items-center bg-slate-900/60 border border-slate-800 rounded-[36px] p-6 sm:p-12 relative overflow-hidden">
+          
+          <div class="lg:col-span-6 space-y-6">
+            <h3 class="text-2xl sm:text-3xl font-black text-white leading-snug">
+              رحلة العميل من الشراء إلى تقييم 5 نجوم في ثانيتين فقط
+            </h3>
+            
+            <div class="space-y-4 text-sm text-slate-300">
+              <div class="flex items-start gap-3.5 p-3 rounded-xl bg-slate-800/30 border border-slate-800">
+                <span class="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span>
+                <div>
+                  <h4 class="font-bold text-white mb-0.5">ملامسة هاتف سريعة</h4>
+                  <p class="text-xs text-slate-400">يقرّب العميل هاتفه من الستاند الأكريليكي الموضوع بجانب الكاشير.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-3 rounded-xl bg-slate-800/30 border border-slate-800">
+                <span class="w-7 h-7 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span>
+                <div>
+                  <h4 class="font-bold text-white mb-0.5">استشعار NFC فوري بالجزيرة الذكية</h4>
+                  <p class="text-xs text-slate-400">ينبثق إشعار النظام الفوري على شاشة الهاتف دون الحاجة لفتح تطبيق الكاميرا.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 p-3 rounded-xl bg-slate-800/30 border border-slate-800">
+                <span class="w-7 h-7 rounded-lg bg-cyan-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
+                <div>
+                  <h4 class="font-bold text-white mb-0.5">فتح نافذة تقييم خرائط Google</h4>
+                  <p class="text-xs text-slate-400">تفتح نافذة النجوم الـ 5 مباشرة مع حفظ مراجعة حقيقية ترفع ظهورك في الخرائط.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <button id="realTapTrigger" type="button" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-black text-sm shadow-xl shadow-blue-600/30 flex items-center justify-center gap-3 transition-transform active:scale-95">
                 <i class="fa-solid fa-hand-pointer text-lg"></i>
                 <span>انقر هنا لمحاكاة تقريب الهاتف الآن</span>
               </button>
             </div>
           </div>
 
-          <!-- مساحة العرض التفاعلية: الستاند والهاتف الحقيقي -->
-          <div class="lg:col-span-6 flex flex-col sm:flex-row items-center justify-center gap-6 relative">
+          <!-- مساحة العرض التفاعلية: مجسم الستاند + الآيفون الفعلي -->
+          <div class="lg:col-span-6 flex flex-col sm:flex-row items-center justify-center gap-7 relative">
             
             <!-- مجسم الستاند الذكي -->
-            <div class="w-44 h-60 bg-gradient-to-b from-white to-slate-100 border-2 border-slate-300 rounded-2xl shadow-xl flex flex-col items-center justify-between p-4 relative shrink-0">
-              <div class="w-12 h-1 bg-slate-300 rounded-full"></div>
+            <div class="w-44 h-64 bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-slate-700/80 rounded-2xl shadow-2xl flex flex-col items-center justify-between p-4 relative shrink-0">
+              <div class="w-12 h-1 bg-slate-700 rounded-full"></div>
               
-              <!-- منطقة استشعار NFC -->
               <div class="relative flex items-center justify-center my-auto">
-                <div class="absolute w-20 h-20 rounded-full bg-emerald-400/20 nfc-signal-wave pointer-events-none"></div>
-                <div class="w-14 h-14 rounded-full bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-md z-10">
+                <div class="absolute w-20 h-20 rounded-full bg-blue-500/20 signal-wave pointer-events-none"></div>
+                <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-500 text-white flex items-center justify-center text-2xl shadow-lg z-10">
                   <i class="fa-solid fa-nfc-symbol"></i>
                 </div>
               </div>
 
               <div class="text-center w-full">
-                <div class="text-[11px] font-black text-slate-800">قيّمنا على Google</div>
+                <div class="text-[11px] font-black text-white">قيّمنا على Google</div>
                 <div class="flex justify-center text-amber-400 text-xs gap-0.5 mt-0.5">
                   <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
@@ -292,15 +531,14 @@
               </div>
             </div>
 
-            <!-- مجسم هاتف iPhone التيتانيوم -->
+            <!-- مجسم هاتف iPhone Realistic -->
             <div id="simPhone" class="iphone-realistic">
               <div class="iphone-screen">
                 
-                <!-- الجزيرة التفاعلية Dynamic Island -->
                 <div id="simIsland" class="dynamic-island">
                   <div class="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-800 shrink-0"></div>
                   <div id="islandContent" class="hidden items-center justify-between w-full text-xs font-bold text-white px-2">
-                    <span class="flex items-center gap-1.5 text-emerald-400 text-[11px]">
+                    <span class="flex items-center gap-1.5 text-cyan-400 text-[11px]">
                       <i class="fa-solid fa-nfc-symbol"></i>
                       <span>Google Reviews</span>
                     </span>
@@ -309,26 +547,21 @@
                   <div class="w-2 h-2 rounded-full bg-blue-500/80 shrink-0"></div>
                 </div>
 
-                <!-- محتوى الشاشة: صفحة تقييم Google Maps الواقعية -->
                 <div class="pt-14 px-4 flex-1 flex flex-col justify-between pb-6 text-slate-900 select-none">
                   
-                  <!-- شريط المتصفح العلوي -->
                   <div class="bg-slate-100 rounded-xl px-3 py-1.5 flex items-center justify-between text-[10px] text-slate-500">
-                    <span class="flex items-center gap-1"><i class="fa-solid fa-lock text-[8px] text-emerald-600"></i> google.com/maps</span>
+                    <span class="flex items-center gap-1"><i class="fa-solid fa-lock text-[8px] text-blue-600"></i> google.com/maps</span>
                     <i class="fa-solid fa-rotate-right text-[9px]"></i>
                   </div>
 
-                  <!-- كارت الفرع والتقييم داخل خرائط Google -->
                   <div id="gMapContent" class="opacity-0 transition-opacity duration-700 my-auto text-center">
-                    
-                    <div class="w-14 h-14 bg-emerald-50 rounded-2xl mx-auto flex items-center justify-center text-emerald-600 text-2xl shadow-sm mb-3 border border-emerald-100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl mx-auto flex items-center justify-center text-blue-600 text-2xl shadow-sm mb-3 border border-blue-100">
                       <i class="fa-solid fa-store"></i>
                     </div>
 
-                    <h4 class="font-black text-sm text-slate-900">كافيه & متجر AVENi</h4>
-                    <p class="text-[11px] text-slate-500 mt-0.5">فرع الأحساء · نقاط البيع</p>
+                    <h4 id="simMapStoreName" class="font-black text-sm text-slate-900">مقهى ركن القهوة</h4>
+                    <p class="text-[11px] text-slate-500 mt-0.5">الفرع الرئيسي · نقاط البيع</p>
 
-                    <!-- النجوم الـ 5 المضيئة -->
                     <div class="flex justify-center gap-1.5 text-xl text-amber-400 my-3">
                       <i class="fa-solid fa-star hover:scale-125 transition-transform cursor-pointer"></i>
                       <i class="fa-solid fa-star hover:scale-125 transition-transform cursor-pointer"></i>
@@ -338,7 +571,7 @@
                     </div>
 
                     <div class="bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-[11px] text-slate-600 text-right">
-                      شارك رأيك وتجربتك للفرع...
+                      تجربة ممتازة وخدمة سريعة جداً..
                     </div>
 
                     <div class="mt-3.5 w-full py-2 rounded-xl bg-blue-600 text-white font-bold text-xs shadow-md">
@@ -346,16 +579,14 @@
                     </div>
                   </div>
 
-                  <!-- حالة الاستعداد الافتراضية قبل النقر -->
                   <div id="standbyText" class="my-auto text-center">
                     <div class="w-12 h-12 rounded-full bg-slate-100 mx-auto flex items-center justify-center text-slate-400 mb-2">
-                      <i class="fa-solid fa-rss text-xl"></i>
+                      <i class="fa-solid fa-rss text-xl text-blue-600"></i>
                     </div>
-                    <div class="text-xs font-bold text-slate-700">قارئ الـ NFC نشط</div>
-                    <div class="text-[10px] text-slate-400 mt-1">اضغط على زر المحاكاة لبدء النقر</div>
+                    <div class="text-xs font-bold text-slate-700">قارئ الـ NFC في وضع الاستعداد</div>
+                    <div class="text-[10px] text-slate-400 mt-1">اضغط على زر المحاكاة لبدء التجربة</div>
                   </div>
 
-                  <!-- مؤشر العودة السفلي -->
                   <div class="w-24 h-1 bg-slate-900 rounded-full mx-auto"></div>
                 </div>
 
@@ -369,86 +600,86 @@
       </div>
     </section>
 
-    <!-- المنتجات الذكية -->
-    <section id="products" class="py-20 border-b border-slate-200/80">
-      <div class="max-w-6xl mx-auto px-6">
+    <!-- المنتجات الذكية والأسعار -->
+    <section id="products" class="py-24 border-b border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-6">
         
         <div class="text-center mb-16">
-          <p class="text-xs font-black text-emerald-600 mb-2 tracking-widest uppercase">HARDWARE SOLUTIONS</p>
-          <h2 class="text-3xl sm:text-4xl font-black text-slate-900">منتجات AVENi الذكية</h2>
-          <p class="text-sm text-slate-500 mt-2">تصاميم أكريليك أنيقة مجهزة بشرائح NFC عالية الدقة</p>
+          <p class="text-xs font-bold text-blue-400 mb-2 tracking-widest uppercase">HARDWARE STORE</p>
+          <h2 class="text-3xl sm:text-4xl font-black text-white">أجهزة وحلول AVENi الذكية</h2>
+          <p class="text-sm text-slate-400 mt-2">مصممة من خامات أكريليك فاخرة ومبرمجة لتعمل مدى الحياة</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-7">
+        <div class="grid md:grid-cols-3 gap-8">
 
           <!-- 1. بطاقة الأعمال الذكية -->
-          <article class="product-card rounded-3xl p-6 flex flex-col justify-between">
+          <article class="premium-card rounded-3xl p-7 flex flex-col justify-between">
             <div>
-              <div class="product-photo-wrap mb-6">
-                <img src="assets/products/AVENi-card-site.webp?v=20260912-1" alt="بطاقة أعمال ذكية AVENi">
+              <div class="bg-slate-900/60 rounded-2xl p-4 mb-6 border border-slate-800 flex items-center justify-center min-h-[220px]">
+                <img src="assets/products/AVENi-card-site.webp?v=20260912-1" alt="بطاقة أعمال ذكية AVENi" class="max-h-[190px] object-contain">
               </div>
-              <span class="text-[11px] font-extrabold text-slate-600 uppercase tracking-wider bg-slate-100 px-3 py-1 rounded-md">للمحترفين ورجال الأعمال</span>
-              <h3 class="text-xl font-black mt-3 text-slate-900">بطاقة الأعمال الذكية</h3>
-              <p class="text-sm text-slate-500 leading-relaxed mt-2.5">
-                شارك رقمك، إيميلك، موقعك، وحساباتك الرقمية بملامسة واحدة لظهر هاتف العميل دون طباعة مئات الكروت الورقية التقليدية.
+              <span class="text-[11px] font-bold text-blue-400 uppercase tracking-wider bg-blue-950/60 border border-blue-800/50 px-3 py-1 rounded-md">للمحترفين ورجال الأعمال</span>
+              <h3 class="text-xl font-black mt-3 text-white">بطاقة الأعمال الذكية NFC</h3>
+              <p class="text-sm text-slate-400 leading-relaxed mt-2.5">
+                شارك رقمك، إيميلك، موقعك، وحساباتك الرقمية بملامسة واحدة لظهر هاتف العميل دون طباعة كروت ورقية قابلة للضياع.
               </p>
             </div>
             
-            <div class="mt-8 pt-5 border-t border-slate-100">
-              <div class="flex items-baseline gap-1 text-3xl font-black text-slate-900">
-                49 <span class="text-sm font-semibold text-slate-500">ريال</span>
+            <div class="mt-8 pt-5 border-t border-slate-800">
+              <div class="flex items-baseline gap-1 text-3xl font-black text-white font-brand">
+                49 <span class="text-sm font-semibold text-slate-400 font-sans">ريال</span>
               </div>
-              <button type="button" class="order-trigger mt-4 w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-sm transition-all" data-product="بطاقة أعمال ذكية">
-                طلب البطاقة الآن
+              <button type="button" class="order-trigger mt-4 w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition-all" data-product="بطاقة أعمال ذكية">
+                طلب البطاقة الذكية
               </button>
             </div>
           </article>
 
-          <!-- 2. ستاند تقييم Google (الأكثر مبيعاً) -->
-          <article class="product-card rounded-3xl p-6 flex flex-col justify-between relative border-2 border-emerald-500/80 bg-gradient-to-b from-emerald-50/40 to-white shadow-xl shadow-emerald-500/10">
-            <div class="absolute -top-3.5 right-6 px-3.5 py-1 rounded-full bg-emerald-600 text-white text-[11px] font-black tracking-wide shadow-md">
+          <!-- 2. ستاند تقييم Google الذكي (الأكثر مبيعاً) -->
+          <article class="premium-card card-popular rounded-3xl p-7 flex flex-col justify-between relative">
+            <div class="absolute -top-3.5 right-6 px-4 py-1 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-[11px] font-black tracking-wide shadow-lg">
               ★ الأكثر طلباً للمقاهي والمطاعم
             </div>
 
             <div>
-              <div class="product-photo-wrap mb-6">
-                <img src="assets/products/AVENi-google-site.webp?v=20260912-1" alt="ستاند تقييم Google">
+              <div class="bg-slate-900/70 rounded-2xl p-4 mb-6 border border-slate-700/60 flex items-center justify-center min-h-[220px]">
+                <img src="assets/products/AVENi-google-site.webp?v=20260912-1" alt="ستاند تقييم Google" class="max-h-[190px] object-contain">
               </div>
-              <span class="text-[11px] font-extrabold text-emerald-700 uppercase tracking-wider bg-emerald-100 px-3 py-1 rounded-md">للمطاعم والكافيهات والعيادات</span>
-              <h3 class="text-xl font-black mt-3 text-slate-900">ستاند تقييم Google الذكي</h3>
-              <p class="text-sm text-slate-600 leading-relaxed mt-2.5">
-                يوضع عند الكاشير أو الاستقبال؛ يلمس العميل الهاتف فيفتح له تقييم 5 نجوم على خرائط Google مباشرة لرفع ظهورك المحلي مجاناً.
+              <span class="text-[11px] font-bold text-cyan-300 uppercase tracking-wider bg-cyan-950/60 border border-cyan-800/50 px-3 py-1 rounded-md">للمطاعم والكافيهات والعيادات</span>
+              <h3 class="text-xl font-black mt-3 text-white">ستاند تقييم Google الذكي</h3>
+              <p class="text-sm text-slate-300 leading-relaxed mt-2.5">
+                يوضع عند الكاشير أو الاستقبال؛ يلمس العميل الهاتف فيفتح له تقييم 5 نجوم على خرائط Google مباشرة لرفع تصنيف فرعك ومبيعاتك.
               </p>
             </div>
 
-            <div class="mt-8 pt-5 border-t border-slate-200">
-              <div class="flex items-baseline gap-1 text-3xl font-black text-emerald-600">
-                99 <span class="text-sm font-semibold text-slate-500">ريال</span>
+            <div class="mt-8 pt-5 border-t border-slate-700/80">
+              <div class="flex items-baseline gap-1 text-3xl font-black text-cyan-400 font-brand">
+                99 <span class="text-sm font-semibold text-slate-400 font-sans">ريال</span>
               </div>
-              <button type="button" class="order-trigger mt-4 w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm transition-all shadow-md shadow-emerald-600/30" data-product="ستاند تقييم Google">
+              <button type="button" class="order-trigger mt-4 w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-black text-sm transition-all shadow-lg shadow-blue-500/25" data-product="ستاند تقييم Google">
                 طلب ستاند التقييم الآن
               </button>
             </div>
           </article>
 
           <!-- 3. ستاند نقاط البيع المخصص -->
-          <article class="product-card rounded-3xl p-6 flex flex-col justify-between">
+          <article class="premium-card rounded-3xl p-7 flex flex-col justify-between">
             <div>
-              <div class="product-photo-wrap mb-6">
-                <img src="assets/products/AVENi-custom-site.webp?v=20260912-1" alt="ستاند نقاط البيع المخصص">
+              <div class="bg-slate-900/60 rounded-2xl p-4 mb-6 border border-slate-800 flex items-center justify-center min-h-[220px]">
+                <img src="assets/products/AVENi-custom-site.webp?v=20260912-1" alt="ستاند نقاط البيع المخصص" class="max-h-[190px] object-contain">
               </div>
-              <span class="text-[11px] font-extrabold text-slate-600 uppercase tracking-wider bg-slate-100 px-3 py-1 rounded-md">للبراندات والمتاجر الكبرى</span>
-              <h3 class="text-xl font-black mt-3 text-slate-900">ستاند نقاط البيع المخصص</h3>
-              <p class="text-sm text-slate-500 leading-relaxed mt-2.5">
-                تصميم بهوية وشعار علامتك التجارية يفتح صفحة رقمية شاملة تجمع قائمة الطعام، المتجر الإلكتروني، إنستغرام، ورقم الواتساب.
+              <span class="text-[11px] font-bold text-indigo-400 uppercase tracking-wider bg-indigo-950/60 border border-indigo-800/50 px-3 py-1 rounded-md">للبراندات والمتاجر الكبرى</span>
+              <h3 class="text-xl font-black mt-3 text-white">ستاند نقاط البيع بهويتك المخصصة</h3>
+              <p class="text-sm text-slate-400 leading-relaxed mt-2.5">
+                طباعة كاملة لشعار علامتك التجارية يفتح صفحة رقمية شاملة تجمع قائمة الطعام، المتجر الإلكتروني، وحسابات التواصل الاجتماعي.
               </p>
             </div>
 
-            <div class="mt-8 pt-5 border-t border-slate-100">
-              <div class="flex items-baseline gap-1 text-3xl font-black text-slate-900">
-                299 <span class="text-sm font-semibold text-slate-500">ريال</span>
+            <div class="mt-8 pt-5 border-t border-slate-800">
+              <div class="flex items-baseline gap-1 text-3xl font-black text-white font-brand">
+                299 <span class="text-sm font-semibold text-slate-400 font-sans">ريال</span>
               </div>
-              <button type="button" class="order-trigger mt-4 w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-sm transition-all" data-product="ستاند نقاط البيع المخصص">
+              <button type="button" class="order-trigger mt-4 w-full py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm transition-all" data-product="ستاند نقاط البيع المخصص">
                 طلب الستاند المخصص
               </button>
             </div>
@@ -458,81 +689,66 @@
       </div>
     </section>
 
-    <!-- حاسبة عائد التقييمات (ROI Calculator) -->
-    <section id="calculator" class="py-20 border-b border-slate-200/80">
-      <div class="max-w-4xl mx-auto px-6 text-center">
+    <!-- مقارنة قبل وبعد -->
+    <section id="compare" class="py-24 border-b border-slate-800/80 bg-[#0B0E17]/40">
+      <div class="max-w-5xl mx-auto px-6">
         
-        <p class="text-xs font-black text-emerald-600 mb-2 uppercase tracking-widest">ROI CALCULATOR</p>
-        <h2 class="text-3xl font-black text-slate-900 mb-3">احسب نمو تقييمات فرعك شهرياً</h2>
-        <p class="text-sm text-slate-500 max-w-lg mx-auto mb-10">اكتشف كيف يسهم ستاند الكاشير في تصدر نشاطك للمرتبة الأولى في منطقتك</p>
-
-        <div class="bg-white border border-slate-200 rounded-3xl p-8 max-w-xl mx-auto shadow-sm">
-          <label for="visitorsInput" class="block text-sm font-bold text-slate-700 mb-3">
-            متوسط عدد زبائنك يومياً: <span id="visitorsVal" class="text-emerald-600 font-black text-base">150</span> عميل
-          </label>
-          <input type="range" id="visitorsInput" min="20" max="800" step="10" value="150" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
-
-          <div class="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-slate-100">
-            <div class="bg-slate-50 rounded-2xl p-4">
-              <div class="text-xs font-bold text-slate-500">تقييمات Google المتوقعة شهرياً</div>
-              <div id="monthlyReviews" class="text-3xl font-black text-emerald-600 mt-1">180+</div>
-              <div class="text-[11px] text-slate-400 mt-1">تقييم حقيقي 5 نجوم</div>
-            </div>
-            <div class="bg-slate-50 rounded-2xl p-4">
-              <div class="text-xs font-bold text-slate-500">الترتيب في منطقتك</div>
-              <div class="text-3xl font-black text-slate-900 mt-1">#1</div>
-              <div class="text-[11px] text-slate-400 mt-1">أعلى ظهور مجاني بالخرائط</div>
-            </div>
-          </div>
+        <div class="text-center mb-16">
+          <p class="text-xs font-bold text-blue-400 mb-2 tracking-widest uppercase">THE SMART CHOICE</p>
+          <h2 class="text-3xl sm:text-4xl font-black text-white">لماذا تنتقل من الباركود الورقي إلى AVENi؟</h2>
+          <p class="text-sm text-slate-400 mt-2">الفرق بين الحلول البدائية وحلول نقاط البيع الحديثة</p>
         </div>
 
-      </div>
-    </section>
-
-    <!-- باقات التوفير والكميات (Bundles) -->
-    <section id="bundles" class="py-20 border-b border-slate-200/80 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        
-        <div class="text-center mb-14">
-          <p class="text-xs font-black text-emerald-600 mb-2 uppercase tracking-widest">BULK SAVINGS</p>
-          <h2 class="text-3xl font-black text-slate-900">باقات المنشآت والكميات</h2>
-          <p class="text-sm text-slate-500 mt-2">وفّر أكثر عند تجهيز عدة طاولات أو فروع في طلب واحد</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8">
           
-          <div class="border border-slate-200 rounded-3xl p-7 bg-[#F8FAFC] flex flex-col justify-between hover:border-emerald-600 transition">
-            <div>
-              <span class="text-xs font-black text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">باقة المقاهي والمطاعم</span>
-              <h3 class="text-xl font-black text-slate-900 mt-3">3 ستاندات تقييم Google</h3>
-              <p class="text-sm text-slate-500 mt-2">مثالية لتغطية الكاشير، منطقة الاستلام، وصالة المشروبات لضمان تقييم كل عميل.</p>
+          <div class="p-8 rounded-3xl bg-slate-900/40 border border-red-500/20">
+            <div class="flex items-center gap-3 mb-6 text-red-400">
+              <i class="fa-solid fa-circle-xmark text-2xl"></i>
+              <h3 class="text-xl font-bold text-white">ورقة الباركود المطبوعة التقليدية</h3>
             </div>
-            <div class="mt-6 pt-5 border-t border-slate-200 flex items-center justify-between">
-              <div>
-                <span class="text-2xl font-black text-slate-900">249 ريال</span>
-                <span class="text-xs text-emerald-600 font-bold block">وفر 48 ريال</span>
-              </div>
-              <button type="button" class="order-trigger px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs" data-product="باقة 3 ستاندات تقييم (249 ريال)">
-                طلب الباقة
-              </button>
-            </div>
+            <ul class="space-y-4 text-sm text-slate-400">
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                <span>مظهر بدائي يشوه ديكور الكاشير وفخامة المحل.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                <span>تتعرض للتمزق والتلف السريع بسبب الماء والقهوة.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                <span>تتطلب من العميل فتح الكاميرا والتركيز، فيتكاسل 90% منهم.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                <span>تضطر لإعادة طباعتها وتكبد تكلفة عند كل تعديل.</span>
+              </li>
+            </ul>
           </div>
 
-          <div class="border border-slate-200 rounded-3xl p-7 bg-[#F8FAFC] flex flex-col justify-between hover:border-emerald-600 transition">
-            <div>
-              <span class="text-xs font-black text-blue-700 bg-blue-100 px-3 py-1 rounded-full">باقة الشركات والفرق</span>
-              <h3 class="text-xl font-black text-slate-900 mt-3">10 بطاقات أعمال ذكية مخصصة</h3>
-              <p class="text-sm text-slate-500 mt-2">طباعة شعار شركتك وأسماء منسوبيك لتمثيل احترافي في الاجتماعات والمعارض.</p>
+          <div class="p-8 rounded-3xl bg-gradient-to-b from-blue-950/30 to-slate-900 border border-blue-500/40 shadow-xl shadow-blue-500/10">
+            <div class="flex items-center gap-3 mb-6 text-cyan-400">
+              <i class="fa-solid fa-circle-check text-2xl"></i>
+              <h3 class="text-xl font-bold text-white">ستاند AVENi الأكريليكي الذكي</h3>
             </div>
-            <div class="mt-6 pt-5 border-t border-slate-200 flex items-center justify-between">
-              <div>
-                <span class="text-2xl font-black text-slate-900">399 ريال</span>
-                <span class="text-xs text-emerald-600 font-bold block">وفر 91 ريال</span>
-              </div>
-              <button type="button" class="order-trigger px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs" data-product="باقة 10 بطاقات أعمال (399 ريال)">
-                طلب الباقة
-              </button>
-            </div>
+            <ul class="space-y-4 text-sm text-slate-200">
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-cyan-400 mt-1"></i>
+                <span>تصميم أكريليك فاخر يرفع من هيبة نقطة البيع والاستقبال.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-cyan-400 mt-1"></i>
+                <span>مقاوم 100% للماء والقهوة والسقوط ويدوم لسنوات.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-cyan-400 mt-1"></i>
+                <span>ملامسة هاتف فورية في ثانية واحدة تضاعف التقييمات بـ 4 أضعاف.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-cyan-400 mt-1"></i>
+                <span>إمكانية إعادة برمجة الرابط وتحديثه مستقبلاً دون تغيير الستاند.</span>
+              </li>
+            </ul>
           </div>
 
         </div>
@@ -541,40 +757,40 @@
     </section>
 
     <!-- الأسئلة الشائعة -->
-    <section id="faq" class="py-20 border-b border-slate-200/80">
+    <section id="faq" class="py-24 border-b border-slate-800/80 bg-[#0B0E17]/40">
       <div class="max-w-3xl mx-auto px-6">
-        <div class="text-center mb-12">
-          <p class="text-xs font-black text-emerald-600 mb-2 uppercase tracking-widest">FAQ</p>
-          <h2 class="text-3xl font-black text-slate-900">الأسئلة الشائعة</h2>
+        <div class="text-center mb-14">
+          <p class="text-xs font-bold text-blue-400 mb-2 uppercase tracking-widest">FAQ</p>
+          <h2 class="text-3xl font-black text-white">الأسئلة الشائعة</h2>
         </div>
 
         <div class="space-y-4">
-          <details class="group rounded-2xl border border-slate-200 bg-white p-5 cursor-pointer shadow-sm">
-            <summary class="font-bold text-slate-900 flex justify-between items-center list-none">
+          <details class="group rounded-2xl border border-slate-800 bg-slate-900/60 p-5 cursor-pointer">
+            <summary class="font-bold text-white flex justify-between items-center list-none">
               <span>هل يحتاج العميل لتحميل تطبيق معين؟</span>
               <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
               إطلاقاً! لا يحتاج العميل لأي تطبيق؛ بمجرد ملامسة الهاتف للستاند يفتح الرابط في متصفح الجوال مباشرة وبشكل فوري.
             </p>
           </details>
 
-          <details class="group rounded-2xl border border-slate-200 bg-white p-5 cursor-pointer shadow-sm">
-            <summary class="font-bold text-slate-900 flex justify-between items-center list-none">
+          <details class="group rounded-2xl border border-slate-800 bg-slate-900/60 p-5 cursor-pointer">
+            <summary class="font-bold text-white flex justify-between items-center list-none">
               <span>هل يمكنني تغيير الرابط مستقبلاً؟</span>
               <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-              نعم، نقوم ببرمجة الرقاقة لتكون مرنة وقابلة لإعادة التوجيه مستقبلاً في حال نقل فرعك أو تحديث حساباتك.
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+              نعم، نقوم ببرمجة الرقاقة لتكون مرنة وقابلة لإعادة التوجيه مستقبلاً في حال نقل فرعك أو تحديث حساباتك دون استبدال القطعة.
             </p>
           </details>
 
-          <details class="group rounded-2xl border border-slate-200 bg-white p-5 cursor-pointer shadow-sm">
-            <summary class="font-bold text-slate-900 flex justify-between items-center list-none">
-              <span>كيف أزودكم برابط خرائط قوقل أو شعار متجري؟</span>
+          <details class="group rounded-2xl border border-slate-800 bg-slate-900/60 p-5 cursor-pointer">
+            <summary class="font-bold text-white flex justify-between items-center list-none">
+              <span>كيف أزودكم برابط خرائط Google أو شعار متجري؟</span>
               <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+            <p class="text-sm text-slate-400 mt-3 leading-relaxed">
               بمجرد إرسال طلبك عبر النموذج أو الواتساب، سيتواصل معك ممثلنا لاستلام رابط فرعك أو شعار علامتك واعتماده فوراً قبل تجهيز الشحنة.
             </p>
           </details>
@@ -582,39 +798,37 @@
       </div>
     </section>
 
-    <!-- نموذج الطلب المباشر -->
-    <section id="order" class="py-24 bg-white">
+    <!-- نموذج الطلب المباشر عبر WhatsApp -->
+    <section id="order" class="py-24 bg-gradient-to-b from-[#07090E] to-[#0D111A]">
       <div class="max-w-xl mx-auto px-6">
         <div class="text-center mb-10">
-          <p class="text-xs font-black text-emerald-600 mb-2 uppercase tracking-widest">DIRECT ORDER</p>
-          <h2 class="text-3xl font-black text-slate-900">اطلب حلول AVENi الآن</h2>
-          <p class="text-sm text-slate-500 mt-2">أدخل بياناتك وسنفتح لك محادثة واتساب مجهزة بالتفاصيل لتأكيد طلبك</p>
+          <p class="text-xs font-bold text-blue-400 mb-2 uppercase tracking-widest">ORDER NOW</p>
+          <h2 class="text-3xl font-black text-white">اطلب حلول AVENi الآن</h2>
+          <p class="text-sm text-slate-400 mt-2">أدخل بياناتك وسنفتح لك محادثة واتساب مجهزة بالتفاصيل لتأكيد طلبك</p>
         </div>
 
-        <form id="orderForm" class="rounded-3xl border border-slate-200 bg-[#F8FAFC] p-8 space-y-6 shadow-lg shadow-slate-200/50" novalidate>
+        <form id="orderForm" class="rounded-3xl border border-slate-800 bg-slate-900/90 p-8 space-y-6 shadow-2xl relative" novalidate>
           <div>
-            <label for="custName" class="block text-sm font-bold text-slate-700 mb-2">الاسم الكريم / اسم المنشأة *</label>
-            <input id="custName" name="name" type="text" required maxlength="100" class="w-full rounded-xl bg-white border border-slate-300 px-4 py-3.5 text-sm text-slate-800 focus:border-emerald-600 outline-none transition" placeholder="مثال: مقهى ركن القهوة / محمد الأحمد">
+            <label for="custName" class="block text-sm font-bold text-slate-200 mb-2">الاسم الكريم / اسم المنشأة *</label>
+            <input id="custName" name="name" type="text" required maxlength="100" class="w-full rounded-xl bg-slate-950 border border-slate-800 px-4 py-3.5 text-sm text-white focus:border-blue-500 outline-none transition" placeholder="مثال: مقهى ركن القهوة / محمد الأحمد">
           </div>
 
           <div>
-            <label for="custPhone" class="block text-sm font-bold text-slate-700 mb-2">رقم الجوال / الواتساب السعودي *</label>
-            <input id="custPhone" name="phone" type="tel" required inputmode="tel" maxlength="13" class="w-full rounded-xl bg-white border border-slate-300 px-4 py-3.5 text-sm text-slate-800 focus:border-emerald-600 outline-none transition text-right" placeholder="05xxxxxxxx" dir="ltr">
-            <p id="phoneError" class="hidden text-xs text-red-500 mt-2 font-medium">يرجى إدخال رقم جوال سعودي صحيح يبدأ بـ 05.</p>
+            <label for="custPhone" class="block text-sm font-bold text-slate-200 mb-2">رقم الجوال / الواتساب السعودي *</label>
+            <input id="custPhone" name="phone" type="tel" required inputmode="tel" maxlength="13" class="w-full rounded-xl bg-slate-950 border border-slate-800 px-4 py-3.5 text-sm text-white focus:border-blue-500 outline-none transition text-right font-brand" placeholder="05xxxxxxxx" dir="ltr">
+            <p id="phoneError" class="hidden text-xs text-red-400 mt-2 font-medium">يرجى إدخال رقم جوال سعودي صحيح يبدأ بـ 05.</p>
           </div>
 
           <div>
-            <label for="prodType" class="block text-sm font-bold text-slate-700 mb-2">اختر المنتج أو الباقة المطلوبة *</label>
-            <select id="prodType" class="w-full rounded-xl bg-white border border-slate-300 px-4 py-3.5 text-sm text-slate-800 focus:border-emerald-600 outline-none transition">
+            <label for="prodType" class="block text-sm font-bold text-slate-200 mb-2">اختر المنتج أو الباقة المطلوبة *</label>
+            <select id="prodType" class="w-full rounded-xl bg-slate-950 border border-slate-800 px-4 py-3.5 text-sm text-white focus:border-blue-500 outline-none transition">
               <option value="ستاند تقييم Google">ستاند تقييم Google الذكي (99 ريال)</option>
               <option value="بطاقة أعمال ذكية">بطاقة أعمال ذكية NFC (49 ريال)</option>
               <option value="ستاند نقاط البيع المخصص">ستاند نقاط البيع المخصص بهويتك (299 ريال)</option>
-              <option value="باقة 3 ستاندات تقييم (249 ريال)">باقة 3 ستاندات تقييم للمقاهي (249 ريال)</option>
-              <option value="باقة 10 بطاقات أعمال (399 ريال)">باقة 10 بطاقات أعمال للشركات (399 ريال)</option>
             </select>
           </div>
 
-          <button type="submit" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-600/30">
+          <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-black text-sm flex items-center justify-center gap-2.5 transition shadow-xl shadow-blue-600/30">
             <i class="fa-brands fa-whatsapp text-lg"></i>
             تأكيد الطلب عبر WhatsApp
           </button>
@@ -624,17 +838,28 @@
   </main>
 
   <!-- Footer -->
-  <footer class="py-8 border-t border-slate-200 text-center text-xs text-slate-500 bg-white">
-    <div class="font-brand font-bold text-slate-900 text-base mb-1">AVENi</div>
-    © 2026 جميع الحقوق محفوظة · حلول الاتصال الذكي NFC
+  <footer class="py-10 border-t border-slate-800/80 text-center text-xs text-slate-500 bg-[#07090E]">
+    <div class="font-brand font-black text-white text-lg mb-1 tracking-wider">AVENi</div>
+    © 2026 جميع الحقوق محفوظة · أنظمة وحلول الاتصال الذكي NFC
   </footer>
 
   <!-- زر واتساب العائم -->
-  <a href="https://wa.me/966591825649?text=مرحباً%20فريق%20AVENi،%20أود%20الاستفسار%20عن%20منتجات%20NFC" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-xl shadow-emerald-600/30 hover:scale-110 transition-transform" title="محادثة واتساب">
+  <a href="https://wa.me/966591825649?text=مرحباً%20فريق%20AVENi،%20أود%20الاستفسار%20عن%20منتجات%20NFC" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-500 text-white flex items-center justify-center text-2xl shadow-xl shadow-blue-600/40 hover:scale-110 transition-transform" title="محادثة واتساب">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- JavaScript التفاعلي للمحاكاة والوظائف -->
+  <!-- إشعار الطلبات الحية Live Sales Toast -->
+  <div id="liveToast" class="fixed bottom-6 left-6 z-50 hidden sm:flex items-center gap-3 p-3.5 rounded-2xl bg-slate-900/90 border border-slate-700 shadow-2xl backdrop-blur-md opacity-0 translate-y-4">
+    <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center text-sm font-bold">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    <div class="text-right">
+      <div id="toastText" class="text-xs font-bold text-white">طلب جديد منذ قليل</div>
+      <div id="toastSub" class="text-[10px] text-slate-400">ستاند تقييم Google · مقهى بالرياض</div>
+    </div>
+  </div>
+
+  <!-- JavaScript التفاعلي -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('orderForm');
@@ -644,7 +869,59 @@
       const menuBtn = document.getElementById('mobileMenuBtn');
       const menu = document.getElementById('mobileMenu');
 
-      // تفاعل محاكي الآيفون الواقعي (Dynamic Island Tap)
+      // 1. تفاعل محاكي تخصيص الستاند Live Customizer
+      const brandInput = document.getElementById('brandInput');
+      const standBrandName = document.getElementById('standBrandName');
+      const simMapStoreName = document.getElementById('simMapStoreName');
+      const btnStandBlack = document.getElementById('btnStandBlack');
+      const btnStandWhite = document.getElementById('btnStandWhite');
+      const standMesh = document.getElementById('standMesh');
+      const standFootnote = document.getElementById('standFootnote');
+      const standTagline = document.getElementById('standTagline');
+      const orderCustomStand = document.getElementById('orderCustomStand');
+      let currentStandColor = 'أسود تيتانيوم';
+
+      if (brandInput && standBrandName) {
+        brandInput.addEventListener('input', (e) => {
+          const val = e.target.value.trim() || 'اسم متجرك هنا';
+          standBrandName.innerText = val;
+          if (simMapStoreName) simMapStoreName.innerText = val;
+        });
+      }
+
+      if (btnStandBlack && btnStandWhite && standMesh) {
+        btnStandBlack.addEventListener('click', () => {
+          currentStandColor = 'أسود تيتانيوم';
+          standMesh.className = 'acrylic-stand-realistic stand-black p-6 flex flex-col justify-between items-center text-center';
+          standBrandName.classList.remove('text-slate-900');
+          standBrandName.classList.add('text-white');
+          standFootnote.className = 'text-[9px] text-cyan-300 font-bold mt-2';
+          standTagline.className = 'text-[10px] text-slate-400 font-semibold mt-1';
+          btnStandBlack.className = 'p-3.5 rounded-xl border-2 border-cyan-500 bg-slate-950 flex items-center justify-center gap-2 text-xs font-bold text-white transition';
+          btnStandWhite.className = 'p-3.5 rounded-xl border border-slate-700 bg-slate-950/60 flex items-center justify-center gap-2 text-xs font-bold text-slate-300 hover:border-slate-500 transition';
+        });
+
+        btnStandWhite.addEventListener('click', () => {
+          currentStandColor = 'أبيض لؤلؤي';
+          standMesh.className = 'acrylic-stand-realistic stand-white p-6 flex flex-col justify-between items-center text-center';
+          standBrandName.classList.remove('text-white');
+          standBrandName.classList.add('text-slate-900');
+          standFootnote.className = 'text-[9px] text-blue-600 font-bold mt-2';
+          standTagline.className = 'text-[10px] text-slate-600 font-semibold mt-1';
+          btnStandWhite.className = 'p-3.5 rounded-xl border-2 border-cyan-500 bg-slate-950 flex items-center justify-center gap-2 text-xs font-bold text-white transition';
+          btnStandBlack.className = 'p-3.5 rounded-xl border border-slate-700 bg-slate-950/60 flex items-center justify-center gap-2 text-xs font-bold text-slate-300 hover:border-slate-500 transition';
+        });
+      }
+
+      if (orderCustomStand) {
+        orderCustomStand.addEventListener('click', () => {
+          const store = brandInput.value.trim() || 'اسم متجري';
+          const msg = `مرحباً فريق AVENi 👋\nأود طلب ستاند تقييم Google مخصص بالبيانات التالية:\n- اسم المتجر: *${store}*\n- لون الستاند المفضل: *${currentStandColor}*\n\nأرجو تزويدي بتفاصيل الاعتماد والشحن.`;
+          window.open(`https://wa.me/966591825649?text=${encodeURIComponent(msg)}`, '_blank');
+        });
+      }
+
+      // 2. محاكي النقر بالآيفون الواقعي
       const realTapBtn = document.getElementById('realTapTrigger');
       const simPhone = document.getElementById('simPhone');
       const simIsland = document.getElementById('simIsland');
@@ -654,51 +931,32 @@
 
       if (realTapBtn) {
         realTapBtn.addEventListener('click', () => {
-          // اهتزاز الجوال الحقيقي إذا كان مدعوماً
           if (navigator.vibrate) navigator.vibrate([40, 60, 40]);
 
-          // 1. حركة اقتراب الهاتف
           simPhone.classList.add('tapped');
           
-          // 2. تمدد الـ Dynamic Island
           setTimeout(() => {
             simIsland.classList.add('expanded');
             islandContent.classList.remove('hidden');
             islandContent.classList.add('flex');
           }, 300);
 
-          // 3. فتح شاشة تقييم Google
           setTimeout(() => {
             standbyText.classList.add('hidden');
             gMapContent.classList.remove('opacity-0');
             gMapContent.classList.add('opacity-100');
           }, 700);
 
-          // 4. استقرار الجزيرة التفاعلية
           setTimeout(() => {
             simIsland.classList.remove('expanded');
             islandContent.classList.add('hidden');
             islandContent.classList.remove('flex');
             simPhone.classList.remove('tapped');
-          }, 2200);
+          }, 2400);
         });
       }
 
-      // حاسبة التقييمات التفاعلية
-      const visitorsInput = document.getElementById('visitorsInput');
-      const visitorsVal = document.getElementById('visitorsVal');
-      const monthlyReviews = document.getElementById('monthlyReviews');
-
-      if (visitorsInput) {
-        visitorsInput.addEventListener('input', (e) => {
-          const val = parseInt(e.target.value, 10);
-          visitorsVal.innerText = val;
-          const estimated = Math.round(val * 30 * 0.04);
-          monthlyReviews.innerText = estimated + "+";
-        });
-      }
-
-      // ربط أزرار الطلب بالنموذج
+      // 3. ربط أزرار الطلب بالنموذج
       document.querySelectorAll('.order-trigger').forEach(btn => {
         btn.addEventListener('click', () => {
           sel.value = btn.dataset.product;
@@ -706,7 +964,7 @@
         });
       });
 
-      // قائمة الجوال
+      // 4. القائمة في الجوال
       menuBtn.addEventListener('click', () => {
         const isHidden = menu.classList.contains('hidden');
         menu.classList.toggle('hidden', !isHidden);
@@ -720,7 +978,7 @@
         });
       });
 
-      // إرسال الطلب عبر الواتساب
+      // 5. نموذج إرسال الطلب
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         err.classList.add('hidden');
@@ -746,6 +1004,34 @@
       });
 
       phone.addEventListener('input', () => err.classList.add('hidden'));
+
+      // 6. شريط التنبيهات التلقائي للطلبات
+      const toast = document.getElementById('liveToast');
+      const toastSub = document.getElementById('toastSub');
+      const sampleOrders = [
+        "ستاند تقييم Google · مقهى بالخبر",
+        "باقة 3 ستاندات تقييم · مطعم في الرياض",
+        "بطاقة أعمال ذكية NFC · مهندس في الأحساء",
+        "ستاند نقاط البيع المخصص · عيادة في جدة"
+      ];
+
+      function showRandomToast() {
+        if (!toast) return;
+        const randomOrder = sampleOrders[Math.floor(Math.random() * sampleOrders.length)];
+        toastSub.innerText = randomOrder;
+        toast.classList.remove('opacity-0', 'translate-y-4');
+        toast.classList.add('opacity-100', 'translate-y-0');
+
+        setTimeout(() => {
+          toast.classList.remove('opacity-100', 'translate-y-0');
+          toast.classList.add('opacity-0', 'translate-y-4');
+        }, 4500);
+      }
+
+      setTimeout(() => {
+        showRandomToast();
+        setInterval(showRandomToast, 18000);
+      }, 5000);
     });
   </script>
 </body>
