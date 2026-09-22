@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>AVENi — الجيل الجديد للتواصل الذكي NFC</title>
+  <title>AVENi — حلول وتقنيات الاتصال الذكي NFC</title>
+  <meta name="description" content="البديل الذكي للورق والكرتون: ستاندات تقييم Google وبطاقات أعمال تفاعلية بتقنية NFC الفورية.">
   <meta name="theme-color" content="#000000">
 
-  <!-- الخطوط الحديثة (IBM Plex Sans Arabic الفخم) -->
+  <!-- الخطوط الحديثة الرسمية -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -29,15 +30,15 @@
       overflow-x: hidden;
     }
 
-    /* تأثير الإضاءة العلوية الفخمة مثل مواقع Apple */
+    /* خلفية الإضاءة البؤرية العلوية الناعمة */
     .hero-glow {
-      background: radial-gradient(circle 600px at 50% -100px, rgba(255, 255, 255, 0.08), transparent 80%);
+      background: radial-gradient(circle 700px at 50% -120px, rgba(255, 255, 255, 0.08), transparent 85%);
     }
 
-    /* كروت زجاجية بنمط 2026 */
+    /* كروت بنمط Bento Grid العصري */
     .bento-card {
-      background: rgba(18, 18, 20, 0.6);
-      backdrop-filter: blur(20px);
+      background: rgba(18, 18, 20, 0.65);
+      backdrop-filter: blur(24px);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 28px;
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -47,18 +48,18 @@
       transform: translateY(-4px);
     }
 
-    /* أزرار عصرية مطفية */
+    /* الأزرار المودرن المطفية */
     .btn-white {
       background: #FFFFFF;
       color: #000000;
       border-radius: 100px;
       font-weight: 700;
-      transition: all 0.3s ease;
+      transition: all 0.25s ease;
     }
     .btn-white:hover {
       background: #E5E5E5;
       transform: scale(1.02);
-      box-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 35px rgba(255, 255, 255, 0.25);
     }
 
     .btn-dark {
@@ -67,28 +68,28 @@
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 100px;
       font-weight: 600;
-      transition: all 0.3s ease;
+      transition: all 0.25s ease;
     }
     .btn-dark:hover {
       border-color: rgba(255, 255, 255, 0.3);
       background: #1C1C20;
     }
 
-    /* هاتف iPhone 16 Pro الواقعي المينيمال */
+    /* محاكي iPhone 16 Pro الواقعي بنمط Minimalist */
     .iphone-frame {
-      width: 280px;
-      height: 560px;
+      width: 285px;
+      height: 570px;
       background: #08080A;
       border-radius: 46px;
       padding: 10px;
       border: 1.5px solid rgba(255, 255, 255, 0.14);
-      box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.9);
+      box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.95);
       position: relative;
     }
     .iphone-screen {
       width: 100%;
       height: 100%;
-      background: #0F0F12;
+      background: #0D0D10;
       border-radius: 36px;
       overflow: hidden;
       display: flex;
@@ -98,7 +99,7 @@
       position: relative;
     }
     .dynamic-pill {
-      width: 80px;
+      width: 82px;
       height: 22px;
       background: #000;
       border-radius: 20px;
@@ -110,7 +111,27 @@
       height: 48px;
       border-radius: 24px;
       background: #18181C;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    /* صور المنتجات داخل الكروت */
+    .product-img-box {
+      background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+      border-radius: 20px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 210px;
+    }
+    .product-img-box img {
+      max-height: 180px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+    .bento-card:hover .product-img-box img {
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -128,8 +149,8 @@
       <nav class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-wide text-zinc-400">
         <a href="#products" class="hover:text-white transition">الأجهزة</a>
         <a href="#demo" class="hover:text-white transition">التجربة المباشرة</a>
-        <a href="#roi" class="hover:text-white transition">العائد على الاستثمار</a>
-        <a href="#faq" class="hover:text-white transition">الأسئلة</a>
+        <a href="#roi" class="hover:text-white transition">العائد المالي</a>
+        <a href="#faq" class="hover:text-white transition">الأسئلة الشائعة</a>
       </nav>
 
       <a href="#order" class="btn-white text-xs px-5 py-2.5">
@@ -151,7 +172,7 @@
       </h1>
 
       <p class="text-zinc-400 text-base sm:text-lg max-w-xl mx-auto mb-10 leading-relaxed font-light">
-        أجهزة أكريليك فاخرة وبطاقات أعمال مبرمجة بتقنية NFC. بدون كاميرا، بدون تطبيقات، وبدون رسوم اشتراك شهرية.
+        أجهزة أكريليك فاخرة وبطاقات أعمال مبرمجة بتقنية NFC. بدون كاميرا، بدون تطبيقات، وبدون أي اشتراكات دورية.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -162,26 +183,49 @@
           جرّب التفاعل المباشر
         </a>
       </div>
+
+      <!-- مؤشرات السرعة والثقة -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20 pt-10 border-t border-white/[0.06] text-center">
+        <div>
+          <div class="text-2xl font-bold text-white font-num">99.8%</div>
+          <div class="text-xs text-zinc-500 mt-1">توافق الهواتف الذكية</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold text-white font-num">1 ثانية</div>
+          <div class="text-xs text-zinc-500 mt-1">سرعة استجابة الملامسة</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold text-white font-num">0 ريال</div>
+          <div class="text-xs text-zinc-500 mt-1">رسوم اشتراك شهرية</div>
+        </div>
+        <div>
+          <div class="text-2xl font-bold text-white font-num">100%</div>
+          <div class="text-xs text-zinc-500 mt-1">مقاوم للماء والحرارة</div>
+        </div>
+      </div>
     </section>
 
-    <!-- Bento Grid Section: المنتجات -->
-    <section id="products" class="py-24 max-w-6xl mx-auto px-6">
+    <!-- Bento Grid Section: الأجهزة والمنتجات -->
+    <section id="products" class="py-24 max-w-6xl mx-auto px-6 border-t border-white/[0.06]">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
         <div>
           <span class="text-xs uppercase tracking-widest text-zinc-500 font-semibold">الأجهزة والحلول</span>
           <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">مصممة لتبهر عملاءك.</h2>
         </div>
-        <p class="text-xs text-zinc-500 max-w-xs">خامات أكريليك ثقيلة، مظهر ماتي أنيق، ومقاومة تامة للسوائل والحرارة.</p>
+        <p class="text-xs text-zinc-500 max-w-xs leading-relaxed">خامات أكريليك ثقيلة، مظهر ماتي أنيق، ومقاومة تامة للسوائل والحرارة عند الكاشير.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
         
-        <!-- المنتج الأول -->
+        <!-- 1. بطاقة الأعمال الذكية -->
         <div class="bento-card p-8 flex flex-col justify-between">
           <div>
-            <span class="text-[11px] font-bold text-zinc-500 uppercase tracking-widest">للمحترفين ورجال الأعمال</span>
+            <div class="product-img-box mb-6">
+              <img src="assets/products/AVENi-card-site.webp?v=20260912-1" alt="بطاقة أعمال ذكية AVENi">
+            </div>
+            <span class="text-[11px] font-bold text-zinc-500 uppercase tracking-widest">للمحترفين ورواد الأعمال</span>
             <h3 class="text-xl font-bold text-white mt-2 mb-3">بطاقة الأعمال الذكية</h3>
-            <p class="text-xs text-zinc-400 leading-relaxed mb-6">احفظ رقمك، بريدك، وحساباتك بملامسة واحدة لهاتف العميل دون طباعة أوراق.</p>
+            <p class="text-xs text-zinc-400 leading-relaxed mb-6">احفظ رقمك، بريدك، وحساباتك بملامسة واحدة لهاتف العميل دون الحاجة لطباعة كروت ورقية.</p>
           </div>
           <div class="pt-6 border-t border-white/[0.06] flex items-center justify-between">
             <span class="text-2xl font-bold text-white font-num">49 <span class="text-xs font-normal text-zinc-500">SAR</span></span>
@@ -189,13 +233,16 @@
           </div>
         </div>
 
-        <!-- المنتج الثاني (الأهم والأكثر مبيعاً) -->
+        <!-- 2. ستاند تقييم Google الذكي (الأكثر طلباً) -->
         <div class="bento-card p-8 flex flex-col justify-between border-white/[0.22] relative overflow-hidden bg-gradient-to-b from-zinc-900/40 to-black">
           <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white text-black text-[10px] font-bold uppercase tracking-wider">الأكثر مبيعاً</div>
           <div>
+            <div class="product-img-box mb-6">
+              <img src="assets/products/AVENi-google-site.webp?v=20260912-1" alt="ستاند تقييم Google">
+            </div>
             <span class="text-[11px] font-bold text-emerald-400 uppercase tracking-widest">للمقاهي والمطاعم والعيادات</span>
             <h3 class="text-xl font-bold text-white mt-2 mb-3">ستاند تقييم Google الذكي</h3>
-            <p class="text-xs text-zinc-300 leading-relaxed mb-6">يوضع عند الكاشير؛ يلمس الزبون هاتفه فيفتح له تقييم 5 نجوم فوراً بالخرائط.</p>
+            <p class="text-xs text-zinc-300 leading-relaxed mb-6">يوضع عند الكاشير أو الاستقبال؛ يلمس الزبون هاتفه فيفتح له تقييم 5 نجوم فوراً بخرائط Google.</p>
           </div>
           <div class="pt-6 border-t border-white/[0.06] flex items-center justify-between">
             <span class="text-2xl font-bold text-white font-num">99 <span class="text-xs font-normal text-zinc-500">SAR</span></span>
@@ -203,12 +250,15 @@
           </div>
         </div>
 
-        <!-- المنتج الثالث -->
+        <!-- 3. ستاند نقاط البيع المخصص -->
         <div class="bento-card p-8 flex flex-col justify-between">
           <div>
+            <div class="product-img-box mb-6">
+              <img src="assets/products/AVENi-custom-site.webp?v=20260912-1" alt="ستاند نقاط البيع المخصص">
+            </div>
             <span class="text-[11px] font-bold text-zinc-500 uppercase tracking-widest">للبراندات والشركات الكبرى</span>
             <h3 class="text-xl font-bold text-white mt-2 mb-3">ستاند نقاط البيع المخصص</h3>
-            <p class="text-xs text-zinc-400 leading-relaxed mb-6">طباعة شعارك وهويتك لفتح صفحة مخصصة تجمع المنيو، المتجر، والواتساب.</p>
+            <p class="text-xs text-zinc-400 leading-relaxed mb-6">طباعة شعارك وهويتك لفتح صفحة مخصصة تجمع قائمة الطعام، المتجر، والواتساب.</p>
           </div>
           <div class="pt-6 border-t border-white/[0.06] flex items-center justify-between">
             <span class="text-2xl font-bold text-white font-num">299 <span class="text-xs font-normal text-zinc-500">SAR</span></span>
@@ -219,7 +269,7 @@
       </div>
     </section>
 
-    <!-- Interactive Simulator: تجربة الآيفون المينيمال -->
+    <!-- Interactive Simulator: محاكاة الهاتف المباشرة -->
     <section id="demo" class="py-24 border-t border-white/[0.06]">
       <div class="max-w-5xl mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -228,7 +278,7 @@
             <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">محاكاة تفاعلية فورية</span>
             <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-6">جرّب بنفسك: كيف يتفاعل هاتف العميل؟</h2>
             <p class="text-sm text-zinc-400 leading-relaxed mb-8">
-              لا توجد كاميرا ليفتحها، ولا رموز باركود ليركز عليها. العميل يضع هاتفه على الستاند فقط، فتتكفل الجزيرة التفاعلية بالباقي.
+              لا توجد كاميرا ليفتحها، ولا رموز باركود ليركز عليها. العميل يضع هاتفه على الستاند فقط، فتتكفل الجزيرة التفاعلية بفتح صفحة التقييم فوراً.
             </p>
             <button id="triggerTap" class="btn-white px-7 py-3.5 text-xs flex items-center gap-3">
               <i class="fa-solid fa-nfc-symbol text-base"></i>
@@ -241,13 +291,13 @@
             <div class="iphone-frame">
               <div class="iphone-screen">
                 
-                <!-- الجزيرة التفاعلية -->
+                <!-- الجزيرة التفاعلية Dynamic Island -->
                 <div id="islandPill" class="dynamic-pill flex items-center justify-between px-3 text-[11px] text-white">
                   <span id="islandText" class="hidden text-emerald-400 font-bold">Google Maps Tap</span>
-                  <span id="islandBadge" class="hidden text-[9px] text-zinc-400">متصل الآن</span>
+                  <span id="islandBadge" class="hidden text-[9px] text-zinc-400">متصل</span>
                 </div>
 
-                <!-- شاشة خرائط Google -->
+                <!-- شاشة خرائط Google المنبثقة -->
                 <div id="screenMap" class="opacity-0 transition-opacity duration-500 my-auto text-center px-4">
                   <div class="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/[0.08] mx-auto flex items-center justify-center text-white mb-3 text-lg">
                     <i class="fa-solid fa-store"></i>
@@ -269,7 +319,7 @@
                   بانتظار ملامسة الستاند
                 </div>
 
-                <!-- البار السفلي -->
+                <!-- شريط الرجوع السفلي -->
                 <div class="w-24 h-1 bg-white/20 rounded-full mx-auto"></div>
 
               </div>
@@ -284,25 +334,25 @@
     <section id="roi" class="py-24 border-t border-white/[0.06] bg-zinc-950/40">
       <div class="max-w-4xl mx-auto px-6 text-center">
         <span class="text-xs uppercase tracking-widest text-zinc-500 font-semibold">المعادلة المالية</span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-12">لماذا يدفع أصحاب المتاجر 99 ريال مرة واحدة؟</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2 mb-12">لماذا يفضل أصحاب المتاجر استثمار الـ 99 ريال لمرة واحدة؟</h2>
 
         <div class="grid md:grid-cols-2 gap-6 text-right">
           <div class="bento-card p-8 border-red-500/10">
             <span class="text-xs font-bold text-red-400 uppercase tracking-widest">إعلانات سناب وتيك توك</span>
             <div class="text-3xl font-bold text-white font-num my-3">2,000+ <span class="text-xs font-normal text-zinc-500">SAR / شهر</span></div>
-            <p class="text-xs text-zinc-400 leading-relaxed">بمجرد توقف دفع الإعلانات بعد 3 أيام، يتوقف تدفق الزوار تماماً دون بناء تقييم دائم.</p>
+            <p class="text-xs text-zinc-400 leading-relaxed">بمجرد توقف تمويل الإعلانات بعد أيام معدودة، يتوقف تدفق الزوار تماماً دون ترك رصيد دائم من التقييمات.</p>
           </div>
 
           <div class="bento-card p-8 border-white/20">
             <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">ستاند AVENi الذكي</span>
-            <div class="text-3xl font-bold text-white font-num my-3">99 <span class="text-xs font-normal text-zinc-500">SAR (مرة واحدة للأبد)</span></div>
-            <p class="text-xs text-zinc-400 leading-relaxed">يعمل على الكاشير 365 يوماً في السنة، يجلب تقييمات يومية تضع فرعك في صدارة الخرائط مجاناً.</p>
+            <div class="text-3xl font-bold text-white font-num my-3">99 <span class="text-xs font-normal text-zinc-500">SAR (تدفع لمرة واحدة)</span></div>
+            <p class="text-xs text-zinc-400 leading-relaxed">يعمل على طاولة الكاشير طوال العام، يجلب تقييمات يومية تضع فرعك في صدارة نتائج الخرائط مجاناً.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- نموذج الطلب السريع -->
+    <!-- نموذج الطلب المباشر عبر WhatsApp -->
     <section id="order" class="py-24 border-t border-white/[0.06]">
       <div class="max-w-lg mx-auto px-6">
         <div class="text-center mb-10">
@@ -319,7 +369,7 @@
           <div>
             <label class="block text-xs font-semibold text-zinc-400 mb-2">رقم الواتساب السعودي</label>
             <input id="storePhone" type="tel" required placeholder="05xxxxxxxx" class="w-full bg-black/60 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-white/40 font-num text-right" dir="ltr">
-            <p id="phoneError" class="hidden text-[11px] text-red-400 mt-1.5">يرجى كتابة رقم يبدأ بـ 05 ويتكون من 10 أرقام.</p>
+            <p id="phoneError" class="hidden text-[11px] text-red-400 mt-1.5">يرجى كتابة رقم سعودي صحيح يبدأ بـ 05 ويتكون من 10 أرقام.</p>
           </div>
 
           <div>
@@ -340,14 +390,16 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="py-12 border-t border-white/[0.06] text-center text-xs text-zinc-600">
     <div class="tracking-widest font-bold text-white mb-2">AVENi</div>
     جميع الحقوق محفوظة © 2026 · أنظمة الاتصال الذكي NFC
   </footer>
 
+  <!-- Scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // تفاعل الهاتف
+      // تفاعل الهاتف والمحاكاة
       const trigger = document.getElementById('triggerTap');
       const pill = document.getElementById('islandPill');
       const text = document.getElementById('islandText');
