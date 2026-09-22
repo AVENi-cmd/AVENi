@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>AVENi | حلول وأنظمة الاتصال الذكي NFC للمتاجر والشركات</title>
-  <meta name="description" content="بطاقات أعمال ذكية وستاندات تقييم Google مخصصة بتقنية NFC وQR Code لنقاط البيع والاستقبال.">
-  <meta name="theme-color" content="#090A0F">
+  <title>AVENi | حلول وأنظمة الاتصال الذكي NFC</title>
+  <meta name="description" content="بطاقات أعمال ذكية وستاندات تقييم Google مخصصة بتقنية NFC وQR Code للمتاجر والشركات.">
+  <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://aveni-cmd.github.io/AVENi/">
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <script src="https://cdn.tailwindcss.com"></script>
@@ -23,47 +23,33 @@
     .font-brand {
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
-    .bg-space {
-      background-color: #08080C;
+    .bg-modern-light {
+      background-color: #F8FAFC;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 100% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 45%),
-        radial-gradient(circle at 0% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 40%);
-    }
-    .glow-border {
-      position: relative;
-    }
-    .glow-border::after {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.4), transparent, rgba(255, 255, 255, 0.1));
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
+        radial-gradient(circle at 10% 10%, rgba(16, 185, 129, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 90% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
     }
     .product-card {
-      background: linear-gradient(180deg, rgba(22, 22, 28, 0.85) 0%, rgba(11, 11, 15, 0.95) 100%);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .product-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(16, 185, 129, 0.5);
-      box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.25);
+      transform: translateY(-8px);
+      border-color: #10B981;
+      box-shadow: 0 20px 40px -12px rgba(16, 185, 129, 0.18);
     }
     .product-photo-wrap {
-      background: radial-gradient(circle at center, rgba(255,255,255,0.04) 0%, transparent 70%);
-      border-radius: 16px;
+      background: radial-gradient(circle at center, #F1F5F9 0%, #FFFFFF 70%);
+      border-radius: 20px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 240px;
+      min-height: 250px;
+      border: 1px solid #F1F5F9;
     }
     .product-photo-wrap img {
       width: 100%;
@@ -72,97 +58,133 @@
       transition: transform 0.4s ease;
     }
     .product-card:hover .product-photo-wrap img {
-      transform: scale(1.05);
+      transform: scale(1.06);
+    }
+    /* محاكي الجوال */
+    .mockup-phone {
+      border: 8px solid #0F172A;
+      box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.25);
+    }
+    @keyframes pulseSoft {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.08); opacity: 0.4; }
+    }
+    .nfc-wave {
+      animation: pulseSoft 2s infinite ease-in-out;
     }
   </style>
 </head>
 
-<body class="bg-space text-[#F4F4F5] antialiased min-h-screen selection:bg-emerald-500 selection:text-black">
+<body class="bg-modern-light text-slate-800 antialiased min-h-screen selection:bg-emerald-500 selection:text-white">
 
-  <!-- Top Announcement Bar -->
-  <div class="bg-gradient-to-r from-emerald-950/80 via-zinc-900 to-zinc-950 border-b border-emerald-900/40 py-2.5 px-4 text-center text-xs font-medium text-emerald-300 flex items-center justify-center gap-2">
-    <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-    شحن سريع وتوصيل لكافة مناطق المملكة | جاهز للاستخدام الفوري بدون أي تطبيق
+  <!-- شريط الإعلان العلوي -->
+  <div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white py-2.5 px-4 text-center text-xs font-bold shadow-sm">
+    <div class="max-w-6xl mx-auto flex items-center justify-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-white animate-ping"></span>
+      <span>شحن سريع خلال 24-48 ساعة لكافة مناطق المملكة | جاهز للاستخدام الفوري بدون أي اشتراكات</span>
+    </div>
   </div>
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-[#08080C]/85 backdrop-blur-2xl border-b border-zinc-800/80">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/80">
     <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" dir="ltr" class="font-brand text-2xl font-black tracking-wider text-white flex items-center gap-2">
-        <span class="w-8 h-8 rounded-lg bg-emerald-500 text-black flex items-center justify-center font-black text-sm">A</span>
+      <a href="#" dir="ltr" class="font-brand text-2xl font-black tracking-wider text-slate-900 flex items-center gap-2.5">
+        <span class="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-black text-base shadow-md shadow-emerald-500/20">A</span>
         AVENi
       </a>
       
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-zinc-400">
-        <a href="#products" class="hover:text-emerald-400 transition-colors">المنتجات الذكية</a>
-        <a href="#workflow" class="hover:text-emerald-400 transition-colors">آلية العمل</a>
-        <a href="#compatibility" class="hover:text-emerald-400 transition-colors">التوافق</a>
-        <a href="#faq" class="hover:text-emerald-400 transition-colors">الأسئلة الشائعة</a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
+        <a href="#products" class="hover:text-emerald-600 transition-colors">المنتجات الذكية</a>
+        <a href="#simulator" class="hover:text-emerald-600 transition-colors">جرّب التقنية</a>
+        <a href="#calculator" class="hover:text-emerald-600 transition-colors">حاسبة التقييمات</a>
+        <a href="#bundles" class="hover:text-emerald-600 transition-colors">باقات الكميات</a>
+        <a href="#faq" class="hover:text-emerald-600 transition-colors">الأسئلة الشائعة</a>
       </nav>
 
-      <a href="#order" class="hidden md:inline-flex px-5 py-2.5 rounded-xl bg-emerald-400 text-black text-xs font-black hover:bg-emerald-300 transition-all hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]">
+      <a href="#order" class="hidden md:inline-flex px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-black hover:bg-emerald-700 transition-all shadow-md shadow-emerald-600/20">
         اطلب الآن عبر WhatsApp
       </a>
 
-      <button id="mobileMenuBtn" class="md:hidden text-zinc-300 p-2 text-xl" aria-label="القائمة">
+      <button id="mobileMenuBtn" class="md:hidden text-slate-700 p-2 text-xl" aria-label="القائمة">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
   </header>
 
   <!-- Mobile Nav Menu -->
-  <nav id="mobileMenu" class="fixed inset-0 top-20 z-40 hidden bg-[#08080C]/98 backdrop-blur-3xl flex-col items-center justify-center gap-8 px-6 text-center border-t border-zinc-800">
-    <a class="mobile-link text-xl font-bold text-zinc-200 hover:text-emerald-400" href="#products">المنتجات الذكية</a>
-    <a class="mobile-link text-xl font-bold text-zinc-200 hover:text-emerald-400" href="#workflow">آلية العمل</a>
-    <a class="mobile-link text-xl font-bold text-zinc-200 hover:text-emerald-400" href="#compatibility">التوافق</a>
-    <a class="mobile-link text-xl font-bold text-zinc-200 hover:text-emerald-400" href="#faq">الأسئلة الشائعة</a>
-    <a class="mobile-link px-8 py-3.5 rounded-xl bg-emerald-400 text-black font-black text-sm mt-4" href="#order">اطلب حلولك الآن</a>
+  <nav id="mobileMenu" class="fixed inset-0 top-20 z-40 hidden bg-white/98 backdrop-blur-2xl flex-col items-center justify-center gap-7 px-6 text-center border-t border-slate-200">
+    <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#products">المنتجات الذكية</a>
+    <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#simulator">جرّب التقنية</a>
+    <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#calculator">حاسبة التقييمات</a>
+    <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#bundles">باقات الكميات</a>
+    <a class="mobile-link text-lg font-bold text-slate-800 hover:text-emerald-600" href="#faq">الأسئلة الشائعة</a>
+    <a class="mobile-link px-8 py-3.5 rounded-xl bg-emerald-600 text-white font-black text-sm mt-3" href="#order">اطلب حلولك الآن</a>
   </nav>
 
   <main>
     <!-- Hero Section -->
-    <section class="pt-16 pb-24 border-b border-zinc-800/50 relative overflow-hidden">
+    <section class="pt-14 pb-20 border-b border-slate-200/80 relative overflow-hidden">
       <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
         
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-bold mb-8">
-          <i class="fa-solid fa-bolt text-xs"></i>
-          تقنية NFC الذكية لنقاط البيع ونمو الأعمال
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold mb-6 shadow-sm">
+          <i class="fa-solid fa-bolt text-emerald-600 text-xs"></i>
+          تقنية NFC الحديثة للمتاجر ونمو الأعمال
         </div>
 
-        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black leading-[1.3] mb-6 tracking-tight">
-          ضاعف تقييماتك وتواصل مع عملائك <br>
-          <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-white bg-clip-text text-transparent">
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-slate-900 leading-[1.3] mb-6 tracking-tight">
+          ضاعف تقييمات Google وتواصلك <br>
+          <span class="bg-gradient-to-r from-emerald-600 to-teal-700 bg-clip-text text-transparent">
             بملامسة هاتف واحدة وبدون تطبيقات
           </span>
         </h1>
 
-        <p class="text-zinc-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-          بطاقات أعمال ذكية وستاندات أكريليك مخصصة لنقاط الاستقبال والكاشير؛ لنقل العميل مباشرة لصفحة تقييم Google أو شبكات التواصل فوراً عبر NFC وQR.
+        <p class="text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+          ستاندات أكريليك أنيقة وبطاقات أعمال ذكية مجهزة لجمع تقييمات 5 نجوم على Google Maps ومشاركة قنواتك الرقمية بلمسة واحدة لنقاط البيع والكاشير.
         </p>
 
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <a href="#order" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-emerald-400 text-black font-black text-sm hover:bg-emerald-300 transition-all shadow-[0_10px_30px_rgba(16,185,129,0.3)]">
+          <a href="#order" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-emerald-600 text-white font-black text-sm hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/30">
             <i class="fa-brands fa-whatsapp text-lg ml-2"></i> اطلب الآن عبر الواتساب
           </a>
-          <a href="#products" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-zinc-900 border border-zinc-700/80 font-bold text-sm text-zinc-200 hover:border-zinc-500 transition-all">
-            استعرض المنتجات والأسعار
+          <a href="#simulator" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white border border-slate-300 font-bold text-sm text-slate-700 hover:border-emerald-600 hover:text-emerald-600 transition-all shadow-sm">
+            <i class="fa-solid fa-play ml-1.5 text-xs text-emerald-600"></i> جرّب التفاعل المباشر
           </a>
+        </div>
+
+        <!-- ميزات المتانة -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-3xl mx-auto pt-8 border-t border-slate-200/80">
+          <div class="flex items-center justify-center gap-2 text-xs font-bold text-slate-600">
+            <i class="fa-solid fa-battery-empty text-emerald-600 text-sm"></i>
+            <span>تعمل للأبد دون بطارية</span>
+          </div>
+          <div class="flex items-center justify-center gap-2 text-xs font-bold text-slate-600">
+            <i class="fa-solid fa-faucet-drip text-emerald-600 text-sm"></i>
+            <span>مقاومة للماء والقهوة</span>
+          </div>
+          <div class="flex items-center justify-center gap-2 text-xs font-bold text-slate-600">
+            <i class="fa-solid fa-mobile-screen text-emerald-600 text-sm"></i>
+            <span>متوافقة مع الآيفون والأندرويد</span>
+          </div>
+          <div class="flex items-center justify-center gap-2 text-xs font-bold text-slate-600">
+            <i class="fa-solid fa-arrows-rotate text-emerald-600 text-sm"></i>
+            <span>تحديث الرابط مستقبلاً</span>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="py-24 border-b border-zinc-800/50">
+    <!-- المنتجات الذكية -->
+    <section id="products" class="py-20 border-b border-slate-200/80">
       <div class="max-w-6xl mx-auto px-6">
         
         <div class="text-center mb-16">
-          <p class="text-xs font-black text-emerald-400 mb-3 tracking-widest uppercase">OUR HARDWARE</p>
-          <h2 class="text-3xl sm:text-4xl font-black text-white">حلول AVENi الذكية</h2>
-          <p class="text-sm text-zinc-400 mt-3 max-w-lg mx-auto">منتجات عصرية ومجهزة برقائق NFC مبرمجة وجاهزة فور استلامها</p>
+          <p class="text-xs font-black text-emerald-600 mb-2 tracking-widest uppercase">HARDWARE SOLUTIONS</p>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900">منتجات AVENi الذكية</h2>
+          <p class="text-sm text-slate-500 mt-2">تصاميم أكريليك أنيقة مجهزة بشرائح NFC عالية الدقة</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-3 gap-7">
 
           <!-- 1. بطاقة الأعمال الذكية -->
           <article class="product-card rounded-3xl p-6 flex flex-col justify-between">
@@ -170,45 +192,45 @@
               <div class="product-photo-wrap mb-6">
                 <img src="assets/products/AVENi-card-site.webp?v=20260912-1" alt="بطاقة أعمال ذكية AVENi">
               </div>
-              <span class="text-[11px] font-extrabold text-zinc-400 uppercase tracking-wider bg-zinc-800/60 px-3 py-1 rounded-md">للمحترفين والأفراد</span>
-              <h3 class="text-xl font-black mt-3 text-white">بطاقة الأعمال الذكية</h3>
-              <p class="text-sm text-zinc-400 leading-relaxed mt-2.5">
-                شارك رقمك، إيميلك، موقعك، وحساباتك الرقمية بملامسة واحدة لظهر هاتف العميل دون طباعة مئات الكروت الورقية.
+              <span class="text-[11px] font-extrabold text-slate-600 uppercase tracking-wider bg-slate-100 px-3 py-1 rounded-md">للمحترفين ورجال الأعمال</span>
+              <h3 class="text-xl font-black mt-3 text-slate-900">بطاقة الأعمال الذكية</h3>
+              <p class="text-sm text-slate-500 leading-relaxed mt-2.5">
+                شارك رقمك، إيميلك، موقعك، وحساباتك الرقمية بملامسة واحدة لظهر هاتف العميل دون طباعة مئات الكروت الورقية التقليدية.
               </p>
             </div>
             
-            <div class="mt-8 pt-5 border-t border-zinc-800/80">
-              <div class="flex items-baseline gap-1 text-3xl font-black text-white">
-                49 <span class="text-sm font-semibold text-zinc-400">ريال</span>
+            <div class="mt-8 pt-5 border-t border-slate-100">
+              <div class="flex items-baseline gap-1 text-3xl font-black text-slate-900">
+                49 <span class="text-sm font-semibold text-slate-500">ريال</span>
               </div>
-              <button type="button" class="order-trigger mt-4 w-full py-3.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-extrabold text-sm transition-all" data-product="بطاقة أعمال ذكية">
+              <button type="button" class="order-trigger mt-4 w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-sm transition-all" data-product="بطاقة أعمال ذكية">
                 طلب البطاقة الآن
               </button>
             </div>
           </article>
 
           <!-- 2. ستاند تقييم Google (الأكثر مبيعاً) -->
-          <article class="product-card rounded-3xl p-6 flex flex-col justify-between glow-border relative border-emerald-500/40 bg-gradient-to-b from-emerald-950/20 via-zinc-900/90 to-[#0A0A0E]">
-            <div class="absolute -top-3.5 right-6 px-3.5 py-1 rounded-full bg-emerald-400 text-black text-[11px] font-black tracking-wide shadow-lg">
-              ★ الأكثر طلباً للمتاجر والمقاهي
+          <article class="product-card rounded-3xl p-6 flex flex-col justify-between relative border-2 border-emerald-500/80 bg-gradient-to-b from-emerald-50/40 to-white shadow-xl shadow-emerald-500/10">
+            <div class="absolute -top-3.5 right-6 px-3.5 py-1 rounded-full bg-emerald-600 text-white text-[11px] font-black tracking-wide shadow-md">
+              ★ الأكثر طلباً للمقاهي والمطاعم
             </div>
 
             <div>
               <div class="product-photo-wrap mb-6">
                 <img src="assets/products/AVENi-google-site.webp?v=20260912-1" alt="ستاند تقييم Google">
               </div>
-              <span class="text-[11px] font-extrabold text-emerald-400 uppercase tracking-wider bg-emerald-950/60 px-3 py-1 rounded-md border border-emerald-500/20">للمطاعم والكافيهات والعيادات</span>
-              <h3 class="text-xl font-black mt-3 text-white">ستاند تقييم Google الذكي</h3>
-              <p class="text-sm text-zinc-400 leading-relaxed mt-2.5">
-                يوضع عند الكاشير أو طاولة الاستقبال؛ يلمس العميل الهاتف فيفتح له تقييم 5 نجوم على Google Maps مباشرة ويرفع ترتيب فرعك محلياً.
+              <span class="text-[11px] font-extrabold text-emerald-700 uppercase tracking-wider bg-emerald-100 px-3 py-1 rounded-md">للمطاعم والكافيهات والعيادات</span>
+              <h3 class="text-xl font-black mt-3 text-slate-900">ستاند تقييم Google الذكي</h3>
+              <p class="text-sm text-slate-600 leading-relaxed mt-2.5">
+                يوضع عند الكاشير أو الاستقبال؛ يلمس العميل الهاتف فيفتح له تقييم 5 نجوم على خرائط Google مباشرة لرفع ظهورك المحلي مجاناً.
               </p>
             </div>
 
-            <div class="mt-8 pt-5 border-t border-zinc-800/80">
-              <div class="flex items-baseline gap-1 text-3xl font-black text-emerald-400">
-                99 <span class="text-sm font-semibold text-zinc-400">ريال</span>
+            <div class="mt-8 pt-5 border-t border-slate-200">
+              <div class="flex items-baseline gap-1 text-3xl font-black text-emerald-600">
+                99 <span class="text-sm font-semibold text-slate-500">ريال</span>
               </div>
-              <button type="button" class="order-trigger mt-4 w-full py-3.5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-black font-black text-sm transition-all shadow-[0_4px_20px_rgba(16,185,129,0.3)]" data-product="ستاند تقييم Google">
+              <button type="button" class="order-trigger mt-4 w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm transition-all shadow-md shadow-emerald-600/30" data-product="ستاند تقييم Google">
                 طلب ستاند التقييم الآن
               </button>
             </div>
@@ -220,18 +242,18 @@
               <div class="product-photo-wrap mb-6">
                 <img src="assets/products/AVENi-custom-site.webp?v=20260912-1" alt="ستاند نقاط البيع المخصص">
               </div>
-              <span class="text-[11px] font-extrabold text-zinc-400 uppercase tracking-wider bg-zinc-800/60 px-3 py-1 rounded-md">للبراندات والشركات</span>
-              <h3 class="text-xl font-black mt-3 text-white">ستاند نقاط البيع المخصص</h3>
-              <p class="text-sm text-zinc-400 leading-relaxed mt-2.5">
-                تصميم بهوية وشعار علامتك التجارية يفتح صفحة رقمية شاملة تجمع قائمة الطعام، المتجر الإلكتروني، إنستغرام، والواتساب.
+              <span class="text-[11px] font-extrabold text-slate-600 uppercase tracking-wider bg-slate-100 px-3 py-1 rounded-md">للبراندات والمتاجر الكبرى</span>
+              <h3 class="text-xl font-black mt-3 text-slate-900">ستاند نقاط البيع المخصص</h3>
+              <p class="text-sm text-slate-500 leading-relaxed mt-2.5">
+                تصميم بهوية وشعار علامتك التجارية يفتح صفحة رقمية شاملة تجمع قائمة الطعام، المتجر الإلكتروني، إنستغرام، ورقم الواتساب.
               </p>
             </div>
 
-            <div class="mt-8 pt-5 border-t border-zinc-800/80">
-              <div class="flex items-baseline gap-1 text-3xl font-black text-white">
-                299 <span class="text-sm font-semibold text-zinc-400">ريال</span>
+            <div class="mt-8 pt-5 border-t border-slate-100">
+              <div class="flex items-baseline gap-1 text-3xl font-black text-slate-900">
+                299 <span class="text-sm font-semibold text-slate-500">ريال</span>
               </div>
-              <button type="button" class="order-trigger mt-4 w-full py-3.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-extrabold text-sm transition-all" data-product="ستاند نقاط البيع المخصص">
+              <button type="button" class="order-trigger mt-4 w-full py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-sm transition-all" data-product="ستاند نقاط البيع المخصص">
                 طلب الستاند المخصص
               </button>
             </div>
@@ -241,129 +263,222 @@
       </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="workflow" class="py-24 border-b border-zinc-800/50">
+    <!-- محاكي تجربة النقر التفاعلي (Interactive NFC Simulator) -->
+    <section id="simulator" class="py-20 border-b border-slate-200/80 bg-white">
       <div class="max-w-5xl mx-auto px-6">
-        <div class="text-center mb-14">
-          <p class="text-xs font-black text-emerald-400 mb-2 uppercase tracking-widest">HOW IT WORKS</p>
-          <h2 class="text-3xl font-black text-white">كيف تعمل أجهزة AVENi؟</h2>
-          <p class="text-sm text-zinc-400 mt-2">عملية سلسة في ثانية واحدة دون أي حواجز تقنية</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="p-8 rounded-3xl border border-zinc-800 bg-[#0E0E13]/80 relative overflow-hidden">
-            <span class="text-4xl font-black text-zinc-800 absolute top-4 left-6">01</span>
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-6">
-              <i class="fa-solid fa-mobile-screen-button"></i>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold mb-4">
+              <i class="fa-solid fa-hand-pointer text-xs"></i> تجربة تفاعلية مباشرة
             </div>
-            <h3 class="text-lg font-bold text-white mb-2">قرّب الهاتف أو امسح</h3>
-            <p class="text-sm text-zinc-400 leading-relaxed">يقوم العميل بمجرد ملامسة هاتفه لعلامة NFC، أو مسح رمز الـ QR بالكاميرا.</p>
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight mb-4">
+              كيف يرى عميلك التجربة عند ملامسة الستاند؟
+            </h2>
+            <p class="text-slate-600 text-sm leading-relaxed mb-8">
+              اضغط على زر المحاكاة وشاهد كيف ينبثق إشعار تقييم Google على هاتف العميل في أجزاء من الثانية دون أن يفتح الكاميرا أو يحمل أي تطبيق.
+            </p>
+            
+            <button id="tapSimulateBtn" type="button" class="px-7 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg shadow-emerald-600/25 flex items-center gap-3 transition">
+              <i class="fa-solid fa-satellite-dish text-lg nfc-wave"></i>
+              <span>اضغط هنا لمحاكاة ملامسة هاتف العميل</span>
+            </button>
           </div>
 
-          <div class="p-8 rounded-3xl border border-zinc-800 bg-[#0E0E13]/80 relative overflow-hidden">
-            <span class="text-4xl font-black text-zinc-800 absolute top-4 left-6">02</span>
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-6">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <!-- الهاتف المحاكي -->
+          <div class="flex justify-center">
+            <div class="mockup-phone w-[280px] h-[480px] bg-slate-900 rounded-[44px] p-3 flex flex-col justify-between relative overflow-hidden">
+              
+              <!-- نوتش الآيفون -->
+              <div class="w-28 h-5 bg-black rounded-full mx-auto mb-2"></div>
+              
+              <!-- إشعار NFC المنبثق التفاعلي -->
+              <div id="simNotification" class="transition-all duration-500 opacity-0 translate-y-[-20px] bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-xl border border-slate-200">
+                <div class="flex items-center gap-2.5">
+                  <div class="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-xs">
+                    <i class="fa-solid fa-nfc-symbol text-base"></i>
+                  </div>
+                  <div>
+                    <div class="text-[11px] font-bold text-slate-800">علامة NFC الذكية</div>
+                    <div class="text-[10px] text-slate-500">تم التعرف على مجمع / متجر AVENi</div>
+                  </div>
+                </div>
+                <div class="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-emerald-600">
+                  <span>فتح صفحة تقييم 5 نجوم على Google</span>
+                  <i class="fa-solid fa-arrow-left text-[10px]"></i>
+                </div>
+              </div>
+
+              <!-- شاشة الهاتف السفلية -->
+              <div class="text-center pb-4">
+                <div class="text-[11px] text-slate-400 font-medium">جاهز لاستشعار هواتف العملاء</div>
+                <div class="w-24 h-1 bg-slate-700 rounded-full mx-auto mt-2"></div>
+              </div>
+
             </div>
-            <h3 class="text-lg font-bold text-white mb-2">تُفتح الوجهة فوراً</h3>
-            <p class="text-sm text-zinc-400 leading-relaxed">ينبثق إشعار فوري على شاشة الهاتف يفتح الرابط المبرمج في ثانية واحدة.</p>
           </div>
 
-          <div class="p-8 rounded-3xl border border-zinc-800 bg-[#0E0E13]/80 relative overflow-hidden">
-            <span class="text-4xl font-black text-zinc-800 absolute top-4 left-6">03</span>
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-6">
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <h3 class="text-lg font-bold text-white mb-2">يتفاعل ويكتب تقييمه</h3>
-            <p class="text-sm text-zinc-400 leading-relaxed">يضع العميل تقييمه أو يحفظ رقمك وقنواتك دون الحاجة لكتابة أو بحث طويل.</p>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- Compatibility Section -->
-    <section id="compatibility" class="py-16 border-b border-zinc-800/50 bg-[#0B0B10]">
+    <!-- حاسبة عائد التقييمات (ROI Calculator) -->
+    <section id="calculator" class="py-20 border-b border-slate-200/80">
       <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-2xl font-bold text-white mb-3">متوافق مع 99% من هواتف Apple وAndroid</h2>
-        <p class="text-sm text-zinc-400 max-w-xl mx-auto leading-relaxed">
-          تعمل رقائق NFC مباشرة مع أجهزة iPhone (من iPhone XS وحتى أحدث إصدار) وجميع هواتف أندرويد الحديثة دون تفعيل، مع وجود رمز QR مدمج كخيار بديل وسريع.
-        </p>
+        
+        <p class="text-xs font-black text-emerald-600 mb-2 uppercase tracking-widest">ROI CALCULATOR</p>
+        <h2 class="text-3xl font-black text-slate-900 mb-3">احسب نمو تقييمات فرعك شهرياً</h2>
+        <p class="text-sm text-slate-500 max-w-lg mx-auto mb-10">اكتشف كيف يسهم ستاند الكاشير في تصدر نشاطك للمرتبة الأولى في منطقتك</p>
+
+        <div class="bg-white border border-slate-200 rounded-3xl p-8 max-w-xl mx-auto shadow-sm">
+          <label for="visitorsInput" class="block text-sm font-bold text-slate-700 mb-3">
+            متوسط عدد زبائنك يومياً: <span id="visitorsVal" class="text-emerald-600 font-black text-base">150</span> عميل
+          </label>
+          <input type="range" id="visitorsInput" min="20" max="800" step="10" value="150" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+
+          <div class="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-slate-100">
+            <div class="bg-slate-50 rounded-2xl p-4">
+              <div class="text-xs font-bold text-slate-500">تقييمات Google المتوقعة شهرياً</div>
+              <div id="monthlyReviews" class="text-3xl font-black text-emerald-600 mt-1">180+</div>
+              <div class="text-[11px] text-slate-400 mt-1">تقييم حقيقي 5 نجوم</div>
+            </div>
+            <div class="bg-slate-50 rounded-2xl p-4">
+              <div class="text-xs font-bold text-slate-500">الترتيب في منطقتك</div>
+              <div class="text-3xl font-black text-slate-900 mt-1">#1</div>
+              <div class="text-[11px] text-slate-400 mt-1">أعلى ظهور مجاني بالخرائط</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-20 border-b border-zinc-800/50">
+    <!-- باقات التوفير والكميات (Bundles) -->
+    <section id="bundles" class="py-20 border-b border-slate-200/80 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="text-center mb-14">
+          <p class="text-xs font-black text-emerald-600 mb-2 uppercase tracking-widest">BULK SAVINGS</p>
+          <h2 class="text-3xl font-black text-slate-900">باقات المنشآت والكميات</h2>
+          <p class="text-sm text-slate-500 mt-2">وفّر أكثر عند تجهيز عدة طاولات أو فروع في طلب واحد</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          
+          <div class="border border-slate-200 rounded-3xl p-7 bg-[#F8FAFC] flex flex-col justify-between hover:border-emerald-600 transition">
+            <div>
+              <span class="text-xs font-black text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">باقة المقاهي والمطاعم</span>
+              <h3 class="text-xl font-black text-slate-900 mt-3">3 ستاندات تقييم Google</h3>
+              <p class="text-sm text-slate-500 mt-2">مثالية لتغطية الكاشير، منطقة الاستلام، وصالة المشروبات لضمان تقييم كل عميل.</p>
+            </div>
+            <div class="mt-6 pt-5 border-t border-slate-200 flex items-center justify-between">
+              <div>
+                <span class="text-2xl font-black text-slate-900">249 ريال</span>
+                <span class="text-xs text-emerald-600 font-bold block">وفر 48 ريال</span>
+              </div>
+              <button type="button" class="order-trigger px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs" data-product="باقة 3 ستاندات تقييم (249 ريال)">
+                طلب الباقة
+              </button>
+            </div>
+          </div>
+
+          <div class="border border-slate-200 rounded-3xl p-7 bg-[#F8FAFC] flex flex-col justify-between hover:border-emerald-600 transition">
+            <div>
+              <span class="text-xs font-black text-blue-700 bg-blue-100 px-3 py-1 rounded-full">باقة الشركات والفرق</span>
+              <h3 class="text-xl font-black text-slate-900 mt-3">10 بطاقات أعمال ذكية مخصصة</h3>
+              <p class="text-sm text-slate-500 mt-2">طباعة شعار شركتك وأسماء منسوبيك لتمثيل احترافي في الاجتماعات والمعارض.</p>
+            </div>
+            <div class="mt-6 pt-5 border-t border-slate-200 flex items-center justify-between">
+              <div>
+                <span class="text-2xl font-black text-slate-900">399 ريال</span>
+                <span class="text-xs text-emerald-600 font-bold block">وفر 91 ريال</span>
+              </div>
+              <button type="button" class="order-trigger px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs" data-product="باقة 10 بطاقات أعمال (399 ريال)">
+                طلب الباقة
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- الأسئلة الشائعة -->
+    <section id="faq" class="py-20 border-b border-slate-200/80">
       <div class="max-w-3xl mx-auto px-6">
         <div class="text-center mb-12">
-          <p class="text-xs font-black text-emerald-400 mb-2 uppercase tracking-widest">FAQ</p>
-          <h2 class="text-3xl font-black text-white">الأسئلة الشائعة</h2>
+          <p class="text-xs font-black text-emerald-600 mb-2 uppercase tracking-widest">FAQ</p>
+          <h2 class="text-3xl font-black text-slate-900">الأسئلة الشائعة</h2>
         </div>
 
         <div class="space-y-4">
-          <details class="group rounded-2xl border border-zinc-800 bg-[#0D0D12] p-5 cursor-pointer">
-            <summary class="font-bold text-white flex justify-between items-center list-none">
+          <details class="group rounded-2xl border border-slate-200 bg-white p-5 cursor-pointer shadow-sm">
+            <summary class="font-bold text-slate-900 flex justify-between items-center list-none">
               <span>هل يحتاج العميل لتحميل تطبيق معين؟</span>
-              <i class="fa-solid fa-chevron-down text-xs text-zinc-400 transition-transform group-open:rotate-180"></i>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="text-sm text-zinc-400 mt-3 leading-relaxed">
-              إطلاقاً! لا يحتاج العميل لأي تطبيق؛ بمجرد ملامسة الهاتف للستاند يفتح الرابط في متصفح الجوال مباشرة.
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              إطلاقاً! لا يحتاج العميل لأي تطبيق؛ بمجرد ملامسة الهاتف للستاند يفتح الرابط في متصفح الجوال مباشرة وبشكل فوري.
             </p>
           </details>
 
-          <details class="group rounded-2xl border border-zinc-800 bg-[#0D0D12] p-5 cursor-pointer">
-            <summary class="font-bold text-white flex justify-between items-center list-none">
-              <span>هل يمكنني تغيير الرابط لاحقاً بعد استلام الستاند؟</span>
-              <i class="fa-solid fa-chevron-down text-xs text-zinc-400 transition-transform group-open:rotate-180"></i>
+          <details class="group rounded-2xl border border-slate-200 bg-white p-5 cursor-pointer shadow-sm">
+            <summary class="font-bold text-slate-900 flex justify-between items-center list-none">
+              <span>هل يمكنني تغيير الرابط مستقبلاً؟</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="text-sm text-zinc-400 mt-3 leading-relaxed">
-              نعم، نقوم ببرمجة الرقاقة لتكون قابلة لإعادة التوجيه، أو نوفر لك صفحة تحكم سريعة لتحديث بياناتك في أي وقت.
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              نعم، نقوم ببرمجة الرقاقة لتكون مرنة وقابلة لإعادة التوجيه مستقبلاً في حال نقل فرعك أو تحديث حساباتك.
             </p>
           </details>
 
-          <details class="group rounded-2xl border border-zinc-800 bg-[#0D0D12] p-5 cursor-pointer">
-            <summary class="font-bold text-white flex justify-between items-center list-none">
-              <span>كيف أزودكم ببيانات متجري أو رابط قوقل ماب؟</span>
-              <i class="fa-solid fa-chevron-down text-xs text-zinc-400 transition-transform group-open:rotate-180"></i>
+          <details class="group rounded-2xl border border-slate-200 bg-white p-5 cursor-pointer shadow-sm">
+            <summary class="font-bold text-slate-900 flex justify-between items-center list-none">
+              <span>كيف أزودكم برابط خرائط قوقل أو شعار متجري؟</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="text-sm text-zinc-400 mt-3 leading-relaxed">
-              بعد إرسال طلبك في النموذج أدناه، سيتواصل معك فريقنا عبر الواتساب فوراً لأخذ رابط خرائط Google أو شعار متجرك لبرمجته وطباعته قبل الشحن.
+            <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+              بمجرد إرسال طلبك عبر النموذج أو الواتساب، سيتواصل معك ممثلنا لاستلام رابط فرعك أو شعار علامتك واعتماده فوراً قبل تجهيز الشحنة.
             </p>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- Order Section -->
-    <section id="order" class="py-24">
+    <!-- نموذج الطلب المباشر -->
+    <section id="order" class="py-24 bg-white">
       <div class="max-w-xl mx-auto px-6">
         <div class="text-center mb-10">
-          <p class="text-xs font-black text-emerald-400 mb-2 uppercase tracking-widest">DIRECT ORDER</p>
-          <h2 class="text-3xl font-black text-white">اطلب حلول AVENi الآن</h2>
-          <p class="text-sm text-zinc-400 mt-2">أدخل بياناتك وسنفتح لك محادثة واتساب مجهزة بالتفاصيل لتأكيد طلبك</p>
+          <p class="text-xs font-black text-emerald-600 mb-2 uppercase tracking-widest">DIRECT ORDER</p>
+          <h2 class="text-3xl font-black text-slate-900">اطلب حلول AVENi الآن</h2>
+          <p class="text-sm text-slate-500 mt-2">أدخل بياناتك وسنفتح لك محادثة واتساب مجهزة بالتفاصيل لتأكيد طلبك</p>
         </div>
 
-        <form id="orderForm" class="rounded-3xl border border-zinc-800 bg-[#0E0E14] p-8 space-y-6 shadow-2xl relative" novalidate>
+        <form id="orderForm" class="rounded-3xl border border-slate-200 bg-[#F8FAFC] p-8 space-y-6 shadow-lg shadow-slate-200/50" novalidate>
           <div>
-            <label for="custName" class="block text-sm font-bold text-zinc-200 mb-2">الاسم الكريم / اسم المنشأة *</label>
-            <input id="custName" name="name" type="text" required maxlength="100" class="w-full rounded-xl bg-[#08080C] border border-zinc-800 px-4 py-3.5 text-sm text-white focus:border-emerald-500 outline-none transition" placeholder="مثال: مقهى ركن القهوة / محمد الأحمد">
+            <label for="custName" class="block text-sm font-bold text-slate-700 mb-2">الاسم الكريم / اسم المنشأة *</label>
+            <input id="custName" name="name" type="text" required maxlength="100" class="w-full rounded-xl bg-white border border-slate-300 px-4 py-3.5 text-sm text-slate-800 focus:border-emerald-600 outline-none transition" placeholder="مثال: مقهى ركن القهوة / محمد الأحمد">
           </div>
 
           <div>
-            <label for="custPhone" class="block text-sm font-bold text-zinc-200 mb-2">رقم الجوال / الواتساب السعودي *</label>
-            <input id="custPhone" name="phone" type="tel" required inputmode="tel" maxlength="13" class="w-full rounded-xl bg-[#08080C] border border-zinc-800 px-4 py-3.5 text-sm text-white focus:border-emerald-500 outline-none transition text-right" placeholder="05xxxxxxxx" dir="ltr">
-            <p id="phoneError" class="hidden text-xs text-red-400 mt-2 font-medium">يرجى إدخال رقم جوال صحيح يبدأ بـ 05 (مثال: 0551234567).</p>
+            <label for="custPhone" class="block text-sm font-bold text-slate-700 mb-2">رقم الجوال / الواتساب السعودي *</label>
+            <input id="custPhone" name="phone" type="tel" required inputmode="tel" maxlength="13" class="w-full rounded-xl bg-white border border-slate-300 px-4 py-3.5 text-sm text-slate-800 focus:border-emerald-600 outline-none transition text-right" placeholder="05xxxxxxxx" dir="ltr">
+            <p id="phoneError" class="hidden text-xs text-red-500 mt-2 font-medium">يرجى إدخال رقم جوال سعودي صحيح يبدأ بـ 05.</p>
           </div>
 
           <div>
-            <label for="prodType" class="block text-sm font-bold text-zinc-200 mb-2">اختر المنتج المطلوب *</label>
-            <select id="prodType" class="w-full rounded-xl bg-[#08080C] border border-zinc-800 px-4 py-3.5 text-sm text-white focus:border-emerald-500 outline-none transition">
+            <label for="prodType" class="block text-sm font-bold text-slate-700 mb-2">اختر المنتج أو الباقة المطلوبة *</label>
+            <select id="prodType" class="w-full rounded-xl bg-white border border-slate-300 px-4 py-3.5 text-sm text-slate-800 focus:border-emerald-600 outline-none transition">
               <option value="ستاند تقييم Google">ستاند تقييم Google الذكي (99 ريال)</option>
               <option value="بطاقة أعمال ذكية">بطاقة أعمال ذكية NFC (49 ريال)</option>
               <option value="ستاند نقاط البيع المخصص">ستاند نقاط البيع المخصص بهويتك (299 ريال)</option>
+              <option value="باقة 3 ستاندات تقييم (249 ريال)">باقة 3 ستاندات تقييم للمقاهي (249 ريال)</option>
+              <option value="باقة 10 بطاقات أعمال (399 ريال)">باقة 10 بطاقات أعمال للشركات (399 ريال)</option>
             </select>
           </div>
 
-          <button type="submit" class="w-full py-4 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-black font-black text-sm flex items-center justify-center gap-2 transition shadow-[0_8px_25px_rgba(16,185,129,0.35)]">
+          <button type="submit" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-600/30">
             <i class="fa-brands fa-whatsapp text-lg"></i>
             تأكيد الطلب عبر WhatsApp
           </button>
@@ -373,13 +488,13 @@
   </main>
 
   <!-- Footer -->
-  <footer class="py-8 border-t border-zinc-800 text-center text-xs text-zinc-500">
-    <div class="font-brand font-bold text-white text-base mb-1">AVENi</div>
+  <footer class="py-8 border-t border-slate-200 text-center text-xs text-slate-500 bg-white">
+    <div class="font-brand font-bold text-slate-900 text-base mb-1">AVENi</div>
     © 2026 جميع الحقوق محفوظة · حلول الاتصال الذكي NFC
   </footer>
 
-  <!-- Floating WhatsApp Action -->
-  <a href="https://wa.me/966591825649?text=مرحباً%20فريق%20AVENi،%20أود%20الاستفسار%20عن%20منتجات%20NFC" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-emerald-500 text-black flex items-center justify-center text-2xl shadow-[0_6px_25px_rgba(16,185,129,0.45)] hover:scale-110 transition-transform" title="محادثة واتساب">
+  <!-- زر واتساب العائم -->
+  <a href="https://wa.me/966591825649?text=مرحباً%20فريق%20AVENi،%20أود%20الاستفسار%20عن%20منتجات%20NFC" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-emerald-600 text-white flex items-center justify-center text-2xl shadow-xl shadow-emerald-600/30 hover:scale-110 transition-transform" title="محادثة واتساب">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
@@ -393,7 +508,36 @@
       const menuBtn = document.getElementById('mobileMenuBtn');
       const menu = document.getElementById('mobileMenu');
 
-      // ربط أزرار الطلب بالنموذج تلقائياً
+      // حاسبة التقييمات التفاعلية
+      const visitorsInput = document.getElementById('visitorsInput');
+      const visitorsVal = document.getElementById('visitorsVal');
+      const monthlyReviews = document.getElementById('monthlyReviews');
+
+      if (visitorsInput) {
+        visitorsInput.addEventListener('input', (e) => {
+          const val = parseInt(e.target.value, 10);
+          visitorsVal.innerText = val;
+          // نسبة تقديرية واقعية: 4% من الزوار يقيمون عند وجود الستاند بالكاشير
+          const estimated = Math.round(val * 30 * 0.04);
+          monthlyReviews.innerText = estimated + "+";
+        });
+      }
+
+      // محاكي تجربة النقر
+      const simBtn = document.getElementById('tapSimulateBtn');
+      const simNotif = document.getElementById('simNotification');
+      if (simBtn && simNotif) {
+        simBtn.addEventListener('click', () => {
+          simNotif.classList.remove('opacity-0', 'translate-y-[-20px]');
+          simNotif.classList.add('opacity-100', 'translate-y-0');
+          setTimeout(() => {
+            simNotif.classList.remove('opacity-100', 'translate-y-0');
+            simNotif.classList.add('opacity-0', 'translate-y-[-20px]');
+          }, 3500);
+        });
+      }
+
+      // ربط أزرار الطلب بالنموذج
       document.querySelectorAll('.order-trigger').forEach(btn => {
         btn.addEventListener('click', () => {
           sel.value = btn.dataset.product;
@@ -401,7 +545,7 @@
         });
       });
 
-      // القائمة للجوال
+      // قائمة الجوال
       menuBtn.addEventListener('click', () => {
         const isHidden = menu.classList.contains('hidden');
         menu.classList.toggle('hidden', !isHidden);
@@ -415,7 +559,7 @@
         });
       });
 
-      // التحقق وتأكيد الطلب عبر الواتساب
+      // إرسال الطلب عبر الواتساب
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         err.classList.add('hidden');
@@ -435,7 +579,7 @@
           return;
         }
 
-        const msg = `مرحباً فريق AVENi 👋\nأود طلب المنتج التالي:\n- المنتج: *${sel.value}*\n- الاسم / المنشأة: *${name}*\n- رقم الجوال: *${rawPhone}*\n\nأرجو تزويدي بالخطوات القادمة وطريقة إرسال البيانات والاعتماد.`;
+        const msg = `مرحباً فريق AVENi 👋\nأود طلب المنتج/الباقة التالية:\n- الطلب: *${sel.value}*\n- الاسم / المنشأة: *${name}*\n- رقم الجوال: *${rawPhone}*\n\nأرجو تزويدي بالخطوات القادمة وطريقة إرسال البيانات والاعتماد.`;
         
         window.open(`https://wa.me/966591825649?text=${encodeURIComponent(msg)}`, '_blank');
       });
