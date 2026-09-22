@@ -2,403 +2,533 @@
 <html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>AVENi — أنظمة الاتصال الذكي NFC</title>
-  <meta name="theme-color" content="#030712">
-
-  <!-- الخط التقني الهندسي الفاخر -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>AVENi — الجيل الجديد لأنظمة الاتصال الذكي NFC</title>
+  <meta name="description" content="عتاد ذكي مصنع من الأكريليك المعالج لجمع تقييمات Google Maps ومشاركة بطاقات الأعمال بتقنية NFC الفورية.">
+  <meta name="theme-color" content="#090A0F">
+  
+  <!-- تحسين تحميل الخطوط والرموز -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
+  <!-- Tailwind CSS Framework -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              void: '#090A0F',
+              surface: '#11141F',
+              card: '#161B2A',
+              emerald: '#10B981',
+              teal: '#06B6D4',
+              stroke: 'rgba(255, 255, 255, 0.08)'
+            }
+          },
+          fontFamily: {
+            sans: ['Alexandria', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    * {
-      font-family: 'Alexandria', -apple-system, BlinkMacSystemFont, sans-serif;
-      letter-spacing: -0.02em;
-    }
-    .mono {
-      font-family: 'JetBrains Mono', monospace;
-      letter-spacing: 0;
-    }
-
-    body {
-      background-color: #030712;
-      color: #F3F4F6;
-      overflow-x: hidden;
-    }
-
-    /* شبكة الهندسة التقنية الدقيقة */
-    .tech-grid {
-      background-size: 40px 40px;
+    /* خلفية الشبكة الهندسية الدقيقة للعتاد */
+    .hardware-grid {
+      background-size: 32px 32px;
       background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    }
+    
+    /* توهج إشعاعي ناعم */
+    .glow-subtle {
+      box-shadow: 0 0 60px -15px rgba(16, 185, 129, 0.2);
     }
 
-    /* الإضاءة النيونية الليزرية الفائقة */
-    .glow-cyan {
-      box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.35);
-    }
-    .glow-border {
-      border: 1px solid rgba(6, 182, 212, 0.3);
-      position: relative;
-    }
-    .glow-border::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, #06B6D4, transparent);
-    }
-
-    /* ألواح الدوائر المتكاملة */
-    .pcb-card {
-      background: rgba(11, 15, 25, 0.85);
-      backdrop-filter: blur(20px);
+    /* حواف ليزرية للمكونات */
+    .laser-border {
       border: 1px solid rgba(255, 255, 255, 0.08);
       position: relative;
     }
-    .pcb-card:hover {
-      border-color: rgba(6, 182, 212, 0.4);
+    .laser-border:hover {
+      border-color: rgba(16, 185, 129, 0.4);
     }
 
-    /* محاكاة رقاقة NFC الحقيقية */
-    .chip-antenna {
-      position: relative;
-      border: 1.5px dashed rgba(6, 182, 212, 0.4);
-      border-radius: 14px;
+    /* موجات النبضة الترددية */
+    @keyframes pulseRing {
+      0% { transform: scale(0.9); opacity: 0.9; }
+      100% { transform: scale(2.4); opacity: 0; }
     }
-    .chip-core {
-      background: linear-gradient(135deg, #1E293B, #0F172A);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: inset 0 0 15px rgba(6, 182, 212, 0.2);
-    }
-
-    /* مسار نبضة الراديو */
-    @keyframes radarBeam {
-      0% { transform: scale(0.85); opacity: 0.8; }
-      100% { transform: scale(2.2); opacity: 0; }
-    }
-    .radar-pulse {
-      animation: radarBeam 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    .ring-active {
+      animation: pulseRing 1.8s cubic-bezier(0.2, 0.6, 0.35, 1) infinite;
     }
   </style>
 </head>
 
-<body class="tech-grid min-h-screen">
+<body class="bg-brand-void text-slate-100 hardware-grid antialiased selection:bg-brand-emerald selection:text-black">
 
-  <!-- شريط التحكم والتوافق التقني -->
-  <div class="border-b border-white/[0.06] bg-[#030712]/90 backdrop-blur-md px-6 py-2">
-    <div class="max-w-7xl mx-auto flex items-center justify-between text-[11px] mono text-slate-400">
+  <!-- 1. شريط التيليميتري والتردد (Top Hardware Telemetry) -->
+  <aside aria-label="مواصفات الشبكة والتردد" class="border-b border-brand-stroke bg-brand-void/90 px-4 py-2 text-[11px] font-mono text-slate-400">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
       <div class="flex items-center gap-3">
-        <span class="inline-flex items-center gap-1.5 text-cyan-400">
-          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
-          PROTOCOL: NFC TYPE 2 / 13.56 MHz
+        <span class="inline-flex items-center gap-1.5 text-brand-emerald font-semibold">
+          <span class="w-2 h-2 rounded-full bg-brand-emerald animate-ping" aria-hidden="true"></span>
+          FREQUENCY: 13.56 MHz (ISO/IEC 14443-A)
         </span>
-        <span class="hidden sm:inline text-slate-600">|</span>
-        <span class="hidden sm:inline">ZERO-LATENCY TRANSMISSION</span>
+        <span class="hidden md:inline text-slate-700" aria-hidden="true">|</span>
+        <span class="hidden md:inline">PASSIVE RF ENERGY (ZERO BATTERY)</span>
       </div>
-      <div class="flex items-center gap-4">
-        <span>KSA DELIVERY: 24-48H</span>
+      <div class="flex items-center gap-4 text-slate-400">
+        <span>شحن مباشر لكافة مناطق المملكة (24–48 ساعة)</span>
       </div>
     </div>
-  </div>
+  </aside>
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-[#030712]/80 backdrop-blur-xl border-b border-white/[0.06]">
+  <!-- 2. الترويسة الرئيسية (Global Navbar) -->
+  <header class="sticky top-0 z-50 bg-brand-void/80 backdrop-blur-xl border-b border-brand-stroke">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
-      <div class="flex items-center gap-8">
-        <a href="#" class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold text-sm shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+      <div class="flex items-center gap-10">
+        <a href="#" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-emerald rounded-lg p-1" aria-label="الرئيسية - AVENi العتاد الذكي">
+          <div class="w-9 h-9 rounded-lg bg-brand-emerald/10 border border-brand-emerald/30 flex items-center justify-center text-brand-emerald font-bold text-sm shadow-[0_0_20px_rgba(16,185,129,0.25)] group-hover:scale-105 transition-transform" aria-hidden="true">
             <i class="fa-solid fa-microchip"></i>
           </div>
-          <span class="text-xl font-black tracking-wider text-white mono">AVENi</span>
+          <span class="text-xl font-extrabold tracking-wider text-white font-mono">AVENi</span>
         </a>
 
-        <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-slate-400">
-          <a href="#hardware" class="hover:text-cyan-400 transition">الأجهزة والعتاد</a>
-          <a href="#live-demo" class="hover:text-cyan-400 transition">المحاكي الترددي</a>
-          <a href="#specs" class="hover:text-cyan-400 transition">المواصفات التقنية</a>
-          <a href="#faq" class="hover:text-cyan-400 transition">الأسئلة</a>
+        <nav class="hidden lg:flex items-center gap-8 text-xs font-semibold tracking-wide text-slate-400" aria-label="التنقل الرئيسي">
+          <a href="#hardware" class="hover:text-white transition-colors">الأجهزة والعتاد</a>
+          <a href="#simulator" class="hover:text-white transition-colors">المحاكي الترددي</a>
+          <a href="#roi" class="hover:text-white transition-colors">حاسبة الاستثمار</a>
+          <a href="#specs" class="hover:text-white transition-colors">المواصفات التقنية</a>
+          <a href="#faq" class="hover:text-white transition-colors">الأسئلة الشائعة</a>
         </nav>
       </div>
 
-      <a href="#order" class="px-5 py-2.5 rounded-lg bg-cyan-500 text-slate-950 font-bold text-xs hover:bg-cyan-400 transition shadow-[0_0_20px_rgba(6,182,212,0.4)]">
-        طلب الأجهزة
-      </a>
+      <div class="flex items-center gap-4">
+        <a href="#order" class="hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-brand-emerald text-brand-void font-extrabold text-xs hover:bg-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.35)] transition-all">
+          طلب الأجهزة المبرمجة
+        </a>
+        <button id="mobileMenuBtn" type="button" class="lg:hidden text-slate-300 p-2 text-xl focus:outline-none focus:ring-2 focus:ring-brand-emerald rounded-lg" aria-label="فتح القائمة الرئيسية" aria-expanded="false">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="relative pt-20 pb-28 px-6 overflow-hidden">
-      <!-- الإضاءة الخلفية للعنوان -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-cyan-500/10 blur-[140px] pointer-events-none"></div>
+  <!-- قائمة الجوال المنبثقة -->
+  <nav id="mobileMenu" class="fixed inset-0 top-20 z-40 hidden bg-brand-void/98 backdrop-blur-2xl flex-col items-center justify-center gap-8 px-6 text-center border-t border-brand-stroke" aria-label="قائمة الجوال">
+    <a class="mobile-nav-link text-lg font-bold text-slate-200 hover:text-brand-emerald" href="#hardware">الأجهزة والعتاد</a>
+    <a class="mobile-nav-link text-lg font-bold text-slate-200 hover:text-brand-emerald" href="#simulator">المحاكي الترددي</a>
+    <a class="mobile-nav-link text-lg font-bold text-slate-200 hover:text-brand-emerald" href="#roi">حاسبة الاستثمار</a>
+    <a class="mobile-nav-link text-lg font-bold text-slate-200 hover:text-brand-emerald" href="#specs">المواصفات التقنية</a>
+    <a class="mobile-nav-link text-lg font-bold text-slate-200 hover:text-brand-emerald" href="#faq">الأسئلة الشائعة</a>
+    <a class="mobile-nav-link px-8 py-3.5 rounded-xl bg-brand-emerald text-brand-void font-black text-sm mt-4" href="#order">طلب الأجهزة الآن</a>
+  </nav>
 
+  <main id="main-content">
+    
+    <!-- 3. الواجهة الرئيسية (Hero Section) -->
+    <section class="pt-20 pb-24 px-6 relative overflow-hidden">
       <div class="max-w-5xl mx-auto text-center relative z-10">
         
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs mono mb-8">
-          <i class="fa-solid fa-bolt text-[10px]"></i> HIGH-FREQUENCY NEAR FIELD COMMUNICATION
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-emerald/10 border border-brand-emerald/30 text-brand-emerald text-xs font-mono mb-8">
+          <i class="fa-solid fa-bolt text-[10px]" aria-hidden="true"></i>
+          ZERO LATENCY SMART INTERACTION
         </div>
 
-        <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white leading-[1.15] mb-8">
-          انقل هويتك وقيم مبيعاتك<br>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400">
-            بتردد 13.56MHz دون لمس أو تطبيقات
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white leading-[1.2] mb-8 tracking-tight">
+          ضاعف تقييمات Google لمنشأتك <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-emerald via-teal-300 to-cyan-400">
+            بملامسة هاتف واحدة .. ودون تطبيقات
           </span>
         </h1>
 
-        <p class="text-slate-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-          بدائل هاردوير ذكية من الأكريليك المعالج تحل محل الكروت الورقية والباركود. توجه العميل في أقل من 0.1 ثانية نحو تقييم Google Maps أو منصتك الرقمية.
+        <p class="text-slate-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+          أجهزة أكريليك هندسية معالجة ليزرياً لنقاط البيع وبطاقات الأعمال. توجه العميل في أقل من 0.1 ثانية نحو تقييم 5 نجوم على الخرائط، لرفع ترتيب فرعك مجاناً للأبد.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#order" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white text-slate-950 font-bold text-xs hover:bg-slate-200 transition">
-            ابدأ الطلب والتخصيص
+          <a href="#order" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-emerald text-brand-void font-extrabold text-sm hover:bg-emerald-400 hover:shadow-[0_0_35px_rgba(16,185,129,0.35)] transition-all flex items-center justify-center gap-2.5">
+            <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
+            <span>طلب عتاد فرعك الآن</span>
           </a>
-          <a href="#live-demo" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 font-bold text-xs hover:border-cyan-500/50 hover:text-white transition">
-            اختبر المحاكي الترددي
+          <a href="#simulator" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-surface border border-brand-stroke text-slate-300 font-bold text-sm hover:border-brand-emerald/50 hover:text-white transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-satellite-dish text-xs text-brand-emerald" aria-hidden="true"></i>
+            <span>اختبار المحاكي الترددي</span>
           </a>
+        </div>
+
+        <!-- 4. شريط مؤشرات الأداء الحية (Social Proof & Live Telemetry) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20 pt-10 border-t border-brand-stroke text-center">
+          <div class="p-4 rounded-xl bg-brand-surface/40 border border-brand-stroke">
+            <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">99.8%</div>
+            <div class="text-xs text-slate-400 mt-1">توافق الهواتف الذكية</div>
+          </div>
+          <div class="p-4 rounded-xl bg-brand-surface/40 border border-brand-stroke">
+            <div class="text-2xl sm:text-3xl font-extrabold text-brand-emerald font-mono">&lt; 85ms</div>
+            <div class="text-xs text-slate-400 mt-1">سرعة استجابة الرقاقة</div>
+          </div>
+          <div class="p-4 rounded-xl bg-brand-surface/40 border border-brand-stroke">
+            <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">0 ريال</div>
+            <div class="text-xs text-slate-400 mt-1">اشتراكات دورية (مدى الحياة)</div>
+          </div>
+          <div class="p-4 rounded-xl bg-brand-surface/40 border border-brand-stroke">
+            <div class="text-2xl sm:text-3xl font-extrabold text-brand-teal font-mono">IP68</div>
+            <div class="text-xs text-slate-400 mt-1">مقاوم للسوائل والحرارة</div>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- المحاكي الترددي التفاعلي (Realistic Radio Frequency Simulation) -->
-    <section id="live-demo" class="py-20 border-y border-white/[0.06] bg-[#050814]">
-      <div class="max-w-6xl mx-auto px-6">
-        
-        <div class="text-center mb-16">
-          <span class="text-xs mono uppercase text-cyan-400 tracking-widest font-semibold">[ REAL-TIME SIGNAL SIMULATION ]</span>
-          <h2 class="text-3xl font-extrabold text-white mt-2">كيف تعمل الدائرة الفيزيائية؟</h2>
-          <p class="text-xs text-slate-400 mt-2">لا تحتاج بطارية. يستمد الهوائي طاقته الكهرومغناطيسية من هاتف العميل لحظياً.</p>
-        </div>
-
-        <div class="grid lg:grid-cols-12 gap-8 items-center">
-          
-          <!-- تفاصيل البرمجة والبيانات الحية -->
-          <div class="lg:col-span-5 space-y-4">
-            <div class="pcb-card rounded-2xl p-6 border-white/[0.08]">
-              <div class="flex items-center justify-between text-xs mono text-slate-400 mb-4 pb-3 border-b border-white/[0.06]">
-                <span>TELEMETRY STATUS</span>
-                <span id="signalStatus" class="text-emerald-400">LISTENING</span>
-              </div>
-              
-              <div class="space-y-3 text-xs mono">
-                <div class="flex justify-between">
-                  <span class="text-slate-500">CHIP SPEC:</span>
-                  <span class="text-white">NXP NTAG213 High-Coercivity</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-slate-500">CARRIER FREQ:</span>
-                  <span class="text-cyan-400">13.56 MHz (ISO 14443A)</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-slate-500">READ LATENCY:</span>
-                  <span class="text-white">&lt; 85ms</span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-slate-500">POWER SOURCE:</span>
-                  <span class="text-white">Passive RF (Zero Battery)</span>
-                </div>
-              </div>
-
-              <button id="pulseTrigger" class="mt-6 w-full py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition flex items-center justify-center gap-2">
-                <i class="fa-solid fa-wave-square"></i>
-                إرسال نبضة هاتف تجريبية
-              </button>
-            </div>
-          </div>
-
-          <!-- اللوحة الفيزيائية والمحاكاة -->
-          <div class="lg:col-span-7 flex flex-col items-center justify-center p-8 pcb-card rounded-3xl border-cyan-500/20 relative overflow-hidden">
-            
-            <!-- أمواج الراديو المنبثقة -->
-            <div id="radarWave" class="hidden absolute w-60 h-60 rounded-full border border-cyan-400/40 radar-pulse pointer-events-none"></div>
-
-            <div class="w-full max-w-sm chip-antenna p-8 flex flex-col items-center justify-center text-center relative z-10">
-              
-              <!-- قلب الرقاقة الدقيقة -->
-              <div class="w-20 h-20 rounded-2xl chip-core flex flex-col items-center justify-center mb-4 relative">
-                <i class="fa-solid fa-nfc-symbol text-3xl text-cyan-400"></i>
-                <span class="text-[8px] mono text-slate-500 mt-1">NTAG213</span>
-              </div>
-
-              <div class="text-sm font-bold text-white mb-1">ستاند AVENi التفاعلي</div>
-              <div class="text-[11px] mono text-slate-400">READY FOR TAP EVENT</div>
-
-              <!-- نافذة نتيجة الاستجابة -->
-              <div id="payloadBox" class="mt-6 w-full bg-slate-950/80 rounded-xl p-3 border border-white/10 text-right opacity-30 transition-all duration-300">
-                <div class="text-[10px] mono text-cyan-400 mb-1">DISPATCHED ACTION:</div>
-                <div class="text-xs font-semibold text-white flex items-center gap-2">
-                  <i class="fa-brands fa-google text-amber-400"></i>
-                  <span>فتح مراجعة 5 نجوم على Google Maps</span>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- الأجهزة والحلول (Hardware Lineup) -->
-    <section id="hardware" class="py-24 max-w-6xl mx-auto px-6">
-      
+    <!-- 5. معرض العتاد والأجهزة (Hardware Bento Lineup) -->
+    <section id="hardware" class="py-24 max-w-7xl mx-auto px-6 border-t border-brand-stroke">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
         <div>
-          <span class="text-xs mono uppercase text-cyan-400 tracking-widest font-semibold">[ HARDWARE LINEUP ]</span>
+          <span class="text-xs font-mono uppercase text-brand-emerald tracking-widest font-semibold">[ HARDWARE LINEUP ]</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">الأجهزة الميدانية المعتمدة</h2>
         </div>
-        <p class="text-xs text-slate-400 max-w-xs leading-relaxed">أجهزة هاردوير مصنعة من مواد صلبة مخصصة لبيئات الكاشير ونقاط الضغط المرتفع.</p>
+        <p class="text-xs text-slate-400 max-w-xs leading-relaxed">أجهزة هاردوير مصنعة من مواد صلبة مخصصة لبيئات الكاشير ومكاتب المحترفين.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
 
-        <!-- 1. بطاقة الأعمال -->
-        <div class="pcb-card rounded-2xl p-7 flex flex-col justify-between">
+        <!-- المنتج 1: بطاقة الأعمال -->
+        <article class="laser-border rounded-2xl p-7 bg-brand-surface/80 flex flex-col justify-between transition-all">
           <div>
-            <div class="text-[11px] mono text-slate-500 uppercase">CARD FORM FACTOR</div>
+            <div class="text-[11px] font-mono text-slate-500 uppercase">FORM FACTOR: CR-80 CARD</div>
             <h3 class="text-lg font-bold text-white mt-1 mb-2">بطاقة الأعمال الذكية NFC</h3>
             <p class="text-xs text-slate-400 leading-relaxed mb-6">
-              بولي فينيل كلوريد مقوى يحمل شريحة داخلية غير مرئية؛ لمشاركة جهات الاتصال وملف المنشأة في ثانية واحدة.
+              بولي فينيل كلوريد مقوى يحمل شريحة داخلية غير مرئية؛ لمشاركة جهات الاتصال وملف المنشأة في ثانية واحدة دون ورق.
             </p>
           </div>
           
-          <div class="pt-6 border-t border-white/[0.06] flex items-center justify-between">
+          <div class="pt-6 border-t border-brand-stroke flex items-center justify-between">
             <div>
-              <span class="text-2xl font-bold text-white mono">49</span>
+              <span class="text-3xl font-bold text-white font-mono">49</span>
               <span class="text-xs text-slate-500 mr-1">ريال</span>
             </div>
-            <a href="#order" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition">
+            <button type="button" class="order-trigger px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition" data-product="بطاقة أعمال ذكية NFC (49 ريال)">
               طلب القطعة
-            </a>
+            </button>
           </div>
-        </div>
+        </article>
 
-        <!-- 2. ستاند التقييم (الأكثر استخداماً) -->
-        <div class="pcb-card glow-border glow-cyan rounded-2xl p-7 flex flex-col justify-between bg-gradient-to-b from-cyan-950/20 to-[#0B0F19]">
-          <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-cyan-500 text-slate-950 text-[10px] font-black uppercase tracking-wider">
-            HIGH DEMAND
+        <!-- المنتج 2: ستاند تقييم قوقل (البطل التسويقي) -->
+        <article class="laser-border glow-subtle rounded-2xl p-7 bg-gradient-to-b from-brand-card to-brand-surface border-brand-emerald/40 relative flex flex-col justify-between">
+          <div class="absolute -top-3.5 right-6 px-3.5 py-1 rounded-full bg-brand-emerald text-brand-void text-[10px] font-black uppercase tracking-wider">
+            ★ الأكثر طلباً للمتاجر
           </div>
 
           <div>
-            <div class="text-[11px] mono text-cyan-400 uppercase">STAND FORM FACTOR</div>
+            <div class="text-[11px] font-mono text-brand-emerald uppercase">FORM FACTOR: ACRYLIC STAND</div>
             <h3 class="text-lg font-bold text-white mt-1 mb-2">ستاند تقييم Google الذكي</h3>
             <p class="text-xs text-slate-300 leading-relaxed mb-6">
-              يوضع عند نقاط البيع والكاشير؛ يرفع نسبة كتابة تقييمات Google بـ 4 أضعاف دون إحراج العميل أو طلب كتابة يدوية.
+              يوضع عند الكاشير أو الاستقبال؛ يلمس العميل هاتفه فيفتح له تقييم 5 نجوم على خرائط Google فوراً دون إحراج أو تأخير.
             </p>
           </div>
           
-          <div class="pt-6 border-t border-white/[0.08] flex items-center justify-between">
+          <div class="pt-6 border-t border-brand-stroke flex items-center justify-between">
             <div>
-              <span class="text-2xl font-bold text-cyan-400 mono">99</span>
+              <span class="text-3xl font-bold text-brand-emerald font-mono">99</span>
               <span class="text-xs text-slate-400 mr-1">ريال</span>
             </div>
-            <a href="#order" class="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition">
-              طلب الستاند
-            </a>
+            <button type="button" class="order-trigger px-5 py-2.5 rounded-lg bg-brand-emerald hover:bg-emerald-400 text-brand-void font-extrabold text-xs transition" data-product="ستاند تقييم Google الذكي (99 ريال)">
+              طلب الستاند الآن
+            </button>
           </div>
-        </div>
+        </article>
 
-        <!-- 3. ستاند نقاط البيع المخصص -->
-        <div class="pcb-card rounded-2xl p-7 flex flex-col justify-between">
+        <!-- المنتج 3: ستاند نقاط البيع المخصص -->
+        <article class="laser-border rounded-2xl p-7 bg-brand-surface/80 flex flex-col justify-between transition-all">
           <div>
-            <div class="text-[11px] mono text-slate-500 uppercase">CUSTOM BRANDED</div>
-            <h3 class="text-lg font-bold text-white mt-1 mb-2">ستاند نقاط البيع بهويتك</h3>
+            <div class="text-[11px] font-mono text-slate-500 uppercase">FORM FACTOR: CUSTOM PRO</div>
+            <h3 class="text-lg font-bold text-white mt-1 mb-2">ستاند نقاط البيع بهويتك المخصصة</h3>
             <p class="text-xs text-slate-400 leading-relaxed mb-6">
-              طباعة ليزرية كاملة لشعار المنشأة مع صفحة هبوط تفاعلية تجمع المنيو، قنوات السوشيال، والدفع بملامسة واحدة.
+              طباعة ليزرية كاملة لشعار المنشأة مع صفحة هبوط تفاعلية تجمع المنيو الإلكتروني وقنوات التواصل والدفع بملامسة واحدة.
             </p>
           </div>
           
-          <div class="pt-6 border-t border-white/[0.06] flex items-center justify-between">
+          <div class="pt-6 border-t border-brand-stroke flex items-center justify-between">
             <div>
-              <span class="text-2xl font-bold text-white mono">299</span>
+              <span class="text-3xl font-bold text-white font-mono">299</span>
               <span class="text-xs text-slate-500 mr-1">ريال</span>
             </div>
-            <a href="#order" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition">
-              طلب الستاند
-            </a>
+            <button type="button" class="order-trigger px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition" data-product="ستاند نقاط البيع المخصص (299 ريال)">
+              طلب الستاند المخصص
+            </button>
           </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 6. المحاكي الترددي التفاعلي (Realistic RF Simulation) -->
+    <section id="simulator" class="py-24 border-t border-brand-stroke bg-brand-surface/40">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="text-center mb-16">
+          <span class="text-xs font-mono uppercase text-brand-emerald tracking-widest font-semibold">[ REAL-TIME SIGNAL LAB ]</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">كيف تعمل الدائرة الفيزيائية؟</h2>
+          <p class="text-xs text-slate-400 mt-2 max-w-md mx-auto">لا توجد بطارية ولا أسلاك. يستمد الهوائي طاقته الكهرومغناطيسية من هاتف العميل لحظياً.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- تفاصيل التيليميتري والتحكم -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="p-6 rounded-2xl bg-brand-void border border-brand-stroke">
+              <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-4 pb-3 border-b border-brand-stroke">
+                <span>SIGNAL CARRIER STATUS</span>
+                <span id="rfStatus" class="text-brand-emerald font-bold">READY (IDLE)</span>
+              </div>
+              
+              <div class="space-y-3 text-xs font-mono">
+                <div class="flex justify-between">
+                  <span class="text-slate-500">CHIP PROTOCOL:</span>
+                  <span class="text-white">ISO/IEC 14443-A Target</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-500">FREQUENCY:</span>
+                  <span class="text-brand-teal">13.56 MHz High-RF</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-500">TRANSFER LATENCY:</span>
+                  <span class="text-white">&lt; 85ms</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-500">POWER SOURCE:</span>
+                  <span class="text-brand-emerald">Passive RF Induction</span>
+                </div>
+              </div>
+
+              <button id="rfSimulateBtn" type="button" class="mt-6 w-full py-3.5 rounded-xl bg-brand-emerald hover:bg-emerald-400 text-brand-void font-extrabold text-xs transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-satellite-dish" aria-hidden="true"></i>
+                <span>محاكاة ملامسة هاتف العميل الآن</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- اللوحة التفاعلية ومسار الإشارة -->
+          <div class="lg:col-span-7 flex flex-col items-center justify-center p-8 rounded-3xl bg-brand-void border border-brand-stroke relative overflow-hidden min-h-[340px]">
+            
+            <!-- حلقة الأمواج الترددية المنبعثة -->
+            <div id="radarRing" class="hidden absolute w-48 h-48 rounded-full border border-brand-emerald/40 ring-active pointer-events-none" aria-hidden="true"></div>
+
+            <div class="w-full max-w-sm border border-dashed border-brand-emerald/30 rounded-2xl p-6 flex flex-col items-center justify-center text-center relative z-10 bg-brand-surface/40">
+              
+              <div class="w-16 h-16 rounded-2xl bg-brand-card border border-white/10 flex items-center justify-center mb-3 shadow-[inset_0_0_15px_rgba(16,185,129,0.15)]" aria-hidden="true">
+                <i class="fa-solid fa-nfc-symbol text-3xl text-brand-emerald"></i>
+              </div>
+
+              <div class="text-sm font-bold text-white mb-0.5">ستاند AVENi الذكي بالكاشير</div>
+              <div class="text-[10px] font-mono text-slate-500">13.56 MHz ANTENNA LOOP</div>
+
+              <!-- صندوق استجابة الوجهة المنبثقة -->
+              <div id="rfPayload" class="mt-6 w-full bg-brand-void rounded-xl p-3.5 border border-brand-stroke text-right opacity-40 transition-all duration-300">
+                <div class="text-[10px] font-mono text-brand-teal mb-1">DISPATCHED ACTION:</div>
+                <div class="text-xs font-bold text-white flex items-center gap-2">
+                  <i class="fa-brands fa-google text-amber-400" aria-hidden="true"></i>
+                  <span>فتح نافذة 5 نجوم على Google Maps تلقائياً</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
       </div>
     </section>
 
-    <!-- المواصفات التقنية الصارمة (Tech Specs) -->
-    <section id="specs" class="py-20 border-t border-white/[0.06] bg-[#02050E]">
+    <!-- 7. حاسبة الأثر المالي vs الإعلانات (Ad Spend vs. Organic Reviews) -->
+    <section id="roi" class="py-24 border-t border-brand-stroke">
+      <div class="max-w-5xl mx-auto px-6">
+        
+        <div class="text-center mb-16">
+          <p class="text-xs font-mono uppercase text-brand-emerald mb-2 tracking-widest font-semibold">[ FINANCIAL LOGIC ]</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">لماذا يفضل أصحاب المتاجر استثمار 99 ريال مرة واحدة؟</h2>
+          <p class="text-sm text-slate-400 mt-2 max-w-lg mx-auto">لغة الأرقام الصريحة لمقارنة الحملات الإعلانية المؤقتة بالأصول الدائمة لخرائط Google</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-stretch">
+          
+          <!-- الإعلانات الممولة -->
+          <div class="p-8 rounded-2xl bg-brand-surface/40 border border-red-500/20 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono font-bold text-red-400 bg-red-950/50 px-3 py-1 rounded-full border border-red-800/50">تكلفة مستمرة</span>
+                <i class="fa-solid fa-arrow-trend-down text-red-400 text-xl" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">إعلانات سناب وتيك توك</h3>
+              <div class="text-3xl font-extrabold text-red-400 font-mono my-4">2,500+ <span class="text-xs font-normal text-slate-400 font-sans">ريال شهرياً</span></div>
+              <ul class="space-y-3.5 text-xs text-slate-300 leading-relaxed">
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-xmark text-red-400 mt-0.5" aria-hidden="true"></i>
+                  <span>بمجرد نفاد الميزانية الإعلانية (خلال 3 إلى 5 أيام) يتوقف تدفق الزوار تماماً.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-xmark text-red-400 mt-0.5" aria-hidden="true"></i>
+                  <span>لا تبني لك أصولاً رقمية تدوم لسنوات ولا ترفع ترتيب ظهورك في الخرائط.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- استثمار ستاند AVENi الدائم -->
+          <div class="p-8 rounded-2xl bg-gradient-to-b from-brand-card to-brand-surface border-2 border-brand-emerald/50 flex flex-col justify-between glow-subtle">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-mono font-bold text-brand-emerald bg-brand-emerald/10 px-3 py-1 rounded-full border border-brand-emerald/30">استثمار دائم</span>
+                <i class="fa-solid fa-crown text-amber-400 text-xl" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">ستاند تقييم Google الذكي</h3>
+              <div class="text-3xl font-extrabold text-brand-emerald font-mono my-4">99 <span class="text-xs font-normal text-slate-400 font-sans">ريال (تدفع لمرة واحدة للأبد)</span></div>
+              <ul class="space-y-3.5 text-xs text-slate-200 leading-relaxed">
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-check text-brand-emerald mt-0.5" aria-hidden="true"></i>
+                  <span>يعمل 365 يوماً على الكاشير يحول كل عميل راضٍ إلى تقييم حقيقي 5 نجوم.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i class="fa-solid fa-check text-brand-emerald mt-0.5" aria-hidden="true"></i>
+                  <span>تصدر نتائج البحث الأولى لكلمات نشاطك في حيك ومدينتك مجاناً.</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-5 border-t border-brand-stroke text-center">
+              <a href="#order" class="inline-flex items-center gap-2 text-xs font-bold text-brand-emerald hover:text-emerald-400 transition-colors">
+                <span>طلب الستاند وتجهيز الرابط لمنشأتك</span>
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. جدول المواصفات العسكرية (Hardware Specs) -->
+    <section id="specs" class="py-20 border-t border-brand-stroke bg-brand-void">
       <div class="max-w-4xl mx-auto px-6">
         
         <div class="text-center mb-14">
-          <span class="text-xs mono uppercase text-cyan-400 tracking-widest font-semibold">[ ARCHITECTURE & COMPLIANCE ]</span>
+          <span class="text-xs font-mono uppercase text-brand-emerald tracking-widest font-semibold">[ HARDWARE BLUEPRINT ]</span>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">المواصفات الهندسية</h2>
         </div>
 
-        <div class="border border-white/[0.08] rounded-2xl overflow-hidden text-xs mono">
-          <div class="grid grid-cols-2 p-4 bg-slate-900/50 border-b border-white/[0.06]">
+        <div class="border border-brand-stroke rounded-2xl overflow-hidden text-xs font-mono">
+          <div class="grid grid-cols-2 p-4 bg-brand-surface/60 border-b border-brand-stroke">
             <span class="text-slate-400">STAND MATERIAL</span>
-            <span class="text-white text-left font-bold">Cast Acrylic (High Density)</span>
+            <span class="text-white text-left font-bold">Cast Solid Acrylic (High Durability)</span>
           </div>
-          <div class="grid grid-cols-2 p-4 bg-transparent border-b border-white/[0.06]">
-            <span class="text-slate-400">ANTENNA GEOMETRY</span>
-            <span class="text-white text-left font-bold">Etched Aluminum Loop Antenna</span>
+          <div class="grid grid-cols-2 p-4 bg-transparent border-b border-brand-stroke">
+            <span class="text-slate-400">CHIP MODEL</span>
+            <span class="text-brand-emerald text-left font-bold">NXP NTAG213 High-Sensitivity</span>
           </div>
-          <div class="grid grid-cols-2 p-4 bg-slate-900/50 border-b border-white/[0.06]">
+          <div class="grid grid-cols-2 p-4 bg-brand-surface/60 border-b border-brand-stroke">
+            <span class="text-slate-400">CARRIER FREQUENCY</span>
+            <span class="text-white text-left font-bold">13.56 MHz (HF Standard)</span>
+          </div>
+          <div class="grid grid-cols-2 p-4 bg-transparent border-b border-brand-stroke">
             <span class="text-slate-400">DATA RETENTION</span>
             <span class="text-white text-left font-bold">10 Years EEPROM</span>
           </div>
-          <div class="grid grid-cols-2 p-4 bg-transparent border-b border-white/[0.06]">
-            <span class="text-slate-400">OPERATING TEMPERATURE</span>
-            <span class="text-white text-left font-bold">-25°C to +70°C</span>
-          </div>
-          <div class="grid grid-cols-2 p-4 bg-slate-900/50">
+          <div class="grid grid-cols-2 p-4 bg-brand-surface/60">
             <span class="text-slate-400">IP RATING</span>
-            <span class="text-cyan-400 text-left font-bold">IP68 (Dust & Liquid Proof)</span>
+            <span class="text-brand-teal text-left font-bold">IP68 (Dust, Coffee & Liquid Proof)</span>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- نموذج الطلب السريع عبر WhatsApp -->
-    <section id="order" class="py-24 border-t border-white/[0.06]">
+    <!-- الأسئلة الشائعة (FAQ) -->
+    <section id="faq" class="py-20 border-t border-brand-stroke bg-brand-surface/20">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <span class="text-xs font-mono uppercase text-brand-emerald tracking-widest font-semibold">[ FREQUENT QUESTIONS ]</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-2">الأسئلة الأكثر شيوعاً</h2>
+        </div>
+
+        <div class="space-y-4">
+          <details class="group rounded-2xl border border-brand-stroke bg-brand-void p-5 cursor-pointer">
+            <summary class="font-bold text-white flex justify-between items-center list-none text-sm">
+              <span>هل يحتاج العميل لتحميل تطبيق معين لقراءة الستاند؟</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-500 transition-transform group-open:rotate-180" aria-hidden="true"></i>
+            </summary>
+            <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+              إطلاقاً! لا يحتاج العميل لأي تطبيق؛ بمجرد ملامسة الهاتف للستاند يفتح الرابط في متصفح الجوال مباشرة وفي أجزاء من الثانية.
+            </p>
+          </details>
+
+          <details class="group rounded-2xl border border-brand-stroke bg-brand-void p-5 cursor-pointer">
+            <summary class="font-bold text-white flex justify-between items-center list-none text-sm">
+              <span>هل يمكنني تغيير رابط الفرع مستقبلاً إذا نقلت موقعي؟</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-500 transition-transform group-open:rotate-180" aria-hidden="true"></i>
+            </summary>
+            <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+              نعم، نقوم ببرمجة الرقاقة لتكون قابلة لإعادة التوجيه مستقبلاً دون الحاجة لشراء ستاند جديد.
+            </p>
+          </details>
+
+          <details class="group rounded-2xl border border-brand-stroke bg-brand-void p-5 cursor-pointer">
+            <summary class="font-bold text-white flex justify-between items-center list-none text-sm">
+              <span>كيف أزودكم برابط خرائط Google لبرمجته قبل الشحن؟</span>
+              <i class="fa-solid fa-chevron-down text-xs text-slate-500 transition-transform group-open:rotate-180" aria-hidden="true"></i>
+            </summary>
+            <p class="text-xs text-slate-400 mt-3 leading-relaxed">
+              بمجرد إرسال طلبك عبر النموذج أدناه، سيتواصل معك ممثلنا مباشرة عبر الواتساب لاعتماد رابط فرعك واختباره قبل إرسال الشحنة.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. نموذج الطلب المباشر عبر WhatsApp (Deployment Request) -->
+    <section id="order" class="py-24 border-t border-brand-stroke bg-brand-void">
       <div class="max-w-md mx-auto px-6">
         
         <div class="text-center mb-10">
-          <span class="text-xs mono text-cyan-400 uppercase tracking-widest">[ DEPLOYMENT REQUEST ]</span>
-          <h2 class="text-2xl font-bold text-white mt-1">تأكيد طلب الأجهزة</h2>
-          <p class="text-xs text-slate-400 mt-2">سيتم فتح محادثة WhatsApp مباشرة لربط وتشفير الرابط الخاص بمنشأتك قبل الشحن.</p>
+          <span class="text-xs font-mono text-brand-emerald uppercase tracking-widest">[ DEPLOYMENT REQUEST ]</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">تأكيد طلب الأجهزة</h2>
+          <p class="text-xs text-slate-400 mt-2">أدخل اسم منشأتك وسنفتح لك محادثة واتساب مجهزة لبرمجة القطع واعتماد الشحن.</p>
         </div>
 
-        <form id="orderForm" class="pcb-card p-8 rounded-2xl space-y-4">
+        <form id="orderForm" class="p-8 rounded-2xl bg-brand-surface border border-brand-stroke space-y-4 shadow-2xl" novalidate>
           <div>
-            <label class="block text-[11px] mono text-slate-400 mb-2">اسم المنشأة أو المحل:</label>
-            <input id="orgName" type="text" required class="w-full bg-[#030712] border border-white/10 rounded-lg px-4 py-3 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400" placeholder="مثال: مقهى ركن القهوة">
+            <label for="orgName" class="block text-xs font-semibold text-slate-300 mb-2">اسم المنشأة أو المحل *</label>
+            <input id="orgName" type="text" required maxlength="80" class="w-full bg-brand-void border border-brand-stroke rounded-xl px-4 py-3 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-brand-emerald transition" placeholder="مثال: مقهى ركن القهوة">
           </div>
 
           <div>
-            <label class="block text-[11px] mono text-slate-400 mb-2">رقم الجوال / الواتساب السعودي:</label>
-            <input id="orgPhone" type="tel" required class="w-full bg-[#030712] border border-white/10 rounded-lg px-4 py-3 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-cyan-400 mono text-right" placeholder="05xxxxxxxx" dir="ltr">
-            <p id="phoneErr" class="hidden text-[10px] text-red-400 mt-1 mono">أدخل رقم جوال يبدأ بـ 05 ويتكون من 10 أرقام.</p>
+            <label for="orgPhone" class="block text-xs font-semibold text-slate-300 mb-2">رقم الجوال / الواتساب السعودي *</label>
+            <input id="orgPhone" type="tel" required inputmode="tel" maxlength="13" class="w-full bg-brand-void border border-brand-stroke rounded-xl px-4 py-3 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-brand-emerald font-mono text-right transition" placeholder="05xxxxxxxx" dir="ltr">
+            <p id="phoneErr" class="hidden text-[11px] text-red-400 mt-1 font-mono">يرجى كتابة رقم سعودي صحيح يبدأ بـ 05 ويتكون من 10 أرقام.</p>
           </div>
 
           <div>
-            <label class="block text-[11px] mono text-slate-400 mb-2">الجهاز المطلوب:</label>
-            <select id="prodSelect" class="w-full bg-[#030712] border border-white/10 rounded-lg px-4 py-3 text-xs text-white focus:outline-none focus:border-cyan-400">
+            <label for="prodSelect" class="block text-xs font-semibold text-slate-300 mb-2">الجهاز أو الباقة المطلوبة *</label>
+            <select id="prodSelect" class="w-full bg-brand-void border border-brand-stroke rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-emerald transition">
               <option value="ستاند تقييم Google الذكي (99 ريال)">ستاند تقييم Google الذكي (99 ريال)</option>
               <option value="بطاقة أعمال ذكية NFC (49 ريال)">بطاقة أعمال ذكية NFC (49 ريال)</option>
-              <option value="ستاند نقاط البيع بهويتك (299 ريال)">ستاند نقاط البيع بهويتك (299 ريال)</option>
+              <option value="ستاند نقاط البيع بهويتك (299 ريال)">ستاند نقاط البيع بهويتك المخصصة (299 ريال)</option>
             </select>
           </div>
 
-          <button type="submit" class="w-full py-3.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition shadow-[0_0_20px_rgba(6,182,212,0.3)] mt-2">
-            إرسال وتأكيد الطلب عبر WhatsApp
+          <button type="submit" class="w-full py-4 rounded-xl bg-brand-emerald hover:bg-emerald-400 text-brand-void font-extrabold text-xs transition shadow-[0_0_25px_rgba(16,185,129,0.3)] mt-2 flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp text-base" aria-hidden="true"></i>
+            <span>إرسال وتأكيد الطلب عبر WhatsApp</span>
           </button>
         </form>
 
@@ -406,61 +536,110 @@
     </section>
   </main>
 
-  <footer class="py-10 border-t border-white/[0.06] text-center text-xs mono text-slate-600 bg-[#02040A]">
-    <div class="font-bold text-white mb-1">AVENi HARDWARE LABS</div>
+  <!-- التذييل التقني (Footer) -->
+  <footer class="py-10 border-t border-brand-stroke text-center text-xs font-mono text-slate-600 bg-brand-void">
+    <div class="font-bold text-white mb-1 tracking-wider">AVENi HARDWARE LABS</div>
     © 2026 KSA · NEAR FIELD COMMUNICATION HARDWARE SYSTEMS
   </footer>
 
+  <!-- JavaScript التفاعلي -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // محاكي إرسال النبضة
-      const btn = document.getElementById('pulseTrigger');
-      const wave = document.getElementById('radarWave');
-      const status = document.getElementById('signalStatus');
-      const payload = document.getElementById('payloadBox');
+      // 1. محاكاة النبضة الترددية
+      const rfBtn = document.getElementById('rfSimulateBtn');
+      const radar = document.getElementById('radarRing');
+      const rfStatus = document.getElementById('rfStatus');
+      const payload = document.getElementById('rfPayload');
 
-      if (btn) {
-        btn.addEventListener('click', () => {
-          if (navigator.vibrate) navigator.vibrate([30, 40, 30]);
+      if (rfBtn) {
+        rfBtn.addEventListener('click', () => {
+          // اهتزاز فيزيائي حقيقي للجوال إن وُجد
+          if (navigator.vibrate) navigator.vibrate([40, 60, 40]);
 
-          wave.classList.remove('hidden');
-          status.innerText = 'CARRIER DETECTED';
-          status.className = 'text-cyan-400';
-          payload.classList.remove('opacity-30');
+          radar.classList.remove('hidden');
+          rfStatus.innerText = 'CARRIER DETECTED (13.56 MHz)';
+          rfStatus.className = 'text-brand-teal font-bold';
+          payload.classList.remove('opacity-40');
           payload.classList.add('opacity-100');
 
           setTimeout(() => {
-            wave.classList.add('hidden');
-            status.innerText = 'TRANSMITTED (200 OK)';
-            status.className = 'text-emerald-400';
-          }, 1200);
+            radar.classList.add('hidden');
+            rfStatus.innerText = 'TRANSMITTED (200 OK)';
+            rfStatus.className = 'text-brand-emerald font-bold';
+          }, 1400);
 
           setTimeout(() => {
-            status.innerText = 'LISTENING';
+            rfStatus.innerText = 'READY (IDLE)';
+            rfStatus.className = 'text-brand-emerald font-bold';
             payload.classList.remove('opacity-100');
-            payload.classList.add('opacity-30');
-          }, 3500);
+            payload.classList.add('opacity-40');
+          }, 3600);
         });
       }
 
-      // إرسال الطلب عبر الواتساب
-      const form = document.getElementById('orderForm');
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('orgName').value.trim();
-        const phone = document.getElementById('orgPhone').value.trim().replace(/\s+/g, '');
-        const prod = document.getElementById('prodSelect').value;
-        const err = document.getElementById('phoneErr');
-
-        if (!/^(05\d{8}|9665\d{8})$/.test(phone)) {
-          err.classList.remove('hidden');
-          return;
-        }
-        err.classList.add('hidden');
-
-        const msg = `مرحباً فريق AVENi 👋\nطلب اعتماد جهاز هاردوير:\n- الجهاز: *${prod}*\n- المنشأة: *${name}*\n- الجوال: *${phone}*\n\nأرجو تزويدي برابط الدفع والتفاصيل.`;
-        window.open(`https://wa.me/966591825649?text=${encodeURIComponent(msg)}`, '_blank');
+      // 2. ربط أزرار المنتجات بنموذج الطلب
+      const prodSelect = document.getElementById('prodSelect');
+      document.querySelectorAll('.order-trigger').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (prodSelect) prodSelect.value = btn.dataset.product;
+          document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+        });
       });
+
+      // 3. التحكم بقائمة الجوال
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+          const isOpen = !mobileMenu.classList.contains('hidden');
+          mobileMenu.classList.toggle('hidden', isOpen);
+          mobileMenu.classList.toggle('flex', !isOpen);
+          menuBtn.setAttribute('aria-expanded', String(!isOpen));
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      // 4. التحقق وإرسال الطلب عبر الواتساب
+      const orderForm = document.getElementById('orderForm');
+      const orgName = document.getElementById('orgName');
+      const orgPhone = document.getElementById('orgPhone');
+      const phoneErr = document.getElementById('phoneErr');
+
+      if (orderForm) {
+        orderForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          phoneErr.classList.add('hidden');
+
+          const name = orgName.value.trim();
+          const rawPhone = orgPhone.value.trim().replace(/[\s()-]/g, '');
+          const isValidPhone = /^(05\d{8}|9665\d{8}|\+9665\d{8})$/.test(rawPhone);
+
+          if (!name) {
+            orgName.focus();
+            return;
+          }
+
+          if (!isValidPhone) {
+            phoneErr.classList.remove('hidden');
+            orgPhone.focus();
+            return;
+          }
+
+          const product = prodSelect ? prodSelect.value : 'طلب هاردوير AVENi';
+          const msg = `مرحباً فريق AVENi 👋\nأود اعتماد طلب عتاد تقني جديد:\n- الجهاز المطلوب: *${product}*\n- اسم المنشأة / العميل: *${name}*\n- رقم الجوال: *${rawPhone}*\n\nأرجو تزويدي بتفاصيل البرمجة والاعتماد لإتمام الشحن.`;
+
+          window.open(`https://wa.me/966591825649?text=${encodeURIComponent(msg)}`, '_blank');
+        });
+
+        orgPhone.addEventListener('input', () => phoneErr.classList.add('hidden'));
+      }
     });
   </script>
 </body>
