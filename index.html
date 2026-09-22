@@ -1,43 +1,447 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>AVENi | أنظمة وحلول الاتصال الذكي NFC</title>
-<meta name="description" content="بطاقات أعمال ذكية وستاندات مخصصة عبر NFC وQR Code للمتاجر والشركات.">
-<meta name="theme-color" content="#08080A">
-<link rel="canonical" href="https://aveni-cmd.github.io/AVENi/">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@latest" defer></script>
-<style>
-body{font-family:'IBM Plex Sans Arabic',sans-serif}.font-brand{font-family:'Plus Jakarta Sans',sans-serif}.bg-obsidian{background:#08080A;background-image:radial-gradient(ellipse 80% 50% at 50% -15%,rgba(250,250,250,.035),transparent 70%),radial-gradient(ellipse 60% 40% at 100% 50%,rgba(16,185,129,.025),transparent 60%)}
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #10B981;outline-offset:2px}.product-card{background:linear-gradient(180deg,#101013,#0A0A0C);border:1px solid #27272A;box-shadow:0 24px 60px rgba(0,0,0,.35)}
-.product-photo{border-radius:0;border:0;background:transparent;overflow:hidden;position:relative;display:block;line-height:0}.product-photo img{display:block;width:100%;height:auto;border:0;border-radius:0;object-fit:initial;object-position:center;background:transparent;filter:none!important;mix-blend-mode:normal!important}
-#mobileMenu{isolation:isolate;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
-#mobileMenu.flex{display:flex!important}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AVENi | حلول وأنظمة الاتصال الذكي NFC للمتاجر والشركات</title>
+  <meta name="description" content="بطاقات أعمال ذكية وستاندات تقييم Google مخصصة بتقنية NFC وQR Code لنقاط البيع والاستقبال.">
+  <meta name="theme-color" content="#090A0F">
+  <link rel="canonical" href="https://aveni-cmd.github.io/AVENi/">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+    }
+    .font-brand {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .bg-space {
+      background-color: #08080C;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 100% 50%, rgba(37, 99, 235, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 0% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 40%);
+    }
+    .glow-border {
+      position: relative;
+    }
+    .glow-border::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.4), transparent, rgba(255, 255, 255, 0.1));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .product-card {
+      background: linear-gradient(180deg, rgba(22, 22, 28, 0.85) 0%, rgba(11, 11, 15, 0.95) 100%);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(16, 185, 129, 0.5);
+      box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.25);
+    }
+    .product-photo-wrap {
+      background: radial-gradient(circle at center, rgba(255,255,255,0.04) 0%, transparent 70%);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 240px;
+    }
+    .product-photo-wrap img {
+      width: 100%;
+      height: 240px;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .product-photo-wrap img {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
-<body class="bg-obsidian text-[#F4F4F5] antialiased min-h-screen pb-24 md:pb-0">
-<div class="bg-gradient-to-r from-emerald-950/60 via-zinc-900 to-blue-950/60 border-b border-zinc-800 py-2 px-4 text-center text-xs text-zinc-300">● شحن سريع (توصيل خلال 24-48 ساعة) لكافة مناطق المملكة بمناسبة الإطلاق التجريبي.</div>
-<header class="sticky top-0 z-40 bg-[#08080A]/90 backdrop-blur-xl border-b border-zinc-800"><div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between"><a href="#" dir="ltr" class="font-brand text-xl font-bold tracking-wide" aria-label="الرئيسية - AVENi">AVENi</a><nav class="hidden md:flex gap-8 text-sm text-zinc-400"><a href="#solutions">الحلول والمنتجات</a><a href="#compatibility">التوافق</a><a href="#workflow">آلية العمل</a><a href="#faq">الأسئلة الشائعة</a></nav><a href="#order" class="hidden md:inline-flex px-6 py-2.5 rounded-xl bg-white text-black text-xs font-bold">اطلب / استفسر</a><button id="mobileMenuBtn" class="md:hidden p-2" aria-label="فتح القائمة" aria-expanded="false"><i data-lucide="menu"></i></button></div></header>
-<nav id="mobileMenu" class="fixed top-20 right-0 bottom-0 left-0 z-[60] hidden bg-[#08080A] border-t border-zinc-800 flex-col items-center justify-center gap-8 overflow-y-auto px-6"><a class="mobile-link text-lg font-bold" href="#solutions">الحلول والمنتجات</a><a class="mobile-link text-lg font-bold" href="#compatibility">التوافق</a><a class="mobile-link text-lg font-bold" href="#workflow">آلية العمل</a><a class="mobile-link text-lg font-bold" href="#faq">الأسئلة الشائعة</a></nav>
-<main>
-<section class="pt-16 pb-20 border-b border-zinc-800/60"><div class="max-w-4xl mx-auto px-6 text-center"><span class="inline-flex px-4 py-1.5 rounded-full bg-[#111115] border border-zinc-800 text-xs font-semibold mb-6">حلول الاتصال الذكي المخصصة للمتاجر والشركات</span><h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.4] mb-6">انقل هويتك وتواصل مع عملائك<br><span class="text-zinc-400">بملامسة هاتف واحدة ودون تطبيقات.</span></h1><p class="text-zinc-400 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">بطاقات أعمال ذكية وستاندات مخصصة لمنصات الاستقبال ونقاط البيع؛ لجمع تقييمات Google ومشاركة قنوات التواصل بلمسة واحدة، مع رمز QR كبديل إضافي.</p><div class="flex flex-col sm:flex-row justify-center gap-3"><a href="#order" class="px-8 py-3.5 rounded-xl bg-white text-black font-bold text-sm">استفسر أو اطلب الآن</a><a href="#solutions" class="px-8 py-3.5 rounded-xl bg-[#111115] border border-zinc-800 font-bold text-sm">عرض المنتجات</a></div></div></section>
-<section id="compatibility" class="py-14 border-b border-zinc-800/60 text-center"><p class="text-xs font-semibold text-[#10B981] mb-2">التوافق</p><h2 class="text-2xl sm:text-3xl font-bold">مصمم للاستخدام اليومي ببساطة</h2><p class="text-sm text-zinc-400 max-w-2xl mx-auto mt-3">NFC يعمل على الهواتف المتوافقة، وQR يوفر مسارًا بديلًا عند الحاجة.</p></section>
-<section id="solutions" class="py-20 border-b border-zinc-800/60"><div class="max-w-6xl mx-auto px-6"><div class="text-center mb-12"><p class="text-xs font-semibold text-[#10B981] mb-2 tracking-widest">OUR PRODUCTS</p><h2 class="text-3xl sm:text-4xl font-bold">منتجاتنا</h2><p class="text-sm text-zinc-400 mt-3">حلول ذكية تبسط تواصل عملائك معك</p></div><div class="grid md:grid-cols-3 gap-5">
-<article class="product-card rounded-2xl p-4 flex flex-col"><div class="product-photo"><img src="assets/products/AVENi-card-site.webp?v=20260912-1" alt="بطاقة أعمال ذكية AVENi البيضاء" width="1080" height="2160" loading="eager" fetchpriority="high" decoding="async" sizes="(max-width:767px) 100vw, 33vw"></div><h3 class="text-lg font-bold mt-5">بطاقة أعمال ذكية</h3><p class="text-xs text-zinc-400 mt-1">للمحترفين والأفراد</p><p class="text-sm text-zinc-400 leading-relaxed mt-3 flex-1">مشاركة بيانات التواصل والروابط الرقمية بلمسة واحدة عبر NFC أو QR.</p><div class="text-2xl font-bold mt-5">49 <span class="text-sm font-normal text-zinc-400">ريال</span></div><button type="button" class="order-trigger mt-5 w-full py-3 rounded-xl bg-white text-black font-bold text-sm" data-product="بطاقة أعمال ذكية">اطلب الآن</button></article>
-<article class="product-card rounded-2xl p-4 flex flex-col"><div class="product-photo"><img src="assets/products/AVENi-google-site.webp?v=20260912-1" alt="ستاند تقييم Google من AVENi، قيّمنا على Google" width="1080" height="2160" loading="lazy" decoding="async" sizes="(max-width:767px) 100vw, 33vw"></div><h3 class="text-lg font-bold mt-5">ستاند تقييم Google</h3><p class="text-xs text-zinc-400 mt-1">للمقاهي والمطاعم وجميع الأنشطة</p><p class="text-sm text-zinc-400 leading-relaxed mt-3 flex-1">نقطة تفاعل عند الكاشير أو الاستقبال لتوجيه العميل إلى صفحة التقييم عبر NFC أو QR.</p><div class="text-2xl font-bold mt-5">99 <span class="text-sm font-normal text-zinc-400">ريال</span></div><button type="button" class="order-trigger mt-5 w-full py-3 rounded-xl bg-white text-black font-bold text-sm" data-product="ستاند تقييم Google">اطلب الآن</button></article>
-<article class="product-card rounded-2xl p-4 flex flex-col"><div class="product-photo"><img src="assets/products/AVENi-custom-site.webp?v=20260912-1" alt="ستاند نقاط البيع المخصص من AVENi" width="1080" height="2160" loading="lazy" decoding="async" sizes="(max-width:767px) 100vw, 33vw"></div><h3 class="text-lg font-bold mt-5">ستاند نقاط البيع المخصص</h3><p class="text-xs text-zinc-400 mt-1">للبراندات والمتاجر والشركات</p><p class="text-sm text-zinc-400 leading-relaxed mt-3 flex-1">صفحة مخصصة لعلامتك التجارية تجمع الروابط المهمة مثل الموقع وWhatsApp وInstagram وTikTok.</p><div class="text-2xl font-bold mt-5">299 <span class="text-sm font-normal text-zinc-400">ريال</span></div><button type="button" class="order-trigger mt-5 w-full py-3 rounded-xl bg-white text-black font-bold text-sm" data-product="ستاند نقاط البيع المخصص">اطلب الآن</button></article>
-</div></div></section>
-<section id="workflow" class="py-20 border-b border-zinc-800/60"><div class="max-w-5xl mx-auto px-6"><div class="text-center mb-10"><p class="text-xs font-semibold text-[#10B981] mb-2">آلية العمل</p><h2 class="text-2xl sm:text-3xl font-bold">ثلاث خطوات واضحة</h2></div><div class="grid md:grid-cols-3 gap-5"><div class="p-6 rounded-2xl border border-zinc-800 bg-[#0D0D10]"><b class="text-[#10B981]">01</b><h3 class="font-bold mt-4">قرّب أو امسح</h3><p class="text-sm text-zinc-400 mt-2">يقرّب العميل هاتفه من NFC أو يمسح QR.</p></div><div class="p-6 rounded-2xl border border-zinc-800 bg-[#0D0D10]"><b class="text-[#10B981]">02</b><h3 class="font-bold mt-4">تُفتح الوجهة</h3><p class="text-sm text-zinc-400 mt-2">ينتقل الهاتف إلى صفحة الويب أو الرابط المحدد دون تطبيق مخصص.</p></div><div class="p-6 rounded-2xl border border-zinc-800 bg-[#0D0D10]"><b class="text-[#10B981]">03</b><h3 class="font-bold mt-4">يتفاعل العميل</h3><p class="text-sm text-zinc-400 mt-2">يصل إلى بيانات التواصل أو التقييم أو القنوات الرقمية.</p></div></div></div></section>
-<section id="faq" class="py-20 border-b border-zinc-800/60"><div class="max-w-3xl mx-auto px-6"><div class="text-center mb-10"><p class="text-xs font-semibold text-[#10B981] mb-2">الأسئلة الشائعة</p><h2 class="text-2xl sm:text-3xl font-bold">أسئلة قبل الطلب</h2></div><div class="space-y-3"><details class="rounded-xl border border-zinc-800 bg-[#0D0D10] p-5"><summary class="cursor-pointer font-bold">هل يحتاج NFC إلى تطبيق؟</summary><p class="text-sm text-zinc-400 mt-3">لا يحتاج العميل إلى تطبيق AVENi مخصص؛ يتوفر QR كمسار بديل.</p></details><details class="rounded-xl border border-zinc-800 bg-[#0D0D10] p-5"><summary class="cursor-pointer font-bold">هل يعمل QR إذا لم يتوفر NFC؟</summary><p class="text-sm text-zinc-400 mt-3">نعم، QR يوفر طريقة وصول بديلة عبر كاميرا الهاتف أو القارئ المدمج.</p></details><details class="rounded-xl border border-zinc-800 bg-[#0D0D10] p-5"><summary class="cursor-pointer font-bold">هل يمكن تخصيص الستاند؟</summary><p class="text-sm text-zinc-400 mt-3">الستاند المخصص يستخدم هوية البراند ويربط الصفحة الرقمية بالروابط المعتمدة عند الطلب.</p></details></div></div></section>
-<section id="order" class="py-20"><div class="max-w-xl mx-auto px-6"><div class="text-center mb-8"><p class="text-xs font-semibold text-[#10B981] mb-2">الطلب والاستفسار</p><h2 class="text-2xl sm:text-3xl font-bold">ابدأ بطلبك عبر WhatsApp</h2><p class="text-sm text-zinc-400 mt-3">أدخل بيانات التواصل الأساسية وسنفتح لك محادثة WhatsApp برسالة جاهزة.</p></div><form id="orderForm" class="rounded-2xl border border-zinc-800 bg-[#0D0D10] p-6 space-y-5" novalidate><div><label for="custName" class="block text-sm font-semibold mb-2">الاسم / المنشأة</label><input id="custName" name="name" type="text" required maxlength="100" autocomplete="name" class="w-full rounded-xl bg-[#08080A] border border-zinc-800 px-4 py-3 text-sm" placeholder="اكتب الاسم أو اسم المنشأة"></div><div><label for="custPhone" class="block text-sm font-semibold mb-2">رقم WhatsApp السعودي</label><input id="custPhone" name="phone" type="tel" required inputmode="tel" maxlength="13" class="w-full rounded-xl bg-[#08080A] border border-zinc-800 px-4 py-3 text-sm" placeholder="05xxxxxxxx"><p id="phoneError" class="hidden text-xs text-red-400 mt-2">أدخل رقم جوال سعودي صحيحًا مثل 05xxxxxxxx أو 9665xxxxxxxx.</p></div><div><label for="prodType" class="block text-sm font-semibold mb-2">الحل المطلوب</label><select id="prodType" class="w-full rounded-xl bg-[#08080A] border border-zinc-800 px-4 py-3 text-sm"><option>بطاقة أعمال ذكية</option><option>ستاند تقييم Google</option><option>ستاند نقاط البيع المخصص</option></select></div><button type="submit" class="w-full py-3.5 rounded-xl bg-white text-black font-bold text-sm">إرسال الطلب عبر WhatsApp</button></form></div></section>
-</main><footer class="py-8 border-t border-zinc-800 text-center text-xs text-zinc-500"><span class="font-brand font-bold text-white">AVENi</span> · © 2026 جميع الحقوق محفوظة</footer>
-<script>document.addEventListener('DOMContentLoaded',()=>{if(window.lucide)window.lucide.createIcons();const form=document.getElementById('orderForm'),phone=document.getElementById('custPhone'),err=document.getElementById('phoneError'),sel=document.getElementById('prodType'),menuBtn=document.getElementById('mobileMenuBtn'),menu=document.getElementById('mobileMenu');document.querySelectorAll('.order-trigger').forEach(b=>b.addEventListener('click',()=>{sel.value=b.dataset.product;document.getElementById('order').scrollIntoView({behavior:'smooth'})}));menuBtn.addEventListener('click',()=>{const open=menu.classList.contains('hidden');menu.classList.toggle('hidden',!open);menu.classList.toggle('flex',open);menuBtn.setAttribute('aria-expanded',String(open));document.body.classList.toggle('overflow-hidden',open)});document.querySelectorAll('.mobile-link').forEach(l=>l.addEventListener('click',()=>{menu.classList.add('hidden');menu.classList.remove('flex');menuBtn.setAttribute('aria-expanded','false');document.body.classList.remove('overflow-hidden')}));form.addEventListener('submit',e=>{e.preventDefault();err.classList.add('hidden');const name=document.getElementById('custName').value.trim(),raw=phone.value.trim().replace(/[\s()-]/g,''),valid=/^(05\d{8}|9665\d{8}|\+9665\d{8})$/.test(raw);if(!name||!valid){if(!valid){err.classList.remove('hidden');phone.focus()}return}const text=`مرحباً فريق AVENi\
-مهتم بطلب: *${sel.value}*\
-الاسم / المنشأة: ${name}\
-أرجو تزويدي بالتفاصيل والخطوات القادمة للاعتماد.`;window.location.href=`https://wa.me/966591825649?text=${encodeURIComponent(text)}`});phone.addEventListener('input',()=>err.classList.add('hidden'))});</script>
-</body></html>
+
+<body class="bg-space text-[#F4F4F5] antialiased min-h-screen selection:bg-emerald-500 selection:text-black">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-emerald-950/80 via-zinc-900 to-zinc-950 border-b border-emerald-900/40 py-2.5 px-4 text-center text-xs font-medium text-emerald-300 flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+    شحن سريع وتوصيل لكافة مناطق المملكة | جاهز للاستخدام الفوري بدون أي تطبيق
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-[#08080C]/85 backdrop-blur-2xl border-b border-zinc-800/80">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" dir="ltr" class="font-brand text-2xl font-black tracking-wider text-white flex items-center gap-2">
+        <span class="w-8 h-8 rounded-lg bg-emerald-500 text-black flex items-center justify-center font-black text-sm">A</span>
+        AVENi
+      </a>
+      
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-zinc-400">
+        <a href="#products" class="hover:text-emerald-400 transition-colors">المنتجات الذكية</a>
+        <a href="#workflow" class="hover:text-emerald-400 transition-colors">آلية العمل</a>
+        <a href="#compatibility" class="hover:text-emerald-400 transition-colors">التوافق</a>
+        <a href="#faq" class="hover:text-emerald-400 transition-colors">الأسئلة الشائعة</a>
+      </nav>
+
+      <a href="#order" class="hidden md:inline-flex px-5 py-2.5 rounded-xl bg-emerald-400 text-black text-xs font-black hover:bg-emerald-300 transition-all hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]">
+        اطلب الآن عبر WhatsApp
+      </a>
+
+      <button id="mobileMenuBtn" class="md:hidden text-zinc-300 p-2 text-xl" aria-label="القائمة">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Menu -->
+  <nav id="mobileMenu" class="fixed inset-0 top-20 z-40 hidden bg-[#08080C]/98 backdrop-blur-3xl flex-col items-center justify-center gap-8 px-6 text-center border-t border-zinc-800">
+    <a class="mobile-link text-xl font-bold text-zinc-200 hover:text-emerald-400" href="#products">المنتجات الذكية</a>
+    <a class="mobile-link text-xl font-bold text-zinc-200 hover:text-emerald-400" href="#workflow">آلية العمل</a>
+    <a class="mobile-link text-xl font-bold text-zinc-200 hover:text-emerald-400" href="#compatibility">التوافق</a>
+    <a class="mobile-link text-xl font-bold text-zinc-200 hover:text-emerald-400" href="#faq">الأسئلة الشائعة</a>
+    <a class="mobile-link px-8 py-3.5 rounded-xl bg-emerald-400 text-black font-black text-sm mt-4" href="#order">اطلب حلولك الآن</a>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-16 pb-24 border-b border-zinc-800/50 relative overflow-hidden">
+      <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-bold mb-8">
+          <i class="fa-solid fa-bolt text-xs"></i>
+          تقنية NFC الذكية لنقاط البيع ونمو الأعمال
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-black leading-[1.3] mb-6 tracking-tight">
+          ضاعف تقييماتك وتواصل مع عملائك <br>
+          <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-white bg-clip-text text-transparent">
+            بملامسة هاتف واحدة وبدون تطبيقات
+          </span>
+        </h1>
+
+        <p class="text-zinc-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+          بطاقات أعمال ذكية وستاندات أكريليك مخصصة لنقاط الاستقبال والكاشير؛ لنقل العميل مباشرة لصفحة تقييم Google أو شبكات التواصل فوراً عبر NFC وQR.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="#order" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-emerald-400 text-black font-black text-sm hover:bg-emerald-300 transition-all shadow-[0_10px_30px_rgba(16,185,129,0.3)]">
+            <i class="fa-brands fa-whatsapp text-lg ml-2"></i> اطلب الآن عبر الواتساب
+          </a>
+          <a href="#products" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-zinc-900 border border-zinc-700/80 font-bold text-sm text-zinc-200 hover:border-zinc-500 transition-all">
+            استعرض المنتجات والأسعار
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-24 border-b border-zinc-800/50">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="text-center mb-16">
+          <p class="text-xs font-black text-emerald-400 mb-3 tracking-widest uppercase">OUR HARDWARE</p>
+          <h2 class="text-3xl sm:text-4xl font-black text-white">حلول AVENi الذكية</h2>
+          <p class="text-sm text-zinc-400 mt-3 max-w-lg mx-auto">منتجات عصرية ومجهزة برقائق NFC مبرمجة وجاهزة فور استلامها</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <!-- 1. بطاقة الأعمال الذكية -->
+          <article class="product-card rounded-3xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="product-photo-wrap mb-6">
+                <img src="assets/products/AVENi-card-site.webp?v=20260912-1" alt="بطاقة أعمال ذكية AVENi">
+              </div>
+              <span class="text-[11px] font-extrabold text-zinc-400 uppercase tracking-wider bg-zinc-800/60 px-3 py-1 rounded-md">للمحترفين والأفراد</span>
+              <h3 class="text-xl font-black mt-3 text-white">بطاقة الأعمال الذكية</h3>
+              <p class="text-sm text-zinc-400 leading-relaxed mt-2.5">
+                شارك رقمك، إيميلك، موقعك، وحساباتك الرقمية بملامسة واحدة لظهر هاتف العميل دون طباعة مئات الكروت الورقية.
+              </p>
+            </div>
+            
+            <div class="mt-8 pt-5 border-t border-zinc-800/80">
+              <div class="flex items-baseline gap-1 text-3xl font-black text-white">
+                49 <span class="text-sm font-semibold text-zinc-400">ريال</span>
+              </div>
+              <button type="button" class="order-trigger mt-4 w-full py-3.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-extrabold text-sm transition-all" data-product="بطاقة أعمال ذكية">
+                طلب البطاقة الآن
+              </button>
+            </div>
+          </article>
+
+          <!-- 2. ستاند تقييم Google (الأكثر مبيعاً) -->
+          <article class="product-card rounded-3xl p-6 flex flex-col justify-between glow-border relative border-emerald-500/40 bg-gradient-to-b from-emerald-950/20 via-zinc-900/90 to-[#0A0A0E]">
+            <div class="absolute -top-3.5 right-6 px-3.5 py-1 rounded-full bg-emerald-400 text-black text-[11px] font-black tracking-wide shadow-lg">
+              ★ الأكثر طلباً للمتاجر والمقاهي
+            </div>
+
+            <div>
+              <div class="product-photo-wrap mb-6">
+                <img src="assets/products/AVENi-google-site.webp?v=20260912-1" alt="ستاند تقييم Google">
+              </div>
+              <span class="text-[11px] font-extrabold text-emerald-400 uppercase tracking-wider bg-emerald-950/60 px-3 py-1 rounded-md border border-emerald-500/20">للمطاعم والكافيهات والعيادات</span>
+              <h3 class="text-xl font-black mt-3 text-white">ستاند تقييم Google الذكي</h3>
+              <p class="text-sm text-zinc-400 leading-relaxed mt-2.5">
+                يوضع عند الكاشير أو طاولة الاستقبال؛ يلمس العميل الهاتف فيفتح له تقييم 5 نجوم على Google Maps مباشرة ويرفع ترتيب فرعك محلياً.
+              </p>
+            </div>
+
+            <div class="mt-8 pt-5 border-t border-zinc-800/80">
+              <div class="flex items-baseline gap-1 text-3xl font-black text-emerald-400">
+                99 <span class="text-sm font-semibold text-zinc-400">ريال</span>
+              </div>
+              <button type="button" class="order-trigger mt-4 w-full py-3.5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-black font-black text-sm transition-all shadow-[0_4px_20px_rgba(16,185,129,0.3)]" data-product="ستاند تقييم Google">
+                طلب ستاند التقييم الآن
+              </button>
+            </div>
+          </article>
+
+          <!-- 3. ستاند نقاط البيع المخصص -->
+          <article class="product-card rounded-3xl p-6 flex flex-col justify-between">
+            <div>
+              <div class="product-photo-wrap mb-6">
+                <img src="assets/products/AVENi-custom-site.webp?v=20260912-1" alt="ستاند نقاط البيع المخصص">
+              </div>
+              <span class="text-[11px] font-extrabold text-zinc-400 uppercase tracking-wider bg-zinc-800/60 px-3 py-1 rounded-md">للبراندات والشركات</span>
+              <h3 class="text-xl font-black mt-3 text-white">ستاند نقاط البيع المخصص</h3>
+              <p class="text-sm text-zinc-400 leading-relaxed mt-2.5">
+                تصميم بهوية وشعار علامتك التجارية يفتح صفحة رقمية شاملة تجمع قائمة الطعام، المتجر الإلكتروني، إنستغرام، والواتساب.
+              </p>
+            </div>
+
+            <div class="mt-8 pt-5 border-t border-zinc-800/80">
+              <div class="flex items-baseline gap-1 text-3xl font-black text-white">
+                299 <span class="text-sm font-semibold text-zinc-400">ريال</span>
+              </div>
+              <button type="button" class="order-trigger mt-4 w-full py-3.5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white font-extrabold text-sm transition-all" data-product="ستاند نقاط البيع المخصص">
+                طلب الستاند المخصص
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="workflow" class="py-24 border-b border-zinc-800/50">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center mb-14">
+          <p class="text-xs font-black text-emerald-400 mb-2 uppercase tracking-widest">HOW IT WORKS</p>
+          <h2 class="text-3xl font-black text-white">كيف تعمل أجهزة AVENi؟</h2>
+          <p class="text-sm text-zinc-400 mt-2">عملية سلسة في ثانية واحدة دون أي حواجز تقنية</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="p-8 rounded-3xl border border-zinc-800 bg-[#0E0E13]/80 relative overflow-hidden">
+            <span class="text-4xl font-black text-zinc-800 absolute top-4 left-6">01</span>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">قرّب الهاتف أو امسح</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed">يقوم العميل بمجرد ملامسة هاتفه لعلامة NFC، أو مسح رمز الـ QR بالكاميرا.</p>
+          </div>
+
+          <div class="p-8 rounded-3xl border border-zinc-800 bg-[#0E0E13]/80 relative overflow-hidden">
+            <span class="text-4xl font-black text-zinc-800 absolute top-4 left-6">02</span>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">تُفتح الوجهة فوراً</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed">ينبثق إشعار فوري على شاشة الهاتف يفتح الرابط المبرمج في ثانية واحدة.</p>
+          </div>
+
+          <div class="p-8 rounded-3xl border border-zinc-800 bg-[#0E0E13]/80 relative overflow-hidden">
+            <span class="text-4xl font-black text-zinc-800 absolute top-4 left-6">03</span>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">يتفاعل ويكتب تقييمه</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed">يضع العميل تقييمه أو يحفظ رقمك وقنواتك دون الحاجة لكتابة أو بحث طويل.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compatibility Section -->
+    <section id="compatibility" class="py-16 border-b border-zinc-800/50 bg-[#0B0B10]">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-2xl font-bold text-white mb-3">متوافق مع 99% من هواتف Apple وAndroid</h2>
+        <p class="text-sm text-zinc-400 max-w-xl mx-auto leading-relaxed">
+          تعمل رقائق NFC مباشرة مع أجهزة iPhone (من iPhone XS وحتى أحدث إصدار) وجميع هواتف أندرويد الحديثة دون تفعيل، مع وجود رمز QR مدمج كخيار بديل وسريع.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 border-b border-zinc-800/50">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <p class="text-xs font-black text-emerald-400 mb-2 uppercase tracking-widest">FAQ</p>
+          <h2 class="text-3xl font-black text-white">الأسئلة الشائعة</h2>
+        </div>
+
+        <div class="space-y-4">
+          <details class="group rounded-2xl border border-zinc-800 bg-[#0D0D12] p-5 cursor-pointer">
+            <summary class="font-bold text-white flex justify-between items-center list-none">
+              <span>هل يحتاج العميل لتحميل تطبيق معين؟</span>
+              <i class="fa-solid fa-chevron-down text-xs text-zinc-400 transition-transform group-open:rotate-180"></i>
+            </summary>
+            <p class="text-sm text-zinc-400 mt-3 leading-relaxed">
+              إطلاقاً! لا يحتاج العميل لأي تطبيق؛ بمجرد ملامسة الهاتف للستاند يفتح الرابط في متصفح الجوال مباشرة.
+            </p>
+          </details>
+
+          <details class="group rounded-2xl border border-zinc-800 bg-[#0D0D12] p-5 cursor-pointer">
+            <summary class="font-bold text-white flex justify-between items-center list-none">
+              <span>هل يمكنني تغيير الرابط لاحقاً بعد استلام الستاند؟</span>
+              <i class="fa-solid fa-chevron-down text-xs text-zinc-400 transition-transform group-open:rotate-180"></i>
+            </summary>
+            <p class="text-sm text-zinc-400 mt-3 leading-relaxed">
+              نعم، نقوم ببرمجة الرقاقة لتكون قابلة لإعادة التوجيه، أو نوفر لك صفحة تحكم سريعة لتحديث بياناتك في أي وقت.
+            </p>
+          </details>
+
+          <details class="group rounded-2xl border border-zinc-800 bg-[#0D0D12] p-5 cursor-pointer">
+            <summary class="font-bold text-white flex justify-between items-center list-none">
+              <span>كيف أزودكم ببيانات متجري أو رابط قوقل ماب؟</span>
+              <i class="fa-solid fa-chevron-down text-xs text-zinc-400 transition-transform group-open:rotate-180"></i>
+            </summary>
+            <p class="text-sm text-zinc-400 mt-3 leading-relaxed">
+              بعد إرسال طلبك في النموذج أدناه، سيتواصل معك فريقنا عبر الواتساب فوراً لأخذ رابط خرائط Google أو شعار متجرك لبرمجته وطباعته قبل الشحن.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="py-24">
+      <div class="max-w-xl mx-auto px-6">
+        <div class="text-center mb-10">
+          <p class="text-xs font-black text-emerald-400 mb-2 uppercase tracking-widest">DIRECT ORDER</p>
+          <h2 class="text-3xl font-black text-white">اطلب حلول AVENi الآن</h2>
+          <p class="text-sm text-zinc-400 mt-2">أدخل بياناتك وسنفتح لك محادثة واتساب مجهزة بالتفاصيل لتأكيد طلبك</p>
+        </div>
+
+        <form id="orderForm" class="rounded-3xl border border-zinc-800 bg-[#0E0E14] p-8 space-y-6 shadow-2xl relative" novalidate>
+          <div>
+            <label for="custName" class="block text-sm font-bold text-zinc-200 mb-2">الاسم الكريم / اسم المنشأة *</label>
+            <input id="custName" name="name" type="text" required maxlength="100" class="w-full rounded-xl bg-[#08080C] border border-zinc-800 px-4 py-3.5 text-sm text-white focus:border-emerald-500 outline-none transition" placeholder="مثال: مقهى ركن القهوة / محمد الأحمد">
+          </div>
+
+          <div>
+            <label for="custPhone" class="block text-sm font-bold text-zinc-200 mb-2">رقم الجوال / الواتساب السعودي *</label>
+            <input id="custPhone" name="phone" type="tel" required inputmode="tel" maxlength="13" class="w-full rounded-xl bg-[#08080C] border border-zinc-800 px-4 py-3.5 text-sm text-white focus:border-emerald-500 outline-none transition text-right" placeholder="05xxxxxxxx" dir="ltr">
+            <p id="phoneError" class="hidden text-xs text-red-400 mt-2 font-medium">يرجى إدخال رقم جوال صحيح يبدأ بـ 05 (مثال: 0551234567).</p>
+          </div>
+
+          <div>
+            <label for="prodType" class="block text-sm font-bold text-zinc-200 mb-2">اختر المنتج المطلوب *</label>
+            <select id="prodType" class="w-full rounded-xl bg-[#08080C] border border-zinc-800 px-4 py-3.5 text-sm text-white focus:border-emerald-500 outline-none transition">
+              <option value="ستاند تقييم Google">ستاند تقييم Google الذكي (99 ريال)</option>
+              <option value="بطاقة أعمال ذكية">بطاقة أعمال ذكية NFC (49 ريال)</option>
+              <option value="ستاند نقاط البيع المخصص">ستاند نقاط البيع المخصص بهويتك (299 ريال)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-black font-black text-sm flex items-center justify-center gap-2 transition shadow-[0_8px_25px_rgba(16,185,129,0.35)]">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            تأكيد الطلب عبر WhatsApp
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-zinc-800 text-center text-xs text-zinc-500">
+    <div class="font-brand font-bold text-white text-base mb-1">AVENi</div>
+    © 2026 جميع الحقوق محفوظة · حلول الاتصال الذكي NFC
+  </footer>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/966591825649?text=مرحباً%20فريق%20AVENi،%20أود%20الاستفسار%20عن%20منتجات%20NFC" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-emerald-500 text-black flex items-center justify-center text-2xl shadow-[0_6px_25px_rgba(16,185,129,0.45)] hover:scale-110 transition-transform" title="محادثة واتساب">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('orderForm');
+      const phone = document.getElementById('custPhone');
+      const err = document.getElementById('phoneError');
+      const sel = document.getElementById('prodType');
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const menu = document.getElementById('mobileMenu');
+
+      // ربط أزرار الطلب بالنموذج تلقائياً
+      document.querySelectorAll('.order-trigger').forEach(btn => {
+        btn.addEventListener('click', () => {
+          sel.value = btn.dataset.product;
+          document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      // القائمة للجوال
+      menuBtn.addEventListener('click', () => {
+        const isHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden', !isHidden);
+        menu.classList.toggle('flex', isHidden);
+      });
+
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          menu.classList.remove('flex');
+        });
+      });
+
+      // التحقق وتأكيد الطلب عبر الواتساب
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        err.classList.add('hidden');
+        
+        const name = document.getElementById('custName').value.trim();
+        const rawPhone = phone.value.trim().replace(/[\s()-]/g, '');
+        const isValid = /^(05\d{8}|9665\d{8}|\+9665\d{8})$/.test(rawPhone);
+
+        if (!name) {
+          document.getElementById('custName').focus();
+          return;
+        }
+
+        if (!isValid) {
+          err.classList.remove('hidden');
+          phone.focus();
+          return;
+        }
+
+        const msg = `مرحباً فريق AVENi 👋\nأود طلب المنتج التالي:\n- المنتج: *${sel.value}*\n- الاسم / المنشأة: *${name}*\n- رقم الجوال: *${rawPhone}*\n\nأرجو تزويدي بالخطوات القادمة وطريقة إرسال البيانات والاعتماد.`;
+        
+        window.open(`https://wa.me/966591825649?text=${encodeURIComponent(msg)}`, '_blank');
+      });
+
+      phone.addEventListener('input', () => err.classList.add('hidden'));
+    });
+  </script>
+</body>
+</html>
