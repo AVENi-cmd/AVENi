@@ -18,3 +18,6 @@ Static HTML, CSS, JavaScript. No build tools required. Google Fonts are optional
 ```
 
 Previous website remains in Git history and the archive/pre-rebuild-20261020 branch.
+
+## Editorial redesign
+Oversized typographic hero and Ascent monogram; asymmetric portfolio; ivory / basalt alternating sections; restrained gold accents. Responsive breakpoints at 1100, 760 and 360px.
