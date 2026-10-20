@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://aveni-cmd.github.io/AVENi/sitemap.xml

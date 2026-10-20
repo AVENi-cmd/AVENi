@@ -1,24 +1,20 @@
-# AVENi
+# AVENi — أفيني
 
-## نبذة
-AVENi هو مشروع حلول اتصال ذكي للمتاجر والشركات، يبدأ ببطاقات أعمال وستاندات مخصصة تعتمد على NFC وQR Code لتسهيل وصول العميل إلى الوجهة الرقمية المناسبة.
+Official brand website for web design and development.
 
-## الوضع الحالي
-- الموقع الرئيسي موجود في `index.html`.
-- المشروع حاليًا موقع ثابت؛ لا توجد منصة SaaS أو لوحة تحكم للعملاء.
-- صفحات العملاء والبنية متعددة العملاء مؤجلة إلى مرحلة لاحقة.
-- رقم WhatsApp المستخدم في نموذج الطلب مؤقت إلى حين اعتماد رقم الإطلاق الرسمي.
+Live: https://aveni-cmd.github.io/AVENi/
 
-## المنتجات الحالية
-- بطاقة أعمال ذكية — 49 ريال.
-- ستاند تقييم Google — 99 ريال.
-- ستاند نقاط البيع المخصص — 299 ريال.
+## Brand
+BASALT #17191C · SAND #EEE9E0 · GOLD #B79A62 · GRAPHITE #62666C · IVORY #F7F5F0
 
-## مبادئ التطوير
-- الحفاظ على هوية AVENi البصرية: الأسود الفحمي والفضي المعدني.
-- عدم إضافة مزايا أو وعود تجارية غير معتمدة.
-- إبقاء البنية بسيطة وقابلة للتوسع لاحقًا.
-- عدم بناء SaaS أو Dashboard قبل اعتماد الحاجة والمرحلة التشغيلية المناسبة.
+Arabic: IBM Plex Sans Arabic. Wordmark: Plus Jakarta Sans. English: Inter.
 
-## النشر
-الموقع منشور عبر GitHub Pages من فرع `main`.
+## Implementation
+Static HTML, CSS, JavaScript. No build tools required. Google Fonts are optional; system fallbacks remain available. Project imagery is sourced from the linked portfolio repositories. Contact form opens WhatsApp with a user-reviewed message; no form data is stored.
+
+## Client footer
+```html
+<a href="https://aveni-cmd.github.io/AVENi/" target="_blank" rel="noopener noreferrer">تصميم وتطوير AVENi</a>
+```
+
+Previous website remains in Git history and the archive/pre-rebuild-20261020 branch.
